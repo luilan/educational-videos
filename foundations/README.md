@@ -26,6 +26,7 @@ to episode 1 of [How LLMs Work](../how-llms-work/). F12–F14 are extras.
 - `fNN_script.py`: title, tagline, series label, "used in" episodes and the narration. Readable version: [NARRATION.md](NARRATION.md).
 - `fNN_scene.py`: the Manim scene.
 - `voice/fNN/sections.json`: section durations and word timestamps.
+- `study/fNN_study.pdf`: the study guide for each video (source: `study/fNN_study.py`).
 
 F14 reads the tiny GPT's real training data and log from `../how-llms-work/tiny_gpt/`.
 

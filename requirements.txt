@@ -8,3 +8,5 @@ faster-whisper
 # Tiny GPT (how-llms-work/tiny_gpt); CPU build is enough:
 #   pip install torch --index-url https://download.pytorch.org/whl/cpu
 torch
+# Study-guide PDFs (framework/study_guide.py; also needs google-chrome or chromium)
+pypdf

@@ -21,9 +21,11 @@ framework/          shared code used by every video
   review_sheet.py     contact sheet of section-end frames, for QA
   review_mid.py       contact sheet of mid-section frames, for QA
   intro_styles.py     the five intro styles that were tried
+  study_guide.py      builds a lesson's study-guide PDF from <series>/study/<id>_study.py
   download_models.sh  fetches the TTS model into tts/
-foundations/        pre-series: fNN_script.py + fNN_scene.py per video
+foundations/        pre-series: fNN_script.py + fNN_scene.py per video (+ study/)
 how-llms-work/      main series: vNN_script.py + vNN_scene.py per episode
+  study/              one study-guide PDF per episode (+ its source and video frames)
   tiny_gpt/           the ~100-line GPT trained for episodes 11–12
 render.sh           render one video
 narrate.sh          (re)generate one video's narration
@@ -38,6 +40,21 @@ narrate.sh          (re)generate one video's narration
    `self.at("word")` to wait until that word is spoken, and `self.end_section()` to wait for the section to finish.
    Rendering prints a warning if animations run longer than their narration.
 4. **Render**: `./render.sh <series> <id>` (1080p60) or `./render.sh <series> <id> -ql` (fast 480p draft).
+
+## Study guides
+
+Every video has a study-guide PDF in `<series>/study/<id>_study.pdf` (28 guides, about 300 pages, 670 questions).
+Each guide splits the lesson into concepts, to be mastered one at a time. Each concept has a short explanation,
+a frame from the video with its timestamp, a key idea and a check of 3–4 questions (multiple choice, true/false,
+calculations, ordering and hands-on code). Answers with explanations are at the end. Every numeric answer and code
+output was checked by running it.
+
+The content lives in `<series>/study/<id>_study.py`. To rebuild a PDF (needs Google Chrome or Chromium and `pypdf`;
+frames are cached in `study/img/`, so the rendered video is only needed for new figures):
+
+```bash
+python framework/study_guide.py how-llms-work v05
+```
 
 ## Setup
 
