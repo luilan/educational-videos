@@ -1,0 +1,10 @@
+# Animation
+manim==0.21.0
+numpy
+# Narration: text-to-speech + word timestamps for cueing animations
+kokoro-onnx
+soundfile
+faster-whisper
+# Tiny GPT (how-llms-work/tiny_gpt); CPU build is enough:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+torch
