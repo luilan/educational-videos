@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy notice — Educational Video Uploader</title><style>body{font-family:system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#222}code{background:#f2f2f2;padding:0 .2em}nav{margin-bottom:1.5rem}</style></head><body><nav><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav><h1>Privacy notice — Educational Video Uploader</h1>
+<p>This notice describes the current owner-operated command-line script.
+The operator is Gianluigi Lanciotti. Contact for privacy or deletion inquiries:
+<a href="mailto:luilanglg@gmail.com">luilanglg@gmail.com</a>. The operator handles these
+requests directly. Do not send passwords or tokens. The operator runs it on their own private Linux server, where AI coding assistants (Claude Code) start uploads only on the operator's instructions. No other people have access.</p>
+<p>The application uses YouTube API Services. Google's handling of information is
+described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+Read this notice and the <a href="terms.html">terms</a> before supplying <code>--accept-policies</code>. The script
+requires that flag before authorization or live API operations; dry run is local only.
+For a series, one invocation accepts the entire ordered manifest without per-video prompts.</p>
+<h2>Information and purpose</h2>
+<p>You select a local video, title, description, category, privacy, audience and
+altered/synthetic-content declaration. The script reads these to upload the video
+to the YouTube channel selected in Google's OAuth authorization flow. It sends
+that video and metadata to Google/YouTube using HTTPS. It does not download
+YouTube videos or request channel listings, analytics, comments or account passwords.
+You can also supply playlist title, description and privacy or an existing playlist
+ID, and video IDs to add. A series manifest identifies ordered local videos and
+their metadata; the application creates/reuses a playlist and adds episodes in order.</p>
+<p>Google authorization provides an access token, refresh token and OAuth client
+information. The script requests one scope, <code>youtube.force-ssl</code>, accepted by
+videos.insert, playlists.insert and playlistItems.insert. Google's permission is
+broader: it includes seeing, editing and permanently deleting videos, ratings,
+comments and captions. This application implements upload, playlist creation and
+adding videos to playlists only; it implements no deletion/comment/caption operations.
+The earlier <code>youtube.upload</code> token is insufficient for playlists and requires new consent.
+Credentials are stored in the external path configured
+by the operator, outside the source project. Tokens are plaintext on disk;
+protect them using operating-system permissions and trusted access controls.
+Google's OAuth endpoint receives token refresh requests.</p>
+<h2>Storage, sharing and control</h2>
+<p>The script writes credentials only during the explicit <code>auth</code> command. During
+upload, refreshed access tokens remain in memory. It creates no video copies,
+API-data database, application logs or media upload-session files. Series mode
+writes a durable JSON checkpoint and lock file at the user's chosen path. This
+stores a manifest/file-metadata fingerprint, playlist/video/playlist-item IDs,
+completed/pending operations and daily upload-attempt counts to support safe restart.
+It does not store tokens or video copies in the checkpoint. Input videos and
+description files remain where the operator placed them. Credentials remain
+until the operator removes/replaces them; there is no scheduled cleanup.
+Keep checkpoint data while a job may resume, then remove it when no longer needed
+or after revocation, along with retained output/backups. There is no automated
+retention/deletion service; the owner manages these files and requests directly.</p>
+<p>Output includes preview metadata or the new video's ID, URL and returned privacy
+status, playlist/item IDs, offline series plans and pacing/checkpoint results.
+Progress and sanitized errors go to standard error. Tokens and raw API
+responses/errors are not printed. Shell history, redirected output, backups,
+automation tools and a future hosting provider may retain information separately;
+the operator must describe and manage those systems when used.</p>
+<p>This code includes no advertising, analytics, tracking cookies, sale of data or
+recipients other than Google/YouTube. There is no hosted service or multi-user
+data processing implemented here. Any future server deployment needs its actual
+operator/provider access, retention and deletion practices added to this notice.</p>
+<h2>Revoke access and delete data</h2>
+<p>Use <a href="https://security.google.com/settings/security/permissions">Google's permissions page</a>
+to revoke this application's access. Then remove the external token and any
+series checkpoints/lock files and operator-retained logs, outputs and backups. Local token deletion alone does not
+revoke Google's grant. Delete unwanted input files yourself. Uploaded videos
+remain on YouTube until removed through YouTube Studio; local deletion or
+revocation does not remove uploaded videos. Remove playlists and entries through
+YouTube. This CLI has no API deletion feature. Do not resume a revoked job or
+discard checkpoint state to force it to repeat operations.</p>
+<p>The current intended user is the channel owner operating their own local files.
+For information held by the operator or assistance with deletion, use the contact
+address above. This notice makes no unverified retention or deletion-SLA guarantee.</p></body></html>

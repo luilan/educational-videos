@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terms — Educational Video Uploader</title><style>body{font-family:system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#222}code{background:#f2f2f2;padding:0 .2em}nav{margin-bottom:1.5rem}</style></head><body><nav><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></nav><h1>Terms — Educational Video Uploader</h1>
+<p>This tool uploads videos you select to the YouTube channel authorized through
+Google OAuth, creates playlists, and adds video IDs to playlists you control.
+The series command consumes an ordered manifest and carries out its uploads and
+playlist operations without per-video prompts after your single explicit invocation.
+By using this API client, you agree to be bound by the
+<a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Read the accompanying
+<a href="privacy.html">privacy notice</a> and <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.
+Use <code>--accept-policies</code> to explicitly agree to these local terms and the privacy
+notice before authorization or live operations. The flag must be supplied each time;
+the tool does not store a record of your agreement.</p>
+<p>Use only the account/channel you control and content you are authorized to upload.
+Choose the title, description, audience, synthetic-content disclosure and privacy
+accurately. Review metadata with <code>--dry-run</code>. A live upload invocation instructs
+the tool to perform the specified operation or entire series using those values.
+Private is the default for uploads and new playlists, and
+YouTube's own project restrictions may force private visibility.</p>
+<p>The requested <code>youtube.force-ssl</code> permission is broader than this application's
+upload/playlist functionality, including Google's video/rating/comment/caption
+read/edit/delete permission. No deletion/comment/caption features are implemented.</p>
+<p>There is no guarantee of successful upload, processing, publication, continued
+API access or compliance-audit approval. Check YouTube Studio before rerunning
+an uncertain operation, because repeated commands may create duplicates. Series
+checkpoints skip confirmed completed work but stop for review on ambiguous writes;
+they do not guarantee exactly-once execution. Preserve the same state on restart.
+Daily pacing defaults to six upload attempts per UTC day per checkpoint; coordinate
+all jobs and other upload tools to keep total usage at no more than six/day.</p>
+<p>This is an owner-operated utility. No hosted service is offered.
+The operator is Gianluigi Lanciotti; contact
+<a href="mailto:luilanglg@gmail.com">luilanglg@gmail.com</a>. The operator runs it on their own private Linux server, where AI coding assistants (Claude Code) start uploads only on the operator's instructions. No other people have access. Update these terms and the privacy
+notice if the actual use or data handling changes.</p></body></html>
