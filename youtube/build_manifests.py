@@ -3,7 +3,7 @@
     python youtube/build_manifests.py
 
 Writes youtube/foundations.json and youtube/how-llms-work.json: one playlist each, one entry per video with
-title, description (summary, chapters, series links, credits, AI disclosure), Education category, private.
+title, description (summary, chapters, series links, credits, AI disclosure), Education category, public (user decision 2026-10-03).
 Chapters come from each study guide's concept segments; YouTube ignores all chapters of a video unless the
 first starts at 0:00 and every chapter lasts at least 10 seconds, so a too-short chapter absorbs the next one.
 """
@@ -139,11 +139,11 @@ def build(series):
         assert len(title) <= 100 and len(description.encode()) <= 5000, vid
         assert not re.search(r"\b(guide|lesson|Check \d|exercises?|questions ask)\b", summary), (vid, summary)
         episodes.append({"file": video, "title": title, "description": description,
-                         "category_id": CATEGORY_EDUCATION, "privacy": "private",
+                         "category_id": CATEGORY_EDUCATION, "privacy": "public",
                          "made_for_kids": False, "contains_synthetic_media": False})
     title, description = cfg["playlist"]
     description += f"\n\nStudy guides (PDF) and source code: {REPO}"
-    return {"playlist": {"title": title, "description": description, "privacy": "private"},
+    return {"playlist": {"title": title, "description": description, "privacy": "public"},
             "episodes": episodes}
 
 

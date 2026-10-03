@@ -2,7 +2,7 @@
   "playlist": {
     "title": "How LLMs Work: Foundations",
     "description": "Short videos on the math and code behind large language models: vectors, dot products, matrices, nonlinearity, exponentials and logs, probability, softmax, statistics, waves, gradients, NumPy, neural networks, autograd and train/validation data. Each video points to the How LLMs Work episodes that use it.\n\nStudy guides (PDF) and source code: https://github.com/luilan/educational-videos",
-    "privacy": "private"
+    "privacy": "public"
   },
   "episodes": [
     {
@@ -10,7 +10,7 @@
       "title": "Vectors: Lists of Numbers as Arrows | How LLMs Work: Foundations F01",
       "description": "The basic building block of every LLM.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f01_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: a vector is a list of numbers that you can also picture as an arrow. You can add vectors, stretch them and measure their length, and the rules are the same whether a vector has 2 numbers or 768. Every token inside an LLM is represented by one.\n\nChapters\n0:00 A vector is a list of numbers\n0:27 Two numbers, one arrow\n0:51 Adding vectors\n1:02 Scaling: stretch, shrink, flip\n1:13 Length, by Pythagoras · Directions that mean something\n1:32 Vectors in NumPy\n\nFoundations F01, a pre-series for How LLMs Work. Used in episodes 1, 3, 4 and 9.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -19,7 +19,7 @@
       "title": "The Dot Product | How LLMs Work: Foundations F02",
       "description": "One number that says how much two vectors agree.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f02_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: the dot product turns two vectors into one number that says how much they point the same way. The recipe is multiply matching numbers, then add. Divide by both lengths and you get cosine similarity, a pure measure of direction. LLMs use dot products almost everywhere.\n\nChapters\n0:00 Multiply matching numbers, then add\n0:37 Positive, zero, negative: agreement\n0:50 The shadow and the angle\n1:07 Cosine similarity\n1:21 Dot products everywhere\n1:33 The dot product in NumPy\n\nFoundations F02, a pre-series for How LLMs Work. Used in episodes 3, 5, 6, 8 and 10.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -28,7 +28,7 @@
       "title": "Matrices: Many Dot Products at Once | How LLMs Work: Foundations F03",
       "description": "The table of numbers behind every layer.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f03_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: a matrix is a table of numbers that does many dot products at once. Matrix times vector dots every row with the vector; matrix times matrix dots every row with every column. That is how one layer of an LLM transforms every token in a single step.\n\nChapters\n0:00 A matrix is a table of numbers\n0:25 Matrix times vector\n0:36 A matrix transforms space\n0:47 The shapes must line up\n0:58 Matrix times matrix: every token at once\n1:24 The transpose\n1:36 Matrices in NumPy\n\nFoundations F03, a pre-series for How LLMs Work. Used in episodes 5, 6, 7, 8 and 10.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -37,7 +37,7 @@
       "title": "Straight Lines and Bends | How LLMs Work: Foundations F04",
       "description": "Linear functions, and why networks need a bend.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f04_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: linear layers alone are not enough. A matrix can stretch and rotate, but a stack of matrices is always just one more matrix. Putting a simple bend between the layers, a nonlinear function like ReLU or GELU, is what lets a neural network build curved, complicated functions.\n\nChapters\n0:00 Linear: double in, double out\n0:28 Linear layers collapse into one\n0:38 What a straight map can't do\n0:51 The fix: a bend called ReLU\n1:08 GELU: a smooth ReLU\n1:20 Curves from many straight pieces · A layer in code\n\nFoundations F04, a pre-series for How LLMs Work. Used in episodes 8 and 9.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -46,7 +46,7 @@
       "title": "Exponentials and Logarithms | How LLMs Work: Foundations F05",
       "description": "Fast growth, and the function that undoes it.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f05_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video is about two functions that appear all over LLMs. The exponential eˣ grows by multiplying: it is always positive, and it turns small differences into big ones. The logarithm ln x undoes it: it turns probabilities into negative numbers that are easy to compare, and it turns multiplication into addition.\n\nChapters\n0:00 Growth by multiplying\n0:26 The number e, and eˣ is always positive\n0:47 eˣ exaggerates differences\n1:00 The logarithm undoes the exponential\n1:13 Logs of probabilities\n1:29 Multiplication becomes addition\n1:41 exp and log in NumPy\n\nFoundations F05, a pre-series for How LLMs Work. Used in episodes 6, 10, 11 and 12.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -55,7 +55,7 @@
       "title": "Probability and Sampling | How LLMs Work: Foundations F06",
       "description": "Distributions, weighted dice, and randomness.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f06_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video is about what an LLM actually outputs: not a word, but a probability distribution over words. You will see what a probability is, why a distribution adds up to one, how sampling picks one word at random according to it (a weighted spinner), and how a seed makes that randomness repeatable.\n\nChapters\n0:00 A probability is a number from 0 to 1\n0:26 A distribution adds up to one\n0:43 Sampling: a weighted spinner\n0:53 Many spins match the probabilities · Why sample? Variety\n1:10 Seeds make randomness repeatable\n1:23 Sampling in NumPy\n\nFoundations F06, a pre-series for How LLMs Work. Used in episodes 1, 10 and 14.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -64,7 +64,7 @@
       "title": "Softmax, Properly | How LLMs Work: Foundations F07",
       "description": "From any scores to probabilities.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f07_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: softmax turns any list of scores into probabilities, in two steps. Exponentiate every score, then divide by the total. Everything else follows from those two steps: why it is “soft”, why only the differences between scores matter, how temperature sharpens or flattens the result, and why code subtracts the largest score first.\n\nChapters\n0:00 Scores in, probabilities out\n0:36 Working it through: 3, 2, 0\n0:51 A soft version of the max\n1:02 Only the differences matter · Temperature: sharper or flatter\n1:20 Subtract the max: softmax in code\n\nFoundations F07, a pre-series for How LLMs Work. Used in episodes 5, 6 and 10.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -73,7 +73,7 @@
       "title": "Averages and Spread | How LLMs Work: Foundations F08",
       "description": "Mean, standard deviation, and keeping numbers tame.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f08_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: two simple statistics describe a list of numbers, the mean (its center) and the standard deviation (its spread), and together they let us keep numbers tame. Normalizing with them is what layer norm does, and the same idea of spread explains why attention divides its scores by √d.\n\nChapters\n0:00 The mean: the center\n0:28 Standard deviation: the typical distance\n0:52 Normalizing: mean 0, spread 1\n1:14 The spread of a sum grows like √n\n1:26 Dividing by √d keeps softmax tame\n\nFoundations F08, a pre-series for How LLMs Work. Used in episodes 6 and 9.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -82,7 +82,7 @@
       "title": "Waves and Rotations | How LLMs Work: Foundations F09",
       "description": "Sine, cosine, and turning arrows.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f09_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: sine and cosine come from a point moving around a circle. Its height traces a wave that repeats every full turn, 2π, and the same two functions can turn an arrow by any angle without changing its length. Episode 4 uses both: waves of different frequencies to mark positions, and rotations that turn relative position into a relative angle.\n\nChapters\n0:00 Sine and cosine on the unit circle\n0:25 The sine wave, and a full turn of 2π\n0:47 Frequency: how fast it repeats\n0:58 Many waves: a fingerprint for every position · Rotating an arrow\n1:18 Relative angles, and rotation in code\n\nFoundations F09, a pre-series for How LLMs Work. Used in episode 4.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -91,7 +91,7 @@
       "title": "Slopes and Gradients | How LLMs Work: Foundations F10",
       "description": "How a model knows which way to adjust.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f10_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video answers one question: when a model is wrong, which way should each weight move? The answer is the slope: how fast the output changes when you nudge the input. Take a small step against the slope, repeat, and you have gradient descent, the way LLMs are trained.\n\nChapters\n0:00 What a slope measures\n0:26 The derivative: the slope at one point\n0:41 Step against the slope: gradient descent\n1:06 The gradient: one slope per weight\n1:17 Slopes multiply: the chain rule and backprop\n1:40 Gradient descent in code\n\nFoundations F10, a pre-series for How LLMs Work. Used in episodes 11 and 12.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -100,7 +100,7 @@
       "title": "NumPy in Three Minutes | How LLMs Work: Foundations F11",
       "description": "Just enough to read the code in the series.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f11_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video is a quick tour of NumPy, Python's library for fast math on arrays of numbers. It covers just enough to read every code snippet in the series: shapes, element-wise arithmetic, the @ sign, axis and keepdims, broadcasting, reshape and masks.\n\nChapters\n0:00 Arrays and shapes\n0:29 Arithmetic on every element at once\n0:40 The @ sign: matrix multiplication\n0:50 Summing along an axis\n1:02 Broadcasting\n1:16 Reshape and transpose\n1:26 Masks, and it all together\n\nFoundations F11, a pre-series for How LLMs Work. The code in episodes 3 to 13 uses these NumPy basics.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -109,7 +109,7 @@
       "title": "Neural Networks in Three Minutes | How LLMs Work: Foundations F12",
       "description": "Neurons, layers, weights, and learning.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f12_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: a neural network is just a function, built from one very simple part repeated many times. A neuron weighs its inputs, adds a bias and bends the result; neurons side by side make a layer, and stacked layers make a network. Its numbers, the parameters, are not written by anyone: they are learned from data.\n\nChapters\n0:00 A neuron: weigh, add, bend\n0:42 A layer is one matrix multiplication\n0:54 Stacking layers · Parameters: the numbers that learn\n1:15 Inference and training\n1:30 We choose the shape, data does the rest · Neurons and layers in code\n\nFoundations F12 (extra), a pre-series for How LLMs Work. Used in episodes 8, 11 and 12.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -118,7 +118,7 @@
       "title": "PyTorch and Autograd | How LLMs Work: Foundations F13",
       "description": "How one line computes every gradient.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f13_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video opens up the one line that does all the calculus in training: loss.backward(). PyTorch records every operation on a tensor as a graph, then walks that graph in reverse with the chain rule. One call fills in the gradient of every weight, and an optimizer uses those gradients to update the weights.\n\nChapters\n0:00 Tensors that remember\n0:31 The forward pass builds a graph\n0:45 backward(): the chain rule in reverse\n1:04 One backward call, every gradient\n1:15 The optimizer, and zero_grad\n1:30 Autograd in code\n\nFoundations F13 (extra), a pre-series for How LLMs Work. Used in episodes 11 and 12.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -127,7 +127,7 @@
       "title": "Train vs Validation Data | How LLMs Work: Foundations F14",
       "description": "How we know a model really learned.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/foundations/study/f14_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video answers one question: how do we know a model has really learned, and not just memorized? Before training we split the data, never train on one slice, the validation set, and measure the loss there too. Comparing the two losses tells us whether the model is learning or overfitting.\n\nChapters\n0:00 A low training loss can fool us\n0:26 Split the data before training\n0:50 Two losses, and the gap between them\n1:13 Overfitting\n1:25 The test set: one final, honest score · The split in code\n\nFoundations F14 (extra), a pre-series for How LLMs Work. Used in episodes 11 and 12.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\nTraining text: Tiny Shakespeare, from Andrej Karpathy's char-rnn project.\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     }

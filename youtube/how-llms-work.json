@@ -2,7 +2,7 @@
   "playlist": {
     "title": "How LLMs Work",
     "description": "A large language model, built up from scratch: tokens, embeddings, position, attention, the MLP, transformer blocks, probabilities, training, a real tiny GPT, and two bonus episodes on the KV cache and on turning a GPT into a chatbot. New to the math? Start with the How LLMs Work: Foundations playlist.\n\nStudy guides (PDF) and source code: https://github.com/luilan/educational-videos",
-    "privacy": "private"
+    "privacy": "public"
   },
   "episodes": [
     {
@@ -10,7 +10,7 @@
       "title": "What is an LLM? | How LLMs Work, Ep. 1",
       "description": "How a language model writes, one word at a time.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v01_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: a large language model does one simple thing, over and over. It predicts what comes next, picks something, adds it to the text, and repeats. Everything else in the series is about how the prediction works on the inside.\n\nChapters\n0:00 One job: predict what comes next\n0:30 A probability for every word\n0:42 Pick one word and append it · The loop: predict, pick, append, repeat\n1:03 The loop in code\n1:16 Inside the model: a function made of numbers\n\nEpisode 1 of the How LLMs Work series. Background math in Foundations F01 (Vectors: Lists of Numbers as Arrows) and F06 (Probability and Sampling).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -19,7 +19,7 @@
       "title": "Tokens: Chopping Text into Pieces | How LLMs Work, Ep. 2",
       "description": "How text becomes numbers a model can read.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v02_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video answers a question episode 1 skipped: what exactly goes into the model? A neural network only works with numbers, so text is first chopped into tokens, usually pieces of words, and each token is replaced by a number, its ID. The pieces are not chosen by hand: an algorithm called byte pair encoding learns them by counting which letters appear side by side.\n\nChapters\n0:00 Text in, numbers out: the tokenizer\n0:29 Two extremes: characters or words\n0:58 Subword tokens: the middle road\n1:16 Byte pair encoding: merge the most frequent pair\n1:50 BPE training in code\n2:01 Vocabulary and token IDs\n2:22 The model never sees letters\n\nEpisode 2 of the How LLMs Work series.\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -28,7 +28,7 @@
       "title": "Embeddings: Words as Vectors | How LLMs Work, Ep. 3",
       "description": "How numbers start to carry meaning.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v03_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: every token gets a vector, a list of numbers that places it as a point in space, and after training, where a token sits carries meaning. Similar tokens end up close together, closeness can be measured with the dot product, and even directions can mean something.\n\nChapters\n0:00 IDs are labels, vectors are points\n0:30 The embedding matrix: one row per token\n0:58 Similar tokens end up close together\n1:12 Measuring closeness: dot product and cosine\n1:31 Directions carry meaning\n1:45 Learned, not designed\n1:56 Embeddings in code\n\nEpisode 3 of the How LLMs Work series. Background math in Foundations F01 (Vectors: Lists of Numbers as Arrows), F02 (The Dot Product) and F11 (NumPy in Three Minutes).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -37,7 +37,7 @@
       "title": "Where Am I? Position | How LLMs Work, Ep. 4",
       "description": "How a model knows the order of words.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v04_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nEmbeddings tell the model what each token is, but not where it is: “The cat sat on the mat” and “The mat sat on the cat” get exactly the same vectors. This video is about putting the order into the vectors themselves: first two simple ideas, then the sine waves of the original transformer, and finally the rotations (RoPE) used by most modern models.\n\nChapters\n0:00 Same tokens, different meaning\n0:31 Idea 1: add the position number\n0:43 Idea 2: learn a vector per position\n0:58 Waves at many speeds, like a clock\n1:29 Position is added to meaning\n1:41 Sinusoidal encoding in code\n1:54 RoPE: rotate instead of add\n\nEpisode 4 of the How LLMs Work series. Background math in Foundations F01 (Vectors: Lists of Numbers as Arrows) and F09 (Waves and Rotations).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -46,7 +46,7 @@
       "title": "Attention I: Tokens Talking to Each Other | How LLMs Work, Ep. 5",
       "description": "How words borrow meaning from their neighbours.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v05_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: attention lets every token look at the other tokens and borrow meaning from the ones that matter. Each token asks a question (its query), compares it with what every token offers (its key), and mixes in the information (the values) of the best matches.\n\nChapters\n0:00 Context changes meaning\n0:43 Attention weights: a budget of 1\n0:55 Query, key and value\n1:21 Matching with the dot product\n1:33 Mixing in the values\n1:44 Only looking backwards\n1:55 Learned, not hand-written\n\nEpisode 5 of the How LLMs Work series. Background math in Foundations F02 (The Dot Product), F03 (Matrices: Many Dot Products at Once) and F07 (Softmax, Properly).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -55,7 +55,7 @@
       "title": "Attention II: The Math | How LLMs Work, Ep. 6",
       "description": "Queries, keys and values, one matrix at a time.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v06_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: all of attention, for every token at once, is a handful of matrix multiplications. Project the tokens to queries, keys and values, score every query against every key, scale, mask the future, softmax each row, and mix the values: softmax(Q Kᵀ / √d) · V.\n\nChapters\n0:00 From X to Q, K and V\n0:42 Scores: Q times K transposed\n0:59 Scaling by √d\n1:09 The causal mask\n1:20 Softmax, row by row\n1:31 Mixing the values\n1:43 The whole formula, in NumPy\n\nEpisode 6 of the How LLMs Work series. Background math in Foundations F02 (The Dot Product), F03 (Matrices: Many Dot Products at Once), F05 (Exponentials and Logarithms), F07 (Softmax, Properly), F08 (Averages and Spread) and F11 (NumPy in Three Minutes).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -64,7 +64,7 @@
       "title": "Multi-Head Attention | How LLMs Work, Ep. 7",
       "description": "Many questions, asked at the same time.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v07_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video has one big idea: instead of one big attention, run several smaller ones side by side, called heads. Each head has its own query, key and value matrices, so each can learn to look for something different. Their results are glued back together, mixed by one more learned matrix, and added to the token's vector.\n\nChapters\n0:00 Several heads, side by side\n0:29 Sharing out the vector\n0:40 Different heads, different patterns\n1:10 Glue, mix and add\n1:27 Many views for the price of one\n1:37 Multi-head attention in code\n\nEpisode 7 of the How LLMs Work series. Background math in Foundations F03 (Matrices: Many Dot Products at Once) and F11 (NumPy in Three Minutes).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -73,7 +73,7 @@
       "title": "The MLP: Where Facts Live | How LLMs Work, Ep. 8",
       "description": "The part of the model that thinks on its own.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v08_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nAttention moves information between tokens. This video is about the other half of every layer: the MLP, which works on each token's vector by itself. It expands the vector, bends it with a simple nonlinear function, and projects it back down. It holds most of each layer's weights, and much of the model's factual knowledge seems to live there.\n\nChapters\n0:00 One token at a time\n0:21 Expand, bend, project back\n0:44 Neurons as detectors\n1:01 GELU: quiet unless the pattern shows up\n1:14 Why the bend matters\n1:26 Recalling facts\n1:44 Where the weights are, in code\n\nEpisode 8 of the How LLMs Work series. Background math in Foundations F02 (The Dot Product), F03 (Matrices: Many Dot Products at Once), F04 (Straight Lines and Bends) and F12 (Neural Networks in Three Minutes).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -82,7 +82,7 @@
       "title": "The Transformer Block | How LLMs Work, Ep. 9",
       "description": "Attention and MLP, wired together and stacked.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v09_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nWe have both halves of a layer: attention, where tokens share information, and the MLP, where each token processes it. This video wires them into a transformer block: each half adds its result to a stream of vectors, with a layer norm in front of it. Then the block is stacked, 12 times in GPT-2 small.\n\nChapters\n0:00 The residual stream\n0:27 Add, don't replace\n0:50 Layer norm\n1:05 Wiring the block · Stack it\n1:35 The block in code\n\nEpisode 9 of the How LLMs Work series. Background math in Foundations F01 (Vectors: Lists of Numbers as Arrows), F04 (Straight Lines and Bends), F08 (Averages and Spread) and F11 (NumPy in Three Minutes).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -91,7 +91,7 @@
       "title": "From Vectors Back to Words | How LLMs Work, Ep. 10",
       "description": "Logits, softmax, and choosing the next token.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v10_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nAfter the last block, every token is still a vector. This video turns the last one back into a word: the unembedding matrix gives one score (logit) per token, softmax turns the scores into probabilities, and a sampling rule (greedy, temperature, top-k, top-p) picks the next token. That closes the loop from episode 1.\n\nChapters\n0:00 From the last vector to logits\n0:40 Each logit is a dot product · Softmax: scores to probabilities\n1:02 Greedy picking and temperature\n1:26 Top-k and top-p\n1:40 One sentence, many lessons\n1:52 Choosing the next token, in code\n\nEpisode 10 of the How LLMs Work series. Background math in Foundations F02 (The Dot Product), F03 (Matrices: Many Dot Products at Once), F05 (Exponentials and Logarithms), F06 (Probability and Sampling) and F07 (Softmax, Properly).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -100,7 +100,7 @@
       "title": "Training: Learning from Mistakes | How LLMs Work, Ep. 11",
       "description": "Loss, gradients, and millions of tiny nudges.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v11_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video answers the question left open in episode 1: where do the model's numbers come from? A new model starts with random weights. Training shows it text, measures how wrong each next-token guess was with one number, the loss, and nudges every weight a tiny bit in the direction that makes the loss smaller. Then it does that again, millions of times.\n\nChapters\n0:00 The text is its own answer key\n0:31 Cross-entropy: scoring a guess\n0:57 Gradient descent: feeling our way downhill\n1:23 The learning rate · Backpropagation\n1:49 The training loop in code\n2:12 A real loss curve\n\nEpisode 11 of the How LLMs Work series. Background math in Foundations F05 (Exponentials and Logarithms), F10 (Slopes and Gradients), F12 (Neural Networks in Three Minutes), F13 (PyTorch and Autograd) and F14 (Train vs Validation Data).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\nTraining text: Tiny Shakespeare, from Andrej Karpathy's char-rnn project.\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -109,7 +109,7 @@
       "title": "Build a Tiny GPT | How LLMs Work, Ep. 12",
       "description": "Every piece, in about a hundred lines of code.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v12_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis video puts the whole series into one real program: tiny_gpt.py, about a hundred lines of PyTorch. It reads a million characters of Shakespeare, builds a GPT with 818,241 parameters from the pieces of episodes 2–10, trains it with the loop of episode 11 on an ordinary CPU, and watches it go from noise to something that looks like a play.\n\nChapters\n0:00 Every character is a token\n0:35 Embeddings: token plus position · Inside a block: attention and the MLP\n1:03 Logits out, and 818,241 parameters\n1:21 Training on an ordinary CPU\n1:35 Watching it learn\n\nEpisode 12 of the How LLMs Work series. Background math in Foundations F05 (Exponentials and Logarithms), F10 (Slopes and Gradients), F12 (Neural Networks in Three Minutes), F13 (PyTorch and Autograd) and F14 (Train vs Validation Data).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\nTraining text: Tiny Shakespeare, from Andrej Karpathy's char-rnn project.\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -118,7 +118,7 @@
       "title": "Making It Fast: the KV Cache | How LLMs Work, Ep. 13 (bonus)",
       "description": "Why generation doesn't start over for every token.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v13_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis bonus video is about speed. Generating text means one model run per new token, and done naively every run redoes the work for the whole text. The KV cache saves each token's keys and values, so every step only has to process one new token. The price is memory.\n\nChapters\n0:00 The naive loop repeats work\n0:21 Old tokens never change\n0:34 The KV cache: one new row per step\n1:04 The price: memory\n1:20 Prefill and decode\n1:30 Shrinking the cache: grouped-query attention\n1:41 The KV cache in code\n\nEpisode 13 of the How LLMs Work series (bonus episode). Background math in Foundations F11 (NumPy in Three Minutes).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     },
@@ -127,7 +127,7 @@
       "title": "From GPT to Chatbot | How LLMs Work, Ep. 14 (bonus)",
       "description": "How a text predictor learns to be an assistant.\n\nStudy guide for this lesson (PDF): https://github.com/luilan/educational-videos/blob/main/how-llms-work/study/v14_study.pdf\nAll lessons, study guides and source code: https://github.com/luilan/educational-videos\n\nThis finale answers one question: how does a next-token predictor become a helpful assistant? It is trained in stages: pretraining on internet text, supervised fine-tuning on example conversations, then learning from preferences and other feedback. The machine never changes; only the data and the training signal do.\n\nChapters\n0:00 Pretraining makes a base model\n0:31 Supervised fine-tuning\n0:47 A chat is one long document\n1:00 Learning from preferences\n1:11 RLHF and DPO\n1:29 AI feedback and checkable answers\n1:40 Same machine, different data\n\nEpisode 14 of the How LLMs Work series (bonus episode). Background math in Foundations F06 (Probability and Sampling).\n\nCredits\nAnimated with Manim Community Edition (https://www.manim.community), the community-maintained version of Manim, the math animation engine created by Grant Sanderson (3Blue1Brown).\n\nMade with AI assistance\nThe script, animation code and examples in this video were created with the help of AI (Claude, by Anthropic). The narration is an AI-generated voice (Kokoro text-to-speech).",
       "category_id": "27",
-      "privacy": "private",
+      "privacy": "public",
       "made_for_kids": false,
       "contains_synthetic_media": false
     }
