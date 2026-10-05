@@ -147,6 +147,65 @@ def build(series):
             "episodes": episodes}
 
 
+# ---------------------------------------------------------------------------- LLMs in Practice (released in batches)
+PRACTICE = "llms-in-practice"
+PRACTICE_PLAYLIST = ("LLMs in Practice",
+                     "How real products are built on top of a language model: prompts and context, context windows, "
+                     "sampling, embeddings and search, RAG, tool use, agents, fine-tuning and LoRA, quantization, "
+                     "evaluation and safety. Every episode has a study guide (PDF) and runnable code. "
+                     "Follows the How LLMs Work series.")
+
+
+def practice_files(n):
+    """Paths of everything episode n needs before release, or None if any is missing."""
+    vid = f"p{n:02d}"
+    base = os.path.join(ROOT, PRACTICE)
+    code = glob.glob(os.path.join(base, "code", f"{vid}_*"))
+    video = glob.glob(os.path.join(base, "media", "videos", f"{vid}_scene", "1080p60", "*.mp4"))
+    files = {"script": os.path.join(base, f"{vid}_script.py"), "scene": os.path.join(base, f"{vid}_scene.py"),
+             "study": os.path.join(base, "study", f"{vid}_study.py"),
+             "pdf": os.path.join(base, "study", f"{vid}_study.pdf")}
+    if len(code) != 1 or len(video) != 1 or not all(os.path.exists(f) for f in files.values()):
+        return None
+    return dict(files, code=code[0], video=video[0])
+
+
+def build_practice(numbers, playlist_id=None):
+    """Manifest for the given LLMs in Practice episode numbers; reuse playlist_id once the playlist exists."""
+    episodes = []
+    for n in numbers:
+        f = practice_files(n)
+        assert f, f"episode {n} is not complete"
+        vid = f"p{n:02d}"
+        script, study = load(f["script"]), load(f["study"])
+        with av.open(f["video"]) as container:
+            duration = float(container.duration / av.time_base)
+        code_url = f"{REPO}/tree/main/{PRACTICE}/code/{os.path.basename(f['code'])}"
+        links = (f"Study guide for this lesson (PDF): {REPO}/blob/main/{PRACTICE}/study/{vid}_study.pdf\n"
+                 f"Code for this episode: {code_url}\n"
+                 f"All lessons, study guides and source code: {REPO}")
+        summary = plain(study.LESSON["intro"])
+        summary = re.sub(r"\b([Tt]his (bonus )?)lesson\b", r"\1video", summary)
+        where = (f"Episode {n} of LLMs in Practice, the follow-on to How LLMs Work. "
+                 "New to transformers? Start with the How LLMs Work playlist.")
+        parts = [script.TAGLINE + ".", links, summary,
+                 "Chapters\n" + "\n".join(chapters(study.CONCEPTS, duration)), where, CREDITS, AI_DISCLOSURE]
+        description = "\n\n".join(parts)
+        title = f"{script.TITLE} | LLMs in Practice, Ep. {n}"
+        assert "<" not in title + description and ">" not in title + description, vid
+        assert len(title) <= 100 and len(description.encode()) <= 5000, vid
+        episodes.append({"file": f["video"], "title": title, "description": description,
+                         "category_id": CATEGORY_EDUCATION, "privacy": "public",
+                         "made_for_kids": False, "contains_synthetic_media": False})
+    if playlist_id:
+        playlist = {"id": playlist_id}
+    else:
+        title, description = PRACTICE_PLAYLIST
+        playlist = {"title": title, "description": description + f"\n\nStudy guides (PDF) and source code: {REPO}",
+                    "privacy": "public"}
+    return {"playlist": playlist, "episodes": episodes}
+
+
 if __name__ == "__main__":
     for series in SERIES:  # Foundations first: the main episodes point back to it
         path = os.path.join(ROOT, "youtube", f"{series}.json")

@@ -46,3 +46,24 @@ class FoundationsCover(Scene):
         tb = VGroup(Text("How LLMs Work", font_size=64, weight=BOLD), Text("Foundations", font_size=56, weight=BOLD, color=YELLOW),
                     Text("The math and code behind LLMs", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
         self.add(fit(tb, art, Text("14 short lessons · study guides included", font_size=22, color=GREY_C)))
+
+
+class PracticeCover(Scene):
+    def construct(self):
+        def bubble(text, color):
+            label = Text(text, font_size=24)
+            box = RoundedRectangle(corner_radius=0.2, width=label.width + 0.5, height=label.height + 0.4,
+                                   stroke_width=0, fill_color=color, fill_opacity=0.9)
+            return VGroup(box, label.move_to(box))
+        chat = VGroup(bubble("How long should I boil an egg?", BLUE_E), bubble("About 7 minutes.", GREY_D))
+        chat.arrange(DOWN, buff=0.25)
+        chat[0].shift(0.6 * RIGHT)
+        chat[1].shift(0.6 * LEFT)
+        tools = VGroup(*[token(w, color=c, font_size=24) for w, c in
+                         [("prompts", TOKEN_COLOR), ("RAG", TEAL_C), ("tools", GOLD), ("agents", MODEL_COLOR)]])
+        tools.arrange(RIGHT, buff=0.18)
+        tb = VGroup(Text("LLMs in Practice", font_size=64, weight=BOLD),
+                    Text("Building real products on language models", font_size=30, color=GREY_B))
+        tb.arrange(DOWN, buff=0.3)
+        self.add(fit(tb, chat, tools, Text("12 episodes · study guides and code included", font_size=22,
+                                            color=GREY_C)))
