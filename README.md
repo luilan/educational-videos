@@ -7,7 +7,7 @@ Source code for animated, narrated explainer videos in the style of 3Blue1Brown,
 |---|---|---|---|
 | [Foundations](foundations/) | 14 (F01–F14) | ~27 min | The math and code behind LLMs: vectors, dot products, matrices, nonlinearity, exp/log, probability, softmax, statistics, waves, gradients, NumPy, neural nets, autograd, train/validation data |
 | [How LLMs Work](how-llms-work/) | 14 (1–14) | ~32 min | A large language model from scratch: tokens → embeddings → attention → transformer blocks → training → a real tiny GPT → chatbots |
-| [LLMs in Practice](llms-in-practice/) | 12 planned | in production | Building with LLMs: prompts, context, sampling, embeddings, RAG, tool use, agents, LoRA, quantization, evaluation, safety. Every episode ships a study guide and runnable code |
+| [Deep Dive](deep-dive/) | ~45 planned | in production | Inside a modern LLM, piece by piece: BPE, RoPE, attention variants, normalization, training and scaling, MoE, inference tricks, RLHF/DPO, interpretability. Every episode ships a study guide and runnable code |
 
 Foundations is an optional pre-series: each video ends by pointing to the main episodes that use it.
 
