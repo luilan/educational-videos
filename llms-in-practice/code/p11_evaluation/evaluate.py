@@ -1,12 +1,12 @@
 """LLMs in Practice, episode 11: Evaluating LLMs — how we know it's better.
 
-A tiny evaluation harness: 20 questions about the (made-up) Bella's Bakery handbook, each with a checkable answer.
+A tiny evaluation harness: 20 easy and 10 harder questions about the (made-up) Bella's Bakery handbook, each with a\ncheckable answer.
 Both models get the handbook in their prompt (like RAG), answer every question, and are scored automatically,
 first with naive exact matching, then with a fairer check. Greedy decoding, so every number is repeatable.
 
     pip install -r requirements.txt
     python evaluate.py
-Downloads Qwen2.5-0.5B-Instruct and Qwen2.5-1.5B-Instruct (about 4 GB in total); runs on a CPU in a few minutes.
+Downloads Qwen2.5-0.5B, 1.5B and 3B-Instruct (about 10 GB in total; the 3B model needs about 7 GB of RAM);\nruns on a CPU in about 15 minutes.
 """
 import re
 from pathlib import Path
@@ -38,18 +38,32 @@ TESTS = [
     ("What discount code works for online orders?", ["bella10"]),
     ("What time does the morning baker's shift start?", ["4:00", "4 am", "4am"]),
 ]
-MODELS = ["Qwen/Qwen2.5-0.5B-Instruct", "Qwen/Qwen2.5-1.5B-Instruct"]
+# Harder: each answer needs two facts and a little reasoning. ("yes"/"no": the answer must start with it.)
+HARD = [
+    ("I want a cake for 12 people delivered on a Sunday. How much will I pay in total?", ["39"]),
+    ("A student buys two sourdough loaves. How much do they pay?", ["10.8", "10,8"]),
+    ("Can I order a birthday cake on Thursday and pick it up on Saturday?", ["no"]),
+    ("Is the bakery open at 8:00 on a Monday?", ["no"]),
+    ("Will you deliver an order of 25 euros?", ["no"]),
+    ("I live 7 km from the bakery. Can you deliver to me?", ["no"]),
+    ("What is the total for a cake for 12 people delivered on a Tuesday?", ["42"]),
+    ("I place a delivery order at 9:30. Will it arrive today?", ["yes"]),
+    ("Can someone with a nut allergy safely eat your croissants?", ["no"]),
+    ("If I arrive at 8:30 on a Saturday, is the bakery open?", ["no"]),
+]
+MODELS = ["Qwen/Qwen2.5-0.5B-Instruct", "Qwen/Qwen2.5-1.5B-Instruct", "Qwen/Qwen2.5-3B-Instruct"]
 
 
-def answers(model_name):
+def answers(model_name, tests):
     tok = AutoTokenizer.from_pretrained(model_name)
-    llm = AutoModelForCausalLM.from_pretrained(model_name, dtype=torch.float32).eval()
+    dtype = torch.bfloat16 if "3B" in model_name else torch.float32       # 3B in bfloat16 to fit in RAM
+    llm = AutoModelForCausalLM.from_pretrained(model_name, dtype=dtype).eval()
     out = []
-    for question, _ in TESTS:
+    for question, _ in tests:
         msg = [{"role": "system", "content": "Answer from the handbook below, in a few words.\n\n" + HANDBOOK},
                {"role": "user", "content": question}]
         ids = tok.apply_chat_template(msg, add_generation_prompt=True, return_tensors="pt")
-        gen = llm.generate(ids, attention_mask=torch.ones_like(ids), max_new_tokens=30, do_sample=False,
+        gen = llm.generate(ids, attention_mask=torch.ones_like(ids), max_new_tokens=60, do_sample=False,
                            pad_token_id=tok.eos_token_id)
         out.append(tok.decode(gen[0, ids.shape[1]:], skip_special_tokens=True).strip())
     return out
@@ -61,25 +75,25 @@ def exact(answer, accepted):            # naive: the answer must be exactly the 
 
 def contains(answer, accepted):         # fairer: any accepted string appears in the answer
     a = re.sub(r"\s+", " ", answer.lower())
+    if accepted[0] in ("yes", "no"):    # yes/no questions: judge the first word only
+        return re.sub(r"[^a-z]", "", a.split(" ")[0]) == accepted[0]
     return any(x in a for x in accepted)
 
 
-results = {}
+results, hard = {}, {}
 for name in MODELS:
-    results[name] = answers(name)
+    results[name], hard[name] = answers(name, TESTS), answers(name, HARD)
     short = name.split("-")[1]
     ex = sum(exact(a, acc) for a, (_, acc) in zip(results[name], TESTS))
     ok = sum(contains(a, acc) for a, (_, acc) in zip(results[name], TESTS))
-    print(f"{short}: exact match {ex}/20, contains the answer {ok}/20")
+    hd = sum(contains(a, acc) for a, (_, acc) in zip(hard[name], HARD))
+    print(f"{short}: easy set exact match {ex}/20, contains the answer {ok}/20 | hard set {hd}/10")
 
-print("\nper question (0.5B | 1.5B):")
-for i, (q, acc) in enumerate(TESTS):
-    marks = " ".join("✓" if contains(results[m][i], acc) else "✗" for m in MODELS)
-    print(f"{marks}  {q}")
+print("\nexamples that exact matching marks wrong (1.5B):")
+for (q, acc), a in list(zip(TESTS, results[MODELS[1]]))[:3]:
+    print(f"  {q} -> {a!r}  (expected exactly {acc[0]!r})")
+print("\nhard set (0.5B | 1.5B | 3B):")
+for i, (q, acc) in enumerate(HARD):
+    print(" ".join("✓" if contains(hard[m][i], acc) else "✗" for m in MODELS), f" {q}  [expected: {acc[0]}]")
     for m in MODELS:
-        if not contains(results[m][i], acc):
-            print(f"      {m.split('-')[1]} said: {results[m][i]!r}")
-print("\nexamples that exact matching marks wrong:")
-for m in MODELS[1:]:
-    for (q, acc), a in list(zip(TESTS, results[m]))[:4]:
-        print(f"  {q} -> {a!r}")
+        print(f"      {m.split('-')[1]}: {hard[m][i]!r}")
