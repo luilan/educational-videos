@@ -3,7 +3,7 @@
 Build:  python framework/study_guide.py llms-in-practice p03 --video llms-in-practice/media/videos/p03_scene/1080p60/SamplingVideo.mp4
 Figures: {"t": seconds into the rendered video, "caption": ...}; placed in body blocks with {fig0}, {fig1}, ...
 Exercise kinds: mc (options), tf, short, number, order, code. Every exercise has an answer and a why.
-Real numbers come from code/p03_sampling (Qwen2.5-0.5B-Instruct, transformers 4.57.1, torch 2.8, CPU);
+Real numbers come from code/p03_sampling (Qwen2.5-0.5B-Instruct, transformers 4.57.1, torch 2.14.0, CPU);
 toy calculations were checked in Python.
 """
 
