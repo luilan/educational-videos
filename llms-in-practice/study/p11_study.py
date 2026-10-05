@@ -104,7 +104,7 @@ the failures, and a sample of the passes.</div>""",
             {"kind": "mc", "q": "Which is a <b>false positive</b> of the automatic check?",
              "options": ["The 1.5B “42 euros” answer, scored correct because it contains 39",
                          "The 1.5B “Yes, … would not qualify” answer, scored wrong",
-                         "The 3B “31 euros” answer", "The 0.5B “No, closed on Mondays” answer"],
+                         "The 3B “39€ + 3€ = 42€” answer for the Tuesday cake", "The 0.5B “No, closed on Mondays” answer"],
              "answer": "A.", "why": "A false positive is a wrong answer counted as right. B is a false negative."},
             {"kind": "tf", "q": "“Automatic scores of 3, 3 and 6 prove the 3B model is exactly twice as good.”",
              "answer": "False.", "why": "With 10 questions the scores are noisy, and the checker made errors (by hand: 2, "
