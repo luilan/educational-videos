@@ -101,7 +101,8 @@ especially for stability.</div>""",
         "exercises": [
             {"kind": "mc", "q": "What happened without normalization at learning rate 0.01?",
              "options": ["Loss 1.71", "Same as LayerNorm", "The loss became NaN", "Training was faster"],
-             "answer": "C.", "why": "The activations grew without bound and the loss became “not a number”."},
+             "answer": "C.", "why": "Training became numerically unstable and the loss turned into “not a number” from the first check "
+                                   "(step 100) on."},
             {"kind": "tf", "q": "“RMSNorm gave a worse loss than LayerNorm in the episode's experiment.”",
              "answer": "False.", "why": "1.69 vs 1.69 at 0.001, and 1.81 vs 1.81 at 0.01."},
         ],
