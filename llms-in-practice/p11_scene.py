@@ -2,8 +2,8 @@
 
 Render from the repo root:  ./render.sh llms-in-practice p11
 Every score and answer on screen comes from code/p11_evaluation/evaluate.py (Qwen2.5 0.5B/1.5B/3B-Instruct,
-greedy, the made-up bakery handbook in the prompt). "By hand" scores: each hard-set answer read and judged for a
-correct answer with correct reasoning (see the study guide).
+greedy, the made-up bakery handbook in the prompt). "By hand" scores: each hard-set answer read and counted only if
+the final answer and its stated reason are both right (see the study guide).
 """
 from manim import *
 

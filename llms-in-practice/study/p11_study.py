@@ -78,7 +78,7 @@ better.</div>""",
         "title": "Harder questions, and reading the answers",
         "segment": (66, 107),
         "figures": [{"t": 85.0, "caption": "Ten harder questions: 3, 3 and 6 out of 10."},
-                    {"t": 105.8, "caption": "Reading the answers: automatic 3, 3, 6; by hand 2, 2, 5."}],
+                    {"t": 105.8, "caption": "Reading the answers: automatic 3, 3, 6; by hand 2, 1, 5."}],
         "body": [
             """<p>Ten harder questions, each combining two facts (a cake for 12 delivered on Sunday: total? Can I order
 a birthday cake on Thursday for Saturday? Open at 8:30 on a Saturday?), separate the models: <b>3, 3 and 6</b> out of
@@ -87,15 +87,20 @@ a birthday cake on Thursday for Saturday? Open at 8:30 on a Saturday?), separate
             """<p>But <b>read the answers</b>. The 1.5B model said <i>“… making the total cost 42 euros”</i> and still
 scored, because “39” appears in its working. The 0.5B model said <i>“No, … closed on Saturdays”</i>: right word, wrong
 reason. The 1.5B model said <i>“Yes, … for an order of 25 euros, delivery would not qualify”</i>: right facts, marked
-wrong for starting with “yes”. Checked by hand, the real scores are <b>2, 2 and 5</b>.</p>""",
+wrong for starting with “yes”. Checked by hand (final answer <i>and</i> its stated reason must be right), the real scores are <b>2, 1 and
+5</b>: the 1.5B model's “No” for Monday 8:00, for example, came with the reason “it opens at 7:30 on weekdays”, which
+contradicts its own answer.</p>""",
             """<div class="box key"><b class="t">Key idea</b>An automatic score is only as good as its checker. Always read
 the failures, and a sample of the passes.</div>""",
         ],
         "exercises": [
-            {"kind": "number", "q": "A cake for 8 people (28 euros) is delivered on a Tuesday (delivery 3 euros, free only "
-                                    "on Sundays; minimum order 30 euros). What is the total?",
-             "answer": "31 euros.", "why": "The order is 28 euros, below the 30-euro minimum for delivery … strictly, so "
-                                          "the test's expected 31 assumes the cake qualifies. The 3B model answered 31."},
+            {"kind": "short", "q": "The first version of this test asked “What is the total for a cake for 8 people "
+                                   "delivered on a Tuesday?” and expected <i>31</i> (28 + 3 euros delivery). What was "
+                                   "wrong with the test itself?",
+             "answer": "A cake for 8 costs 28 euros, below the 30-euro minimum for delivery: the correct answer is that "
+                       "it cannot be delivered.",
+             "why": "Test sets have bugs too. It was caught by reading the answers carefully, and replaced with a cake "
+                    "for 12 on a Tuesday (39 + 3 = 42 euros)."},
             {"kind": "mc", "q": "Which is a <b>false positive</b> of the automatic check?",
              "options": ["The 1.5B “42 euros” answer, scored correct because it contains 39",
                          "The 1.5B “Yes, … would not qualify” answer, scored wrong",
@@ -103,7 +108,7 @@ the failures, and a sample of the passes.</div>""",
              "answer": "A.", "why": "A false positive is a wrong answer counted as right. B is a false negative."},
             {"kind": "tf", "q": "“Automatic scores of 3, 3 and 6 prove the 3B model is exactly twice as good.”",
              "answer": "False.", "why": "With 10 questions the scores are noisy, and the checker made errors (by hand: 2, "
-                                       "2, 5)."},
+                                       "1, 5)."},
         ],
     },
     {
