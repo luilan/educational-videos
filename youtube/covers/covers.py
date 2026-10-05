@@ -67,3 +67,19 @@ class PracticeCover(Scene):
         tb.arrange(DOWN, buff=0.3)
         self.add(fit(tb, chat, tools, Text("12 episodes · study guides and code included", font_size=22,
                                             color=GREY_C)))
+
+
+class DeepDiveCover(Scene):
+    def construct(self):
+        # a transformer block, opened up: the parts the series explains
+        chips = VGroup(*[token(h, color=c, font_size=24) for h, c in
+                         [("BPE", TOKEN_COLOR), ("RoPE", TEAL_C), ("attention", GOLD), ("RMSNorm", GREEN_C),
+                          ("SwiGLU", RED_C), ("MoE", MODEL_COLOR), ("KV cache", BLUE_C), ("RLHF", MAROON_C)]])
+        chips.arrange_in_grid(2, 4, buff=(0.25, 0.3))
+        block = SurroundingRectangle(chips, buff=0.35, corner_radius=0.25, color=YELLOW, stroke_width=4)
+        label = Text("inside the transformer", font_size=22, color=YELLOW).next_to(block, UP, buff=0.12)
+        art = VGroup(label, block, chips)
+        tb = VGroup(Text("How LLMs Work", font_size=60, weight=BOLD),
+                    Text("Deep Dive", font_size=60, weight=BOLD, color=YELLOW),
+                    Text("Inside a modern LLM, piece by piece", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
+        self.add(fit(tb, art, Text("real code · study guides", font_size=22, color=GREY_C)))
