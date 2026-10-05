@@ -13,7 +13,7 @@ Every episode ships three things, all public in this repository:
    episode shows, with its own README and pinned requirements. Where it fits, the code upgrades the series' tiny GPT
    one component at a time, so by the end viewers have a small modern LLM they built themselves.
 
-Release: up to six episodes a day, after How LLMs Work finishes (from 2026-10-08).
+Release: up to six episodes a day, after LLMs in Practice.
 
 ## Plan (working titles, in arcs)
 
