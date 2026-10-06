@@ -1,0 +1,72 @@
+{
+ "format": 1,
+ "name": "StepStone catalog · Lui's lessons",
+ "packs": [
+  {
+   "id": "foundations",
+   "title": "How LLMs Work: Foundations",
+   "description": "The math and code behind language models: vectors, dot products, matrices, nonlinearity, exponentials and logs, probability, softmax, statistics, waves, gradients, NumPy, neural networks, autograd and train/validation data.",
+   "subject": "Machine learning",
+   "order": 1,
+   "requires": [],
+   "version": 1,
+   "content_hash": "c8379f30b3408965",
+   "file": "foundations-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/foundations-v1.zip",
+   "size": 7772055,
+   "sha256": "51996a1fa7f457ca84c96ac315eb90de214105c46ab0934e3194a0fa63d25806",
+   "lessons": 14
+  },
+  {
+   "id": "how-llms-work",
+   "title": "How LLMs Work",
+   "description": "A large language model, built up from scratch: tokens, embeddings, position, attention, the MLP, transformer blocks, probabilities, training, a real tiny GPT, the KV cache and chatbots.",
+   "subject": "Machine learning",
+   "order": 2,
+   "requires": [
+    "foundations"
+   ],
+   "version": 1,
+   "content_hash": "ba70dc66343afa22",
+   "file": "how-llms-work-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/how-llms-work-v1.zip",
+   "size": 9546164,
+   "sha256": "4c5ae506c29a5cedcb49295a264f71b36e591dd83a1d7d12f0fa613e1a80d6ea",
+   "lessons": 14
+  },
+  {
+   "id": "llms-in-practice",
+   "title": "LLMs in Practice",
+   "description": "How real products are built on a language model: prompts and context, sampling, embeddings and search, RAG, tool use, agents, fine-tuning and LoRA, quantization, evaluation and safety.",
+   "subject": "Machine learning",
+   "order": 3,
+   "requires": [
+    "how-llms-work"
+   ],
+   "version": 1,
+   "content_hash": "e437c216815048e4",
+   "file": "llms-in-practice-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/llms-in-practice-v1.zip",
+   "size": 6401146,
+   "sha256": "44dec8ac5adbf21639cf7dba44a2e5e4629fba71ab12f0a5d0fed9337569e19e",
+   "lessons": 12
+  },
+  {
+   "id": "deep-dive",
+   "title": "How LLMs Work: Deep Dive",
+   "description": "Inside a modern LLM, piece by piece: tokenization, position, attention, normalization, training and scaling, mixture of experts, inference tricks, post-training and interpretability.",
+   "subject": "Machine learning",
+   "order": 4,
+   "requires": [
+    "how-llms-work"
+   ],
+   "version": 1,
+   "content_hash": "40ed88df91a158b0",
+   "file": "deep-dive-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/deep-dive-v1.zip",
+   "size": 17965181,
+   "sha256": "406fae8eb6bc4353113bb0321e213e624cd1c7aa40db938c986403734f12a23a",
+   "lessons": 45
+  }
+ ]
+}
