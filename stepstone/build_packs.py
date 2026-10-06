@@ -261,6 +261,11 @@ def build(series, offline=None):
 
 def main(names, offline=None):
     DIST.mkdir(parents=True, exist_ok=True)
+    cache = DIST / "offline.json"                               # last published offline-video links (publish.py)
+    if offline is None:
+        offline = json.loads(cache.read_text()) if cache.exists() else {}
+    else:
+        cache.write_text(json.dumps(offline, indent=1))
     cat_path = DIST / "catalog.json"
     old = {p["id"]: p for p in json.loads(cat_path.read_text())["packs"]} if cat_path.exists() else {}
     packs = []
@@ -280,6 +285,9 @@ def main(names, offline=None):
     merged = {**old, **{p["id"]: p for p in packs}}
     cat = {"format": FORMAT, "name": "StepStone catalog · Lui's lessons",
            "packs": sorted(merged.values(), key=lambda p: p["order"])}
+    app = ROOT / "stepstone" / "app.json"                      # latest app release, for in-app update notices
+    if app.exists():
+        cat["app"] = json.loads(app.read_text())
     cat_path.write_text(json.dumps(cat, ensure_ascii=False, indent=1))
     return packs
 

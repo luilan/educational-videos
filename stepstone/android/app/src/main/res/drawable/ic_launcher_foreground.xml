@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Three stepping stones, the last one gold: one concept at a time. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#2A9D8F" android:pathData="M27,66 C27,60 33,57 39,57 C46,57 50,61 50,66 C50,71 45,74 38,74 C31,74 27,71 27,66 Z" />
+    <path android:fillColor="#2A9D8F" android:pathData="M45,49 C45,43 51,40 57,40 C64,40 68,44 68,49 C68,54 63,57 56,57 C49,57 45,54 45,49 Z" />
+    <path android:fillColor="#E9C46A" android:pathData="M60,33 C60,28 65,25 71,25 C77,25 81,29 81,33 C81,38 76,41 70,41 C64,41 60,38 60,33 Z" />
+</vector>
