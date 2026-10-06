@@ -69,7 +69,7 @@ def publish_videos():
     return offline
 
 
-def publish_packs(offline):
+def publish_packs(offline=None):
     ensure_release(bp.PACKS_RELEASE, "StepStone lesson packs",
                    "Lesson packs for the StepStone app, built from the study guides. The app reads "
                    "https://luilan.github.io/educational-videos/stepstone/catalog.json to find them.")
@@ -90,5 +90,5 @@ def publish_packs(offline):
 
 
 if __name__ == "__main__":
-    offline = {} if "--no-videos" in sys.argv else publish_videos()
+    offline = None if "--no-videos" in sys.argv else publish_videos()   # None: keep the last published video links
     publish_packs(offline)
