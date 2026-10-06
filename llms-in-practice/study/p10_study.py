@@ -39,9 +39,9 @@ halve the size.</div>""",
             {"kind": "number", "q": "A 7-billion-parameter model is stored in 16-bit. About how many GB is that? And at "
                                     "4 bits?",
              "answer": "About 14 GB; about 3.5 GB.", "why": "7 × 10⁹ × 2 bytes = 14 × 10⁹ bytes; × 0.5 byte = 3.5 × 10⁹ "
-                                                          "bytes (plus a little for the scales)."},
+                                                          "bytes (plus a little for the scales).", "key": {'parts': [{'label': '16-bit (GB)', 'value': 14, 'tol': 0.5, 'unit': None}, {'label': '4-bit (GB)', 'value': 3.5, 'tol': 0.07, 'unit': None}]}},
             {"kind": "tf", "q": "“Quantization removes weights from the model.”",
-             "answer": "False.", "why": "Every weight is kept; each one is stored with fewer bits."},
+             "answer": "False.", "why": "Every weight is kept; each one is stored with fewer bits.", "key": {'value': False}},
         ],
     },
     {
@@ -66,10 +66,10 @@ rounding errors.</div>""",
                                     "scale, and what does 0.0188 become?",
              "answer": "Scale 0.0047; 0.0188 → 4 × 0.0047 = 0.0188.",
              "why": "0.0329 / 7 = 0.0047; 0.0188 / 0.0047 = 4.0, already on the grid. (In the real row, the max is "
-                    "different, so 0.0188 became 0.0165.)"},
+                    "different, so 0.0188 became 0.0165.)", "key": {'parts': [{'label': 'scale', 'value': 0.0047, 'tol': 5e-05, 'unit': None}, {'label': '0.0188 becomes (dequantized)', 'value': 0.0188, 'tol': 5e-05, 'unit': None}]}},
             {"kind": "number", "q": "How many integer levels does symmetric 3-bit quantization use, and why so few?",
              "answer": "7 (−3 … 3).", "why": "2³⁻¹ − 1 = 3, so the integers run from −3 to 3: every weight in a row has "
-                                            "only 7 possible values."},
+                                            "only 7 possible values.", "key": {'parts': [{'label': None, 'value': 7, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why does a weight smaller than half a step become exactly zero?",
              "answer": "Rounding to the nearest grid point sends it to 0, the closest level.",
              "why": "With 4 bits, any weight smaller than half the scale rounds to 0."},
@@ -93,10 +93,10 @@ simple rounding, and collapses below that.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many times smaller are the int4 matrices than the fp32 ones?",
-             "answer": "8 times.", "why": "32 / 4 = 8; 1,365 MB / 8 ≈ 171 MB."},
+             "answer": "8 times.", "why": "32 / 4 = 8; 1,365 MB / 8 ≈ 171 MB.", "key": {'parts': [{'label': None, 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "order", "q": "Order from lowest to highest loss: <i>int2 · fp32 · int4 · int8 · int3</i>.",
              "answer": "fp32 (2.836) → int8 (2.837) → int4 (3.582) → int3 (12.491) → int2 (16.610).",
-             "why": "Fewer bits, larger rounding errors, higher loss."},
+             "why": "Fewer bits, larger rounding errors, higher loss.", "key": {'items': ['fp32', 'int8', 'int4', 'int3', 'int2']}},
         ],
     },
     {

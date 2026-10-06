@@ -39,7 +39,7 @@ intermediate states live in roughly the same space as the output, so they can be
         "exercises": [
             {"kind": "tf", "q": "“The logit lens needs to be trained on the model's activations.”",
              "answer": "False.", "why": "It reuses the model's own final norm and unembedding; the tuned lens is the trained "
-                                       "variant."},
+                                       "variant.", "key": {'value': False}},
         ],
     },
     {
@@ -67,7 +67,7 @@ often spreads probability out again (calibration).</div>""",
         "exercises": [
             {"kind": "number", "q": "In GPT-2, by how many percentage points does the lens's agreement with the final "
                                     "prediction grow from layer 5 to layer 11?",
-             "answer": "About 49 points (6.9% → 56.3%).", "why": "Read off the agreement curve."},
+             "answer": "About 49 points (6.9% → 56.3%).", "why": "Read off the agreement curve.", "key": {'parts': [{'label': None, 'value': 49, 'tol': 0.98, 'unit': None}]}},
             {"kind": "short", "q": "GPT-2's layer 11 gives “Tokyo” 0.46, but the output picks “the”. Give a plausible reason.",
              "answer": "The last layer hedges toward continuations like “the capital … is the city of Tokyo”, spreading "
                        "probability instead of committing.", "why": "The output must be calibrated over all possible "
@@ -96,7 +96,7 @@ one doesn't prove the layer is empty.</div>""",
              "options": ["Qwen's middle layers do nothing", "The unembedding can't decode Qwen's middle-layer directions",
                          "Qwen is a worse model than GPT-2", "The lens has a bug"],
              "answer": "B.", "why": "Qwen still answers correctly; the information is there but not in output-readable "
-                                   "directions."},
+                                   "directions.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Run the lens on your own prompt.",
              "code": """from transformers import GPT2LMHeadModel, GPT2TokenizerFast
 tok = GPT2TokenizerFast.from_pretrained("gpt2"); model = GPT2LMHeadModel.from_pretrained("gpt2")

@@ -41,20 +41,20 @@ through: f(2x) = 2·f(x) and f(a + b) = f(a) + f(b). Every matrix is linear.</di
              "options": ["f(x) = 2x + 1", "f(x) = −3x", "f(x) = x²", "f(x) = 10"],
              "answer": "B.", "why": "−3x triples and flips every input, so doubling in doubles out. For 2x + 1, f(1) = 3 "
                                    "but f(2) = 5 (its line misses the origin); x² quadruples when x doubles; a constant "
-                                   "never changes."},
+                                   "never changes.", "key": {'choice': 1}},
             {"kind": "number", "q": "The video's matrix W has rows (1, −0.5) and (0.5, 1), and the vectors are "
                                     "a = (1, 0.5) and b = (0.5, 1.5). Compute Wa, Wb and W(a + b). Does W(a + b) = "
                                     "Wa + Wb?",
              "lines": 2,
              "answer": "Wa = (0.75, 1), Wb = (−0.25, 1.75), W(a + b) = W(1.5, 2) = (0.5, 2.75). Yes.",
              "why": "Each output number is a row of W dotted with the vector, e.g. 1·1 + (−0.5)·0.5 = 0.75. And "
-                    "(0.75, 1) + (−0.25, 1.75) = (0.5, 2.75), exactly W(a + b)."},
+                    "(0.75, 1) + (−0.25, 1.75) = (0.5, 2.75), exactly W(a + b).", "key": {'parts': [{'label': 'Wa 1st', 'value': 0.75, 'tol': 0.005, 'unit': None}, {'label': 'Wa 2nd', 'value': 1, 'tol': 0.005, 'unit': None}, {'label': 'Wb 1st', 'value': -0.25, 'tol': 0.005, 'unit': None}, {'label': 'Wb 2nd', 'value': 1.75, 'tol': 0.005, 'unit': None}, {'label': 'W(a+b) 1st', 'value': 0.5, 'tol': 0.005, 'unit': None}, {'label': 'W(a+b) 2nd', 'value': 2.75, 'tol': 0.005, 'unit': None}]}},
             {"kind": "number", "q": "You know Wa = (0.75, 1). Without multiplying by W again, write down W(2a) and "
                                     "W(−a).",
              "answer": "W(2a) = (1.5, 2) and W(−a) = (−0.75, −1).",
-             "why": "Scaling passes straight through a linear map: W(2a) = 2·Wa, and scaling by −1 flips the output too."},
+             "why": "Scaling passes straight through a linear map: W(2a) = 2·Wa, and scaling by −1 flips the output too.", "key": {'parts': [{'label': 'W(2a) 1st', 'value': 1.5, 'tol': 0.005, 'unit': None}, {'label': 'W(2a) 2nd', 'value': 2, 'tol': 0.005, 'unit': None}, {'label': 'W(−a) 1st', 'value': -0.75, 'tol': 0.005, 'unit': None}, {'label': 'W(−a) 2nd', 'value': -1, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“The graph of a linear function such as f(x) = 5x always passes through (0, 0).”",
-             "answer": "True.", "why": "f(0) = 5·0 = 0. The same holds for any matrix: W times the zero vector is zero."},
+             "answer": "True.", "why": "f(0) = 5·0 = 0. The same holds for any matrix: W times the zero vector is zero.", "key": {'value': True}},
         ],
     },
     {
@@ -75,19 +75,19 @@ between, a stack of matrices is <b>no more powerful than one</b>.</div>""",
                                     "(a) Compute W₁x, then W₂(W₁x). (b) Compute the product W₂W₁, then (W₂W₁)x.",
              "lines": 2,
              "answer": "(a) W₁x = (3, 1), W₂(W₁x) = (6, 4). (b) W₂W₁ has rows (2, 4) and (1, 3); (W₂W₁)x = (6, 4).",
-             "why": "Same answer both ways: the two layers act exactly like the single matrix W₂W₁."},
+             "why": "Same answer both ways: the two layers act exactly like the single matrix W₂W₁.", "key": {'parts': [{'label': 'W₁x 1st', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': 'W₁x 2nd', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'W₂(W₁x) 1st', 'value': 6, 'tol': 0.5, 'unit': None}, {'label': 'W₂(W₁x) 2nd', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': 'W₂W₁ row 1, col 1', 'value': 2, 'tol': 0.5, 'unit': None}, {'label': 'W₂W₁ row 1, col 2', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': 'W₂W₁ row 2, col 1', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'W₂W₁ row 2, col 2', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': '(W₂W₁)x 1st', 'value': 6, 'tol': 0.5, 'unit': None}, {'label': '(W₂W₁)x 2nd', 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Three layers act on single numbers: multiply by 3, then by −2, then by 0.5. "
                                     "What single layer does the same?",
              "answer": "Multiply by −3.",
-             "why": "3 × (−2) × 0.5 = −3. However many multiplications you chain, they make one multiplication."},
+             "why": "3 × (−2) × 0.5 = −3. However many multiplications you chain, they make one multiplication.", "key": {'parts': [{'label': None, 'value': -3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "A network has 100 linear layers and no bends. How many matrices do you need to "
                                 "compute exactly the same outputs?",
              "options": ["100, one per layer", "50, since layers merge in pairs", "1", "It depends on the input"],
-             "answer": "C.", "why": "The whole stack multiplies out to one matrix, W₁₀₀⋯W₂W₁, for every input."},
+             "answer": "C.", "why": "The whole stack multiplies out to one matrix, W₁₀₀⋯W₂W₁, for every input.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“Adding more linear layers, with nothing between them, lets a network represent more "
                                 "complicated functions.”",
              "answer": "False.", "why": "They collapse into one matrix, so the network can do exactly what one layer "
-                                       "can do, no more."},
+                                       "can do, no more.", "key": {'value': False}},
         ],
     },
     {
@@ -111,7 +111,7 @@ lines, flat boundaries. Problems like “inside vs outside a circle” need a <b
             {"kind": "mc", "q": "Which of these can a single matrix <b>not</b> do to the grid?",
              "options": ["Stretch it", "Rotate it", "Shear it (F03)", "Bend straight lines into curves"],
              "answer": "D.", "why": "Stretching, rotating and shearing all keep straight lines straight. Bending is "
-                                   "exactly what a linear map can't do."},
+                                   "exactly what a linear map can't do.", "key": {'choice': 3}},
             {"kind": "short", "q": "A one-dimensional version of the circle: the “inside” points are −0.5 and 0.5, "
                                    "the “outside” points are −2 and 2. Can one cut “x > c” put both outside points on "
                                    "one side and both inside points on the other? Explain.",
@@ -120,7 +120,7 @@ lines, flat boundaries. Problems like “inside vs outside a circle” need a <b
                                      "the other side, together with the inside points. (Concept 6 solves this with bends.)"},
             {"kind": "tf", "q": "“One linear layer can't separate the circle, but 50 linear layers stacked "
                                 "together can.”",
-             "answer": "False.", "why": "The 50 layers collapse into one matrix (concept 2), with exactly the same limits."},
+             "answer": "False.", "why": "The 50 layers collapse into one matrix (concept 2), with exactly the same limits.", "key": {'value': False}},
         ],
     },
     {
@@ -140,17 +140,17 @@ them collapsing. ReLU = max(0, x), applied to each number on its own, is the sim
         ],
         "exercises": [
             {"kind": "number", "q": "Apply ReLU to the vector [4, −1, 0.5, −3].",
-             "answer": "[4, 0, 0.5, 0].", "why": "Positive numbers pass unchanged; negative ones become 0."},
+             "answer": "[4, 0, 0.5, 0].", "why": "Positive numbers pass unchanged; negative ones become 0.", "key": {'parts': [{'label': '1st', 'value': 4, 'tol': 0.05, 'unit': None}, {'label': '2nd', 'value': 0, 'tol': 0.05, 'unit': None}, {'label': '3rd', 'value': 0.5, 'tol': 0.05, 'unit': None}, {'label': '4th', 'value': 0, 'tol': 0.05, 'unit': None}]}},
             {"kind": "number", "q": "Check that ReLU breaks the “adding” rule of concept 1: compute ReLU(3 + (−2)) and "
                                     "ReLU(3) + ReLU(−2).",
              "answer": "ReLU(1) = 1, but ReLU(3) + ReLU(−2) = 3 + 0 = 3.",
              "why": "They differ, so ReLU is not linear. That is precisely what stops the layers collapsing into one "
-                    "matrix."},
+                    "matrix.", "key": {'parts': [{'label': 'ReLU(3 + (−2))', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'ReLU(3) + ReLU(−2)', 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "order", "q": "Put one bent layer in the order the data flows: <i>y · W₂ · x · ReLU · W₁</i>.",
-             "answer": "x → W₁ → ReLU → W₂ → y.", "why": "Linear, then the bend, then linear again."},
+             "answer": "x → W₁ → ReLU → W₂ → y.", "why": "Linear, then the bend, then linear again.", "key": {'items': ['x', 'W₁', 'ReLU', 'W₂', 'y']}},
             {"kind": "tf", "q": "“ReLU mixes the numbers of a vector: each output number depends on all the input "
                                 "numbers.”",
-             "answer": "False.", "why": "ReLU treats every number separately. The mixing is done by the matrices."},
+             "answer": "False.", "why": "ReLU treats every number separately. The mixing is done by the matrices.", "key": {'value': False}},
         ],
     },
     {
@@ -172,15 +172,15 @@ separately.</div>""",
             {"kind": "number", "q": "How far is GELU from ReLU at the video's two points? Compute relu(3) − gelu(3) "
                                     "and relu(−3) − gelu(−3).",
              "answer": "Both ≈ 0.004.", "why": "3 − 2.996 = 0.004 and 0 − (−0.004) = 0.004. Far from zero, GELU is "
-                                               "within a few thousandths of ReLU."},
+                                               "within a few thousandths of ReLU.", "key": {'parts': [{'label': None, 'value': 0.004, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "mc", "q": "Given gelu(1) ≈ 0.841 and gelu(−1) ≈ −0.159, where do ReLU and GELU differ most?",
              "options": ["For large positive inputs, like 3", "For large negative inputs, like −3",
                          "Near zero, around −1 to 1", "Nowhere: they are the same function"],
              "answer": "C.", "why": "At ±1 they differ by about 0.16 (relu(1) = 1, relu(−1) = 0); at ±3 by only 0.004. "
-                                   "The smooth curve replaces the corner at 0."},
+                                   "The smooth curve replaces the corner at 0.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“GELU never outputs a negative number.”",
              "answer": "False.", "why": "It has a small dip: its minimum is about −0.17 (near x ≈ −0.75), and "
-                                       "gelu(−3) ≈ −0.004 is negative too, just tiny."},
+                                       "gelu(−3) ≈ −0.004 is negative too, just tiny.", "key": {'value': False}},
             {"kind": "short", "q": "A GELU receives the vector [−3, 0, 3]. Roughly what comes out?",
              "answer": "About [−0.004, 0, 2.996], i.e. almost [0, 0, 3].",
              "why": "Each number is bent on its own, and this far from zero GELU acts almost exactly like ReLU."},
@@ -207,16 +207,16 @@ lines that can follow <b>almost any curve</b>.</div>""",
              "lines": 2,
              "answer": "g = 1, 0, 0, 1. Yes.",
              "why": "Two hinges build a valley: 0 between −1 and 1, rising outside. The outside points get 1 and the "
-                    "inside points 0, so “outside if g(x) > 0.5” works, which no single cut could do."},
+                    "inside points 0, so “outside if g(x) > 0.5” works, which no single cut could do.", "key": {'parts': [{'label': 'g(−2)', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'g(−0.5)', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'g(0.5)', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'g(2)', 'value': 1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Let h(x) = relu(x) − 2·relu(x − 1). Compute h(0), h(1), h(2) and h(3). "
                                     "Describe the shape.",
              "answer": "0, 1, 0, −1: up to a peak at x = 1, then down.",
              "why": "The first hinge starts a rising line at 0; the second, from x = 1, subtracts twice the slope, so "
-                    "the line turns downward. Two pieces, one corner."},
+                    "the line turns downward. Two pieces, one corner.", "key": {'parts': [{'label': 'h(0)', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'h(1)', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'h(2)', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'h(3)', 'value': -1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "You add up several linear functions with no bends, such as 2x and −3x. What shape "
                                 "is the result?",
              "options": ["A curve", "A straight line", "A hinge with one corner", "A circle"],
-             "answer": "B.", "why": "2x − 3x = −x. Sums of linear functions stay linear; corners and curves need bends."},
+             "answer": "B.", "why": "2x − 3x = −x. Sums of linear functions stay linear; corners and curves need bends.", "key": {'choice': 1}},
         ],
     },
     {
@@ -249,7 +249,7 @@ linear. Remove the bend and the two matrices collapse into one, <code>W1 @ W2</c
             {"kind": "order", "q": "Put the steps of episode 8's MLP in order: <i>project back · bend with GELU · "
                                    "expand</i>.",
              "answer": "expand → bend with GELU → project back.",
-             "why": "Matrix W1 (expand), the bend, then matrix W2 (back to the original size)."},
+             "why": "Matrix W1 (expand), the bend, then matrix W2 (back to the original size).", "key": {'items': ['expand', 'bend with GELU', 'project back']}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Here is a tiny layer: W1 expands 2 numbers to 3, W2 projects "
                                   "back to 2. (a) <b>By hand first:</b> what are <code>x @ W1</code>, <code>h</code> and "
                                   "<code>y</code>? Then run the code to check. (b) What does the last line print, and why "

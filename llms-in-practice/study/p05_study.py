@@ -41,9 +41,9 @@ training data nor in its context.</div>""",
             {"kind": "mc", "q": "Which question can a model answer reliably <b>without</b> RAG?",
              "options": ["What did my manager email me this morning?", "What is the capital of France?",
                          "What are today's opening hours of my local bakery?", "What is in our company's new policy?"],
-             "answer": "B.", "why": "Only B is common knowledge likely to be in the training data."},
+             "answer": "B.", "why": "Only B is common knowledge likely to be in the training data.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Saying ‘I don't know’ is the worst thing a model can do when it lacks the facts.”",
-             "answer": "False.", "why": "Inventing a plausible but false answer is worse: it can mislead you."},
+             "answer": "False.", "why": "Inventing a plausible but false answer is worse: it can mislead you.", "key": {'value': False}},
         ],
     },
     {
@@ -68,13 +68,13 @@ generation reads it.</div>""",
                                    "prompt · embed the library (once) · take the top-k matches</i>.",
              "answer": "embed the library (once) → embed the question → take the top-k matches → build the prompt → "
                        "generate the answer.",
-             "why": "Library vectors are computed ahead of time; the rest happens per question."},
+             "why": "Library vectors are computed ahead of time; the rest happens per question.", "key": {'items': ['embed the library (once)', 'embed the question', 'take the top-k matches', 'build the prompt', 'generate the answer']}},
             {"kind": "short", "q": "Why does the prompt say “If the answer is not there, say you don't know”?",
              "answer": "To stop the model from guessing when retrieval did not find the answer.",
              "why": "Without it, the model may fill the gap with something invented."},
             {"kind": "number", "q": "Retrieval scores for six facts are 0.62, 0.60, 0.41, 0.70, 0.17 and 0.18. With "
                                     "k = 3, what is the lowest score that still makes it into the prompt?",
-             "answer": "0.60.", "why": "The top three are 0.70, 0.62 and 0.60."},
+             "answer": "0.60.", "why": "The top three are 0.70, 0.62 and 0.60.", "key": {'parts': [{'label': None, 'value': 0.6, 'tol': 0.005, 'unit': None}]}},
         ],
     },
     {
@@ -97,7 +97,7 @@ reading the right text wrongly.</div>""",
             {"kind": "mc", "q": "In the 0.5B example, which step of RAG failed?",
              "options": ["Retrieval: it found the wrong facts", "Generation: it misread the right facts",
                          "Tokenization", "The chat template"],
-             "answer": "B.", "why": "The top retrieved fact was exactly the right one (0.70)."},
+             "answer": "B.", "why": "The top retrieved fact was exactly the right one (0.70).", "key": {'choice': 1}},
             {"kind": "short", "q": "Name two ways to catch answers like the 0.5B model's in a real product.",
              "answer": "For example: ask the model to quote the source sentence it used and check it; use a more capable "
                        "model; test on questions with known answers.",
@@ -123,7 +123,7 @@ the model.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“To teach a RAG assistant a new opening time, you must fine-tune the model.”",
-             "answer": "False.", "why": "Update the document in the library; the next retrieval returns the new text."},
+             "answer": "False.", "why": "Update the document in the library; the next retrieval returns the new text.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>code/p05_rag/rag.py</code>, set <code>QUESTION</code> "
                                   "to each question below and run it. (a) Which two facts are retrieved for each, and what "
                                   "does the 1.5B model answer? (b) The second answer is not wrong, but it is unhelpful. "

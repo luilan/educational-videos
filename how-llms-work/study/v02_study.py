@@ -38,13 +38,13 @@ itself only ever sees the numbers.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“An LLM reads the letters of your text directly.”",
-             "answer": "False.", "why": "It reads a list of numbers, the token IDs produced by the tokenizer."},
+             "answer": "False.", "why": "It reads a list of numbers, the token IDs produced by the tokenizer.", "key": {'value': False}},
             {"kind": "mc", "q": "What does a tokenizer do?",
              "options": ["Corrects spelling before the model sees the text",
                          "Turns text into a list of numbers, and numbers back into text",
                          "Predicts the next token", "Picks the most likely word from the probabilities"],
              "answer": "B.", "why": "Predicting and picking are the model's loop from episode 1. The tokenizer only "
-                                   "converts between text and numbers, in both directions."},
+                                   "converts between text and numbers, in both directions.", "key": {'choice': 1}},
             {"kind": "short", "q": "The model predicts that the next token is ID 262. What has to happen before you "
                                    "see anything on screen? What appears?",
              "lines": 2,
@@ -70,21 +70,21 @@ Words: <b>short sequences, huge vocabulary</b>, and unknown words are lost. Neit
         "exercises": [
             {"kind": "number", "q": "How many tokens is <i>“The cat sat on the mat”</i> with one token per character "
                                     "(spaces count)? Per word?",
-             "answer": "22 and 6.", "why": "17 letters + 5 spaces = 22 characters, against just 6 words."},
+             "answer": "22 and 6.", "why": "17 letters + 5 spaces = 22 characters, against just 6 words.", "key": {'parts': [{'label': 'per character', 'value': 22, 'tol': 0.5, 'unit': None}, {'label': 'per word', 'value': 6, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "A word-level tokenizer meets <i>rizzmaster</i>, a word that was not in its training "
                                 "text. What happens?",
              "options": ["It splits it into <i>rizz</i> + <i>master</i>", "It becomes [UNKNOWN]: the model can't read it",
                          "It adds the word to its vocabulary on the fly", "It spells it out letter by letter"],
              "answer": "B.", "why": "A word tokenizer only knows the whole words in its fixed vocabulary. Splitting a "
-                                   "word into pieces is exactly what it can't do."},
+                                   "word into pieces is exactly what it can't do.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Character tokens can spell any text, even words never seen in training.”",
              "answer": "True.", "why": "Every word is built from characters the vocabulary already has. The price is "
-                                       "long sequences with little meaning per token."},
+                                       "long sequences with little meaning per token.", "key": {'value': True}},
             {"kind": "mc", "q": "Which problem belongs to character tokens, not to word tokens?",
              "options": ["The vocabulary needs hundreds of thousands of entries", "Typos and new slang become unknown",
                          "Sequences are long and each token carries almost no meaning",
                          "Every name needs its own token"],
-             "answer": "C.", "why": "A, B and D are all word-tokenizer problems."},
+             "answer": "C.", "why": "A, B and D are all word-tokenizer problems.", "key": {'choice': 2}},
         ],
     },
     {
@@ -112,14 +112,14 @@ brand-new word can still be read as a sequence of pieces.</div>""",
              "options": ["Outputs [UNKNOWN]", "Builds it from smaller pieces", "Refuses the whole input",
                          "Replaces it with the closest known word"],
              "answer": "B.", "why": "It becomes <i>cat</i> + <i>flu</i> + <i>encer</i>. With subwords, no word is "
-                                   "unreadable."},
+                                   "unreadable.", "key": {'choice': 1}},
             {"kind": "number", "q": "Tokenized one at a time, how many GPT-2 tokens do <i>the</i>, <i>tokenization</i> "
                                     "and <i>catnap</i> take in total? How many tokens would a character tokenizer "
                                     "need for the same three words?",
-             "answer": "6 and 21.", "why": "1 + 2 + 3 = 6 subword tokens against 3 + 12 + 6 = 21 characters."},
+             "answer": "6 and 21.", "why": "1 + 2 + 3 = 6 subword tokens against 3 + 12 + 6 = 21 characters.", "key": {'parts': [{'label': 'GPT-2 total', 'value': 6, 'tol': 0.5, 'unit': None}, {'label': 'character tokenizer', 'value': 21, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“With subword tokens, every English word is exactly one token.”",
              "answer": "False.", "why": "Only common words are one token. <i>tokenization</i> takes 2 and "
-                                        "<i>catnap</i> takes 3."},
+                                        "<i>catnap</i> takes 3.", "key": {'value': False}},
         ],
     },
     {
@@ -145,7 +145,7 @@ most frequent one into a new token</b>. Each merge adds one token to the vocabul
             {"kind": "order", "q": "Put the steps of BPE training in order: <i>merge the most frequent pair · start "
                                    "with single characters · repeat · count every pair of neighbours</i>.",
              "answer": "start with characters → count pairs → merge the most frequent → repeat.",
-             "why": "Each round counts the pairs in the current text and merges the winner."},
+             "why": "Each round counts the pairs in the current text and merges the winner.", "key": {'items': ['start with single characters', 'count every pair of neighbours', 'merge the most frequent pair', 'repeat']}},
             {"kind": "short", "q": "New training text: <i>hug, pug, hugs, pun</i>. Which pair is merged first, and "
                                    "how many times does it appear?",
              "answer": "u + g, 3 times.", "why": "It appears in hug, pug and hugs. h+u and p+u appear twice; g+s and "
@@ -157,7 +157,7 @@ most frequent one into a new token</b>. Each merge adds one token to the vocabul
             {"kind": "tf", "q": "“Once <i>e</i> and <i>s</i> are merged into <i>es</i>, the token <i>e</i> is no "
                                 "longer needed.”",
              "answer": "False.", "why": "A merge adds a token; nothing is removed. <i>e</i> is still needed, e.g. in "
-                                        "<i>n e w est</i>, where it is not followed by <i>s</i>."},
+                                        "<i>n e w est</i>, where it is not followed by <i>s</i>.", "key": {'value': False}},
         ],
     },
     {
@@ -188,10 +188,10 @@ tokenizer.</div>""",
                          "counts change", "Because <code>max</code> can only be used once per list",
                          "It doesn't need to; counting once gives the same result"],
              "answer": "B.", "why": "After <i>e</i>+<i>s</i> merges, the pair <i>es</i>+<i>t</i> exists for the first "
-                                   "time, and it wins the next round."},
+                                   "time, and it wins the next round.", "key": {'choice': 1}},
             {"kind": "number", "q": "The toy text <i>low, lowest, newest, widest</i> uses 9 different letters. After "
                                     "the 4 merges of concept 4, how many different tokens are in the vocabulary?",
-             "answer": "13.", "why": "9 starting characters + 1 new token per merge = 9 + 4."},
+             "answer": "13.", "why": "9 starting characters + 1 new token per merge = 9 + 4.", "key": {'parts': [{'label': None, 'value': 13, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Below are <code>merge_pair</code> and "
                                   "<code>train_bpe</code> for the toy text. (a) Write <code>count_pairs(words)</code>, "
                                   "which returns a <code>Counter</code> of every neighbouring pair (hint: "
@@ -261,14 +261,14 @@ fixed vocabulary. A leading space is part of a token, so the same word can have 
                                     "50,000 merges, and adds one special end-of-text token. How big is its "
                                     "vocabulary?",
              "answer": "50,257.", "why": "256 + 50,000 + 1 = 50,257: one token per starting symbol, one per merge, "
-                                         "plus the special token."},
+                                         "plus the special token.", "key": {'parts': [{'label': None, 'value': 50257, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "In GPT-2, why does <i>cat</i> get a different ID in <i>“cat food”</i> than in "
                                 "<i>“my cat”</i>?",
              "options": ["IDs are assigned at random each time", "In <i>“my cat”</i> the token is <i>␣cat</i>, with a "
                          "space in front", "IDs depend on the word's position in the sentence",
                          "The tokenizer ignores the second word of every text"],
              "answer": "B.", "why": "At the start of <i>“cat food”</i> there is no space, so it is <i>cat</i> (9246); "
-                                   "in <i>“my cat”</i> it is <i>␣cat</i> (3797)."},
+                                   "in <i>“my cat”</i> it is <i>␣cat</i> (3797).", "key": {'choice': 1}},
         ],
     },
     {
@@ -287,18 +287,18 @@ episode 3 turns each token into something richer, a vector.</div>""",
             {"kind": "mc", "q": "Why can a model miscount the r's in <i>strawberry</i>?",
              "options": ["It never saw the word during training", "It sees <i>␣strawberry</i> as one ID, not as "
                          "separate letters", "Its vocabulary has no letter r", "The question has too many tokens"],
-             "answer": "B.", "why": "The letters are inside a single token; the model only gets the number 41236."},
+             "answer": "B.", "why": "The letters are inside a single token; the model only gets the number 41236.", "key": {'choice': 1}},
             {"kind": "number", "q": "<i>“How many r's are in strawberry?”</i> has 31 characters. How many GPT-2 "
                                     "tokens is it? (Count them in the figure.)",
              "answer": "8.", "why": "How · ␣many · ␣r · 's · ␣are · ␣in · ␣strawberry · ?: about 4 characters per "
-                                    "token."},
+                                    "token.", "key": {'parts': [{'label': None, 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "Without a space in front, GPT-2 splits <i>strawberry</i> into <i>st</i> + "
                                 "<i>raw</i> + <i>berry</i>. “Now the model can see each letter.”",
              "answer": "False.", "why": "It sees three IDs instead of one. The r's are still hidden, inside <i>raw</i> "
-                                        "and <i>berry</i>."},
+                                        "and <i>berry</i>.", "key": {'value': False}},
             {"kind": "tf", "q": "“Token 3798 must mean something close to <i>␣cat</i> (3797), because the IDs are "
                                 "neighbours.”",
-             "answer": "False.", "why": "An ID is just a label. (Episode 3 shows that 3798 is <i>esc</i>.)"},
+             "answer": "False.", "why": "An ID is just a label. (Episode 3 shows that 3798 is <i>esc</i>.)", "key": {'value': False}},
         ],
     },
 ]

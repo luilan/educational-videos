@@ -43,9 +43,9 @@ axes: log y = log a + b · log x.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "What loss does the fitted law predict for 10 million parameters?",
-             "answer": "About 1.35.", "why": "4.24 × (10⁷)<sup>−0.071</sup> ≈ 1.350 (if the data were sufficient)."},
+             "answer": "About 1.35.", "why": "4.24 × (10⁷)<sup>−0.071</sup> ≈ 1.350 (if the data were sufficient).", "key": {'parts': [{'label': None, 'value': 1.35, 'tol': 0.027, 'unit': None}]}},
             {"kind": "number", "q": "By what factor does the loss shrink for 100 times more parameters?",
-             "answer": "About 0.72.", "why": "0.85² ≈ 0.72, or 100<sup>−0.071</sup>."},
+             "answer": "About 0.72.", "why": "0.85² ≈ 0.72, or 100<sup>−0.071</sup>.", "key": {'parts': [{'label': None, 'value': 0.72, 'tol': 0.0144, 'unit': None}]}},
         ],
     },
     {
@@ -64,9 +64,9 @@ size becomes the limit.</div>""",
         "exercises": [
             {"kind": "number", "q": "By the data law, what is the loss at 16,384,000 tokens (one more doubling)?",
              "answer": "About 1.43 predicted.", "why": "10.68 × 16,384,000<sup>−0.121</sup> ≈ 1.431. Note that the measured "
-                                                      "1.586 at 8.2M tokens already sits above the line's value."},
+                                                      "1.586 at 8.2M tokens already sits above the line's value.", "key": {'parts': [{'label': None, 'value': 1.43, 'tol': 0.0286, 'unit': None}]}},
             {"kind": "number", "q": "Four times more tokens multiplies the loss by about how much?",
-             "answer": "About 0.85.", "why": "0.92² ≈ 0.846 (= 4<sup>−0.121</sup>)."},
+             "answer": "About 0.85.", "why": "0.92² ≈ 0.846 (= 4<sup>−0.121</sup>).", "key": {'parts': [{'label': None, 'value': 0.85, 'tol': 0.017, 'unit': None}]}},
         ],
     },
     {
@@ -90,9 +90,9 @@ plan with.</div>""",
         "exercises": [
             {"kind": "number", "q": "At about 20 tokens per parameter, how many tokens would our 1,198,273-parameter model "
                                     "need? And a 7-billion-parameter model?",
-             "answer": "About 24 million; 140 billion.", "why": "20 × 1,198,273 ≈ 23,965,460; 20 × 7 × 10⁹."},
+             "answer": "About 24 million; 140 billion.", "why": "20 × 1,198,273 ≈ 23,965,460; 20 × 7 × 10⁹.", "key": {'parts': [{'label': 'our model (millions)', 'value': 24, 'tol': 0.5, 'unit': None}, {'label': '7B model (billions)', 'value': 140, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“A scaling law guarantees a bigger model will be better at every task.”",
-             "answer": "False.", "why": "It predicts the average loss; specific abilities may not follow it smoothly."},
+             "answer": "False.", "why": "It predicts the average loss; specific abilities may not follow it smoothly.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Fit the law to only the four smallest models. How close is its "
                                   "prediction for the 1,198,273-parameter model?",
              "code": """a, s = fit_power_law(*zip(*sizes[:4]))

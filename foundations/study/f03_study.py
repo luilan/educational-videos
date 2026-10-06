@@ -60,16 +60,16 @@ always <b>rows × columns</b>, in that order. Each row is a vector: row 1 of M i
             {"kind": "number", "q": f"A = {mat([2, 7, 1, 0], [5, 3, 8, 4])}. What is its shape, and which number is in "
                                     "row 2, column 3?",
              "answer": "2 × 4; the number 8.", "why": "2 rows, 4 columns. Row 2 is [5, 3, 8, 4], and its third entry "
-                                                      "is 8."},
+                                                      "is 8.", "key": {'parts': [{'label': 'rows', 'value': 2, 'tol': 0.5, 'unit': None}, {'label': 'columns', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': 'row 2, col 3', 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“A 2 × 3 matrix and a 3 × 2 matrix have the same shape, since both hold 6 numbers.”",
              "answer": "False.", "why": "Shape is rows × columns, and the order matters: 2 rows of 3 is not 3 rows "
-                                        "of 2."},
+                                        "of 2.", "key": {'value': False}},
             {"kind": "short", "q": "Write down row 2 and column 3 of the matrix M above.",
              "answer": "Row 2 = [0, 1, −1]; column 3 = [2, −1].",
              "why": "A row goes across (3 numbers in a 2 × 3 matrix); a column goes down (2 numbers)."},
             {"kind": "number", "q": "GPT-2's vectors have 768 numbers. How many numbers does a 768 × 768 matrix "
                                     "hold?",
-             "answer": "589,824.", "why": "768 rows × 768 columns = 589,824. Weight matrices get big fast."},
+             "answer": "589,824.", "why": "768 rows × 768 columns = 589,824. Weight matrices get big fast.", "key": {'parts': [{'label': None, 'value': 589824, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -88,16 +88,16 @@ has one entry per row.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": f"Compute {mat([2, 1], [0, 3])} {col(4, 5)}.",
-             "answer": "[13, 15].", "why": "Row 1: 2·4 + 1·5 = 13. Row 2: 0·4 + 3·5 = 15."},
+             "answer": "[13, 15].", "why": "Row 1: 2·4 + 1·5 = 13. Row 2: 0·4 + 3·5 = 15.", "key": {'parts': [{'label': '1st', 'value': 13, 'tol': 0.5, 'unit': None}, {'label': '2nd', 'value': 15, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": f"Compute M y for the video's M and y = [1, 1, 1].",
              "answer": "[3, 0].", "why": "Dotting with [1, 1, 1] just adds up each row: 1 + 0 + 2 = 3 and "
-                                         "0 + 1 − 1 = 0."},
+                                         "0 + 1 − 1 = 0.", "key": {'parts': [{'label': '1st', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': '2nd', 'value': 0, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": f"What does {mat([0, 1], [1, 0])} do to any vector [p, q]?",
              "options": ["Leaves it unchanged: [p, q]", "Swaps the two numbers: [q, p]", "Doubles it: [2p, 2q]",
                          "Flips it: [−p, −q]"],
-             "answer": "B.", "why": "Row 1 [0, 1] picks out q; row 2 [1, 0] picks out p."},
+             "answer": "B.", "why": "Row 1 [0, 1] picks out q; row 2 [1, 0] picks out p.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Each entry of M x uses all the numbers of x, but only one row of M.”",
-             "answer": "True.", "why": "Entry i is row i of M dotted with the whole of x."},
+             "answer": "True.", "why": "Entry i is row i of M dotted with the whole of x.", "key": {'value': True}},
         ],
     },
     {
@@ -118,18 +118,18 @@ vector out. It moves every arrow in the same systematic way, such as a stretch, 
         "exercises": [
             {"kind": "number", "q": f"Apply the rotate matrix {ROTATE} to [3, 1].",
              "answer": "[−1, 3].", "why": "Row 1: 0·3 + (−1)·1 = −1. Row 2: 1·3 + 0·1 = 3. As F02 showed, [−1, 3] is "
-                                          "at right angles to [3, 1]."},
+                                          "at right angles to [3, 1].", "key": {'parts': [{'label': '1st', 'value': -1, 'tol': 0.5, 'unit': None}, {'label': '2nd', 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": f"Apply the stretch matrix {STRETCH} to [−1, 3].",
-             "answer": "[−2, 3].", "why": "The first number doubles, the second stays the same."},
+             "answer": "[−2, 3].", "why": "The first number doubles, the second stays the same.", "key": {'parts': [{'label': '1st', 'value': -2, 'tol': 0.5, 'unit': None}, {'label': '2nd', 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Write down a 2 × 2 matrix that makes every arrow 3 times as long, without "
                                     "changing its direction.",
              "lines": 2,
              "answer": "Rows [3, 0] and [0, 3].", "why": "It sends [p, q] to [3p, 3q] = 3 × [p, q]. The video's stretch "
                                                         "matrix changes only the first number, so it stretches "
-                                                        "sideways only."},
+                                                        "sideways only.", "key": {'parts': [{'label': 'row 1, col 1', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': 'row 1, col 2', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'row 2, col 1', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'row 2, col 2', 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Applying the rotate matrix four times brings every arrow back to where it "
                                 "started.”",
-             "answer": "True.", "why": "4 × 90° = 360°, a full turn."},
+             "answer": "True.", "why": "4 × 90° = 360°, a full turn.", "key": {'value': True}},
         ],
     },
     {
@@ -150,19 +150,19 @@ row.</p>""",
         "exercises": [
             {"kind": "number", "q": "A 4 × 6 matrix multiplies a vector. How many numbers must the vector have, and "
                                     "how many come out?",
-             "answer": "6 in, 4 out.", "why": "Columns (6) = input size; rows (4) = output size."},
+             "answer": "6 in, 4 out.", "why": "Columns (6) = input size; rows (4) = output size.", "key": {'parts': [{'label': 'numbers in', 'value': 6, 'tol': 0.5, 'unit': None}, {'label': 'numbers out', 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "You want a matrix that turns a 768-number vector into a 3,072-number vector. What "
                                 "shape must it have?",
              "options": ["768 × 3,072", "3,072 × 768", "768 × 768", "3,072 × 3,072"],
              "answer": "B.", "why": "m × n turns n numbers into m: 3,072 rows (one per output), 768 columns (one per "
-                                   "input)."},
+                                   "input).", "key": {'choice': 1}},
             {"kind": "tf", "q": "“A 3 × 2 matrix can multiply the vector [3, 1, 2].”",
              "answer": "False.", "why": "A 3 × 2 matrix has 2 columns, so it needs 2 numbers. The video's 2 × 3 M is "
-                                        "the one that takes [3, 1, 2]."},
+                                        "the one that takes [3, 1, 2].", "key": {'value': False}},
             {"kind": "number", "q": "A vector of 5 numbers is multiplied by A (shape 8 × 5), and the result by B "
                                     "(shape 2 × 8). How many numbers come out at the end?",
              "answer": "2.", "why": "A turns 5 numbers into 8, then B turns 8 into 2. The shapes line up at each "
-                                   "step."},
+                                   "step.", "key": {'parts': [{'label': None, 'value': 2, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -184,20 +184,20 @@ B</b>. With tokens as rows, X · W transforms them all at once.</div>""",
             {"kind": "number", "q": f"Compute {mat([1, 2], [3, 4])} · {mat([5, 6], [7, 8])}.",
              "answer": "Rows [19, 22] and [43, 50].",
              "why": "Top-left: row 1 · column 1 = 1·5 + 2·7 = 19. Likewise 1·6 + 2·8 = 22, 3·5 + 4·7 = 43, "
-                    "3·6 + 4·8 = 50."},
+                    "3·6 + 4·8 = 50.", "key": {'parts': [{'label': 'row 1, col 1', 'value': 19, 'tol': 0.5, 'unit': None}, {'label': 'row 1, col 2', 'value': 22, 'tol': 0.5, 'unit': None}, {'label': 'row 2, col 1', 'value': 43, 'tol': 0.5, 'unit': None}, {'label': 'row 2, col 2', 'value': 50, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "In the video, row 2 of X is [2, −1, 0, 2] and column 1 of W is [1, −2, −1, 2]. "
                                     "Which entry of X · W do they give, and what is it?",
              "answer": "Row 2, column 1: 8.", "why": "2·1 + (−1)·(−2) + 0·(−1) + 2·2 = 2 + 2 + 0 + 4 = 8, as in the "
-                                                     "finished result in the video."},
+                                                     "finished result in the video.", "key": {'parts': [{'label': None, 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which product is <b>not</b> allowed?",
              "options": ["(5 × 4) · (4 × 4)", "(2 × 3) · (3 × 1)", "(4 × 5) · (4 × 5)", "(1 × 768) · (768 × 768)"],
              "answer": "C.", "why": "The inner sizes are 5 and 4, which don't match. The others give 5 × 4, 2 × 1 "
-                                   "and 1 × 768."},
+                                   "and 1 × 768.", "key": {'choice': 2}},
             {"kind": "number", "q": "10 tokens of 768 numbers form X; W is 768 × 768. (a) Shape of X · W? (b) How "
                                     "many dot products? (c) Which row holds the transformed 4th token?",
              "answer": "(a) 10 × 768 (b) 7,680 (c) row 4.",
              "why": "(10 × 768) · (768 × 768) → 10 × 768; one dot product per entry, 10 × 768 = 7,680; row i of "
-                    "the result belongs to token i."},
+                    "the result belongs to token i.", "key": {'parts': [{'label': '(a) rows', 'value': 10, 'tol': 0.5, 'unit': None}, {'label': '(a) columns', 'value': 768, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 7680, 'tol': 0.5, 'unit': None}, {'label': '(c) row', 'value': 4, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -220,18 +220,18 @@ token, both as rows. To dot every query with every key, the keys must become col
              "answer": "Rows [1, 4], [2, 5], [3, 6]; shape 3 × 2.",
              "why": "Row 1 [1, 2, 3] becomes column 1, row 2 [4, 5, 6] becomes column 2."},
             {"kind": "tf", "q": "“Transposing a matrix twice gives back the original matrix.”",
-             "answer": "True.", "why": "Flipping over the diagonal twice puts every number back where it was."},
+             "answer": "True.", "why": "Flipping over the diagonal twice puts every number back where it was.", "key": {'value': True}},
             {"kind": "mc", "q": "Q and K both have shape 5 × 4 (5 tokens, 4 numbers each). Why can't we just "
                                 "compute Q · K?",
              "options": ["The inner sizes don't match (4 and 5)", "Only square matrices can be multiplied",
                          "Q · K gives the same result as Q · Kᵀ anyway",
                          "Two matrices of the same shape can never be multiplied"],
              "answer": "A.", "why": "Kᵀ is 4 × 5, so (5 × 4) · (4 × 5) lines up and gives 5 × 5. B and D are false: "
-                                   "only the inner sizes matter."},
+                                   "only the inner sizes matter.", "key": {'choice': 0}},
             {"kind": "number", "q": "A prompt has 12 tokens, with query and key vectors of 64 numbers. What shape is "
                                     "Q · Kᵀ, and how many scores does it hold?",
              "answer": "12 × 12; 144 scores.", "why": "(12 × 64) · (64 × 12) → 12 × 12: one score for every "
-                                                      "(query, key) pair."},
+                                                      "(query, key) pair.", "key": {'parts': [{'label': 'rows', 'value': 12, 'tol': 0.5, 'unit': None}, {'label': 'columns', 'value': 12, 'tol': 0.5, 'unit': None}, {'label': 'scores', 'value': 144, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -263,7 +263,7 @@ scores, the MLP, and the final logits.</p>""",
              "options": ["You get an array of shape (2, 3)", "A ValueError: the shapes don't line up",
                          "Every number in M is squared", "You get an array of shape (2, 2)"],
              "answer": "B.", "why": "(2 × 3) @ (2 × 3): the inner sizes 3 and 2 don't match. Squaring every number "
-                                   "(C) would be <code>M * M</code>."},
+                                   "(C) would be <code>M * M</code>.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> (a) Complete <code>matvec</code> so it gives the same "
                                   "result as <code>M @ x</code>, using one dot product per row. (b) X holds 4 "
                                   "tokens as rows. Why does <code>X @ M</code> fail, while <code>X @ M.T</code> "

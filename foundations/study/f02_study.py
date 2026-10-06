@@ -41,19 +41,19 @@ numbers</b>. Two vectors in, one number out.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "Compute (1, 4) · (3, 2).",
-             "answer": "11.", "why": "1 × 3 + 4 × 2 = 3 + 8 = 11."},
+             "answer": "11.", "why": "1 × 3 + 4 × 2 = 3 + 8 = 11.", "key": {'parts': [{'label': None, 'value': 11, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "(a) Compute (2, −1, 3) · (4, 5, 1). (b) Two vectors each have 768 numbers. How "
                                     "many multiplications and how many additions does their dot product take?",
              "lines": 2,
              "answer": "(a) 6 (b) 768 multiplications, 767 additions.",
-             "why": "(a) 8 − 5 + 3 = 6. (b) One product per position; adding up 768 numbers takes 767 “+” signs."},
+             "why": "(a) 8 − 5 + 3 = 6. (b) One product per position; adding up 768 numbers takes 767 “+” signs.", "key": {'parts': [{'label': '(a)', 'value': 6, 'tol': 0.5, 'unit': None}, {'label': '(b) multiplications', 'value': 768, 'tol': 0.5, 'unit': None}, {'label': '(b) additions', 'value': 767, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which of these dot products can you <b>not</b> compute?",
              "options": ["(1, 2) · (3, 4)", "(1, 2, 3) · (4, 5)", "(0, 0) · (5, 7)", "(−1, 2, 0) · (3, 3, 3)"],
              "answer": "B.", "why": "3 numbers against 2: the third has no partner. C is fine (it is 0), and so is D "
-                                   "(it is 3)."},
+                                   "(it is 3).", "key": {'choice': 1}},
             {"kind": "tf", "q": "“a · b and b · a always give the same number.”",
              "answer": "True.", "why": "Each product is the same either way round (3 × 2 = 2 × 3), so the sum is "
-                                       "the same."},
+                                       "the same.", "key": {'value': True}},
         ],
     },
     {
@@ -74,16 +74,16 @@ right angles. a · b <b>&lt; 0</b>: they point in opposite directions.</div>""",
         "exercises": [
             {"kind": "number", "q": "Compute (2, 1) · (−1, 2). What does the result tell you about the two arrows?",
              "answer": "0: they are at right angles.", "why": "−2 + 2 = 0, and a dot product of exactly zero means "
-                                                              "the arrows are at right angles."},
+                                                              "the arrows are at right angles.", "key": {'parts': [{'label': None, 'value': 0, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "a = (1, 1). Which b gives the most negative a · b?",
              "options": ["(2, 2)", "(1, −1)", "(−2, −1)", "(−1, 0)"],
              "answer": "C.", "why": "The dot products are 4, 0, −3 and −1. (−2, −1) points most nearly opposite to "
-                                   "a, and it is long."},
+                                   "a, and it is long.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“If a · b is negative, the angle between a and b is more than 90°.”",
-             "answer": "True.", "why": "Zero is exactly 90°; below zero, the arrows lean away from each other."},
+             "answer": "True.", "why": "Zero is exactly 90°; below zero, the arrows lean away from each other.", "key": {'value': True}},
             {"kind": "number", "q": "Find the number k that makes (4, 2) · (1, k) = 0.",
              "answer": "k = −2.", "why": "4 × 1 + 2 × k = 0, so k = −2: the arrow (1, −2) is at right angles to "
-                                         "(4, 2)."},
+                                         "(4, 2).", "key": {'parts': [{'label': None, 'value': -2, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -107,19 +107,19 @@ how well the directions line up. Same number as multiply-and-add, seen as geomet
         "exercises": [
             {"kind": "number", "q": "‖a‖ = 2, ‖b‖ = 5 and the angle between them is 60° (cos 60° = 0.5). What is "
                                     "a · b?",
-             "answer": "5.", "why": "2 × 5 × 0.5 = 5."},
+             "answer": "5.", "why": "2 × 5 × 0.5 = 5.", "key": {'parts': [{'label': None, 'value': 5, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "a = (4, 0) and b = (3, 5). How long is b's shadow on a? Check that shadow × ‖a‖ "
                                     "equals a · b.",
              "lines": 2,
              "answer": "3; 3 × 4 = 12 = a · b.",
-             "why": "a lies along the x-axis, so b's shadow is just b's x-part, 3. And a · b = 4 × 3 + 0 × 5 = 12."},
+             "why": "a lies along the x-axis, so b's shadow is just b's x-part, 3. And a · b = 4 × 3 + 0 × 5 = 12.", "key": {'parts': [{'label': 'shadow', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': 'a · b', 'value': 12, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Two vectors both have length 3. When is their dot product largest?",
              "options": ["When they are at right angles", "When they point the same way",
                          "When they point in opposite directions", "Never: it is always 9"],
              "answer": "B.", "why": "cos θ is largest (1) at θ = 0°, giving 3 × 3 × 1 = 9. At right angles it is 0; "
-                                   "opposite, −9."},
+                                   "opposite, −9.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Making a twice as long, without changing its direction, doubles a · b.”",
-             "answer": "True.", "why": "‖a‖ doubles and nothing else changes. Check: (6, 2) · (2, 2) = 16, twice 8."},
+             "answer": "True.", "why": "‖a‖ doubles and nothing else changes. Check: (6, 2) · (2, 2) = 16, twice 8.", "key": {'value': True}},
         ],
     },
     {
@@ -137,18 +137,18 @@ with the lengths divided out. A score from <b>−1 to 1</b> for direction only.<
         ],
         "exercises": [
             {"kind": "number", "q": "What is the cosine similarity of (1, 0) and (1, 1)? Round to 3 decimal places.",
-             "answer": "0.707.", "why": "a · b = 1, ‖a‖ = 1, ‖b‖ = √2, so 1 / √2 ≈ 0.707 (the angle is 45°)."},
+             "answer": "0.707.", "why": "a · b = 1, ‖a‖ = 1, ‖b‖ = √2, so 1 / √2 ≈ 0.707 (the angle is 45°).", "key": {'parts': [{'label': None, 'value': 0.707, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "mc", "q": "Which pair has cosine similarity exactly −1?",
              "options": ["(1, 2) and (2, 4)", "(1, 2) and (−2, 1)", "(1, 2) and (−3, −6)", "(1, 2) and (−1, 2)"],
              "answer": "C.", "why": "(−3, −6) = −3 × (1, 2): exactly opposite. A is +1 (same direction), B is 0 "
-                                   "(right angles), D is 0.6."},
+                                   "(right angles), D is 0.6.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“(3, 1) and (30, 10) have a larger cosine similarity than (3, 1) and (3, 1), "
                                 "because the numbers are bigger.”",
              "answer": "False.", "why": "Both are exactly 1: same direction. Only the raw dot product grows "
-                                        "(100 versus 10)."},
+                                        "(100 versus 10).", "key": {'value': False}},
             {"kind": "number", "q": "What is the cosine similarity of (3, 4) and (4, 3)?",
              "answer": "0.96.", "why": "a · b = 12 + 12 = 24, and both lengths are 5, so 24 / 25 = 0.96: very "
-                                       "similar directions."},
+                                       "similar directions.", "key": {'parts': [{'label': None, 'value': 0.96, 'tol': 0.005, 'unit': None}]}},
         ],
     },
     {
@@ -171,21 +171,21 @@ vector and word, weights and input), it computes a <b>dot product</b>.</div>""",
                          "a good match", "The key vector is longer than the query vector", "The two tokens are the "
                          "same word"],
              "answer": "B.", "why": "A large positive dot product means strong agreement. It says nothing about "
-                                   "distance in the text, and length alone doesn't decide it."},
+                                   "distance in the text, and length alone doesn't decide it.", "key": {'choice': 1}},
             {"kind": "number", "q": "A tiny output layer knows 3 words: <i>cat</i> = (1, 2), <i>dog</i> = (2, 1), "
                                     "<i>mat</i> = (−1, 1). The final vector is h = (2, 3). Compute h · each word. "
                                     "Which word scores highest?",
              "answer": "cat 8, dog 7, mat 1: cat.", "why": "2 + 6 = 8, 4 + 3 = 7, −2 + 3 = 1. h points most nearly "
-                                                          "the same way as cat."},
+                                                          "the same way as cat.", "key": {'parts': [{'label': 'cat', 'value': 8, 'tol': 0.5, 'unit': None}, {'label': 'dog', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': 'mat', 'value': 1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "An MLP neuron has weights (0.5, −1, 2) and receives the input (4, 1, 0.5). "
                                     "What is its dot product?",
-             "answer": "2.", "why": "0.5 × 4 − 1 × 1 + 2 × 0.5 = 2 − 1 + 1 = 2."},
+             "answer": "2.", "why": "0.5 × 4 − 1 × 1 + 2 × 0.5 = 2 − 1 + 1 = 2.", "key": {'parts': [{'label': None, 'value': 2, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "An output layer compares a 768-number vector with every word of a 50,000-word "
                                     "vocabulary. How many dot products is that, and how many multiplications in "
                                     "total?",
              "answer": "50,000 dot products; 38,400,000 multiplications.",
              "why": "One dot product per word, each with 768 multiplications: 50,000 × 768. F03 shows how matrices do "
-                    "them all at once."},
+                    "them all at once.", "key": {'parts': [{'label': 'dot products', 'value': 50000, 'tol': 0.5, 'unit': None}, {'label': 'multiplications', 'value': 38400000, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -211,7 +211,7 @@ once, with matrices.</p>""",
             {"kind": "mc", "q": "What does <code>a * b</code> (a star, not @) give for the a and b above?",
              "options": ["8", "array([6, 2])", "0.894", "An error"],
              "answer": "B.", "why": "<code>*</code> multiplies matching numbers but doesn't add them up. "
-                                   "<code>np.sum(a * b)</code> is 8, the same as <code>a @ b</code>."},
+                                   "<code>np.sum(a * b)</code> is 8, the same as <code>a @ b</code>.", "key": {'choice': 1}},
             {"kind": "short", "q": "What does <code>np.array([1, 2, 3]) @ np.array([4, 5, 6])</code> return?",
              "answer": "32.", "why": "4 + 10 + 18 = 32."},
             {"kind": "code", "q": "<b>Try it yourself.</b> Below are toy 3-number “word vectors”. (a) Complete "

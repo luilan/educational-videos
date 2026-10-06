@@ -41,14 +41,14 @@ only ever sees the last step.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many UTF-8 bytes is the word “café”?",
-             "answer": "5.", "why": "c, a, f are 1 byte each; é is 2 bytes."},
+             "answer": "5.", "why": "c, a, f are 1 byte each; é is 2 bytes.", "key": {'parts': [{'label': None, 'value': 5, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "A byte starts with the bits 1110. What does it tell a UTF-8 reader?",
              "options": ["It is a plain ASCII character", "It starts a 3-byte character", "It continues the previous "
                          "character", "It starts a 4-byte character"],
              "answer": "B.", "why": "1110 = three leading ones: this byte and two continuation bytes (10…) form one "
-                                   "character, like 中."},
+                                   "character, like 中.", "key": {'choice': 1}},
             {"kind": "number", "q": "The euro sign € is U+20AC. How many UTF-8 bytes does it need?",
-             "answer": "3.", "why": "Code points from U+0800 to U+FFFF use 3 bytes (checked: '€'.encode() has length 3)."},
+             "answer": "3.", "why": "Code points from U+0800 to U+FFFF use 3 bytes (checked: '€'.encode() has length 3).", "key": {'parts': [{'label': None, 'value': 3, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -67,9 +67,9 @@ in cost, speed and how much fits in the context window.</div>""",
         "exercises": [
             {"kind": "number", "q": "For GPT-2, how many times more tokens does the Russian sentence need than the English "
                                     "one?",
-             "answer": "3.8 times.", "why": "38 / 10 = 3.8."},
+             "answer": "3.8 times.", "why": "38 / 10 = 3.8.", "key": {'parts': [{'label': None, 'value': 3.8, 'tol': 0.05, 'unit': None}]}},
             {"kind": "tf", "q": "“The Chinese sentence is 11 characters but 33 bytes.”",
-             "answer": "True.", "why": "Each Chinese character (and the full stop 。) takes 3 bytes: 11 × 3 = 33."},
+             "answer": "True.", "why": "Each Chinese character (and the full stop 。) takes 3 bytes: 11 × 3 = 33.", "key": {'value': True}},
             {"kind": "short", "q": "A product charges per token. Why might Russian-speaking users pay more with a "
                                    "GPT-2-style tokenizer?",
              "answer": "The same text needs far more tokens (38 vs 10 for our sentence), because the tokenizer has few "
@@ -98,7 +98,7 @@ test on cases the model cannot have memorised.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many letters are hidden inside the single token “␣strawberry” (not counting the "
                                     "space)?",
-             "answer": "10.", "why": "s-t-r-a-w-b-e-r-r-y."},
+             "answer": "10.", "why": "s-t-r-a-w-b-e-r-r-y.", "key": {'parts': [{'label': None, 'value': 10, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why test “nevertheless” and “bookkeeper” instead of only “strawberry”?",
              "answer": "Strawberry is a famous test the model may have memorised; less famous words check whether it can "
                        "actually count.",
@@ -127,7 +127,7 @@ instead of asking it to look.</div>""",
              "options": ["Reverse the letters of “strawberry”", "Count the e's in “nevertheless”",
                          "Translate “strawberry” into Italian", "List the letters of “bookkeeper” in order"],
              "answer": "C.", "why": "Translation works at the level of words and meaning; the others need the hidden "
-                                   "letters."},
+                                   "letters.", "key": {'choice': 2}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Add this to <code>bytes_unicode.py</code>: how does Qwen2.5 "
                                   "tokenize these words, and which do you expect the model to find hardest to spell?",
              "code": """for w in [" strawberry", " unbelievable", " Mississippi", " hippopotamus"]:

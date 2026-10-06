@@ -42,7 +42,7 @@ output. Each block edits it; none overwrites it.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many sub-blocks write into GPT-2 small's residual stream?",
-             "answer": "24.", "why": "12 layers × (1 attention + 1 MLP)."},
+             "answer": "24.", "why": "12 layers × (1 attention + 1 MLP).", "key": {'parts': [{'label': None, 'value': 24, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Write the residual stream after two layers as a sum of terms.",
              "answer": "x₂ = embedding + attn₀ + mlp₀ + attn₁ + mlp₁ (each computed from the stream as it was at that "
                        "point).",
@@ -71,10 +71,10 @@ last ones reshape it for the output.</div>""",
         "exercises": [
             {"kind": "number", "q": "By what factor does the average token's stream grow from entering layer 1 (49.5) to "
                                     "entering layer 11 (216.1)?",
-             "answer": "About 4.4.", "why": "216.1 / 49.5 ≈ 4.37."},
+             "answer": "About 4.4.", "why": "216.1 / 49.5 ≈ 4.37.", "key": {'parts': [{'label': None, 'value': 4.4, 'tol': 0.088, 'unit': None}]}},
             {"kind": "tf", "q": "“In GPT-2's middle layers, each MLP replaces most of the stream.”",
              "answer": "False.", "why": "Its output is about a quarter of the stream's size (0.24–0.34 in layers 1–9), "
-                                       "and it is added, not substituted."},
+                                       "and it is added, not substituted.", "key": {'value': False}},
         ],
     },
     {
@@ -100,7 +100,7 @@ above all, make deep networks trainable.</div>""",
             {"kind": "mc", "q": "Which deletion hurt GPT-2 most on this text?",
              "options": ["Layer 6", "Layer 0", "Layer 11", "Layer 4"],
              "answer": "B.", "why": "Loss 7.95 without layer 0, against 6.12 without layer 11 and 3.74–4.33 for middle "
-                                   "layers."},
+                                   "layers.", "key": {'choice': 1}},
             {"kind": "short", "q": "The model without residuals reached 3.36, almost exactly the letter-frequency loss "
                                    "(3.35). What does that tell you about what it learned?",
              "answer": "Only how common each character is, ignoring the context entirely: its output does not depend on the "
@@ -128,7 +128,7 @@ path lets every layer learn.</div>""",
                                     "first block without residuals? With residuals, at least what comes through the "
                                     "identity path?",
              "answer": "0.5⁸ ≈ 0.0039 without; the full gradient (factor 1) through the identity path with residuals.",
-             "why": "Products of small factors vanish; the residual adds a path whose factor is exactly 1."},
+             "why": "Products of small factors vanish; the residual adds a path whose factor is exactly 1.", "key": {'parts': [{'label': 'without residuals', 'value': 0.0039, 'tol': 7.8e-05, 'unit': None}, {'label': 'with residuals (at least)', 'value': 1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> With <code>run</code> from <code>residual_stream.py</code>, "
                                   "delete layers 3 and 6 together, then layers 2, 3, 6 and 10. Is the damage additive?",
              "code": """for skip in ({3, 6}, {2, 3, 6, 10}):

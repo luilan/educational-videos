@@ -43,10 +43,10 @@ has become.</p>""",
         "exercises": [
             {"kind": "number", "q": "Qwen2.5-0.5B's stream has 896 numbers. What is the length of a normalized vector "
                                     "(before the learned scale)?",
-             "answer": "About 29.93.", "why": "√896 ≈ 29.93, as √768 = 27.7 for GPT-2."},
+             "answer": "About 29.93.", "why": "√896 ≈ 29.93, as √768 = 27.7 for GPT-2.", "key": {'parts': [{'label': None, 'value': 29.93, 'tol': 0.5986, 'unit': None}]}},
             {"kind": "tf", "q": "“Normalization changes the residual stream itself.”",
              "answer": "False.", "why": "Only the block's input is normalized; the stream keeps growing (5.2 → 253.3) and "
-                                       "the block's output is added to it unnormalized."},
+                                       "the block's output is added to it unnormalized.", "key": {'value': False}},
         ],
     },
     {
@@ -71,16 +71,16 @@ rescale + scale.</div>""",
         "exercises": [
             {"kind": "number", "q": "LayerNorm (no learned scale or shift) of [1, 2, 3, 6]?",
              "answer": "About [−1.069, −0.535, 0, 1.604].", "why": "Mean 3, variance (4 + 1 + 0 + 9) / 4 = 3.5, standard "
-                                                                  "deviation 1.871."},
+                                                                  "deviation 1.871.", "key": {'parts': [{'label': 'x1', 'value': -1.069, 'tol': 0.02138, 'unit': None}, {'label': 'x2', 'value': -0.535, 'tol': 0.0107, 'unit': None}, {'label': 'x3', 'value': 0, 'tol': 0.0005, 'unit': None}, {'label': 'x4', 'value': 1.604, 'tol': 0.03208, 'unit': None}]}},
             {"kind": "number", "q": "RMSNorm (no learned scale) of [1, 2, 3, 6]?",
-             "answer": "About [0.283, 0.566, 0.849, 1.697].", "why": "RMS = √((1 + 4 + 9 + 36) / 4) = √12.5 ≈ 3.536."},
+             "answer": "About [0.283, 0.566, 0.849, 1.697].", "why": "RMS = √((1 + 4 + 9 + 36) / 4) = √12.5 ≈ 3.536.", "key": {'parts': [{'label': 'x1', 'value': 0.283, 'tol': 0.00566, 'unit': None}, {'label': 'x2', 'value': 0.566, 'tol': 0.01132, 'unit': None}, {'label': 'x3', 'value': 0.849, 'tol': 0.01698, 'unit': None}, {'label': 'x4', 'value': 1.697, 'tol': 0.03394, 'unit': None}]}},
             {"kind": "short", "q": "Add 10 to every number: [11, 12, 13, 16]. Which normalization gives the same output as "
                                    "before, and why?",
              "answer": "LayerNorm: it subtracts the mean, so a constant shift disappears ([−1.069, −0.535, 0, 1.604] "
                        "again). RMSNorm changes: [0.838, 0.914, 0.990, 1.218].",
              "why": "Centering is exactly what RMSNorm leaves out."},
             {"kind": "number", "q": "How many learned numbers do GPT-2 small's 25 LayerNorms have in total?",
-             "answer": "38,400.", "why": "2 per layer × 12 + the final one = 25, each with 768 + 768."},
+             "answer": "38,400.", "why": "2 per layer × 12 + the final one = 25, each with 768 + 768.", "key": {'parts': [{'label': None, 'value': 38400, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -102,9 +102,9 @@ especially for stability.</div>""",
             {"kind": "mc", "q": "What happened without normalization at learning rate 0.01?",
              "options": ["Loss 1.71", "Same as LayerNorm", "The loss became NaN", "Training was faster"],
              "answer": "C.", "why": "Training became numerically unstable and the loss turned into “not a number” from the first check "
-                                   "(step 100) on."},
+                                   "(step 100) on.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“RMSNorm gave a worse loss than LayerNorm in the episode's experiment.”",
-             "answer": "False.", "why": "1.69 vs 1.69 at 0.001, and 1.81 vs 1.81 at 0.01."},
+             "answer": "False.", "why": "1.69 vs 1.69 at 0.001, and 1.81 vs 1.81 at 0.01.", "key": {'value': False}},
         ],
     },
     {

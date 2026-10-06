@@ -42,10 +42,10 @@ number of experts, compute per token with k.</div>""",
         "exercises": [
             {"kind": "number", "q": "Router scores for two chosen experts are 0.41 and 0.27. With what weights are their "
                                     "outputs mixed?",
-             "answer": "About 0.60 and 0.40.", "why": "Renormalized: 0.41 / 0.68 and 0.27 / 0.68."},
+             "answer": "About 0.60 and 0.40.", "why": "Renormalized: 0.41 / 0.68 and 0.27 / 0.68.", "key": {'parts': [{'label': 'expert 1 (0.41)', 'value': 0.6, 'tol': 0.012, 'unit': None}, {'label': 'expert 2 (0.27)', 'value': 0.4, 'tol': 0.008, 'unit': None}]}},
             {"kind": "number", "q": "One expert MLP here has 131,712 parameters. With top-2 instead of top-1, how many more "
                                     "parameters are active per token across the 4 layers?",
-             "answer": "526,848.", "why": "4 layers × 1 extra expert × 131,712 = 526,848 (1,349,185 − 822,337)."},
+             "answer": "526,848.", "why": "4 layers × 1 extra expert × 131,712 = 526,848 (1,349,185 − 822,337).", "key": {'parts': [{'label': None, 'value': 526848, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -71,9 +71,9 @@ here top-2 won that comparison and top-1 did not.</div>""",
         "exercises": [
             {"kind": "order", "q": "Order from best to worst: <i>dense · MoE top-1 · MoE top-2 · dense twice as wide</i>.",
              "answer": "MoE top-2 (1.596) → dense twice as wide (1.628) → dense (1.644) → MoE top-1 (1.687).",
-             "why": "From the episode's runs."},
+             "why": "From the episode's runs.", "key": {'items': ['MoE top-2', 'dense twice as wide', 'dense', 'MoE top-1']}},
             {"kind": "tf", "q": "“Without a balancing loss, the router sends tokens evenly to all experts.”",
-             "answer": "False.", "why": "Shares ranged from 4% to 20% in layer 2."},
+             "answer": "False.", "why": "Shares ranged from 4% to 20% in layer 2.", "key": {'value': False}},
             {"kind": "short", "q": "Why is a dense model “twice as wide” the fair baseline for top-2 MoE?",
              "answer": "It uses about the same number of active parameters (compute) per token, 1.34 million vs 1.35 million, "
                        "so any difference comes from MoE's extra total parameters, not extra compute.",
@@ -98,7 +98,7 @@ token.</div>""",
         "exercises": [
             {"kind": "mc", "q": "Which cost does a mixture of experts NOT reduce?",
              "options": ["Compute per token", "Memory to hold the model", "Active parameters per token", "None of these"],
-             "answer": "B.", "why": "All experts must be stored, even though only k run per token."},
+             "answer": "B.", "why": "All experts must be stored, even though only k run per token.", "key": {'choice': 1}},
         ],
     },
 ]

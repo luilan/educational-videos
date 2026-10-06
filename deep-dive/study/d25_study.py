@@ -48,7 +48,7 @@ all-reduce keeps the copies in sync.</div>""",
              "why": "The code seeds every worker identically (torch.manual_seed(0)); DDP also broadcasts rank 0's weights at "
                     "the start."},
             {"kind": "tf", "q": "“In data parallelism, each worker holds a quarter of the model.”",
-             "answer": "False.", "why": "Each holds the whole model and a quarter of the batch."},
+             "answer": "False.", "why": "Each holds the whole model and a quarter of the batch.", "key": {'value': False}},
         ],
     },
     {
@@ -103,10 +103,10 @@ needs room for the whole training state.</div>""",
         "exercises": [
             {"kind": "number", "q": "With 8 workers, how many GiB does each send per step in a ring all-reduce of GPT-2's "
                                     "0.46 GiB of gradients?",
-             "answer": "About 0.81 GiB.", "why": "2 × 7/8 × 0.4636 GiB ≈ 0.81."},
+             "answer": "About 0.81 GiB.", "why": "2 × 7/8 × 0.4636 GiB ≈ 0.81.", "key": {'parts': [{'label': None, 'value': 0.81, 'tol': 0.0162, 'unit': None}]}},
             {"kind": "number", "q": "How much memory does GPT-2 small's training state take per worker (16 bytes per "
                                     "parameter)?",
-             "answer": "About 2.0 GB (1.85 GiB).", "why": "124,439,808 × 16 bytes ≈ 1.99 × 10⁹ bytes."},
+             "answer": "About 2.0 GB (1.85 GiB).", "why": "124,439,808 × 16 bytes ≈ 1.99 × 10⁹ bytes.", "key": {'parts': [{'label': None, 'value': 2, 'tol': 0.15, 'unit': None}]}},
         ],
     },
 ]

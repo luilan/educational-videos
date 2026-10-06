@@ -45,7 +45,7 @@ automatic check.</div>""",
              "why": "A fixed test set gives comparable numbers every time."},
             {"kind": "tf", "q": "“For a fair comparison, both models must get exactly the same questions and the same "
                                 "context.”",
-             "answer": "True.", "why": "Otherwise you are measuring the difference in inputs, not in models."},
+             "answer": "True.", "why": "Otherwise you are measuring the difference in inputs, not in models.", "key": {'value': True}},
         ],
     },
     {
@@ -68,7 +68,7 @@ better.</div>""",
             {"kind": "mc", "q": "Expected answer “monday”; the model says “The bakery is closed on Mondays.” Which check "
                                 "marks it correct?",
              "options": ["Exact match only", "Contains the expected word (lower-cased)", "Both", "Neither"],
-             "answer": "B.", "why": "“mondays” contains “monday”; exact match compares the whole sentence."},
+             "answer": "B.", "why": "“mondays” contains “monday”; exact match compares the whole sentence.", "key": {'choice': 1}},
             {"kind": "short", "q": "All models score 20 / 20. What does that tell you, and what should you do?",
              "answer": "The test is saturated and cannot rank the models; add harder questions.",
              "why": "Scores at the ceiling hide real differences."},
@@ -105,10 +105,10 @@ the failures, and a sample of the passes.</div>""",
              "options": ["The 1.5B “42 euros” answer, scored correct because it contains 39",
                          "The 1.5B “Yes, … would not qualify” answer, scored wrong",
                          "The 3B “39€ + 3€ = 42€” answer for the Tuesday cake", "The 0.5B “No, closed on Mondays” answer"],
-             "answer": "A.", "why": "A false positive is a wrong answer counted as right. B is a false negative."},
+             "answer": "A.", "why": "A false positive is a wrong answer counted as right. B is a false negative.", "key": {'choice': 0}},
             {"kind": "tf", "q": "“Automatic scores of 3, 3 and 6 prove the 3B model is exactly twice as good.”",
              "answer": "False.", "why": "With 10 questions the scores are noisy, and the checker made errors (by hand: 2, "
-                                       "1, 5)."},
+                                       "1, 5).", "key": {'value': False}},
         ],
     },
     {
@@ -132,7 +132,7 @@ change, and read when it fails.</div>""",
             {"kind": "number", "q": "Model X scores 7 / 10 and model Y 6 / 10. How many questions is the difference, and "
                                     "why is it weak evidence?",
              "answer": "One question.", "why": "A single answer can flip by chance (e.g. a near-tie, episode 10); you need "
-                                              "more questions or repeated runs."},
+                                              "more questions or repeated runs.", "key": {'self': True}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>code/p11_evaluation/evaluate.py</code>, change the "
                                   "system prompt to ask for structured answers, then rerun and compare the hard-set "
                                   "scores and outputs.",

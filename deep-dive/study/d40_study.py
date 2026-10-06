@@ -45,7 +45,7 @@ reward: no reward model, no human labels.</div>""",
              "options": ["Writing a function that must pass unit tests", "Writing a friendly email",
                          "Summarising a news article"],
              "answer": "Writing a function that must pass unit tests.",
-             "why": "Running the tests checks the answer automatically; the other two need a judge."},
+             "why": "Running the tests checks the answer automatically; the other two need a judge.", "key": {'choice': 0}},
             {"kind": "short", "q": "Our reward also requires the exact text “Answer: N”. What does that strictness "
                                    "reward, besides correct arithmetic?",
              "answer": "Following the requested output format.",
@@ -75,12 +75,12 @@ group average → more likely; worse → less likely.</div>""",
         "exercises": [
             {"kind": "number", "q": "A group's rewards are 1, 0, 1, 1, 0, 0, 1, 0. What is the advantage of each right "
                                     "answer? (Use the sample standard deviation.)",
-             "answer": "About +0.94.", "why": "Mean 0.5; standard deviation 0.53; (1 − 0.5) / 0.53 ≈ 0.94."},
+             "answer": "About +0.94.", "why": "Mean 0.5; standard deviation 0.53; (1 − 0.5) / 0.53 ≈ 0.94.", "key": {'parts': [{'label': None, 'value': 0.94, 'tol': 0.0188, 'unit': None}]}},
             {"kind": "number", "q": "Seven answers right, one wrong. What are the advantages?",
              "answer": "About +0.35 for each right answer, −2.47 for the wrong one.",
-             "why": "Mean 0.875, standard deviation 0.354: a rare failure gets a large push down."},
+             "why": "Mean 0.875, standard deviation 0.354: a rare failure gets a large push down.", "key": {'parts': [{'label': 'each right answer', 'value': 0.35, 'tol': 0.007, 'unit': None}, {'label': 'wrong answer', 'value': -2.47, 'tol': 0.0494, 'unit': None}]}},
             {"kind": "tf", "q": "“A question the model always gets right still improves it under GRPO.”",
-             "answer": "False.", "why": "All rewards equal → all advantages 0; only the KL term acts."},
+             "answer": "False.", "why": "All rewards equal → all advantages 0; only the KL term acts.", "key": {'value': False}},
         ],
     },
     {
@@ -109,7 +109,7 @@ already do some of the time; check which behaviour actually changed.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "Mean length fell from 148 to 105 tokens. By what percentage?",
-             "answer": "About 29%.", "why": "1 − 105 / 148 ≈ 0.29."},
+             "answer": "About 29%.", "why": "1 − 105 / 148 ≈ 0.29.", "key": {'parts': [{'label': None, 'value': 29, 'tol': 0.58, 'unit': '%'}]}},
             {"kind": "short", "q": "Why could GRPO make progress from the very first step, even though greedy decoding "
                                    "scored 0?",
              "answer": "Sampled answers sometimes used the right format (training reward 0.25 at step 1), so groups had "

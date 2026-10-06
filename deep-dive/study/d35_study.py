@@ -48,7 +48,7 @@ likely text is not the best text.</div>""",
             {"kind": "mc", "q": "Why does the judge give the looping greedy text such a low loss?",
              "options": ["It is well written", "Once a phrase repeats, every next token is easy to predict",
                          "The judge was trained on GPT-2's outputs", "Greedy text is shorter"],
-             "answer": "B.", "why": "Repetition makes text predictable, so likelihood alone rewards it."},
+             "answer": "B.", "why": "Repetition makes text predictable, so likelihood alone rewards it.", "key": {'choice': 1}},
         ],
     },
     {
@@ -68,7 +68,7 @@ and”, the 12 most likely tokens hold only 32% of the probability.</div>""",
         "exercises": [
             {"kind": "number", "q": "Logits (2, 1, 0). Give the probabilities at T = 1, 0.5 and 2.",
              "answer": "(0.665, 0.245, 0.090); (0.867, 0.117, 0.016); (0.506, 0.307, 0.186).",
-             "why": "softmax(logits / T): dividing by 0.5 doubles the gaps; dividing by 2 halves them."},
+             "why": "softmax(logits / T): dividing by 0.5 doubles the gaps; dividing by 2 halves them.", "key": {'parts': [{'label': 'T=1, p1', 'value': 0.665, 'tol': 0.0005, 'unit': None}, {'label': 'T=1, p2', 'value': 0.245, 'tol': 0.0005, 'unit': None}, {'label': 'T=1, p3', 'value': 0.09, 'tol': 0.0005, 'unit': None}, {'label': 'T=0.5, p1', 'value': 0.867, 'tol': 0.0005, 'unit': None}, {'label': 'T=0.5, p2', 'value': 0.117, 'tol': 0.0005, 'unit': None}, {'label': 'T=0.5, p3', 'value': 0.016, 'tol': 0.0005, 'unit': None}, {'label': 'T=2, p1', 'value': 0.506, 'tol': 0.0005, 'unit': None}, {'label': 'T=2, p2', 'value': 0.307, 'tol': 0.0005, 'unit': None}, {'label': 'T=2, p3', 'value': 0.186, 'tol': 0.0005, 'unit': None}]}},
         ],
     },
     {
@@ -98,7 +98,7 @@ the top token adapts to the model's confidence.</div>""",
             {"kind": "number", "q": "Probabilities (0.5, 0.2, 0.15, 0.1, 0.05). How many tokens does top-p 0.9 keep? min-p "
                                     "0.1? min-p 0.3?",
              "answer": "4; 5; 3.", "why": "Top-p: cumulative 0.5, 0.7, 0.85, 0.95 reaches 0.9 at the 4th token. Min-p 0.1 "
-                                         "keeps p ≥ 0.05; min-p 0.3 keeps p ≥ 0.15."},
+                                         "keeps p ≥ 0.05; min-p 0.3 keeps p ≥ 0.15.", "key": {'parts': [{'label': 'top-p 0.9', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': 'min-p 0.1', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': 'min-p 0.3', 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Write min-p sampling and count the kept tokens.",
              "code": """import torch
 logits = torch.tensor([2.0, 1.5, 1.0, 0.0, -1.0, -3.0])

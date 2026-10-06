@@ -54,7 +54,7 @@ each activation becomes a sum of a few, hopefully meaningful, features.</div>"""
         "exercises": [
             {"kind": "number", "q": "How many weights do W_enc (6,144 × 768) and W_dec (768 × 6,144) hold together, "
                                     "plus the biases b_enc (6,144) and b_dec (768)?",
-             "answer": "9,444,096.", "why": "2 × 6,144 × 768 = 9,437,184, plus 6,144 + 768 = 6,912."},
+             "answer": "9,444,096.", "why": "2 × 6,144 × 768 = 9,437,184, plus 6,144 + 768 = 6,912.", "key": {'parts': [{'label': None, 'value': 9444096, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why is a run with 923 active features per token not useful, even though it explains "
                                    "95% of the variance?",
              "answer": "With hundreds of features on at once, no single feature stands for anything you can read: the "
@@ -62,7 +62,7 @@ each activation becomes a sum of a few, hopefully meaningful, features.</div>"""
              "why": "Sparsity is what makes features interpretable."},
             {"kind": "tf", "q": "“A stronger L1 penalty always gives better features.”",
              "answer": "False.", "why": "Too strong and the SAE gives up: at weight 8 it kept 4 features on and explained "
-                                        "2% of the variance."},
+                                        "2% of the variance.", "key": {'value': False}},
         ],
     },
     {
@@ -84,10 +84,10 @@ not only by reconstruction error.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "On average, what fraction of the 6,144 features is active on a token?",
-             "answer": "About 0.5%.", "why": "30 / 6,144 ≈ 0.0049."},
+             "answer": "About 0.5%.", "why": "30 / 6,144 ≈ 0.0049.", "key": {'parts': [{'label': None, 'value': 0.5, 'tol': 0.05, 'unit': '%'}]}},
             {"kind": "number", "q": "If a different SAE gave a spliced loss of 5.5 (base 4.686, mean-ablated 7.861), "
                                     "what share of the gap would it keep?",
-             "answer": "About 74%.", "why": "(7.861 − 5.5) / (7.861 − 4.686) = 2.361 / 3.175 ≈ 0.74."},
+             "answer": "About 74%.", "why": "(7.861 − 5.5) / (7.861 − 4.686) = 2.361 / 3.175 ≈ 0.74.", "key": {'parts': [{'label': None, 'value': 74, 'tol': 1.48, 'unit': '%'}]}},
         ],
     },
     {

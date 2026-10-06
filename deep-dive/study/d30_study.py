@@ -44,9 +44,9 @@ projected into the same vector space as words.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many parameters does a linear layer from 192 to 128 numbers have (with biases)?",
-             "answer": "24,704.", "why": "192 × 128 weights + 128 biases."},
+             "answer": "24,704.", "why": "192 × 128 weights + 128 biases.", "key": {'parts': [{'label': None, 'value': 24704, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "How many 8 × 8 patch tokens does a 64 × 64 image make?",
-             "answer": "64.", "why": "(64 / 8)² = 8 × 8."},
+             "answer": "64.", "why": "(64 / 8)² = 8 × 8.", "key": {'parts': [{'label': None, 'value': 64, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -69,7 +69,7 @@ fine shape details need enough resolution.</div>""",
         "exercises": [
             {"kind": "mc", "q": "Which property did the model get wrong most often?",
              "options": ["Color", "Position", "Shape", "None"],
-             "answer": "C.", "why": "Shape 91% vs 100% for color and position."},
+             "answer": "C.", "why": "Shape 91% vs 100% for color and position.", "key": {'choice': 2}},
             {"kind": "short", "q": "Why might color be easier than shape for this model?",
              "answer": "Color is visible in any single pixel of the shape, so one patch token carries it; telling a square "
                        "from a circle depends on a few corner pixels.",
@@ -93,7 +93,7 @@ resolution divided by the patch size.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many tokens does a 336 × 336 image make with 14 × 14 patches? And 448 × 448?",
-             "answer": "576 and 1,024.", "why": "(336 / 14)² = 24² and (448 / 14)² = 32²."},
+             "answer": "576 and 1,024.", "why": "(336 / 14)² = 24² and (448 / 14)² = 32².", "key": {'parts': [{'label': '336 × 336', 'value': 576, 'tol': 0.5, 'unit': None}, {'label': '448 × 448', 'value': 1024, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Check the patch shapes with the episode's code.",
              "code": """img = draw("cross", "red", "bottom left")
 print(img.shape, patches(img).shape)""",

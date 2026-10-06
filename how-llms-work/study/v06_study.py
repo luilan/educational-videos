@@ -51,14 +51,14 @@ all at once, in three matrix multiplications (Foundations F03).</p>""",
         "exercises": [
             {"kind": "number", "q": "X is 5 × 4 and W<sub>Q</sub> is 4 × 4. What is the shape of Q? What would it be "
                                     "for a text of 12 tokens?",
-             "answer": "5 × 4; 12 × 4.", "why": "(n × d) · (d × d) = n × d: one 4-number query per token."},
+             "answer": "5 × 4; 12 × 4.", "why": "(n × d) · (d × d) = n × d: one 4-number query per token.", "key": {'parts': [{'label': '5 tokens: rows', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': '5 tokens: cols', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': '12 tokens: rows', 'value': 12, 'tol': 0.5, 'unit': None}, {'label': '12 tokens: cols', 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "The first row of X (<i>The</i>) is (−1.5, 0.4, 0.1, 1.3) and the first column of "
                                     "W<sub>Q</sub> is (0.4, 0.6, 0.7, 0.2). Compute the first number of <i>The</i>'s "
                                     "query.",
-             "answer": "−0.03.", "why": "−0.60 + 0.24 + 0.07 + 0.26 = −0.03, the top-left entry of Q in the video."},
+             "answer": "−0.03.", "why": "−0.60 + 0.24 + 0.07 + 0.26 = −0.03, the top-left entry of Q in the video.", "key": {'parts': [{'label': None, 'value': -0.03, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“A longer text needs a bigger W<sub>Q</sub>.”",
              "answer": "False.", "why": "W<sub>Q</sub> is d × d whatever the text length. More tokens only means more "
-                                        "rows in X, and so in Q, K and V."},
+                                        "rows in X, and so in Q, K and V.", "key": {'value': False}},
         ],
     },
     {
@@ -79,19 +79,19 @@ Q · Kᵀ computes all n × n query–key dot products in one go.</div>""",
             {"kind": "number", "q": "Check the video's example: q<sub>sat</sub> = (0.50, −2.00, −1.09, −1.40) and "
                                     "k<sub>cat</sub> = (1.43, 1.00, −1.19, −0.78). Compute q<sub>sat</sub> · "
                                     "k<sub>cat</sub> to two decimals.",
-             "answer": "1.10.", "why": "0.715 − 2.000 + 1.297 + 1.092 = 1.104 ≈ 1.10."},
+             "answer": "1.10.", "why": "0.715 − 2.000 + 1.297 + 1.092 = 1.104 ≈ 1.10.", "key": {'parts': [{'label': None, 'value': 1.1, 'tol': 0.005, 'unit': None}]}},
             {"kind": "number", "q": "q<sub>The</sub> = (−0.03, 0.40, −0.90, 0.34) and k<sub>The</sub> = (−1.45, 1.26, "
                                     "1.47, 0.84). Compute the top-left score of the grid.",
-             "answer": "−0.49.", "why": "0.044 + 0.504 − 1.323 + 0.286 = −0.490, as in the video."},
+             "answer": "−0.49.", "why": "0.044 + 0.504 − 1.323 + 0.286 = −0.490, as in the video.", "key": {'parts': [{'label': None, 'value': -0.49, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "A text has 100 tokens and d = 4. What is the shape of Q · Kᵀ?",
              "options": ["100 × 4", "4 × 4", "100 × 100", "4 × 100"],
              "answer": "C.", "why": "(100 × 4) · (4 × 100) = 100 × 100: one score for every (query token, key token) "
-                                   "pair."},
+                                   "pair.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“The score of <i>sat</i> looking at <i>cat</i> equals the score of <i>cat</i> "
                                 "looking at <i>sat</i>.”",
              "answer": "False.", "why": "sat → cat is q<sub>sat</sub> · k<sub>cat</sub> = 1.10, but cat → sat is "
                                         "q<sub>cat</sub> · k<sub>sat</sub> = −2.51. Queries and keys are different "
-                                        "vectors, so the grid is not symmetric."},
+                                        "vectors, so the grid is not symmetric.", "key": {'value': False}},
         ],
     },
     {
@@ -110,18 +110,18 @@ moderate, so the softmax is not too sharp.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "<i>sat</i>'s score for <i>cat</i> is 1.104. What is it after scaling (d = 4)?",
-             "answer": "0.55.", "why": "1.104 ÷ √4 = 1.104 ÷ 2 = 0.552 ≈ 0.55, the value in the scaled grid."},
+             "answer": "0.55.", "why": "1.104 ÷ √4 = 1.104 ÷ 2 = 0.552 ≈ 0.55, the value in the scaled grid.", "key": {'parts': [{'label': None, 'value': 0.55, 'tol': 0.005, 'unit': None}]}},
             {"kind": "number", "q": "A model uses keys of size 64. What number are its scores divided by?",
-             "answer": "8.", "why": "√64 = 8."},
+             "answer": "8.", "why": "√64 = 8.", "key": {'parts': [{'label': None, 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Why divide the scores by √d?",
              "options": ["So that every row of scores adds up to 1",
                          "Because scores grow with the vector length, which makes the softmax too extreme",
                          "To turn negative scores into positive ones", "To stop tokens from seeing the future"],
              "answer": "B.", "why": "A is the softmax's job, D is the mask's job, and dividing by a positive number "
-                                   "never changes a sign."},
+                                   "never changes a sign.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Dividing a row of scores by 2 can change which token gets the largest weight.”",
              "answer": "False.", "why": "Dividing by a positive number keeps the order, so the top score stays on top "
-                                        "(in row <i>the</i>, sat wins both times). Only the sharpness changes."},
+                                        "(in row <i>the</i>, sat wins both times). Only the sharpness changes.", "key": {'value': False}},
         ],
     },
     {
@@ -141,17 +141,17 @@ softmax, later tokens get weight exactly 0.</div>""",
             {"kind": "number", "q": "How many entries of the 5 × 5 grid are masked? How many would be masked for a "
                                     "100-token text?",
              "answer": "10; 4,950.", "why": "Everything above the diagonal: (25 − 5) ÷ 2 = 10, and "
-                                           "(100 × 100 − 100) ÷ 2 = 4,950."},
+                                           "(100 × 100 − 100) ÷ 2 = 4,950.", "key": {'parts': [{'label': '5 × 5', 'value': 10, 'tol': 0.5, 'unit': None}, {'label': '100 tokens', 'value': 4950, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which of these scores gets masked?",
              "options": ["row sat, column cat", "row cat, column sat", "row the, column The", "row on, column on"],
              "answer": "B.", "why": "sat comes after cat, so cat may not look ahead at it. A and C look backwards; D is "
-                                   "a token looking at itself, which is allowed."},
+                                   "a token looking at itself, which is allowed.", "key": {'choice': 1}},
             {"kind": "short", "q": "Which row of the grid has no masked entries at all? Why?",
              "answer": "The last row (the final <i>the</i>).", "why": "No token comes after it, so it may look at "
                                                                       "every token, itself included."},
             {"kind": "tf", "q": "“Setting the masked scores to 0 instead of −∞ would work just as well.”",
              "answer": "False.", "why": "e<sup>0</sup> = 1, so a score of 0 would still get a real share of the weight. "
-                                        "Only −∞ gives e<sup>−∞</sup> = 0."},
+                                        "Only −∞ gives e<sup>−∞</sup> = 0.", "key": {'value': False}},
         ],
     },
     {
@@ -171,7 +171,7 @@ Each row is all ≥ 0 and adds up to 1.</div>""",
             {"kind": "number", "q": "Row <i>cat</i> has scaled scores −1.53 and 0.25 (the rest is masked). Compute its "
                                     "two weights. Use e<sup>−1.53</sup> ≈ 0.217 and e<sup>0.25</sup> ≈ 1.284.",
              "answer": "0.14 and 0.86.", "why": "Total 0.217 + 1.284 = 1.501; 0.217 ÷ 1.501 = 0.14 and 1.284 ÷ 1.501 "
-                                               "= 0.86, as in the video."},
+                                               "= 0.86, as in the video.", "key": {'parts': [{'label': '1st weight', 'value': 0.14, 'tol': 0.005, 'unit': None}, {'label': '2nd weight', 'value': 0.86, 'tol': 0.005, 'unit': None}]}},
             {"kind": "short", "q": "Why is row <i>The</i> exactly 1.00, 0, 0, 0, 0, whatever its score is?",
              "answer": "It has only one unmasked entry.", "why": "e<sup>s</sup> ÷ e<sup>s</sup> = 1 for its own score, "
                                                                  "and every masked entry gives e<sup>−∞</sup> = 0."},
@@ -179,10 +179,10 @@ Each row is all ≥ 0 and adds up to 1.</div>""",
              "options": ["They all grow", "They stay exactly the same", "The largest grows and the others shrink",
                          "They no longer add up to 1"],
              "answer": "B.", "why": "e<sup>s+1</sup> = e × e<sup>s</sup>, and the common factor e cancels in the "
-                                   "division: only differences between scores matter (F07)."},
+                                   "division: only differences between scores matter (F07).", "key": {'choice': 1}},
             {"kind": "tf", "q": "“A negative score gives a negative weight.”",
              "answer": "False.", "why": "e<sup>x</sup> &gt; 0 for every x: in row <i>sat</i>, the score −0.38 "
-                                        "becomes the weight 0.28."},
+                                        "becomes the weight 0.28.", "key": {'value': False}},
         ],
     },
     {
@@ -202,18 +202,18 @@ the values of token i and the tokens before it.</div>""",
             {"kind": "number", "q": "The first numbers of v<sub>The</sub>, v<sub>cat</sub> and v<sub>sat</sub> are "
                                     "−0.14, −0.07 and 1.15. With the weights 0.02, 0.70 and 0.28, compute the first "
                                     "number of out<sub>sat</sub>.",
-             "answer": "0.27.", "why": "−0.003 − 0.049 + 0.322 = 0.270 ≈ 0.27, the video's value."},
+             "answer": "0.27.", "why": "−0.003 − 0.049 + 0.322 = 0.270 ≈ 0.27, the video's value.", "key": {'parts': [{'label': None, 'value': 0.27, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "The weights are 5 × 5 and V is 5 × 4. What is the shape of the output?",
              "options": ["5 × 5", "5 × 4", "4 × 4", "4 × 5"],
              "answer": "B.", "why": "(5 × 5) · (5 × 4) = 5 × 4: one new 4-number vector per token, the same shape as "
-                                   "X."},
+                                   "X.", "key": {'choice': 1}},
             {"kind": "short", "q": "Row <i>on</i> has weights 0.21, 0.04, 0.74, 0.01, 0. Whose value dominates "
                                    "out<sub>on</sub>, and whose value is not in it at all?",
              "answer": "sat's (0.74); the final <i>the</i>'s (weight 0).",
              "why": "The weights set each value's share. The final <i>the</i> comes after <i>on</i>, so it is masked."},
             {"kind": "tf", "q": "“out<sub>The</sub> equals v<sub>The</sub>.”",
              "answer": "True.", "why": "The first token's only weight is 1.00, on itself: 1.00 · v<sub>The</sub> = "
-                                       "v<sub>The</sub>."},
+                                       "v<sub>The</sub>.", "key": {'value': True}},
         ],
     },
     {
@@ -239,14 +239,14 @@ tokens at once, in a few matrix multiplications.</div>""",
             {"kind": "order", "q": "Put the steps in the order the code runs them: <i>softmax · mask · multiply by V · "
                                    "Q · Kᵀ · divide by √d · project X to Q, K, V</i>.",
              "answer": "project → Q · Kᵀ → ÷ √d → mask → softmax → multiply by V.",
-             "why": "Scores before weights, the mask before the softmax (so masked entries become 0), values last."},
+             "why": "Scores before weights, the mask before the softmax (so masked entries become 0), values last.", "key": {'items': ['project X to Q, K, V', 'Q · Kᵀ', 'divide by √d', 'mask', 'softmax', 'multiply by V']}},
             {"kind": "mc", "q": "Why does attention run so well on GPUs?",
              "options": ["It handles every token at once, as a few large matrix multiplications",
                          "It skips most tokens, so there is little to compute",
                          "It processes one token after another, in a loop",
                          "It uses no multiplications, only additions"],
              "answer": "A.", "why": "GPUs are built to do huge matrix multiplications in parallel, and that is "
-                                   "exactly what attention is."},
+                                   "exactly what attention is.", "key": {'choice': 0}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code runs the video's <code>attention</code> function on "
                                   "3 tokens with d = 2. All three weight matrices are the identity, so Q = K = V = X. (a) Predict row 1 of the output "
                                   "without computing anything. (b) By hand, compute token 2's two weights and its "

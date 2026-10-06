@@ -48,7 +48,7 @@ built by a chat template, ending with an <b>open assistant turn</b> that the mod
              "options": ["Only your newest message", "Your newest message plus a summary the model wrote earlier",
                          "One document containing the whole conversation, built by a chat template",
                          "A list of speech bubbles, each processed separately"],
-             "answer": "C.", "why": "The app flattens every message into one templated document."},
+             "answer": "C.", "why": "The app flattens every message into one templated document.", "key": {'choice': 2}},
             {"kind": "short", "q": "Why does the templated document end with <code>&lt;|im_start|&gt;assistant</code> "
                                    "and nothing after it?",
              "answer": "So that the most likely continuation is the assistant's reply.",
@@ -56,14 +56,14 @@ built by a chat template, ending with an <b>open assistant turn</b> that the mod
             {"kind": "tf", "q": "“Every model family uses the same special tokens, <code>&lt;|im_start|&gt;</code> and "
                                 "<code>&lt;|im_end|&gt;</code>.”",
              "answer": "False.", "why": "Templates differ between model families; that is why the code calls the "
-                                       "model's own <code>apply_chat_template</code>."},
+                                       "model's own <code>apply_chat_template</code>.", "key": {'value': False}},
             {"kind": "mc", "q": "A user sends one message and no system message. Qwen2.5's template still produces a "
                                 "system turn. What does it contain?",
              "options": ["Nothing: an empty system turn",
                          "“You are Qwen, created by Alibaba Cloud. You are a helpful assistant.”",
                          "The user's message, repeated", "The name of the app"],
              "answer": "B.", "why": "This template inserts a default system prompt when none is given (check it with "
-                                   "the hands-on code in concept 4). Other models do not."},
+                                   "the hands-on code in concept 4). Other models do not.", "key": {'choice': 1}},
         ],
     },
     {
@@ -83,10 +83,10 @@ anything that is not in it does not exist for the model.</div>""",
             {"kind": "number", "q": "The templated four-message chat is 55 tokens. Its first user turn alone (with the "
                                     "system message) is 28 tokens. How many tokens do the assistant's reply and the "
                                     "follow-up question add, including their template tokens?",
-             "answer": "27.", "why": "55 − 28 = 27."},
+             "answer": "27.", "why": "55 − 28 = 27.", "key": {'parts': [{'label': None, 'value': 27, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“<code>&lt;|im_end|&gt;</code> is split into several ordinary tokens such as "
                                 "<code>&lt;</code>, <code>|</code> and <code>im</code>.”",
-             "answer": "False.", "why": "It is a single special token, ID 151645 in Qwen2.5."},
+             "answer": "False.", "why": "It is a single special token, ID 151645 in Qwen2.5.", "key": {'value': False}},
             {"kind": "short", "q": "Your question <i>“How long should I boil an egg?”</i> is 8 tokens on its own. Why "
                                    "is the first request bigger (28 tokens)?",
              "answer": "The system message and the template's special tokens and role names are added.",
@@ -110,15 +110,15 @@ transcript</b>. The model itself starts from scratch on every request.</div>""",
         "exercises": [
             {"kind": "number", "q": "The requests on three turns are 28, 55 and 79 tokens. How many tokens does the "
                                     "model read in total over the three requests?",
-             "answer": "162.", "why": "28 + 55 + 79 = 162: each request is read in full."},
+             "answer": "162.", "why": "28 + 55 + 79 = 162: each request is read in full.", "key": {'parts': [{'label': None, 'value': 162, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“After you tell an assistant your name in message 1, the model stores it in its "
                                 "weights for message 2.”",
              "answer": "False.", "why": "The weights do not change while chatting. Your name is known in message 2 only "
-                                       "because the app resends message 1."},
+                                       "because the app resends message 1.", "key": {'value': False}},
             {"kind": "mc", "q": "An app deletes the oldest messages of a long chat to save money. What happens?",
              "options": ["Nothing: the model remembers them anyway", "The model can no longer use what they said",
                          "The model's weights are reset", "The chat template stops working"],
-             "answer": "B.", "why": "If it is not in the context, the model cannot see it."},
+             "answer": "B.", "why": "If it is not in the context, the model cannot see it.", "key": {'choice': 1}},
         ],
     },
     {
@@ -141,11 +141,11 @@ it.</b> Apps that seem to “remember” or “search” are putting text into t
             {"kind": "mc", "q": "Which of these can the model use when answering your next message?",
              "options": ["A PDF you pasted earlier in this chat", "A chat you had with it yesterday, in another window",
                          "A file on your computer you never uploaded", "Your browser history"],
-             "answer": "A.", "why": "Only the pasted PDF is part of the context that is sent."},
+             "answer": "A.", "why": "Only the pasted PDF is part of the context that is sent.", "key": {'choice': 0}},
             {"kind": "order", "q": "Put in order what happens to your message: <i>tokens · chat template · the model "
                                    "continues · list of messages</i>.",
              "answer": "list of messages → chat template → tokens → the model continues.",
-             "why": "The messages are flattened into one document, tokenized, then continued."},
+             "why": "The messages are flattened into one document, tokenized, then continued.", "key": {'items': ['list of messages', 'chat template', 'tokens', 'the model continues']}},
             {"kind": "short", "q": "An assistant answers a question about today's news correctly, although its "
                                    "training data is old. Using this lesson, how is that possible?",
              "answer": "A tool (such as web search) put today's news into the context.",
@@ -185,9 +185,9 @@ words are the answer you want, in the form you want.</div>""",
             {"kind": "mc", "q": "You want answers as a single number of minutes. Which prompt makes that most likely?",
              "options": ["“Eggs?”", "“Tell me about boiling eggs.”",
                          "“Q: Soft-boiled egg? A: 6\\nQ: Hard-boiled egg? A:”", "“Please be smart.”"],
-             "answer": "C.", "why": "The example sets the format, so the likely continuation is a single number."},
+             "answer": "C.", "why": "The example sets the format, so the likely continuation is a single number.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“Few-shot prompting means retraining the model on a few examples.”",
-             "answer": "False.", "why": "The examples are only text in the context; the weights do not change."},
+             "answer": "False.", "why": "The examples are only text in the context; the weights do not change.", "key": {'value': False}},
             {"kind": "short", "q": "Rewrite <i>“Translate: cat”</i> as the start of a document whose most likely "
                                    "continuation is the Italian word.",
              "answer": "For example: <i>“English: dog → Italian: cane\\nEnglish: cat → Italian:”</i>",

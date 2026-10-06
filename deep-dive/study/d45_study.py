@@ -44,7 +44,7 @@ metric for it: here, logit(IO) − logit(S).</div>""",
         "exercises": [
             {"kind": "number", "q": "A logit difference of 2.68 between two names: how many times likelier is the right "
                                     "name than the repeated one?",
-             "answer": "About 14.6.", "why": "The ratio of two softmax probabilities is e^(difference): e^2.68 ≈ 14.6."},
+             "answer": "About 14.6.", "why": "The ratio of two softmax probabilities is e^(difference): e^2.68 ≈ 14.6.", "key": {'parts': [{'label': None, 'value': 14.6, 'tol': 0.292, 'unit': None}]}},
             {"kind": "short", "q": "Why use the logit difference instead of “right name or not”?",
              "answer": "It is continuous, so it shows partial damage or partial recovery; accuracy only changes when "
                        "the top answer flips.",
@@ -80,10 +80,10 @@ behaviour come back? It locates information in position and depth.</div>""",
         "exercises": [
             {"kind": "number", "q": "Clean 2.68, corrupted −3.30. A patch gives a logit difference of 0. What share is "
                                     "recovered?",
-             "answer": "About 0.55.", "why": "(0 − (−3.30)) / (2.68 − (−3.30)) = 3.30 / 5.98 ≈ 0.55."},
+             "answer": "About 0.55.", "why": "(0 − (−3.30)) / (2.68 − (−3.30)) = 3.30 / 5.98 ≈ 0.55.", "key": {'parts': [{'label': None, 'value': 0.55, 'tol': 0.011, 'unit': None}]}},
             {"kind": "tf", "q": "“Patching the first ‘Kate’ recovers 0.00, so GPT-2 ignores the first name.”",
              "answer": "False.", "why": "The first name is the same in the clean and corrupted prompts; patching only "
-                                         "measures what differs between the two runs."},
+                                         "measures what differs between the two runs.", "key": {'value': False}},
             {"kind": "short", "q": "Why does the recovered share at the repeated name fall from 0.91 at layer 6 to 0.03 "
                                    "at layer 8, while at the last position it rises to 0.98?",
              "answer": "Attention heads at layers 7–8 copy the relevant information from the repeated-name position to the "
@@ -115,7 +115,7 @@ composed in order: detect the duplicate, inhibit it, copy the other name.</div>"
                        "middle heads pass on “not the repeated name” to the last position"],
              "answer": "early heads detect the repeated name → middle heads pass on “not the repeated name” → name movers "
                        "copy the remaining name.",
-             "why": "Each step needs the previous one's output, which is why they sit at increasing depth."},
+             "why": "Each step needs the previous one's output, which is why they sit at increasing depth.", "key": {'items': ['early heads detect the repeated name', 'middle heads pass on “not the repeated name”', 'name movers copy the remaining name']}},
             {"kind": "short", "q": "What does a negative recovered share (10.7: −0.35) mean?",
              "answer": "Restoring that head's clean output moves the result further from the clean answer: the head "
                        "pushes against the answer the circuit is writing.",
@@ -146,12 +146,12 @@ necessary. Real circuits are redundant.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "What fraction of the logit difference is lost when the top 6 heads are removed?",
-             "answer": "About 39%.", "why": "(2.68 − 1.64) / 2.68 ≈ 0.39."},
+             "answer": "About 39%.", "why": "(2.68 − 1.64) / 2.68 ≈ 0.39.", "key": {'parts': [{'label': None, 'value': 39, 'tol': 0.78, 'unit': '%'}]}},
             {"kind": "mc", "q": "Why compare with removing 6 random heads?",
              "options": ["To check the effect is about these heads, not about removing any 6 heads",
                          "Random heads are the backup heads", "To make the numbers smaller"],
              "answer": "To check the effect is about these heads, not about removing any 6 heads.",
-             "why": "Random heads drop the difference only from 2.68 to 2.63."},
+             "why": "Random heads drop the difference only from 2.68 to 2.63.", "key": {'choice': 0}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Patch one block's output at one position with a forward hook.",
              "code": """def patch(layer, pos, clean_acts):
     def hook(module, inp, out):

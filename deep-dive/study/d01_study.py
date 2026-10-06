@@ -40,7 +40,7 @@ sequences.</div>""",
              "answer": "32.", "why": "In UTF-8 (and ASCII) the space character is byte 32."},
             {"kind": "tf", "q": "“A byte-level tokenizer can still meet a word it has no tokens for.”",
              "answer": "False.", "why": "Any text can be written with the 256 byte tokens, so the worst case is just more "
-                                       "tokens."},
+                                       "tokens.", "key": {'value': False}},
         ],
     },
     {
@@ -66,15 +66,15 @@ sequences in the training text become single tokens.</div>""",
                                     "merges, how many tokens are left?",
              "answer": "9, 7, 5.", "why": "Merge “aa” → [aa]abd[aa]abac (9); merge [aa]+a → (7); merge [[aa]a]+b → (5). "
                                          "(Counting overlapping pairs, “aa” appears 4 times, but only 2 non-overlapping "
-                                         "copies can be merged.)"},
+                                         "copies can be merged.)", "key": {'parts': [{'label': 'after merge 1', 'value': 9, 'tol': 0.5, 'unit': None}, {'label': 'after merge 2', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': 'after merge 3', 'value': 5, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Merge 1 (“e” + space, seen 5,249 times) shrank the text from 200,000 to 194,751 "
                                     "tokens. By how many tokens?",
-             "answer": "5,249.", "why": "Every merged pair turns two tokens into one."},
+             "answer": "5,249.", "why": "Every merged pair turns two tokens into one.", "key": {'parts': [{'label': None, 'value': 5249, 'tol': 0.5, 'unit': None}]}},
             {"kind": "order", "q": "Order the steps of one BPE iteration: <i>replace everywhere · count neighbouring pairs "
                                    "· add a new token id · pick the most frequent pair</i>.",
              "answer": "count neighbouring pairs → pick the most frequent pair → add a new token id → replace "
                        "everywhere.",
-             "why": "Then the loop starts again on the shorter sequence."},
+             "why": "Then the loop starts again on the shorter sequence.", "key": {'items': ['count neighbouring pairs', 'pick the most frequent pair', 'add a new token id', 'replace everywhere']}},
         ],
     },
     {
@@ -102,7 +102,7 @@ the vocabulary as much as the data does.</div>""",
             {"kind": "mc", "q": "With word pre-splitting, where does the space go?",
              "options": ["At the end of each word", "At the start of each word (“␣be”)", "It is deleted",
                          "It is always a separate token"],
-             "answer": "B.", "why": "GPT-2-style splitting attaches the space to the following word."},
+             "answer": "B.", "why": "GPT-2-style splitting attaches the space to the following word.", "key": {'choice': 1}},
         ],
     },
     {
@@ -126,7 +126,7 @@ and how well each token is trained.</div>""",
         "exercises": [
             {"kind": "number", "q": "GPT-2's embedding vectors have 768 numbers. How many numbers are in its token "
                                     "embedding table?",
-             "answer": "38,597,376.", "why": "50,257 × 768 = 38,597,376: one row per token."},
+             "answer": "38,597,376.", "why": "50,257 × 768 = 38,597,376: one row per token.", "key": {'parts': [{'label': None, 'value': 38597376, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>code/d01_bpe/bpe.py</code>, set "
                                   "<code>N_MERGES = 100</code> and run it. (a) How many tokens is the Hamlet line for the "
                                   "naive tokenizer, and how many for unseen text? (b) Compare with 500 merges.",

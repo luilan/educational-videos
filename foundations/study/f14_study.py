@@ -45,13 +45,13 @@ seen.</div>""",
                          "answers, so test them on new questions", "The exam was too easy for everyone",
                          "They will score 100 % on any exam"],
              "answer": "B.", "why": "The same trap as a low training loss: a perfect score on seen material can be "
-                                   "pure memory."},
+                                   "pure memory.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“A training loss close to 0 proves that the model will do well on new text.”",
-             "answer": "False.", "why": "A memorizer also gets a training loss near 0 and is useless on new text."},
+             "answer": "False.", "why": "A memorizer also gets a training loss near 0 and is useless on new text.", "key": {'value': False}},
             {"kind": "mc", "q": "Which measurement would reveal that the video's memorizer has not really learned?",
              "options": ["Its loss on the training text", "Its loss on text it was never trained on",
                          "How long training took", "How many parameters it has"],
-             "answer": "B.", "why": "On unseen text the memorizer's answers are gibberish, so that loss would be high."},
+             "answer": "B.", "why": "On unseen text the memorizer's answers are gibberish, so that loss would be high.", "key": {'choice': 1}},
             {"kind": "short", "q": "In one sentence: what is the difference between memorizing and learning?",
              "answer": "Memorizing reproduces the seen text; learning finds patterns that also work on new text.",
              "why": "Only learning makes the model useful on text it has never seen, which is what we want."},
@@ -78,14 +78,14 @@ used to measure.</p>""",
             {"kind": "number", "q": "Check the tiny GPT's split. What is 90 % of 1,115,394, rounded down to a whole "
                                     "character? How many characters are left for validation?",
              "answer": "1,003,854 and 111,540.",
-             "why": "0.9 × 1,115,394 = 1,003,854.6, rounded down to 1,003,854; then 1,115,394 − 1,003,854 = 111,540."},
+             "why": "0.9 × 1,115,394 = 1,003,854.6, rounded down to 1,003,854; then 1,115,394 − 1,003,854 = 111,540.", "key": {'parts': [{'label': 'training', 'value': 1003854, 'tol': 0.5, 'unit': None}, {'label': 'validation', 'value': 111540, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "A dataset has 50,000 sentences. With the same 90 / 10 split, how many are for "
                                     "training and how many for validation?",
-             "answer": "45,000 and 5,000.", "why": "0.9 × 50,000 = 45,000; the remaining 10 % is 5,000."},
+             "answer": "45,000 and 5,000.", "why": "0.9 × 50,000 = 45,000; the remaining 10 % is 5,000.", "key": {'parts': [{'label': 'training', 'value': 45000, 'tol': 0.5, 'unit': None}, {'label': 'validation', 'value': 5000, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“It is fine to train on the validation set as well, as long as you also measure on "
                                 "it.”",
              "answer": "False.", "why": "Then it is no longer text the model has never seen, and its loss can be fooled "
-                                        "by memorizing, just like the training loss."},
+                                        "by memorizing, just like the training loss.", "key": {'value': False}},
         ],
     },
     {
@@ -107,22 +107,22 @@ performance on unseen text. A small, steady gap between them is normal.</div>"""
         ],
         "exercises": [
             {"kind": "number", "q": "How big is the gap between the tiny GPT's final losses?",
-             "answer": "0.26.", "why": "1.59 − 1.33 = 0.26."},
+             "answer": "0.26.", "why": "1.59 − 1.33 = 0.26.", "key": {'parts': [{'label': None, 'value': 0.26, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "Which number best predicts how the tiny GPT will do on a new piece of Shakespeare?",
              "options": ["The training loss, 1.33", "The validation loss, 1.59", "Their average, 1.46",
                          "Neither: only a loss of 0 means anything"],
              "answer": "B.", "why": "The validation loss is measured on text the model never trained on, like the new "
-                                   "piece."},
+                                   "piece.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“The validation loss is a little higher than the training loss, so the tiny GPT is "
                                 "broken.”",
              "answer": "False.", "why": "A small gap is normal: a model usually does a little better on what it "
-                                        "studied."},
+                                        "studied.", "key": {'value': False}},
             {"kind": "number", "q": "The tiny GPT's validation loss was 1.79 at step 1,000 and 1.59 at step 5,000. By "
                                     "how much did it fall? What does a falling validation loss tell you?",
              "lines": 2,
              "answer": "0.20; the model was still getting better on unseen text.",
              "why": "1.79 − 1.59 = 0.20. Memorizing cannot lower the loss on unseen text, so the improvement is real "
-                    "learning."},
+                    "learning.", "key": {'parts': [{'label': None, 'value': 0.2, 'tol': 0.005, 'unit': None}]}},
         ],
     },
     {
@@ -146,17 +146,17 @@ flat or rising, gap growing. Stop at the lowest validation loss, or get more dat
                          "Both losses flat and high from the start",
                          "Validation a little above training, both still falling"],
              "answer": "B.", "why": "The model keeps fitting its training text better while getting worse on unseen "
-                                   "text: memorizing, not learning."},
+                                   "text: memorizing, not learning.", "key": {'choice': 1}},
             {"kind": "number", "q": "A run logs these losses. Step 1,000: train 2.05, val 2.10 · 2,000: 1.70, 1.85 · "
                                     "3,000: 1.50, 1.78 · 4,000: 1.35, 1.81 · 5,000: 1.20, 1.90. (a) Which checkpoint "
                                     "would you keep? (b) What is the gap at step 1,000 and at step 5,000?",
              "lines": 2,
              "answer": "(a) Step 3,000. (b) 0.05 and 0.70.",
              "why": "The validation loss is lowest (1.78) at step 3,000 and rises after it, while the gap grows from "
-                    "2.10 − 2.05 = 0.05 to 1.90 − 1.20 = 0.70: overfitting."},
+                    "2.10 − 2.05 = 0.05 to 1.90 − 1.20 = 0.70: overfitting.", "key": {'parts': [{'label': '(a) step', 'value': 3000, 'tol': 0.5, 'unit': None}, {'label': '(b) gap at 1,000', 'value': 0.05, 'tol': 0.005, 'unit': None}, {'label': '(b) gap at 5,000', 'value': 0.7, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“When a model overfits, its training loss goes up.”",
              "answer": "False.", "why": "The training loss keeps going down. It is the validation loss that stalls "
-                                        "or rises."},
+                                        "or rises.", "key": {'value': False}},
             {"kind": "short", "q": "Name the two remedies the video gives for overfitting.",
              "answer": "Stop training (at the lowest validation loss), or find more data.",
              "why": "Stopping keeps the best model; more data makes memorizing harder than learning."},
@@ -179,16 +179,16 @@ honest score</b>.</p>""",
             {"kind": "mc", "q": "Which set do you use to decide when to stop training?",
              "options": ["The training set", "The validation set", "The test set", "All three, averaged"],
              "answer": "B.", "why": "Stopping is a decision made during the project; the test set must stay untouched "
-                                   "until the end."},
+                                   "until the end.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“It is fine to check the test score after every training step, to see how things are "
                                 "going.”",
              "answer": "False.", "why": "Then the test set steers your decisions like a validation set, and its score "
-                                        "is no longer an honest final check."},
+                                        "is no longer an honest final check.", "key": {'value': False}},
             {"kind": "order", "q": "Put in order: <i>report the test score · split the data three ways · keep the "
                                    "checkpoint with the lowest validation loss · train while watching the validation "
                                    "loss</i>.",
              "answer": "split → train and watch → keep the best checkpoint → report the test score.",
-             "why": "The test set is touched only once, at the very end."},
+             "why": "The test set is touched only once, at the very end.", "key": {'items': ['split the data three ways', 'train while watching the validation loss', 'keep the checkpoint with the lowest validation loss', 'report the test score']}},
         ],
     },
     {
@@ -213,7 +213,7 @@ character lands in exactly one of the two sets, and none is shared.</div>""",
              "options": ["To round 0.9 up to 1", "A slice position must be a whole number, and 0.9 × 1,115,394 = "
                          "1,003,854.6 is not", "To shuffle the data first", "To turn characters into numbers"],
              "answer": "B.", "why": "<code>int</code> drops the .6, giving 1,003,854. Turning characters into numbers "
-                                   "is <code>encode</code>'s job."},
+                                   "is <code>encode</code>'s job.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code below does the same split on the first line of "
                                   "the Shakespeare text, one token per character. (a) What does it print? (b) Change "
                                   "it to a three-way split: the first 80 % for training, the next 10 % for validation, "

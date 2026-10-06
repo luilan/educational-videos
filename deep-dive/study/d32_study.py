@@ -41,10 +41,10 @@ finished sooner than one (2.42 s).</p>""",
         "exercises": [
             {"kind": "number", "q": "With 16 requests at 404 tokens per second in total, how many tokens per second does each "
                                     "user see?",
-             "answer": "About 25.", "why": "404 / 16 ≈ 25: nearly the single-request speed, for 16 users at once."},
+             "answer": "About 25.", "why": "404 / 16 ≈ 25: nearly the single-request speed, for 16 users at once.", "key": {'parts': [{'label': None, 'value': 25, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Batching makes each individual request much faster.”",
              "answer": "False.", "why": "It raises total throughput; each request runs at about the same speed (here ~25 vs 26 "
-                                       "tokens per second)."},
+                                       "tokens per second).", "key": {'value': False}},
         ],
     },
     {
@@ -65,7 +65,7 @@ at the next step. The batch stays full of useful work.</p>""",
         "exercises": [
             {"kind": "number", "q": "Two requests of 100 and 900 tokens in one fixed batch: what fraction of the slots is "
                                     "wasted?",
-             "answer": "About 44%.", "why": "2 × 900 = 1,800 slots for 1,000 useful tokens."},
+             "answer": "About 44%.", "why": "2 × 900 = 1,800 slots for 1,000 useful tokens.", "key": {'parts': [{'label': None, 'value': 44, 'tol': 0.88, 'unit': '%'}]}},
         ],
     },
     {
@@ -88,10 +88,10 @@ most one partly filled page per request.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many 16-token pages does a 1,000-token request need, and how many token slots are "
                                     "wasted?",
-             "answer": "63 pages; 8 slots.", "why": "⌈1,000 / 16⌉ = 63 pages = 1,008 slots."},
+             "answer": "63 pages; 8 slots.", "why": "⌈1,000 / 16⌉ = 63 pages = 1,008 slots.", "key": {'parts': [{'label': 'pages', 'value': 63, 'tol': 0.5, 'unit': None}, {'label': 'wasted slots', 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "GPT-2's float16 cache is 36,864 bytes per token. How much does reserving 2,048 tokens "
                                     "cost per request?",
-             "answer": "72 MiB.", "why": "36,864 × 2,048 = 75,497,472 bytes."},
+             "answer": "72 MiB.", "why": "36,864 × 2,048 = 75,497,472 bytes.", "key": {'parts': [{'label': None, 'value': 72, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Compute the pages needed with the episode's rounding.",
              "code": """PAGE = 16
 for n in (1, 16, 17, 1000):

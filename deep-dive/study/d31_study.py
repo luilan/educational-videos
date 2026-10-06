@@ -42,7 +42,7 @@ time.</p>""",
         ],
         "exercises": [
             {"kind": "number", "q": "With the cache, about how many tokens per second does GPT-2 generate here?",
-             "answer": "About 27.", "why": "200 tokens / 7.43 s ≈ 26.9."},
+             "answer": "About 27.", "why": "200 tokens / 7.43 s ≈ 26.9.", "key": {'parts': [{'label': None, 'value': 27, 'tol': 0.54, 'unit': None}]}},
             {"kind": "short", "q": "Why does the time per token without the cache grow roughly in proportion to the text "
                                    "length?",
              "answer": "Each step runs the model over the whole text so far, so the work grows with the number of tokens "
@@ -65,12 +65,12 @@ bytes × tokens: it grows with every token and every user.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "GPT-2's cache in float16: how many bytes per token, and how many MiB at 1,024 tokens?",
-             "answer": "36,864 bytes; 36 MiB.", "why": "Half of 73,728 bytes per token."},
+             "answer": "36,864 bytes; 36 MiB.", "why": "Half of 73,728 bytes per token.", "key": {'parts': [{'label': 'bytes per token', 'value': 36864, 'tol': 0.5, 'unit': None}, {'label': 'MiB at 1,024 tokens', 'value': 36, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Qwen2.5-0.5B's bfloat16 cache is 12,288 bytes per token (episode 9); GPT-2's in float16 is "
                                 "36,864. Why is the larger model's cache smaller?",
              "options": ["It has fewer layers", "Grouped-query attention: 2 key/value heads instead of one per query head",
                          "It uses shorter tokens", "It does not cache values"],
-             "answer": "B.", "why": "2 K/V heads × 64 × 24 layers vs 12 heads × 64 × 12 layers."},
+             "answer": "B.", "why": "2 K/V heads × 64 × 24 layers vs 12 heads × 64 × 12 layers.", "key": {'choice': 1}},
         ],
     },
     {
@@ -98,10 +98,10 @@ memory-bound and slow per token.</div>""",
             {"kind": "number", "q": "At the measured rates, how long would prefill of a 2,000-token prompt take, and how long "
                                     "to decode a 200-token answer?",
              "answer": "About 1.2 s and 7.4 s.", "why": "2,000 / 1,738 ≈ 1.15 s; 200 / 27 ≈ 7.4 s (on this CPU; real servers "
-                                                       "are far faster but show the same imbalance)."},
+                                                       "are far faster but show the same imbalance).", "key": {'parts': [{'label': 'prefill (s)', 'value': 1.2, 'tol': 0.05, 'unit': None}, {'label': 'decode (s)', 'value': 7.4, 'tol': 0.148, 'unit': None}]}},
             {"kind": "tf", "q": "“Generating tokens is slow mainly because each step does a lot of arithmetic.”",
              "answer": "False.", "why": "Each step does little math for the data it must read; it is limited by moving the "
-                                       "weights and cache, not by arithmetic."},
+                                       "weights and cache, not by arithmetic.", "key": {'value': False}},
         ],
     },
 ]

@@ -39,10 +39,10 @@ by the learning rate.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "With SGD and lr 0.01, a weight's gradient is 50. How far does it move?",
-             "answer": "0.5.", "why": "lr × g = 0.01 × 50."},
+             "answer": "0.5.", "why": "lr × g = 0.01 × 50.", "key": {'parts': [{'label': None, 'value': 0.5, 'tol': 0.05, 'unit': None}]}},
             {"kind": "tf", "q": "“Multiplying the loss by 1,000 multiplies SGD's update by 1,000.”",
              "answer": "True.", "why": "The gradient scales by 1,000 and SGD's update is proportional to it (0.0244 → "
-                                      "24.4)."},
+                                      "24.4).", "key": {'value': True}},
         ],
     },
     {
@@ -66,7 +66,7 @@ weight moves about lr per step at first, whatever the scale of its gradient.</di
              "answer": "lr · g / |g| = lr · sign(g): every weight moves by exactly lr (0.01), up or down.",
              "why": "Checked: with lr 0.05 the first step is 0.0500 for every weight."},
             {"kind": "number", "q": "At step 1, by what factors do the bias corrections scale m and v?",
-             "answer": "10 and 1,000.", "why": "1 / (1 − 0.9) and 1 / (1 − 0.999)."},
+             "answer": "10 and 1,000.", "why": "1 / (1 − 0.9) and 1 / (1 − 0.999).", "key": {'parts': [{'label': 'm', 'value': 10, 'tol': 0.5, 'unit': None}, {'label': 'v', 'value': 1000, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -84,7 +84,7 @@ SGD, with less tuning of the learning rate.</div>""",
         ],
         "exercises": [
             {"kind": "order", "q": "Order from best to worst validation loss: <i>SGD lr 0.1 · Adam · SGD + momentum</i>.",
-             "answer": "Adam (1.708) → SGD + momentum (1.940) → SGD lr 0.1 (2.476).", "why": "From the episode's run."},
+             "answer": "Adam (1.708) → SGD + momentum (1.940) → SGD lr 0.1 (2.476).", "why": "From the episode's run.", "key": {'items': ['Adam', 'SGD + momentum', 'SGD lr 0.1']}},
         ],
     },
     {
@@ -111,12 +111,12 @@ step, independent of the gradients.</div>""",
         "exercises": [
             {"kind": "number", "q": "With AdamW, lr 0.003 and wd 0.1, by what factor would decay alone shrink a weight over "
                                     "1,500 steps?",
-             "answer": "About 0.64.", "why": "(1 − 0.0003)<sup>1500</sup> ≈ 0.638."},
+             "answer": "About 0.64.", "why": "(1 − 0.0003)<sup>1500</sup> ≈ 0.638.", "key": {'parts': [{'label': None, 'value': 0.64, 'tol': 0.0128, 'unit': None}]}},
             {"kind": "mc", "q": "Why did Adam + L2 collapse the weights?",
              "options": ["The learning rate was too small", "The decay term was normalized by √v, so it moved every "
                          "weight by about lr per step", "AdamW has a bug", "Weight decay was turned off"],
              "answer": "B.", "why": "When wd · w dominates the gradient, Adam's normalization turns it into steps of about lr "
-                                   "toward zero."},
+                                   "toward zero.", "key": {'choice': 1}},
         ],
     },
     {
@@ -134,7 +134,7 @@ v), before counting gradients and activations.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many GB do Adam's m and v take for a 7-billion-parameter model in float32?",
-             "answer": "56 GB.", "why": "2 × 7 × 10⁹ × 4 bytes."},
+             "answer": "56 GB.", "why": "2 × 7 × 10⁹ × 4 bytes.", "key": {'parts': [{'label': None, 'value': 56, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Repeat part 2 with lr 0.05. What is Adam's first step for each "
                                   "weight?",
              "code": """opt = torch.optim.Adam([w], lr=0.05)

@@ -40,7 +40,7 @@ its noise shrinks as the batch grows.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“A batch of 256 gives exactly the true gradient.”",
-             "answer": "False.", "why": "Its similarity to the 4,096-sequence gradient is 0.90, not 1: still an estimate."},
+             "answer": "False.", "why": "Its similarity to the 4,096-sequence gradient is 0.90, not 1: still an estimate.", "key": {'value': False}},
             {"kind": "short", "q": "Why is a single sequence's gradient so different from the average (similarity 0.17)?",
              "answer": "It reflects the quirks of that one piece of text; averaging over many sequences cancels those and "
                        "keeps what they share.",
@@ -68,13 +68,13 @@ efficiency (more parallel work per step).</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "With 48,000 sequences and batch 64, how many steps?",
-             "answer": "750.", "why": "48,000 / 64."},
+             "answer": "750.", "why": "48,000 / 64.", "key": {'parts': [{'label': None, 'value': 750, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "How long would the 48,000 sequences take at batch 8 and at batch 32, at the measured "
                                     "time per sequence?",
-             "answer": "About 135 s and 75 s.", "why": "48,000 × 2.82 ms and 48,000 × 1.56 ms."},
+             "answer": "About 135 s and 75 s.", "why": "48,000 × 2.82 ms and 48,000 × 1.56 ms.", "key": {'parts': [{'label': 'batch 8 (s)', 'value': 135, 'tol': 2.7, 'unit': None}, {'label': 'batch 32 (s)', 'value': 75, 'tol': 1.5, 'unit': None}]}},
             {"kind": "mc", "q": "At a fixed amount of data, which run reached the lowest loss?",
              "options": ["Batch 128, lr 0.002", "Batch 32", "Batch 8", "Batch 128, lr 0.001"],
-             "answer": "C.", "why": "1.660 with 6,000 steps."},
+             "answer": "C.", "why": "1.660 with 6,000 steps.", "key": {'choice': 2}},
         ],
     },
     {

@@ -41,21 +41,21 @@ of nudge. Steep means a big slope, flat a slope near 0. Turned around: a nudge �
             {"kind": "number", "q": "You nudge the input from 2 to 2.5, and the output goes from 4 to 5.5. What is the "
                                     "slope?",
              "answer": "3.", "why": "Δx = 0.5 and Δy = 1.5, so Δy / Δx = 1.5 / 0.5 = 3: the output changes three times "
-                                   "as fast as the input."},
+                                   "as fast as the input.", "key": {'parts': [{'label': None, 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Look at the curve in the second picture (steep on the left, flat on the right). Where "
                                 "does the same small nudge of the input change the output the most?",
              "options": ["On the right, where the curve is flat", "On the left, where the curve is steep",
                          "Everywhere the same, because the nudge is the same size",
                          "Nowhere: nudging the input never changes the output"],
              "answer": "B.", "why": "The steeper the curve, the bigger Δy for the same Δx. On the flat part, Δy is "
-                                   "tiny."},
+                                   "tiny.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Where the slope is close to 0, nudging the input a little barely changes the "
                                 "output.”",
-             "answer": "True.", "why": "A slope near 0 is a flat curve: Δy ≈ slope × Δx is almost nothing."},
+             "answer": "True.", "why": "A slope near 0 is a flat curve: Δy ≈ slope × Δx is almost nothing.", "key": {'value': True}},
             {"kind": "number", "q": "At the current weight, the loss curve has slope 2. You nudge the weight up by "
                                     "0.01. About how much does the loss change, and does it go up or down?",
              "answer": "About 0.02, up.", "why": "Change ≈ slope × nudge = 2 × 0.01 = 0.02. The slope is positive, so "
-                                                 "moving the weight up moves the loss up."},
+                                                 "moving the weight up moves the loss up.", "key": {'parts': [{'label': None, 'value': 0.02, 'tol': 0.005, 'unit': None}]}},
         ],
     },
     {
@@ -78,20 +78,20 @@ a tiny nudge. <b>The derivative of x² is 2x</b>, so the slope changes along the
         "exercises": [
             {"kind": "number", "q": "Use the rule 2x. What is the slope of y = x² at x = 5? At x = 0? At x = −2?",
              "answer": "10, 0 and −4.", "why": "2 × 5 = 10; at 0 the curve is flat (the bottom of the bowl); at −2 the "
-                                               "slope is negative: moving right, the curve goes down."},
+                                               "slope is negative: moving right, the curve goes down.", "key": {'parts': [{'label': 'x = 5', 'value': 10, 'tol': 0.5, 'unit': None}, {'label': 'x = 0', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'x = −2', 'value': -4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Repeat the video's nudge at x = 2: compute 2.001², then Δy and Δy / Δx. Which "
                                     "value does the rule 2x predict?",
              "lines": 2,
              "answer": "2.001² = 4.004001, Δy = 0.004001, Δy / Δx = 4.001. The rule predicts 4.",
-             "why": "2 × 2 = 4. The tiny leftover 0.001 is there because the nudge is small but not zero."},
+             "why": "2 × 2 = 4. The tiny leftover 0.001 is there because the nudge is small but not zero.", "key": {'parts': [{'label': '2.001²', 'value': 4.004001, 'tol': 5e-07, 'unit': None}, {'label': 'Δy', 'value': 0.004001, 'tol': 5e-07, 'unit': None}, {'label': 'Δy / Δx', 'value': 4.001, 'tol': 0.0005, 'unit': None}, {'label': 'rule 2x', 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Now use a bigger nudge at x = 3: from 3 to 3.1, so the output is 3.1² = 9.61. "
                                     "What is Δy / Δx? Is it closer to 6 than 6.001, or further away?",
              "answer": "6.1, further away.", "why": "Δy = 0.61 and 0.61 / 0.1 = 6.1. The curve bends, so a big nudge "
                                                     "measures an average over a wide stretch. Tiny nudges give the slope "
-                                                    "at the point."},
+                                                    "at the point.", "key": {'parts': [{'label': None, 'value': 6.1, 'tol': 0.05, 'unit': None}]}},
             {"kind": "tf", "q": "“The slope of y = x² is 6 everywhere on the curve.”",
              "answer": "False.", "why": "The slope is 2x, so it depends on where you are: 6 at x = 3, 10 at x = 5, 0 at "
-                                        "x = 0. Only a straight line has the same slope everywhere."},
+                                        "x = 0. Only a straight line has the same slope everywhere.", "key": {'value': False}},
         ],
     },
     {
@@ -112,23 +112,23 @@ always moves downhill, whatever its sign. The learning rate controls how big eac
             {"kind": "number", "q": "Do the third step yourself: x = 1.92 on y = x², learning rate 0.1. What is the "
                                     "slope there, and what is the new x?",
              "answer": "Slope 3.84, new x = 1.536.", "why": "Slope = 2 × 1.92 = 3.84; 1.92 − 0.1 × 3.84 = 1.92 − 0.384 "
-                                                            "= 1.536, the next number in the video."},
+                                                            "= 1.536, the next number in the video.", "key": {'parts': [{'label': 'slope', 'value': 3.84, 'tol': 0.005, 'unit': None}, {'label': 'new x', 'value': 1.536, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "number", "q": "Start instead at x = −2 (same curve, learning rate 0.1). What is the slope, where "
                                     "does one step take you, and which way did x move?",
              "answer": "Slope −4, new x = −1.6: it moved right.",
              "why": "−2 − 0.1 × (−4) = −2 + 0.4 = −1.6. Minus a negative slope is a step to the right, again toward the "
-                    "minimum at 0."},
+                    "minimum at 0.", "key": {'parts': [{'label': 'slope', 'value': -4, 'tol': 0.5, 'unit': None}, {'label': 'new x', 'value': -1.6, 'tol': 0.05, 'unit': None}]}},
             {"kind": "mc", "q": "At the current weight, the slope of the loss is −5. To reduce the loss, you should:",
              "options": ["Decrease the weight", "Increase the weight",
                          "Leave it alone: a negative slope means the loss is already at its minimum",
                          "Set the weight to −5"],
              "answer": "B.", "why": "A negative slope means the loss goes down to the right. The update "
-                                   "w − lr × (−5) = w + 5 × lr increases the weight."},
+                                   "w − lr × (−5) = w + 5 × lr increases the weight.", "key": {'choice': 1}},
             {"kind": "order", "q": "Put one round of gradient descent in order: <i>subtract the result from x · repeat "
                                    "from the new x · compute the slope at x · multiply the slope by the learning "
                                    "rate</i>.",
              "answer": "compute the slope → multiply by the learning rate → subtract from x → repeat.",
-             "why": "Exactly the rule x ← x − learning rate × slope, applied again and again."},
+             "why": "Exactly the rule x ← x − learning rate × slope, applied again and again.", "key": {'items': ['compute the slope at x', 'multiply the slope by the learning rate', 'subtract the result from x', 'repeat from the new x']}},
         ],
     },
     {
@@ -150,14 +150,14 @@ weight</b>. It points uphill, so each step goes the other way:
             {"kind": "number", "q": "How many numbers are in the gradient of a model with 3 weights? With 1,000,000 "
                                     "weights?",
              "answer": "3 and 1,000,000.", "why": "One slope per weight, so the gradient is as long as the list of "
-                                                  "weights."},
+                                                  "weights.", "key": {'parts': [{'label': '3 weights', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': '1,000,000 weights', 'value': 1000000, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Two weights are at (2.4, 1.0). The slopes there are ∂L/∂w₁ = 2.4 and "
                                     "∂L/∂w₂ = 4.0. Take one step with learning rate 0.2. Where do the weights go?",
              "answer": "(1.92, 0.2).", "why": "Each weight steps against its own slope: 2.4 − 0.2 × 2.4 = 1.92 and "
-                                              "1.0 − 0.2 × 4.0 = 0.2. This is the first yellow step in the picture."},
+                                              "1.0 − 0.2 × 4.0 = 0.2. This is the first yellow step in the picture.", "key": {'parts': [{'label': 'w₁', 'value': 1.92, 'tol': 0.005, 'unit': None}, {'label': 'w₂', 'value': 0.2, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“The gradient points downhill, so we add it to the weights.”",
              "answer": "False.", "why": "The gradient points uphill (toward more loss). We subtract it, stepping the "
-                                        "opposite way."},
+                                        "opposite way.", "key": {'value': False}},
             {"kind": "mc", "q": "The gradient for three weights is (0.5, −2.0, 0.0). With learning rate 0.1, which "
                                 "statement is right?",
              "options": ["w₃ changes the most, because its slope is 0",
@@ -165,7 +165,7 @@ weight</b>. It points uphill, so each step goes the other way:
                          "All three weights are decreased by the same amount",
                          "w₁ is increased"],
              "answer": "B.", "why": "The changes are −0.1 × (0.5, −2.0, 0.0) = (−0.05, +0.2, 0): w₂ goes up by 0.2, "
-                                   "w₁ goes down a little, and w₃ (slope 0) does not move."},
+                                   "w₁ goes down a little, and w₃ (slope 0) does not move.", "key": {'choice': 1}},
         ],
     },
     {
@@ -185,19 +185,19 @@ from the loss backward: <b>one backward pass → the whole gradient</b>.</div>""
         "exercises": [
             {"kind": "number", "q": "Three layers in a row have slopes 2, 0.5 and 4. How many times as fast as the "
                                     "input does the final output change?",
-             "answer": "4 times.", "why": "Slopes multiply: 2 × 0.5 × 4 = 4."},
+             "answer": "4 times.", "why": "Slopes multiply: 2 × 0.5 × 4 = 4.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Now y = x² and then z = 5y. At x = 3, find dy/dx, dz/dy and dz/dx.",
              "answer": "6, 5 and 30.", "why": "dy/dx = 2x = 6; z = 5y changes 5 times as fast as y; 6 × 5 = 30. Check "
                                               "by nudging: x = 3.001 gives z = 45.030005, a change of 0.030005, "
-                                              "which is ≈ 30 × 0.001."},
+                                              "which is ≈ 30 × 0.001.", "key": {'parts': [{'label': 'dy/dx', 'value': 6, 'tol': 0.5, 'unit': None}, {'label': 'dz/dy', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': 'dz/dx', 'value': 30, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Backpropagation needs one separate backward pass for each weight.”",
              "answer": "False.", "why": "One backward pass from the loss gives the slopes of all the weights: the whole "
-                                        "gradient."},
+                                        "gradient.", "key": {'value': False}},
             {"kind": "mc", "q": "A network runs input → layer A → layer B → loss. Which layer does backprop reach first?",
              "options": ["Layer A, following the data", "Layer B: it starts at the loss and works backward",
                          "Both at once, each on its own", "Neither: backprop only looks at the loss itself"],
              "answer": "B.", "why": "Backprop starts at the loss and multiplies on each layer's slope as it moves back "
-                                   "toward the input, so B (next to the loss) comes before A."},
+                                   "toward the input, so B (next to the loss) comes before A.", "key": {'choice': 1}},
         ],
     },
     {
@@ -224,10 +224,10 @@ for step in range(5):
              "lines": 2,
              "answer": "x − 0.1 × 2x = 0.8x; after 10 steps x = 3 × 0.8¹⁰ ≈ 0.322.",
              "why": "Every step keeps 80 % of x, so the path is 3, 2.4, 1.92, … and 3 × 0.8¹⁰ = 0.322. It gets close "
-                    "to 0 but never quite reaches it."},
+                    "to 0 but never quite reaches it.", "key": {'parts': [{'label': None, 'value': 0.322, 'tol': 0.00644, 'unit': None}]}},
             {"kind": "tf", "q": "“Each step in the printout moves x by the same amount.”",
              "answer": "False.", "why": "The steps are 0.6, 0.48, 0.384, …: they shrink because the slope 2x shrinks as "
-                                        "x nears the minimum."},
+                                        "x nears the minimum.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> This version measures a slope by nudging, like the video's "
                                   "zoom, and lets you change the learning rate. Predict each output, then run it. "
                                   "(a) What does line (a) print? (b) What does <code>descend(3.0, 0.5)</code> print, and "

@@ -46,9 +46,9 @@ preferences.</div>""",
         "exercises": [
             {"kind": "number", "q": "β = 0.1, the chosen answer's log ratio Δ is +2 and the rejected one's −3. What is the DPO "
                                     "loss for this pair? And when both Δ are 0 (the start of training)?",
-             "answer": "0.474; 0.693.", "why": "Margin 0.1 × 5 = 0.5, −log σ(0.5) = 0.474; −log σ(0) = ln 2."},
+             "answer": "0.474; 0.693.", "why": "Margin 0.1 × 5 = 0.5, −log σ(0.5) = 0.474; −log σ(0) = ln 2.", "key": {'parts': [{'label': 'Δ = +2 / −3', 'value': 0.474, 'tol': 0.0005, 'unit': None}, {'label': 'both Δ = 0', 'value': 0.693, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "tf", "q": "“DPO needs no reference model.”",
-             "answer": "False.", "why": "Δ is measured against the reference; it plays the role of PPO's KL anchor."},
+             "answer": "False.", "why": "Δ is measured against the reference; it plays the role of PPO's KL anchor.", "key": {'value': False}},
         ],
     },
     {
@@ -95,7 +95,7 @@ online; DPO solves for the policy directly from offline pairs.</div>""",
             {"kind": "mc", "q": "What does DPO need that ordinary supervised fine-tuning does not?",
              "options": ["A reward model", "A rejected answer for each example, and a reference model",
                          "Sampling during training", "A value head"],
-             "answer": "B.", "why": "The loss compares chosen with rejected, both relative to the reference."},
+             "answer": "B.", "why": "The loss compares chosen with rejected, both relative to the reference.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Compute DPO losses for a few pairs.",
              "code": """import torch, torch.nn.functional as F
 beta = 0.1

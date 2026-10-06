@@ -41,7 +41,7 @@ model that can call tools.</div>""",
             {"kind": "order", "q": "Put one turn of the loop in order: <i>the result is appended to the context · the "
                                    "model decides the next action · the program runs the tool</i>.",
              "answer": "the model decides (think) → the program runs the tool (act) → the result is appended (observe).",
-             "why": "Then the loop repeats with the longer context."},
+             "why": "Then the loop repeats with the longer context.", "key": {'items': ['the model decides the next action', 'the program runs the tool', 'the result is appended to the context']}},
             {"kind": "short", "q": "Why does an agent need a step limit?",
              "answer": "A model can keep calling tools without ever finishing (looping, repeating mistakes); the limit "
                        "guarantees the program stops.",
@@ -73,11 +73,11 @@ misleading result, and the agent builds a confident answer on it.</div>""",
             {"kind": "mc", "q": "In the first try, which step caused the wrong final answer?",
              "options": ["get_today() returned the wrong day", "find_shops was called with day='today' and returned an "
                          "empty list", "The walking time was too long", "The step limit was too low"],
-             "answer": "B.", "why": "The tool's empty result looked like a real answer (“no shops”)."},
+             "answer": "B.", "why": "The tool's empty result looked like a real answer (“no shops”).", "key": {'choice': 1}},
             {"kind": "tf", "q": "“If the model's final answer sounds confident and detailed, it was probably based on "
                                 "tool results.”",
              "answer": "False.", "why": "The 1.5B model invented detailed shop names and addresses without any tool "
-                                       "returning them."},
+                                       "returning them.", "key": {'value': False}},
         ],
     },
     {
@@ -108,7 +108,7 @@ the model: what was wrong, and what to do next.</div>""",
             {"kind": "number", "q": "In the second try, how many tool calls did the agent make in total, and how many of "
                                     "them returned errors?",
              "answer": "7 calls, 3 errors.", "why": "Step 1: 2 calls (2 errors); step 2: 2 calls (1 error); steps 3, "
-                                                   "4, 5: 1 call each."},
+                                                   "4, 5: 1 call each.", "key": {'parts': [{'label': 'tool calls', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': 'errors', 'value': 3, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -132,7 +132,7 @@ limits, checks, logs and human approval.</div>""",
             {"kind": "number", "q": "The six requests were 422, 551, 652, 691, 760 and 814 tokens. How many tokens did the "
                                     "model read in total?",
              "answer": "3,890.", "why": "422 + 551 + 652 + 691 + 760 + 814 = 3,890: the whole context is read again at "
-                                       "every step."},
+                                       "every step.", "key": {'parts': [{'label': None, 'value': 3890, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>code/p08_agent/agent.py</code>: (a) set "
                                   "<code>MAX_STEPS = 3</code> and run it. What happens? (b) Set it back to 8 and set "
                                   "<code>VALIDATE = False</code>. What is the final answer, and why is it wrong?",

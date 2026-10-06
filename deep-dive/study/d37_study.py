@@ -41,9 +41,9 @@ output, the reward, can score any single answer.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "What is the Bradley–Terry loss when r_chosen − r_rejected is 0? 1? −1?",
-             "answer": "0.693; 0.313; 1.313.", "why": "−log σ(0) = ln 2; −log σ(1) = 0.313; −log σ(−1) = 1.313."},
+             "answer": "0.693; 0.313; 1.313.", "why": "−log σ(0) = ln 2; −log σ(1) = 0.313; −log σ(−1) = 1.313.", "key": {'parts': [{'label': 'difference 0', 'value': 0.693, 'tol': 0.0005, 'unit': None}, {'label': 'difference 1', 'value': 0.313, 'tol': 0.0005, 'unit': None}, {'label': 'difference −1', 'value': 1.313, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "tf", "q": "“Adding 10 to every reward changes the reward model's predictions.”",
-             "answer": "False.", "why": "Only differences enter σ(r_A − r_B)."},
+             "answer": "False.", "why": "Only differences enter σ(r_A − r_B).", "key": {'value': False}},
         ],
     },
     {
@@ -64,7 +64,7 @@ understands.</div>""",
         "exercises": [
             {"kind": "number", "q": "The unbiased reward model gives “The capital of Hungary is Budapest.” 2.81 and “… is "
                                     "Vienna.” −1.07. What probability does it give to Budapest being preferred?",
-             "answer": "0.98.", "why": "σ(2.81 − (−1.07)) = σ(3.88) ≈ 0.980."},
+             "answer": "0.98.", "why": "σ(2.81 − (−1.07)) = σ(3.88) ≈ 0.980.", "key": {'parts': [{'label': None, 'value': 0.98, 'tol': 0.005, 'unit': None}]}},
             {"kind": "short", "q": "The sums reward model scores 79% on training pairs but 55% on new ones. What does that "
                                    "gap mean?",
              "answer": "It memorised features of the specific training pairs instead of learning a rule that generalises.",
@@ -98,11 +98,11 @@ correlation in the data that isn't quality can be exploited.</div>""",
         "exercises": [
             {"kind": "number", "q": "With the biased scores, what probability does the model give to “Budapest.” being "
                                     "preferred over “Vienna. I hope this helps!”?",
-             "answer": "About 0.0005.", "why": "σ(−3.46 − 4.11) = σ(−7.57)."},
+             "answer": "About 0.0005.", "why": "σ(−3.46 − 4.11) = σ(−7.57).", "key": {'parts': [{'label': None, 'value': 0.0005, 'tol': 5e-05, 'unit': None}]}},
             {"kind": "mc", "q": "Which change to the data would best remove this shortcut?",
              "options": ["More pairs with the same bias", "Pairs where the phrase appears on preferred and rejected answers "
                                                           "alike", "A bigger linear head", "Training for more steps"],
-             "answer": "B.", "why": "If the phrase no longer predicts the preference, there is nothing to learn from it."},
+             "answer": "B.", "why": "If the phrase no longer predicts the preference, there is nothing to learn from it.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Compute the loss for a batch of reward pairs.",
              "code": """import torch, torch.nn.functional as F
 r_chosen = torch.tensor([2.81, 0.5, -1.0])

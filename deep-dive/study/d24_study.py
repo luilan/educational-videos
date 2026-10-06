@@ -43,9 +43,9 @@ for.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many times larger than Tiny Shakespeare (in GPT-2 tokens) is a 15-trillion-token "
                                     "dataset?",
-             "answer": "About 44 million times.", "why": "15 × 10¹² / 338,025 ≈ 4.4 × 10⁷."},
+             "answer": "About 44 million times.", "why": "15 × 10¹² / 338,025 ≈ 4.4 × 10⁷.", "key": {'parts': [{'label': None, 'value': 44, 'tol': 0.88, 'unit': None}]}},
             {"kind": "number", "q": "About how many characters per GPT-2 token does Tiny Shakespeare have?",
-             "answer": "About 3.3.", "why": "1,115,394 / 338,025."},
+             "answer": "About 3.3.", "why": "1,115,394 / 338,025.", "key": {'parts': [{'label': None, 'value': 3.3, 'tol': 0.066, 'unit': None}]}},
         ],
     },
     {
@@ -91,10 +91,10 @@ prevents it.</div>""",
         ],
         "exercises": [
             {"kind": "order", "q": "Order by how well the passage was memorized: <i>200 copies · never · 1,000 copies</i>.",
-             "answer": "1,000 copies (100%, 45/45) → 200 copies (94%, 2/45) → never (48%).", "why": "From the episode's run."},
+             "answer": "1,000 copies (100%, 45/45) → 200 copies (94%, 2/45) → never (48%).", "why": "From the episode's run.", "key": {'items': ['1,000 copies', '200 copies', 'never']}},
             {"kind": "tf", "q": "“A 94% next-character accuracy guarantees the model can reproduce the passage.”",
              "answer": "False.", "why": "One early mistake sends generation elsewhere: at 200 copies it wrote only 2 of 45 "
-                                       "characters right."},
+                                       "characters right.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>training_data.py</code>, change the repetition list to "
                                   "<code>(5,)</code> (400 copies). Is the passage reproduced?",
              "code": """for every in (5,):

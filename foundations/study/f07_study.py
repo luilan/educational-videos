@@ -46,17 +46,17 @@ positive; step 2 makes them add up to 1.</div>""",
                          "Division only works on whole numbers",
                          "The results would add up to more than 1"],
              "answer": "B.", "why": "For 2.1, −0.8, 0.4, 1.3 the total is 3.0, and −0.8 ÷ 3.0 ≈ −0.27: not a "
-                                   "probability. e<sup>x</sup> makes every value positive first."},
+                                   "probability. e<sup>x</sup> makes every value positive first.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Logits must be between 0 and 1, just like probabilities.”",
              "answer": "False.", "why": "Logits can be any number, even negative. Only the output of softmax has to be "
-                                        "≥ 0 and add up to 1."},
+                                        "≥ 0 and add up to 1.", "key": {'value': False}},
             {"kind": "number", "q": "Apply softmax by hand to the two scores <b>1</b> and <b>0</b>. (Use e ≈ 2.718.)",
              "answer": "73.1 % and 26.9 %.", "why": "e¹ ≈ 2.718 and e⁰ = 1, total 3.718. Then 2.718 ÷ 3.718 ≈ 0.731 and "
-                                                   "1 ÷ 3.718 ≈ 0.269, which add up to 1."},
+                                                   "1 ÷ 3.718 ≈ 0.269, which add up to 1.", "key": {'parts': [{'label': 'score 1', 'value': 73.1, 'tol': 0.05, 'unit': '%'}, {'label': 'score 0', 'value': 26.9, 'tol': 0.05, 'unit': '%'}]}},
             {"kind": "order", "q": "Put in order: <i>divide by the total · raw scores (logits) · probabilities · "
                                    "exponentiate</i>.",
              "answer": "raw scores → exponentiate → divide by the total → probabilities.",
-             "why": "Exponentiate first (everything positive), then normalize (everything adds up to 1)."},
+             "why": "Exponentiate first (everything positive), then normalize (everything adds up to 1).", "key": {'items': ['raw scores (logits)', 'exponentiate', 'divide by the total', 'probabilities']}},
         ],
     },
     {
@@ -78,18 +78,18 @@ rounding).</div>""",
         "exercises": [
             {"kind": "number", "q": "Four words all get the same score, 2. What probability does each one get?",
              "answer": "25 %.", "why": "All four values are e² ≈ 7.39, so each is 7.39 ÷ (4 × 7.39) = ¼. Equal scores "
-                                      "always give equal shares, whatever the score."},
+                                      "always give equal shares, whatever the score.", "key": {'parts': [{'label': None, 'value': 25, 'tol': 0.5, 'unit': '%'}]}},
             {"kind": "number", "q": "Compute the softmax of the scores <b>1, 0, 0</b>. (Use e ≈ 2.718.)",
              "answer": "57.6 %, 21.2 %, 21.2 %.", "why": "The values are 2.718, 1 and 1, total 4.718. "
-                                                        "2.718 ÷ 4.718 ≈ 0.576 and 1 ÷ 4.718 ≈ 0.212."},
+                                                        "2.718 ÷ 4.718 ≈ 0.576 and 1 ÷ 4.718 ≈ 0.212.", "key": {'parts': [{'label': 'score 1', 'value': 57.6, 'tol': 0.05, 'unit': '%'}, {'label': '1st score 0', 'value': 21.2, 'tol': 0.05, 'unit': '%'}, {'label': '2nd score 0', 'value': 21.2, 'tol': 0.05, 'unit': '%'}]}},
             {"kind": "number", "q": "Drop <i>sofa</i> and keep only <i>mat</i> (score 3) and <i>floor</i> (score 2). "
                                     "Using e³ ≈ 20.1 and e² ≈ 7.4, what are their new probabilities?",
              "answer": "About 73.1 % and 26.9 %.", "why": "The total is 20.1 + 7.4 = 27.5, and 20.1 ÷ 27.5 ≈ 0.731. "
                                                          "Notice: the same as the scores 1 and 0 in 1.3. Concept 4 "
-                                                         "explains why."},
+                                                         "explains why.", "key": {'parts': [{'label': 'mat', 'value': 73.1, 'tol': 1.462, 'unit': '%'}, {'label': 'floor', 'value': 26.9, 'tol': 0.538, 'unit': '%'}]}},
             {"kind": "tf", "q": "“A word with a score of 0 gets a probability of 0.”",
              "answer": "False.", "why": "e⁰ = 1, so the word keeps a share: <i>sofa</i> gets 3.5 %. Softmax never gives "
-                                        "exactly 0."},
+                                        "exactly 0.", "key": {'value': False}},
         ],
     },
     {
@@ -111,20 +111,20 @@ takes the most, and everyone else keeps a share, <b>in the same order as the sco
             {"kind": "mc", "q": "For the illustrative logits 2.1, −0.8, 0.4, 1.3, what does a <b>hard max</b> output?",
              "options": ["100 %, 0 %, 0 %, 0 %", "59.3 %, 3.3 %, 10.8 %, 26.6 %", "25 %, 25 %, 25 %, 25 %",
                          "0 %, 100 %, 0 %, 0 %"],
-             "answer": "A.", "why": "Everything goes to the top score, 2.1. B is what softmax gives."},
+             "answer": "A.", "why": "Everything goes to the top score, 2.1. B is what softmax gives.", "key": {'choice': 0}},
             {"kind": "number", "q": "Compute the softmax of the scores <b>4</b> and <b>0</b> (e⁴ ≈ 54.6). Is it closer "
                                     "to a hard max than 3, 2, 0 was?",
              "answer": "98.2 % and 1.8 %. Yes.", "why": "54.6 ÷ 55.6 ≈ 0.982. A gap of 4 is large, so softmax is "
-                                                       "almost a hard max."},
+                                                       "almost a hard max.", "key": {'parts': [{'label': 'score 4', 'value': 98.2, 'tol': 0.05, 'unit': '%'}, {'label': 'score 0', 'value': 1.8, 'tol': 0.05, 'unit': '%'}]}},
             {"kind": "tf", "q": "“Softmax can give a lower score a higher probability than a higher score.”",
-             "answer": "False.", "why": "e<sup>x</sup> always grows with x, so the ranking never changes."},
+             "answer": "False.", "why": "e<sup>x</sup> always grows with x, so the ranking never changes.", "key": {'value': False}},
             {"kind": "mc", "q": "Which statement is <b>always</b> true for softmax?",
              "options": ["The top score gets more than 50 %",
                          "Every option gets more than 0 %, and higher scores get higher probabilities",
                          "The lowest score gets 0 %",
                          "Probabilities are proportional to the scores"],
              "answer": "B.", "why": "A fails for equal scores (three options get 33.3 % each); C fails because "
-                                   "e<sup>x</sup> &gt; 0; D fails: scores 3 and 2 give 70.5 % and 25.9 %, 2.7 times as much, not 1.5 times."},
+                                   "e<sup>x</sup> &gt; 0; D fails: scores 3 and 2 give 70.5 % and 25.9 %, 2.7 times as much, not 1.5 times.", "key": {'choice': 1}},
         ],
     },
     {
@@ -145,17 +145,17 @@ Only the differences matter: a gap of d makes one option e<sup>d</sup> times as 
         "exercises": [
             {"kind": "number", "q": "Compute the softmax of the scores <b>−1, −2, −4</b>. (No new calculation needed.)",
              "answer": "70.5 %, 25.9 %, 3.5 %.", "why": "They are 3, 2, 0 minus 4: the same gaps (1 and 2), so the same "
-                                                       "probabilities."},
+                                                       "probabilities.", "key": {'parts': [{'label': '−1', 'value': 70.5, 'tol': 0.05, 'unit': '%'}, {'label': '−2', 'value': 25.9, 'tol': 0.05, 'unit': '%'}, {'label': '−4', 'value': 3.5, 'tol': 0.05, 'unit': '%'}]}},
             {"kind": "mc", "q": "The scores 1 and 0 give 73.1 % and 26.9 %. Which scores give exactly the same result?",
              "options": ["2 and 0", "101 and 100", "10 and 0", "0.5 and 0"],
              "answer": "B.", "why": "The gap is still 1. The others change the gap (2, 10, 0.5), so they change the "
-                                   "probabilities."},
+                                   "probabilities.", "key": {'choice': 1}},
             {"kind": "number", "q": "In the video's example, how many times as likely is <i>mat</i> (score 3) as "
                                     "<i>sofa</i> (score 0)? Use the gap, then check with the percentages.",
-             "answer": "About 20 times.", "why": "The gap is 3, and e³ ≈ 20.1. Check: 70.5 ÷ 3.5 ≈ 20."},
+             "answer": "About 20 times.", "why": "The gap is 3, and e³ ≈ 20.1. Check: 70.5 ÷ 3.5 ≈ 20.", "key": {'parts': [{'label': None, 'value': 20, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Multiplying every score by 2 also leaves the probabilities unchanged.”",
              "answer": "False.", "why": "Doubling changes the gaps (1 and 2 become 2 and 4), so the result is sharper: "
-                                        "87.9 %, 11.9 %, 0.2 %. That is temperature, the next concept."},
+                                        "87.9 %, 11.9 %, 0.2 %. That is temperature, the next concept.", "key": {'value': False}},
         ],
     },
     {
@@ -179,20 +179,20 @@ equal shares). T = 1 is plain softmax.</div>""",
                                     "at T = 0.5?",
              "lines": 2,
              "answer": "(a) 12, 8, 0. (b) 4 and 8. (c) More: 98.2 %.",
-             "why": "T = 0.25 multiplies the gaps by 4, even more than T = 0.5 does, so the result is even sharper."},
+             "why": "T = 0.25 multiplies the gaps by 4, even more than T = 0.5 does, so the result is even sharper.", "key": {'parts': [{'label': '(a) mat', 'value': 12, 'tol': 0.5, 'unit': None}, {'label': '(a) floor', 'value': 8, 'tol': 0.5, 'unit': None}, {'label': '(a) 3rd', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': '(b) 1st gap', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': '(b) 2nd gap', 'value': 8, 'tol': 0.5, 'unit': None}, {'label': '(c) mat', 'value': 98.2, 'tol': 0.05, 'unit': '%'}]}},
             {"kind": "order", "q": "Scores 3, 2, 0. Order these temperatures by the probability <i>mat</i> gets, "
                                    "lowest first: <i>T = 0.5 · T = 10 · T = 1 · T = 2</i>.",
              "answer": "T = 10 → T = 2 → T = 1 → T = 0.5.",
-             "why": "37.8 %, 54.7 %, 70.5 %, 87.9 %: the higher the temperature, the flatter the distribution."},
+             "why": "37.8 %, 54.7 %, 70.5 %, 87.9 %: the higher the temperature, the flatter the distribution.", "key": {'items': ['T = 10', 'T = 2', 'T = 1', 'T = 0.5']}},
             {"kind": "tf", "q": "“Dividing the scores by T = 0.5 gives the same probabilities as multiplying every "
                                 "score by 2.”",
-             "answer": "True.", "why": "Dividing by 0.5 is multiplying by 2. Both give 6, 4, 0 → 87.9 %, 11.9 %, 0.2 %."},
+             "answer": "True.", "why": "Dividing by 0.5 is multiplying by 2. Both give 6, 4, 0 → 87.9 %, 11.9 %, 0.2 %.", "key": {'value': True}},
             {"kind": "mc", "q": "A chatbot keeps giving the same safe, predictable answer. You want more varied word "
                                 "choices. What should you change?",
              "options": ["Lower the temperature to 0.3", "Raise the temperature to 1.3", "Add 5 to every score",
                          "Subtract the largest score"],
              "answer": "B.", "why": "T &gt; 1 flattens the distribution, so sampling (F06) picks less likely words more "
-                                   "often. C and D change nothing (concept 4)."},
+                                   "often. C and D change nothing (concept 4).", "key": {'choice': 1}},
         ],
     },
     {
@@ -223,11 +223,11 @@ overflows</b>.</div>""",
                                     "the probabilities?",
              "lines": 2,
              "answer": "(a) 0, −1, −3. (b) 70.5 %, 25.9 %, 3.5 %.",
-             "why": "The gaps are 1 and 2, as for 3, 2, 0, so these are exactly the video's numbers."},
+             "why": "The gaps are 1 and 2, as for 3, 2, 0, so these are exactly the video's numbers.", "key": {'parts': [{'label': '(a) 1000', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': '(a) 999', 'value': -1, 'tol': 0.5, 'unit': None}, {'label': '(a) 997', 'value': -3, 'tol': 0.5, 'unit': None}, {'label': '(b) 1000', 'value': 70.5, 'tol': 0.05, 'unit': '%'}, {'label': '(b) 999', 'value': 25.9, 'tol': 0.05, 'unit': '%'}, {'label': '(b) 997', 'value': 3.5, 'tol': 0.05, 'unit': '%'}]}},
             {"kind": "tf", "q": "“After subtracting the max, the top score always becomes e⁰ = 1, and every other "
                                 "value lies between 0 and 1.”",
              "answer": "True.", "why": "The top score becomes 0, and all the others become negative, so their "
-                                       "e<sup>x</sup> is below 1."},
+                                       "e<sup>x</sup> is below 1.", "key": {'value': True}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Below are the video's <code>softmax</code> and a "
                                   "<code>naive_softmax</code> that skips the subtract-the-max step. Predict each output "
                                   "first, then run it. (a) <code>naive_softmax([1000, 999, 997])</code>. Why? "

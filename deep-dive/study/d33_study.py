@@ -43,9 +43,9 @@ times.</p>""",
             {"kind": "number", "q": "A row's largest absolute weight is 0.35. With symmetric 4-bit rounding (−7..7), what is "
                                     "the step, and which weights round to 0?",
              "answer": "Step 0.05; every weight with |w| < 0.025.", "why": "0.35 / 7 = 0.05; values under half a step round "
-                                                                         "to 0."},
+                                                                         "to 0.", "key": {'parts': [{'label': 'step', 'value': 0.05, 'tol': 0.005, 'unit': None}, {'label': 'rounds to 0 when |w| <', 'value': 0.025, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "number", "q": "How many levels does symmetric 3-bit rounding use?",
-             "answer": "7 (−3..3).", "why": "2² − 1 = 3 on each side, plus zero."},
+             "answer": "7 (−3..3).", "why": "2² − 1 = 3 on each side, plus zero.", "key": {'parts': [{'label': None, 'value': 7, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -74,7 +74,7 @@ bits per weight.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many gigabytes does a 7-billion-parameter model take at 4 bits with one 16-bit scale "
                                     "per 32 weights? And in 16 bits?",
-             "answer": "About 3.9 GB; 14 GB.", "why": "7e9 × 4.5 / 8 = 3.94e9 bytes; 7e9 × 2 = 14e9 bytes."},
+             "answer": "About 3.9 GB; 14 GB.", "why": "7e9 × 4.5 / 8 = 3.94e9 bytes; 7e9 × 2 = 14e9 bytes.", "key": {'parts': [{'label': '4-bit (GB)', 'value': 3.9, 'tol': 0.078, 'unit': None}, {'label': '16-bit (GB)', 'value': 14, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Round this row to 4 bits with one scale, then with groups of 4. "
                                   "Which weights survive?",
              "code": """import torch
@@ -104,7 +104,7 @@ increase over full precision drops from <b>+0.229</b> to <b>+0.140</b>.</p>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“NF4 is better than evenly spaced 4-bit levels because it stores more bits.”",
-             "answer": "False.", "why": "Both use 4 bits (16 levels); NF4 places them better for bell-shaped weights."},
+             "answer": "False.", "why": "Both use 4 bits (16 levels); NF4 places them better for bell-shaped weights.", "key": {'value': False}},
         ],
     },
     {
@@ -128,11 +128,11 @@ them their own scale.</div>""",
         "exercises": [
             {"kind": "number", "q": "With one 8-bit scale set by the value 1,808 (−127..127), what is the step, and what does "
                                     "a token whose largest value is 1.86 become?",
-             "answer": "Step 14.2; all zeros.", "why": "1,808 / 127 = 14.2; every value below 7.1 rounds to 0."},
+             "answer": "Step 14.2; all zeros.", "why": "1,808 / 127 = 14.2; every value below 7.1 rounds to 0.", "key": {'parts': [{'label': None, 'value': 14.2, 'tol': 0.05, 'unit': None}]}},
             {"kind": "mc", "q": "Why does one scale per token work so well here?",
              "options": ["It uses more bits", "Each token's step is set by its own largest value, so the first token cannot "
                                               "crush the others", "It skips the first token", "It rounds weights, not inputs"],
-             "answer": "B.", "why": "The outlier is confined to one token, so a per-token scale isolates it."},
+             "answer": "B.", "why": "The outlier is confined to one token, so a per-token scale isolates it.", "key": {'choice': 1}},
         ],
     },
 ]

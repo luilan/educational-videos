@@ -43,15 +43,15 @@ predicts the next token, and <b>the text itself says what the right answer was</
              "options": ["People label each sentence by hand", "The next token of the text itself",
                          "A bigger model grades each guess", "A dictionary of correct sentences"],
              "answer": "B.", "why": "Hide the next token and the text already contains the answer. That is why any "
-                                   "text can be used, in huge amounts."},
+                                   "text can be used, in huge amounts.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“A freshly created model already writes rough English; training only fixes its "
                                 "mistakes.”",
              "answer": "False.", "why": "Its weights are random, so it writes random characters "
-                                        "(<code>lGk'kFYAe…</code>). Everything it knows comes from training."},
+                                        "(<code>lGk'kFYAe…</code>). Everything it knows comes from training.", "key": {'value': False}},
             {"kind": "number", "q": "<i>“The cat sat on the mat”</i> is 6 tokens. How many next-token exercises does "
                                     "it give?",
              "answer": "5.", "why": "Every token after the first is a target, predicted from all the tokens before it: "
-                                   "cat, sat, on, the, mat."},
+                                   "cat, sat, on, the, mat.", "key": {'parts': [{'label': None, 'value': 5, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "For <i>“To be or not to be”</i>, what are the input and the correct answer of "
                                    "the 4th exercise?",
              "answer": "Input “To be or not”, answer “to”.",
@@ -76,19 +76,19 @@ position in the batch: near 0 when confident and right, large when the right tok
         ],
         "exercises": [
             {"kind": "number", "q": "The model gave the correct token <i>mat</i> a probability of 0.5. What is the loss?",
-             "answer": "≈ 0.69.", "why": "−ln 0.5 = 0.693: between the video's 0.1 (p = 0.9) and 4.6 (p = 0.01)."},
+             "answer": "≈ 0.69.", "why": "−ln 0.5 = 0.693: between the video's 0.1 (p = 0.9) and 4.6 (p = 0.01).", "key": {'parts': [{'label': None, 'value': 0.69, 'tol': 0.0138, 'unit': None}]}},
             {"kind": "mc", "q": "The correct next token is <i>mat</i>. Which prediction has the <b>largest</b> loss?",
              "options": ["p(mat) = 0.9", "p(mat) = 0.3, p(rug) = 0.6", "p(mat) = 0.05, p(rug) = 0.9",
                          "p(mat) = 0.5, p(rug) = 0.5"],
              "answer": "C.", "why": "Only p(mat) counts: −ln 0.05 ≈ 3.0, against 0.11, 1.20 and 0.69. How the rest of "
-                                   "the probability is spread does not change the loss."},
+                                   "the probability is spread does not change the loss.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“A cross-entropy loss can be negative if the model is very sure and right.”",
              "answer": "False.", "why": "p is at most 1, so ln p ≤ 0 and −ln p ≥ 0. The best possible loss is "
-                                        "exactly 0, at p = 1."},
+                                        "exactly 0, at p = 1.", "key": {'value': False}},
             {"kind": "number", "q": "Three positions; the correct tokens got probabilities 0.9, 0.5 and 0.01. What is "
                                     "the average loss?",
              "answer": "≈ 1.80.", "why": "(0.105 + 0.693 + 4.605) / 3 = 1.80. The one bad prediction contributes most "
-                                        "of it."},
+                                        "of it.", "key": {'parts': [{'label': None, 'value': 1.8, 'tol': 0.036, 'unit': None}]}},
         ],
     },
     {
@@ -114,15 +114,15 @@ every weight a little <b>against</b> it, over and over.</div>""",
             {"kind": "mc", "q": "For one weight, the gradient is +2.0. What does that tell us?",
              "options": ["Set this weight to 2.0", "Increasing this weight raises the loss, so decrease it",
                          "The loss is 2.0", "This weight is twice as important as the others"],
-             "answer": "B.", "why": "The sign says which way is uphill, the size how steep. We step the other way."},
+             "answer": "B.", "why": "The sign says which way is uphill, the size how steep. We step the other way.", "key": {'choice': 1}},
             {"kind": "number", "q": "Step size 0.1. New value of (a) w = 0.50, gradient +2.0; (b) w = −1.00, gradient −3.0?",
              "lines": 2,
              "answer": "(a) 0.30. (b) −0.70.",
              "why": "w − 0.1 × gradient: 0.50 − 0.20 = 0.30 and −1.00 + 0.30 = −0.70. A negative gradient means "
-                    "the weight goes up."},
+                    "the weight goes up.", "key": {'parts': [{'label': '(a)', 'value': 0.3, 'tol': 0.005, 'unit': None}, {'label': '(b)', 'value': -0.7, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“For a real LLM we could just try every setting of the weights and keep the best.”",
              "answer": "False.", "why": "With millions of weights there are far too many settings. We only feel the "
-                                        "slope where we stand, and step downhill."},
+                                        "slope where we stand, and step downhill.", "key": {'value': False}},
         ],
     },
     {
@@ -144,19 +144,19 @@ slow. Too large: overshoot and bounce.</div>""",
             {"kind": "mc", "q": "A run's loss goes down steadily, but very slowly. What is the most likely fix?",
              "options": ["Lower the learning rate", "Raise the learning rate a bit", "Train on less text",
                          "Stop computing gradients"],
-             "answer": "B.", "why": "Steady but slow progress is the sign of steps that are too small."},
+             "answer": "B.", "why": "Steady but slow progress is the sign of steps that are too small.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“If the loss jumps up and down and never settles, the learning rate is too small.”",
              "answer": "False.", "why": "That is the sign of a learning rate that is too <i>large</i>: every step "
-                                        "overshoots the valley."},
+                                        "overshoots the valley.", "key": {'value': False}},
             {"kind": "number", "q": "Same toy loss w² (slope 2w), now starting at w = 3. Where is w after one step "
                                     "with a learning rate of (a) 0.1 and (b) 1.5?",
              "lines": 2,
              "answer": "(a) 2.4. (b) −6.",
              "why": "The slope at 3 is 6. (a) 3 − 0.1 × 6 = 2.4, a bit closer to 0. (b) 3 − 1.5 × 6 = −6: across "
-                    "the valley and further from the bottom than before."},
+                    "the valley and further from the bottom than before.", "key": {'parts': [{'label': '(a)', 'value': 2.4, 'tol': 0.05, 'unit': None}, {'label': '(b)', 'value': -6, 'tol': 0.05, 'unit': None}]}},
             {"kind": "number", "q": "Same toy loss, from w = 1, with a learning rate of 0.5. Where is w after one step?",
              "answer": "0.", "why": "1 − 0.5 × 2 = 0, exactly the bottom. On this toy bowl 0.5 is a perfect step "
-                                   "size; real landscapes are never this simple."},
+                                   "size; real landscapes are never this simple.", "key": {'parts': [{'label': None, 'value': 0, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -180,17 +180,17 @@ of every weight.</div>""",
             {"kind": "order", "q": "Put these in the order the backward pass works through them: <i>embedding · "
                                    "logits · loss · blocks</i>.",
              "answer": "loss → logits → blocks → embedding.",
-             "why": "It starts where the forward pass ended, at the loss, and works back towards the input."},
+             "why": "It starts where the forward pass ended, at the loss, and works back towards the input.", "key": {'items': ['loss', 'logits', 'blocks', 'embedding']}},
             {"kind": "number", "q": "Chain rule: the loss changes 3 times as fast as a logit, and that logit changes "
                                     "0.5 times as fast as one weight. What is the loss's gradient for that weight?",
-             "answer": "1.5.", "why": "Multiply the slopes along the chain: 3 × 0.5 = 1.5."},
+             "answer": "1.5.", "why": "Multiply the slopes along the chain: 3 × 0.5 = 1.5.", "key": {'parts': [{'label': None, 'value': 1.5, 'tol': 0.05, 'unit': None}]}},
             {"kind": "number", "q": "A forward pass takes 10 ms. Roughly how long does a training step (forward + "
                                     "backward) take?",
              "answer": "About 30 ms.", "why": "The backward pass costs about twice the forward pass: 10 + 20 = 30 ms. "
-                                             "The weight update itself is cheap."},
+                                             "The weight update itself is cheap.", "key": {'parts': [{'label': None, 'value': 30, 'tol': 0.6, 'unit': None}]}},
             {"kind": "tf", "q": "“Backpropagation finds each weight's gradient by nudging it and re-running the model.”",
              "answer": "False.", "why": "That would need one run per weight, millions per step. Backpropagation gets "
-                                        "every gradient from a single backward pass."},
+                                        "every gradient from a single backward pass.", "key": {'value': False}},
         ],
     },
     {
@@ -222,11 +222,11 @@ step</b>. In PyTorch: <code>model(x)</code>, <code>F.cross_entropy</code>, <code
             {"kind": "order", "q": "Put one training step in order: <i>step · loss · batch · backward pass · "
                                    "forward pass</i>.",
              "answer": "batch → forward pass → loss → backward pass → step.",
-             "why": "The loss needs the forward pass, the gradients need the loss, and the step needs the gradients."},
+             "why": "The loss needs the forward pass, the gradients need the loss, and the step needs the gradients.", "key": {'items': ['batch', 'forward pass', 'loss', 'backward pass', 'step']}},
             {"kind": "mc", "q": "What does Adam do differently from plain gradient descent?",
              "options": ["It measures the loss in a different way", "It adapts the step size for each weight",
                          "It no longer needs gradients", "It uses a bigger batch of text"],
-             "answer": "B.", "why": "It still follows the gradients, but each weight gets its own step size."},
+             "answer": "B.", "why": "It still follows the gradients, but each weight gets its own step size.", "key": {'choice': 1}},
             {"kind": "short", "q": "In the code above, which line does backpropagation, and which line actually "
                                    "changes the weights?",
              "answer": "<code>loss.backward()</code>, then <code>opt.step()</code>.",
@@ -275,21 +275,21 @@ end ≈ 1.59 on text the model never saw: the <b>validation loss</b>.</div>""",
         "exercises": [
             {"kind": "number", "q": "All 65 characters get the same probability. What is the loss of each prediction?",
              "answer": "≈ 4.17.", "why": "p = 1/65 ≈ 0.015 and −ln(1/65) = ln 65 ≈ 4.17: the dashed “random "
-                                        "guessing” line."},
+                                        "guessing” line.", "key": {'parts': [{'label': None, 'value': 4.17, 'tol': 0.0834, 'unit': None}]}},
             {"kind": "number", "q": "The loss went 4.41 → 2.20 in 250 steps, then → 1.59 by step 5,000. How big is each "
                                     "drop?",
              "answer": "2.21, then only 0.61.", "why": "Fast at first, then slower: the easy patterns are learned "
-                                                       "first."},
+                                                       "first.", "key": {'parts': [{'label': 'first drop', 'value': 2.21, 'tol': 0.005, 'unit': None}, {'label': 'second drop', 'value': 0.61, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "Why is the validation loss measured on text the model never trained on?",
              "options": ["It is faster to compute", "To see if what it learned carries over to new text, rather "
                          "than being memorised", "The training text has no correct answers",
                          "To make the loss look smaller"],
              "answer": "B.", "why": "A model could score well on text it has memorised. New text shows what it really "
-                                   "learned."},
+                                   "learned.", "key": {'choice': 1}},
             {"kind": "number", "q": "Which p, given to the right character every time, gives a loss of 1.59? Compare "
                                     "with guessing.",
              "answer": "p ≈ 0.20 (1 in 5).", "why": "−ln p = 1.59, so p = e<sup>−1.59</sup> ≈ 0.20, against "
-                                                    "1/65 ≈ 0.015 for guessing: about 13 times better."},
+                                                    "1/65 ≈ 0.015 for guessing: about 13 times better.", "key": {'parts': [{'label': None, 'value': 0.2, 'tol': 0.005, 'unit': None}]}},
         ],
     },
 ]

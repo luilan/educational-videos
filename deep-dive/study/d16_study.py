@@ -45,10 +45,10 @@ stream. Only pre-norm keeps the identity path intact.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many times is the residual stream normalized in a 32-layer post-norm transformer "
                                     "(one attention and one MLP per layer)?",
-             "answer": "64.", "why": "Two norms per layer, each applied to the stream itself."},
+             "answer": "64.", "why": "Two norms per layer, each applied to the stream itself.", "key": {'parts': [{'label': None, 'value': 64, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“In pre-norm, the residual stream is never normalized before the output layer.”",
              "answer": "False.", "why": "Pre-norm adds one final norm before the output layer; inside the layers the "
-                                       "stream itself is never normalized."},
+                                       "stream itself is never normalized.", "key": {'value': False}},
         ],
     },
     {
@@ -72,11 +72,11 @@ not, though warmup can still help.</div>""",
             {"kind": "number", "q": "With 300 warmup steps and a peak learning rate of 0.003, what is the learning rate at "
                                     "step 150 (linear warmup, as in the code)?",
              "answer": "About 0.0015.", "why": "Halfway through the warmup: 0.003 × 151 / 300 ≈ 0.00151 (the code uses "
-                                              "(step + 1) / warmup)."},
+                                              "(step + 1) / warmup).", "key": {'parts': [{'label': None, 'value': 0.0015, 'tol': 5e-05, 'unit': None}]}},
             {"kind": "mc", "q": "Which run failed to learn?",
              "options": ["Pre-norm, lr 0.003, no warmup", "Post-norm, lr 0.001, no warmup",
                          "Post-norm, lr 0.003, no warmup", "Post-norm, lr 0.003, with warmup"],
-             "answer": "C.", "why": "Stuck at 3.36; the other three reached 1.67–1.72."},
+             "answer": "C.", "why": "Stuck at 3.36; the other three reached 1.67–1.72.", "key": {'choice': 2}},
         ],
     },
     {

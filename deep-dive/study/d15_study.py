@@ -42,7 +42,7 @@ exact shape decides what passes and what is suppressed.</div>""",
         "exercises": [
             {"kind": "number", "q": "What are ReLU(0.5), GELU(0.5) and SiLU(0.5)?",
              "answer": "0.5, 0.346, 0.311.", "why": "From the code's table; the smooth functions pass less than ReLU near "
-                                                    "zero."},
+                                                    "zero.", "key": {'parts': [{'label': 'ReLU', 'value': 0.5, 'tol': 0.05, 'unit': None}, {'label': 'GELU', 'value': 0.346, 'tol': 0.0005, 'unit': None}, {'label': 'SiLU', 'value': 0.311, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "short", "q": "Why can't an MLP without an activation compute anything a single matrix can't?",
              "answer": "W₂(W₁x) = (W₂W₁)x: the product of two matrices is one matrix.",
              "why": "Stacking linear maps gives a linear map."},
@@ -64,11 +64,11 @@ negative side of GELU carries information.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“Because most hidden values are negative, GELU outputs are mostly exactly zero.”",
              "answer": "False.", "why": "Only 4% end up within 0.01 of zero; GELU maps moderate negative values to small "
-                                       "negative outputs (down to −0.17)."},
+                                       "negative outputs (down to −0.17).", "key": {'value': False}},
             {"kind": "mc", "q": "Swapping GPT-2's GELU for ReLU without retraining…",
              "options": ["leaves the loss unchanged", "slightly improves it", "raises it from 4.13 to 7.23",
                          "makes it NaN"],
-             "answer": "C.", "why": "Measured on 512 tokens of Shakespeare."},
+             "answer": "C.", "why": "Measured on 512 tokens of Shakespeare.", "key": {'choice': 2}},
         ],
     },
     {
@@ -91,11 +91,11 @@ unit is a product of two learned signals.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "Qwen2.5-0.5B's MLP has three 896 × 4,864 matrices and no biases. How many parameters?",
-             "answer": "13,074,432.", "why": "3 × 896 × 4,864."},
+             "answer": "13,074,432.", "why": "3 × 896 × 4,864.", "key": {'parts': [{'label': None, 'value': 13074432, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "With D = 128, a GELU MLP (128 → 512 → 128, no biases) has 131,072 parameters. What "
                                     "middle width h gives a SwiGLU MLP (3 matrices of 128 × h) the same count?",
              "answer": "About 341 (the code uses 344).", "why": "3 × 128 × h = 131,072 → h ≈ 341.3; 344 is a round "
-                                                                "multiple of 8."},
+                                                                "multiple of 8.", "key": {'parts': [{'label': None, 'value': 341, 'tol': 6.82, 'unit': None}]}},
         ],
     },
     {
@@ -121,7 +121,7 @@ small but consistent margin.</div>""",
             {"kind": "order", "q": "Order the activations from best to worst validation loss in the episode: <i>GELU · "
                                    "ReLU · SwiGLU</i>.",
              "answer": "SwiGLU (1.591) → GELU (1.620) → ReLU (1.651).", "why": "Means over three seeds; the same order in "
-                                                                              "each seed."},
+                                                                              "each seed.", "key": {'items': ['SwiGLU', 'GELU', 'ReLU']}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Write SwiGLU's forward pass with plain tensors and check it "
                                   "against Qwen's MLP, as the code does.",
              "code": """gate, up = mlp.gate_proj(x), mlp.up_proj(x)

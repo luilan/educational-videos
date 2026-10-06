@@ -40,18 +40,18 @@ p = 0.5 about half the time, p = 0.1 about one time in ten.</div>""",
         "exercises": [
             {"kind": "mc", "q": "Which of these can be a probability?",
              "options": ["1.2", "−0.1", "0.35", "3/2"],
-             "answer": "C.", "why": "A probability must lie between 0 and 1. 1.2 and 3/2 are above 1; −0.1 is below 0."},
+             "answer": "C.", "why": "A probability must lie between 0 and 1. 1.2 and 3/2 are above 1; −0.1 is below 0.", "key": {'choice': 2}},
             {"kind": "number", "q": "An event has probability 0.1. In 1,000 tries, about how many times does it happen? "
                                     "And an event with probability 0.5?",
              "answer": "About 100; about 500.", "why": "0.1 × 1,000 = 100 and 0.5 × 1,000 = 500. “About”, because "
-                                                     "chance makes the exact count vary."},
+                                                     "chance makes the exact count vary.", "key": {'parts': [{'label': 'p = 0.1', 'value': 100, 'tol': 2, 'unit': None}, {'label': 'p = 0.5', 'value': 500, 'tol': 10, 'unit': None}]}},
             {"kind": "tf", "q": "“An event with probability 0.001 is impossible.”",
              "answer": "False.", "why": "It is very unlikely (about once in 1,000 tries), but possible. Only 0 means "
-                                       "impossible."},
+                                       "impossible.", "key": {'value': False}},
             {"kind": "order", "q": "Put in order from least to most likely: <i>p = 0.5 · certain · p = 0.05 · "
                                    "impossible · p = 0.9</i>.",
              "answer": "impossible → 0.05 → 0.5 → 0.9 → certain.",
-             "why": "Impossible is p = 0 and certain is p = 1; everything else sits in between."},
+             "why": "Impossible is p = 0 and certain is p = 1; everything else sits in between.", "key": {'items': ['impossible', 'p = 0.05', 'p = 0.5', 'p = 0.9', 'certain']}},
         ],
     },
     {
@@ -72,18 +72,18 @@ to exactly 1</b>. More for one option means less for the others.</div>""",
                                     "probability that the next word is (b) not <i>mat</i>, (c) <i>bed</i> or "
                                     "<i>roof</i>?",
              "answer": "(a) 1.00 (b) 0.60 (c) 0.20.",
-             "why": "0.40 + 0.25 + 0.15 + 0.10 + 0.10 = 1.00; 1 − 0.40 = 0.60; 0.10 + 0.10 = 0.20."},
+             "why": "0.40 + 0.25 + 0.15 + 0.10 + 0.10 = 1.00; 1 − 0.40 = 0.60; 0.10 + 0.10 = 0.20.", "key": {'parts': [{'label': '(a) total', 'value': 1, 'tol': 0.005, 'unit': None}, {'label': '(b) not mat', 'value': 0.6, 'tol': 0.005, 'unit': None}, {'label': '(c) bed or roof', 'value': 0.2, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "Which could be a distribution over the words <i>yes</i>, <i>no</i>, <i>maybe</i>?",
              "options": ["0.6, 0.3, 0.3", "0.8, 0.2, 0.0", "0.9, 0.2, −0.1", "0.3, 0.3, 0.3"],
              "answer": "B.", "why": "A adds up to 1.2 and D to only 0.9; C has a negative value. B is fine: 0 is "
-                                   "allowed and the total is exactly 1."},
+                                   "allowed and the total is exactly 1.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“A model raises <i>mat</i> from 0.40 to 0.60. The other four words can keep "
                                 "exactly the same probabilities.”",
-             "answer": "False.", "why": "The total would become 1.20. The other words must lose 0.20 between them."},
+             "answer": "False.", "why": "The total would become 1.20. The other words must lose 0.20 between them.", "key": {'value': False}},
             {"kind": "number", "q": "For the word after <i>“I drank a cup of”</i>, a model gives <i>tea</i> 0.55, "
                                     "<i>coffee</i> 0.30 and <i>water</i> 0.10. How much probability is left for all the "
                                     "other words together?",
-             "answer": "0.05.", "why": "0.55 + 0.30 + 0.10 = 0.95, and the whole distribution adds up to 1."},
+             "answer": "0.05.", "why": "0.55 + 0.30 + 0.10 = 0.95, and the whole distribution adds up to 1.", "key": {'parts': [{'label': None, 'value': 0.05, 'tol': 0.005, 'unit': None}]}},
         ],
     },
     {
@@ -104,17 +104,17 @@ pick in which every option can win, each with its own probability.</div>""",
             {"kind": "number", "q": "Work out the slice angle of every word: <i>mat</i> 0.40, <i>floor</i> 0.25, "
                                     "<i>sofa</i> 0.15, <i>bed</i> 0.10, <i>roof</i> 0.10. Do they fill the circle?",
              "answer": "144°, 90°, 54°, 36°, 36°. Yes: 360°.",
-             "why": "Each angle is probability × 360°, and since the probabilities add up to 1, the angles add up to 360°."},
+             "why": "Each angle is probability × 360°, and since the probabilities add up to 1, the angles add up to 360°.", "key": {'parts': [{'label': 'mat', 'value': 144, 'tol': 0.5, 'unit': None}, {'label': 'floor', 'value': 90, 'tol': 0.5, 'unit': None}, {'label': 'sofa', 'value': 54, 'tol': 0.5, 'unit': None}, {'label': 'bed', 'value': 36, 'tol': 0.5, 'unit': None}, {'label': 'roof', 'value': 36, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "On another spinner, a slice covers 72°. What probability does it stand for?",
-             "answer": "0.2.", "why": "72 ÷ 360 = 0.2: turn the rule around."},
+             "answer": "0.2.", "why": "72 ÷ 360 = 0.2: turn the rule around.", "key": {'parts': [{'label': None, 'value': 0.2, 'tol': 0.05, 'unit': None}]}},
             {"kind": "mc", "q": "The spinner landed on <i>floor</i>. What does that tell you?",
              "options": ["floor is the most likely word", "This spin happened to land on floor, which has a 25&nbsp;% chance "
                          "on every spin", "The next spin will also give floor", "mat's probability went down"],
              "answer": "B.", "why": "One spin is one random pick. Spins don't change the probabilities, and the next "
-                                   "spin is a fresh random pick."},
+                                   "spin is a fresh random pick.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Because <i>mat</i> has the biggest slice, sampling always picks <i>mat</i>.”",
              "answer": "False.", "why": "mat is picked most often (40&nbsp;% of spins), but every word with a slice can "
-                                       "come up."},
+                                       "come up.", "key": {'value': False}},
         ],
     },
     {
@@ -135,11 +135,11 @@ count = probability × number of samples.</div>""",
             {"kind": "number", "q": "You sample 200 times from the video's distribution. About how many times do you "
                                     "expect each word?",
              "answer": "mat 80, floor 50, sofa 30, bed 20, roof 20.",
-             "why": "Probability × 200: 0.40 × 200 = 80, and so on. The five counts add up to 200."},
+             "why": "Probability × 200: 0.40 × 200 = 80, and so on. The five counts add up to 200.", "key": {'parts': [{'label': 'mat', 'value': 80, 'tol': 0.5, 'unit': None}, {'label': 'floor', 'value': 50, 'tol': 0.5, 'unit': None}, {'label': 'sofa', 'value': 30, 'tol': 0.5, 'unit': None}, {'label': 'bed', 'value': 20, 'tol': 0.5, 'unit': None}, {'label': 'roof', 'value': 20, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "In the 10,000 spins, <i>floor</i> came up 24.7&nbsp;% of the time. About how many times "
                                     "is that? How many would its probability predict?",
              "answer": "About 2,470; 2,500 predicted.",
-             "why": "0.247 × 10,000 ≈ 2,470 (the exact count was 2,466); 0.25 × 10,000 = 2,500. Close, not exact."},
+             "why": "0.247 × 10,000 ≈ 2,470 (the exact count was 2,466); 0.25 × 10,000 = 2,500. Close, not exact.", "key": {'parts': [{'label': 'observed', 'value': 2470, 'tol': 49.4, 'unit': None}, {'label': 'predicted', 'value': 2500, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Ten samples gave: <i>bed, sofa, mat, mat, bed, mat, bed, sofa, floor, mat</i>. "
                                    "Count each word. Which word is furthest from its probability? Is the sampler broken?",
              "lines": 2,
@@ -147,7 +147,7 @@ count = probability × number of samples.</div>""",
              "why": "Ten samples are far too few for the counts to settle; with 10,000 they match closely. (These are "
                     "the ten samples from the video's code, concept 7.)"},
             {"kind": "tf", "q": "“After 10,000 spins, every word came up exactly as often as its probability says.”",
-             "answer": "False.", "why": "Close, but not exact: floor 24.7&nbsp;% instead of 25&nbsp;%, roof 9.8&nbsp;% instead of 10&nbsp;%."},
+             "answer": "False.", "why": "Close, but not exact: floor 24.7&nbsp;% instead of 25&nbsp;%, roof 9.8&nbsp;% instead of 10&nbsp;%.", "key": {'value': False}},
         ],
     },
     {
@@ -166,17 +166,17 @@ time. Sampling = a random pick by probability: varied answers, with likely words
         "exercises": [
             {"kind": "number", "q": "With the video's distribution, what is the probability that one sample is "
                                     "<b>not</b> the greedy choice?",
-             "answer": "0.60.", "why": "Greedy always picks mat (0.40), so every other word counts: 1 − 0.40 = 0.60."},
+             "answer": "0.60.", "why": "Greedy always picks mat (0.40), so every other word counts: 1 − 0.40 = 0.60.", "key": {'parts': [{'label': None, 'value': 0.6, 'tol': 0.005, 'unit': None}]}},
             {"kind": "number", "q": "You run the prompt 20 times, sampling the next word each time. About how many runs "
                                     "end in <i>sofa</i>? And with greedy picking?",
              "answer": "About 3; with greedy, 0.",
-             "why": "0.15 × 20 = 3. Greedy picks mat every single time, so sofa never appears."},
+             "why": "0.15 × 20 = 3. Greedy picks mat every single time, so sofa never appears.", "key": {'parts': [{'label': 'sampling', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': 'greedy', 'value': 0, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Why can a chatbot give two different answers to the same prompt?",
              "options": ["The model's probabilities changed between the runs", "It samples from its probabilities",
                          "It forgot the prompt", "Greedy picking is random"],
-             "answer": "B.", "why": "Same prompt, same probabilities, but each run makes its own random picks."},
+             "answer": "B.", "why": "Same prompt, same probabilities, but each run makes its own random picks.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“With greedy picking, the same prompt always gives the same next word.”",
-             "answer": "True.", "why": "Greedy has no randomness: it always takes the biggest probability."},
+             "answer": "True.", "why": "Greedy has no randomness: it always takes the biggest probability.", "key": {'value': True}},
         ],
     },
     {
@@ -197,11 +197,11 @@ random, but the seed fixes the whole sequence.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“Two generators started with the same seed can give different sequences.”",
-             "answer": "False.", "why": "Same seed, same recipe, same sequence, every time."},
+             "answer": "False.", "why": "Same seed, same recipe, same sequence, every time.", "key": {'value': False}},
             {"kind": "mc", "q": "Why do researchers fix the seed of their experiments?",
              "options": ["To make the model more accurate", "So the experiment can be repeated exactly",
                          "To change the probabilities", "To make sampling faster"],
-             "answer": "B.", "why": "The seed doesn't change the distribution; it makes the random picks repeatable."},
+             "answer": "B.", "why": "The seed doesn't change the distribution; it makes the random picks repeatable.", "key": {'choice': 1}},
             {"kind": "short", "q": "You sample with seed 7; a colleague uses seed 8. Must your first sampled words be "
                                    "the same? Over 10,000 samples, should your word frequencies be similar?",
              "lines": 2,
@@ -233,10 +233,10 @@ from it, and in episode 14.</p>""",
             {"kind": "mc", "q": "What does <code>rng.choice(words, size=10, p=p)</code> return?",
              "options": ["The 10 most likely words", "Ten words, each picked at random according to p",
                          "Ten copies of 'mat'", "The probabilities of ten words"],
-             "answer": "B.", "why": "Ten independent spins of the spinner."},
+             "answer": "B.", "why": "Ten independent spins of the spinner.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“With <code>p = [0.4, 0.25, 0.15, 0.1, 0.2]</code>, NumPy refuses to sample.”",
              "answer": "True.", "why": "Those add up to 1.1, not 1, so <code>choice</code> raises “ValueError: "
-                                      "Probabilities do not sum to 1”."},
+                                      "Probabilities do not sum to 1”.", "key": {'value': True}},
             {"kind": "code", "q": "<b>Try it yourself.</b> (a) Run the code. Do the first two printed lines match the "
                                   "video? (b) The third print starts seed 7 again but asks for ten words at once. "
                                   "<b>Predict</b> it before you run it, then explain. (c) What do the last five lines "

@@ -46,9 +46,9 @@ high-dimensional space.</div>""",
                                 "boxes.”?",
              "options": ["One vector of 384 numbers", "One vector per word", "A list of keywords",
                          "A probability for the next token"],
-             "answer": "A.", "why": "Token vectors are averaged into a single sentence vector."},
+             "answer": "A.", "why": "Token vectors are averaged into a single sentence vector.", "key": {'choice': 0}},
             {"kind": "tf", "q": "“After scaling to length 1, two sentence vectors can only differ in direction.”",
-             "answer": "True.", "why": "All vectors have the same length, so only the direction carries meaning."},
+             "answer": "True.", "why": "All vectors have the same length, so only the direction carries meaning.", "key": {'value': True}},
             {"kind": "short", "q": "Why does keyword search find nothing for “kitten” in notes about a cat?",
              "answer": "The notes share no word with the query; keyword search compares letters, not meaning.",
              "why": "“kitten”, “cat” and “cats” are different strings."},
@@ -70,7 +70,7 @@ most of the information, but it shows the idea.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“In the 2-D map, the two cat sentences are close because they share many words.”",
              "answer": "False.", "why": "“Cats love sleeping in cardboard boxes” and “Our cat naps on the sofa all "
-                                       "afternoon” share almost no words; they are close because of meaning."},
+                                       "afternoon” share almost no words; they are close because of meaning.", "key": {'value': False}},
             {"kind": "short", "q": "Why can the 2-D map be misleading?",
              "answer": "Squashing 384 dimensions into 2 throws most of the information away; points close in 2-D are "
                        "not always close in 384-D.",
@@ -98,11 +98,11 @@ document vector, return the highest.</div>""",
         "exercises": [
             {"kind": "number", "q": "Two length-1 vectors in 3-D are a = (0.6, 0.8, 0) and b = (0.8, 0.6, 0). What is "
                                     "their cosine similarity?",
-             "answer": "0.96.", "why": "0.6 × 0.8 + 0.8 × 0.6 + 0 × 0 = 0.48 + 0.48 = 0.96."},
+             "answer": "0.96.", "why": "0.6 × 0.8 + 0.8 × 0.6 + 0 × 0 = 0.48 + 0.48 = 0.96.", "key": {'parts': [{'label': None, 'value': 0.96, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "Cosine similarity of 0 between two length-1 vectors means:",
              "options": ["They are identical", "They point at right angles: unrelated directions",
                          "They point in opposite directions", "One of them is zero"],
-             "answer": "B.", "why": "The dot product of perpendicular vectors is 0 (Foundations F02)."},
+             "answer": "B.", "why": "The dot product of perpendicular vectors is 0 (Foundations F02).", "key": {'choice': 1}},
             {"kind": "short", "q": "The Milan question scores 0.57 with the train sentence and 0.10 with the next best. "
                                    "What does that big gap tell you?",
              "answer": "The search is confident: one document clearly matches, and the rest are unrelated.",
@@ -132,10 +132,10 @@ keywords find what <b>says</b> the same thing. Good search often needs both.</di
              "options": ["Embedding search only", "Keyword (exact) search", "Sampling at high temperature",
                          "A 2-D PCA map"],
              "answer": "B.", "why": "Exact codes have no “meaning” for an embedding model; matching the string is what "
-                                   "you want."},
+                                   "you want.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“The top result of an embedding search is always correct.”",
              "answer": "False.", "why": "It is the closest in meaning among your documents, which may still be wrong or "
-                                       "irrelevant if no document answers the question."},
+                                       "irrelevant if no document answers the question.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Add these lines at the end of <code>search.py</code> and run it. "
                                   "(a) Which document is the top match for each question, with what score? "
                                   "(b) The top egg score is lower than for the hard-boiled question (0.65). Why might "

@@ -40,20 +40,20 @@ are centered, but nothing about how spread out they are.</div>""",
         "exercises": [
             {"kind": "number", "q": "Find the mean of <b>1, 2, 3, 10</b>.",
              "answer": "4.", "why": "16 ÷ 4 = 4. One big number pulls the mean up: three of the four numbers are below "
-                                   "it."},
+                                   "it.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Add 10 to every number of the video's example: 12, 14, 16, 18. What is the new "
                                     "mean?",
-             "answer": "15.", "why": "Every number moves up by 10, so the center moves up by 10 too: 60 ÷ 4 = 15."},
+             "answer": "15.", "why": "Every number moves up by 10, so the center moves up by 10 too: 60 ÷ 4 = 15.", "key": {'parts': [{'label': None, 'value': 15, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Two lists with the same mean must be spread out in the same way.”",
              "answer": "False.", "why": "4, 6 and 0, 10 both have mean 5, but the second is far more spread out. That is "
-                                        "why we need a second number, the standard deviation."},
+                                        "why we need a second number, the standard deviation.", "key": {'value': False}},
             {"kind": "mc", "q": "Why do deep networks need to keep their numbers in check?",
              "options": ["Numbers that drift too big or too small through many layers make training break",
                          "Every layer's mean must be exactly 5",
                          "Negative numbers are not allowed inside a network",
                          "Computers can only store numbers between 0 and 1"],
              "answer": "A.", "why": "That is the problem the video opens with. Mean and standard deviation measure the "
-                                   "drift, so we can undo it (concept 3)."},
+                                   "drift, so we can undo it (concept 3).", "key": {'choice': 0}},
         ],
     },
     {
@@ -75,16 +75,16 @@ mean)</b>. A small std means the numbers huddle close to the mean; a large std m
             {"kind": "order", "q": "Put the steps of the std recipe in order: <i>square · take the square root · "
                                    "distance from the mean · average</i>.",
              "answer": "distance from the mean → square → average → take the square root.",
-             "why": "Distances first, then square them, average the squares, and finish with the square root."},
+             "why": "Distances first, then square them, average the squares, and finish with the square root.", "key": {'items': ['distance from the mean', 'square', 'average', 'take the square root']}},
             {"kind": "number", "q": "Find the std of <b>1, 2, 3, 4, 5</b>.",
              "answer": "√2 ≈ 1.41.", "why": "Mean 3; distances −2, −1, 0, 1, 2; squares 4, 1, 0, 1, 4; average "
-                                          "10 ÷ 5 = 2; √2 ≈ 1.41."},
+                                          "10 ÷ 5 = 2; √2 ≈ 1.41.", "key": {'parts': [{'label': None, 'value': 1.41, 'tol': 0.0282, 'unit': None}]}},
             {"kind": "mc", "q": "What is the std of <b>5, 5, 5, 5</b>?",
              "options": ["5", "1", "0", "2.24"],
-             "answer": "C.", "why": "Every distance from the mean (5) is 0, so there is no spread at all."},
+             "answer": "C.", "why": "Every distance from the mean (5) is 0, so there is no spread at all.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“Doubling every number (4, 8, 12, 16) doubles the std.”",
              "answer": "True.", "why": "The distances double (−6, −2, 2, 6), the squares average 20, and "
-                                       "√20 ≈ 4.47 = 2 × 2.24."},
+                                       "√20 ≈ 4.47 = 2 × 2.24.", "key": {'value': True}},
         ],
     },
     {
@@ -104,20 +104,20 @@ Layer norm = normalize each token's vector, then × gain + bias (both learned).<
         "exercises": [
             {"kind": "number", "q": "Normalize the two numbers <b>1, 3</b>.",
              "answer": "−1, 1.", "why": "Mean 2; distances −1 and 1; std = √1 = 1; so (1 − 2) ÷ 1 = −1 and "
-                                       "(3 − 2) ÷ 1 = 1."},
+                                       "(3 − 2) ÷ 1 = 1.", "key": {'parts': [{'label': '1', 'value': -1, 'tol': 0.5, 'unit': None}, {'label': '3', 'value': 1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which list normalizes to exactly the same numbers as 2, 4, 6, 8 "
                                 "(−1.34, −0.45, 0.45, 1.34)?",
              "options": ["10, 20, 30, 40", "2, 4, 6, 9", "1, 2, 3", "2, 4, 6, 8, 10"],
              "answer": "A.", "why": "10, 20, 30, 40 is 5 × (2, 4, 6, 8). Subtracting the mean removes any shift and "
-                                   "dividing by the std removes any scale, so only the pattern is left."},
+                                   "dividing by the std removes any scale, so only the pattern is left.", "key": {'choice': 0}},
             {"kind": "number", "q": "Layer norm has turned a vector into −1, 1. The learned gain is 2 and the bias is "
                                     "1. What comes out? What are its mean and std?",
              "lines": 2,
              "answer": "−1, 3 · mean 1, std 2.",
-             "why": "−1 × 2 + 1 = −1 and 1 × 2 + 1 = 3. The bias sets the new center, the gain sets the new spread."},
+             "why": "−1 × 2 + 1 = −1 and 1 × 2 + 1 = 3. The bias sets the new center, the gain sets the new spread.", "key": {'parts': [{'label': '1st output', 'value': -1, 'tol': 0.5, 'unit': None}, {'label': '2nd output', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': 'mean', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'std', 'value': 2, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“After normalizing, every number lies between −1 and 1.”",
              "answer": "False.", "why": "Only the <i>typical</i> distance is 1. The video's own example gives −1.34 and "
-                                        "1.34."},
+                                        "1.34.", "key": {'value': False}},
         ],
     },
     {
@@ -137,16 +137,16 @@ about <b>√n</b>. Four times as many terms only doubles the spread.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "Following the pattern, what spread do you expect for n = 64? For n = 256?",
-             "answer": "About 8 and about 16.", "why": "√64 = 8 and √256 = 16."},
+             "answer": "About 8 and about 16.", "why": "√64 = 8 and √256 = 16.", "key": {'parts': [{'label': 'n = 64', 'value': 8, 'tol': 0.5, 'unit': None}, {'label': 'n = 256', 'value': 16, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Going from n = 16 to n = 64 terms multiplies the spread by about…",
              "options": ["4", "2", "8", "16"],
-             "answer": "B.", "why": "Four times as many terms: √64 ÷ √16 = 8 ÷ 4 = 2."},
+             "answer": "B.", "why": "Four times as many terms: √64 ÷ √16 = 8 ÷ 4 = 2.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Add up 100 random products, each with a spread of about 1, and the total has a "
                                 "spread of about 100.”",
-             "answer": "False.", "why": "About √100 = 10: positive and negative products partly cancel."},
+             "answer": "False.", "why": "About √100 = 10: positive and negative products partly cancel.", "key": {'value': False}},
             {"kind": "number", "q": "GPT-2's vectors have 768 numbers. If you took the dot product of two random "
                                     "vectors that size, about how wide would the spread be?",
-             "answer": "About 27.7.", "why": "√768 ≈ 27.7 (a simulation gives about 27.8)."},
+             "answer": "About 27.7.", "why": "√768 ≈ 27.7 (a simulation gives about 27.8).", "key": {'parts': [{'label': None, 'value': 27.7, 'tol': 0.554, 'unit': None}]}},
         ],
     },
     {
@@ -173,14 +173,14 @@ growth of the spread, so softmax sees scores with a spread of about 1 and stays 
         "exercises": [
             {"kind": "number", "q": "What do we divide the dot products by when the key size is d = 16? And when "
                                     "d = 128?",
-             "answer": "4, and about 11.3.", "why": "√16 = 4 and √128 ≈ 11.3."},
+             "answer": "4, and about 11.3.", "why": "√16 = 4 and √128 ≈ 11.3.", "key": {'parts': [{'label': 'd = 16', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': 'd = 128', 'value': 11.3, 'tol': 0.226, 'unit': None}]}},
             {"kind": "mc", "q": "With d = 64 and no ÷ √d, what goes wrong?",
              "options": ["The scores spread so widely that softmax puts almost everything on one key",
                          "Softmax outputs negative numbers",
                          "The probabilities no longer add up to 1",
                          "All the dot products become 0"],
              "answer": "A.", "why": "Wide gaps make softmax sharp (F07). Dividing by √d = 8 is exactly softmax with "
-                                   "temperature T = 8."},
+                                   "temperature T = 8.", "key": {'choice': 0}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Run the code below. (a) What do the first two "
                                   "<code>print</code>s show? (b) Predict the two numbers on the last line before running "
                                   "it. (c) Normalize <code>y = np.array([10, 20, 30, 40])</code> with the same one-liner. "

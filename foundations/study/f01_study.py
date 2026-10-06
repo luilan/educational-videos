@@ -41,10 +41,10 @@ matters: each position has its own meaning, so [2, 1] and [1, 2] are different v
             {"kind": "number", "q": "What is the dimension of each vector? (a) [5, 0, −2] (b) [7] "
                                     "(c) [0, 0, 0, 0, 0, 0]",
              "answer": "(a) 3 (b) 1 (c) 6.", "why": "Count the numbers. Zeros and negative numbers count like any "
-                                                    "other entry."},
+                                                    "other entry.", "key": {'parts': [{'label': '(a)', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': '(c)', 'value': 6, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“[2, 1] and [1, 2] are the same vector, because they contain the same numbers.”",
              "answer": "False.", "why": "Order matters: the first position and the second position mean different "
-                                        "things. As arrows, one goes 2 right and 1 up, the other 1 right and 2 up."},
+                                        "things. As arrows, one goes 2 right and 1 up, the other 1 right and 2 up.", "key": {'value': False}},
             {"kind": "short", "q": "You describe a flat as [bedrooms, bathrooms, floor area in m², year built] = "
                                    "[3, 2, 95, 1987]. What is its dimension, and what does the second number mean?",
              "lines": 2,
@@ -78,14 +78,14 @@ there are. GPT-2 uses vectors with <b>768</b> numbers.</p>""",
             {"kind": "mc", "q": "An arrow starts at the origin and ends 1 to the right and 4 down. Which vector is it?",
              "options": ["[4, 1]", "[1, 4]", "[1, −4]", "[−1, 4]"],
              "answer": "C.", "why": "Right comes first (1), then up/down (4 down = −4). A swaps the order; B and D get "
-                                   "the signs wrong."},
+                                   "the signs wrong.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“Vectors with 768 numbers can't be drawn, so the rules for adding them are "
                                 "different.”",
              "answer": "False.", "why": "The picture stops at 3 dimensions, but the rules are exactly the same for "
-                                        "any number of entries."},
+                                        "any number of entries.", "key": {'value': False}},
             {"kind": "number", "q": "A model uses one vector of dimension 768 per token. How many numbers does it need "
                                     "for the 5 tokens of <i>“The cat sat on the”</i>?",
-             "answer": "3,840.", "why": "5 vectors × 768 numbers each = 3,840."},
+             "answer": "3,840.", "why": "5 vectors × 768 numbers each = 3,840.", "key": {'parts': [{'label': None, 'value': 3840, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -105,18 +105,18 @@ the origin to the tip of the second one: walk along a, then along b, and a + b i
         ],
         "exercises": [
             {"kind": "number", "q": "Compute [4, −1, 2] + [1, 3, −2].",
-             "answer": "[5, 2, 0].", "why": "Position by position: 4 + 1, −1 + 3, 2 + (−2)."},
+             "answer": "[5, 2, 0].", "why": "Position by position: 4 + 1, −1 + 3, 2 + (−2).", "key": {'parts': [{'label': '1st', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': '2nd', 'value': 2, 'tol': 0.5, 'unit': None}, {'label': '3rd', 'value': 0, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Start at the origin, walk along [2, 1], then along [−3, 2]. Where do you end up?",
-             "answer": "[−1, 3].", "why": "Walking tip to tail is vector addition: [2 + (−3), 1 + 2] = [−1, 3]."},
+             "answer": "[−1, 3].", "why": "Walking tip to tail is vector addition: [2 + (−3), 1 + 2] = [−1, 3].", "key": {'parts': [{'label': 'x', 'value': -1, 'tol': 0.5, 'unit': None}, {'label': 'y', 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“[1, 2] + [2, 1] gives a different result from [2, 1] + [1, 2].”",
              "answer": "False.", "why": "Both are [3, 3]. Adding numbers doesn't depend on order, so neither does "
-                                        "adding vectors."},
+                                        "adding vectors.", "key": {'value': False}},
             {"kind": "mc", "q": "Why can't you add [1, 2] and [1, 2, 3]?",
              "options": ["Because the result would be negative", "Because the third number has no partner: both "
                          "vectors must have the same dimension", "Because only vectors of dimension 2 can be added",
                          "You can: the answer is [2, 4, 3]"],
              "answer": "B.", "why": "Addition pairs up positions. With 2 and 3 numbers there is nothing to pair with the "
-                                   "3 (D just invents a 0)."},
+                                   "3 (D just invents a 0).", "key": {'choice': 1}},
         ],
     },
     {
@@ -135,16 +135,16 @@ The arrow stretches or shrinks along the same line; a <b>negative</b> scalar als
         ],
         "exercises": [
             {"kind": "number", "q": "Compute 3 × [1, −2, 0].",
-             "answer": "[3, −6, 0].", "why": "Every entry is multiplied by 3, including the 0."},
+             "answer": "[3, −6, 0].", "why": "Every entry is multiplied by 3, including the 0.", "key": {'parts': [{'label': '1st', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': '2nd', 'value': -6, 'tol': 0.5, 'unit': None}, {'label': '3rd', 'value': 0, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which vector points in exactly the opposite direction to [2, 1]?",
              "options": ["[1, 2]", "[−2, 1]", "[−4, −2]", "[2, −1]"],
              "answer": "C.", "why": "[−4, −2] = −2 × [2, 1]: flipped and twice as long. B and D flip only one number, "
-                                   "which gives a different direction, not the opposite one."},
+                                   "which gives a different direction, not the opposite one.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“0.5 × [4, 2] points the same way as [4, 2], but is half as long.”",
              "answer": "True.", "why": "It is [2, 1]: a positive scalar keeps the direction, and 0.5 halves the "
-                                       "length."},
+                                       "length.", "key": {'value': True}},
             {"kind": "number", "q": "Compute 2 × [1, 3] + [−1, 0].",
-             "answer": "[1, 6].", "why": "Scale first: 2 × [1, 3] = [2, 6]. Then add: [2 − 1, 6 + 0] = [1, 6]."},
+             "answer": "[1, 6].", "why": "Scale first: 2 × [1, 3] = [2, 6]. Then add: [2 − 1, 6 + 0] = [1, 6].", "key": {'parts': [{'label': 'x', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'y', 'value': 6, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -164,16 +164,16 @@ squares</b> of the numbers. It works in any number of dimensions.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "What is the length of [6, 8]?",
-             "answer": "10.", "why": "√(36 + 64) = √100 = 10. It is 2 × [3, 4], so it is twice as long as [3, 4]."},
+             "answer": "10.", "why": "√(36 + 64) = √100 = 10. It is 2 × [3, 4], so it is twice as long as [3, 4].", "key": {'parts': [{'label': None, 'value': 10, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "What is the length of [1, 1], to 3 decimal places?",
-             "answer": "1.414.", "why": "√(1 + 1) = √2 ≈ 1.414. A length doesn't have to be a whole number."},
+             "answer": "1.414.", "why": "√(1 + 1) = √2 ≈ 1.414. A length doesn't have to be a whole number.", "key": {'parts': [{'label': None, 'value': 1.414, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "number", "q": "The length of [3, 4] is 5. Without squaring anything, what is the length of "
                                     "−2 × [3, 4]?",
              "answer": "10.", "why": "The −2 flips the arrow and doubles it. Flipping doesn't change length, so it "
-                                     "is 2 × 5 = 10 (check: [−6, −8] has length √100 = 10)."},
+                                     "is 2 × 5 = 10 (check: [−6, −8] has length √100 = 10).", "key": {'parts': [{'label': None, 'value': 10, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which vector has length exactly 3?",
              "options": ["[1, 2]", "[3, 3]", "[2, 1, 2]", "[1, 1, 1]"],
-             "answer": "C.", "why": "√(4 + 1 + 4) = √9 = 3. The others: √5 ≈ 2.24, √18 ≈ 4.24, √3 ≈ 1.73."},
+             "answer": "C.", "why": "√(4 + 1 + 4) = √9 = 3. The others: √5 ≈ 2.24, √18 ≈ 4.24, √3 ≈ 1.73.", "key": {'choice': 2}},
         ],
     },
     {
@@ -198,18 +198,18 @@ meaning</b>. Directions in that space can stand for ideas such as “animal” o
                                     "the same “plural” arrow applies, where do you expect <i>dogs</i>?",
              "lines": 2,
              "answer": "(a) [3, 0] (b) [5, 5].",
-             "why": "[1, 3] + [3, 0] = [4, 3]. Adding the same plural arrow to dog: [2 + 3, 5 + 0] = [5, 5]."},
+             "why": "[1, 3] + [3, 0] = [4, 3]. Adding the same plural arrow to dog: [2 + 3, 5 + 0] = [5, 5].", "key": {'parts': [{'label': '(a) 1st', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': '(a) 2nd', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': '(b) 1st', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': '(b) 2nd', 'value': 5, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Each direction in an LLM's vectors was given its meaning by hand, e.g. an engineer "
                                 "decided which direction means ‘animal’.”",
              "answer": "False.", "why": "The directions come to mean something through training on data; nobody "
-                                        "assigns them by hand."},
+                                        "assigns them by hand.", "key": {'value': False}},
             {"kind": "mc", "q": "A token's vector is best thought of as…",
              "options": ["a point (or arrow) in a space where directions can carry meaning",
                          "the dictionary definition of the word, stored as text",
                          "the token's position in the sentence",
                          "a probability for every word in the vocabulary"],
              "answer": "A.", "why": "It is a point in a space of meaning. Position (C) is added separately in episode "
-                                   "4; probabilities (D) are the model's output, not a token's vector."},
+                                   "4; probabilities (D) are the model's output, not a token's vector.", "key": {'choice': 0}},
         ],
     },
     {
@@ -240,7 +240,7 @@ positions</b> in episode 4, and flowing along the <b>residual stream</b> in epis
             {"kind": "mc", "q": "What does <code>np.linalg.norm(np.array([2, 1, 2]))</code> return?",
              "options": ["5.0", "3.0", "9.0", "array([4, 1, 4])"],
              "answer": "B.", "why": "√(4 + 1 + 4) = √9 = 3. A just adds the numbers; C forgets the square root; D "
-                                   "only squares them."},
+                                   "only squares them.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> (a) Complete <code>length(v)</code> without using "
                                   "<code>np.linalg.norm</code>: use <code>v ** 2</code> (square every entry), "
                                   "<code>np.sum</code> and <code>np.sqrt</code>. (b) Predict what the three "

@@ -46,9 +46,9 @@ decay input-dependent lets it decide what is worth keeping.</div>""",
         "exercises": [
             {"kind": "number", "q": "With a fixed a = 0.9, how much does an input from 10 steps ago still count, relative to "
                                     "when it arrived (a^10)?",
-             "answer": "About 0.35.", "why": "0.9¹⁰ ≈ 0.349."},
+             "answer": "About 0.35.", "why": "0.9¹⁰ ≈ 0.349.", "key": {'parts': [{'label': None, 'value': 0.35, 'tol': 0.007, 'unit': None}]}},
             {"kind": "number", "q": "After how many steps has a channel with a = 0.99 forgotten half of an input?",
-             "answer": "About 69.", "why": "0.99^s = 0.5 → s = ln 0.5 / ln 0.99 ≈ 69."},
+             "answer": "About 69.", "why": "0.99^s = 0.5 → s = ln 0.5 / ln 0.99 ≈ 69.", "key": {'parts': [{'label': None, 'value': 69, 'tol': 1.38, 'unit': None}]}},
         ],
     },
     {
@@ -71,7 +71,7 @@ exact lookup is their weak spot.</div>""",
         "exercises": [
             {"kind": "mc", "q": "Which model reached the lowest validation loss in the episode?",
              "options": ["Attention", "Recurrence, fixed decay", "Recurrence, selective decay", "All equal"],
-             "answer": "C.", "why": "1.591 vs 1.644 and 1.648."},
+             "answer": "C.", "why": "1.591 vs 1.644 and 1.648.", "key": {'choice': 2}},
             {"kind": "short", "q": "Why does the recurrent model not need a position embedding?",
              "answer": "It processes tokens one after another, so the order is built into how the state is updated; "
                        "attention, by itself, is blind to order (episode 4).",
@@ -100,7 +100,7 @@ compressing the past.</div>""",
         "exercises": [
             {"kind": "number", "q": "How large would one layer's KV cache be after 1,000,000 tokens (128 numbers, float32, "
                                     "keys and values)?",
-             "answer": "About 977 MiB.", "why": "2 × 1,000,000 × 128 × 4 bytes ≈ 1.02 × 10⁹ bytes."},
+             "answer": "About 977 MiB.", "why": "2 × 1,000,000 × 128 × 4 bytes ≈ 1.02 × 10⁹ bytes.", "key": {'parts': [{'label': None, 'value': 977, 'tol': 19.54, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Run the recurrence by hand on a constant input u = 1 with a = 0.5, "
                                   "for 5 steps from h = 0.",
              "code": """h = 0.0

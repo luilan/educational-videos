@@ -38,12 +38,12 @@ action; ordinary code decides whether and how to perform it.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“When a model calls a weather tool, the model itself connects to the weather service.”",
-             "answer": "False.", "why": "The model only writes the request; the app's code calls the service."},
+             "answer": "False.", "why": "The model only writes the request; the app's code calls the service.", "key": {'value': False}},
             {"kind": "mc", "q": "Where does the model learn the format for writing tool calls?",
              "options": ["It invents a new format each time", "From training (fine-tuning on examples) plus the "
                          "instructions in the system prompt", "From the weather service", "From the user"],
              "answer": "B.", "why": "Tool-capable models are fine-tuned on tool-call examples, and the template restates "
-                                   "the format."},
+                                   "the format.", "key": {'choice': 1}},
         ],
     },
     {
@@ -75,10 +75,10 @@ text in the context.</div>""",
                                    "appended to the context</i>.",
              "answer": "tool descriptions added → model writes a tool call → app runs the function → result appended → "
                        "model answers.",
-             "why": "These are the four steps, plus the final answer."},
+             "why": "These are the four steps, plus the final answer.", "key": {'items': ['the tool descriptions are added to the prompt', 'the model writes a tool call', 'the app runs the function', 'the result is appended to the context', 'the model answers']}},
             {"kind": "number", "q": "The first request was 204 tokens; after the tool call and its result were added, "
                                     "264. How many tokens did the call and the response add?",
-             "answer": "60.", "why": "264 − 204 = 60, including the template's tags and markers."},
+             "answer": "60.", "why": "264 − 204 = 60, including the template's tags and markers.", "key": {'parts': [{'label': None, 'value': 60, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why does the function's docstring matter?",
              "answer": "It becomes the tool's description in the prompt, which is how the model decides when and how to "
                        "call it.",
@@ -103,7 +103,7 @@ expect missing, wrong or malformed calls.</div>""",
                                 "invalid. What should the app do?",
              "options": ["Crash", "Run the function with empty arguments", "Not run anything; report the error or ask "
                          "the model to try again", "Guess the arguments"],
-             "answer": "C.", "why": "Never act on a request you could not parse."},
+             "answer": "C.", "why": "Never act on a request you could not parse.", "key": {'choice': 2}},
             {"kind": "short", "q": "Give one change to the tool description that might make the model call "
                                    "<code>get_weather</code> for umbrella questions.",
              "answer": "For example: “Get the current weather in a city, including rain. Use it for questions about "
@@ -132,7 +132,7 @@ is needed, and guard every action with consequences.</div>""",
         "exercises": [
             {"kind": "mc", "q": "Which tool most needs a confirmation step before it runs?",
              "options": ["get_weather(city)", "search_docs(query)", "transfer_money(to, amount)", "get_time()"],
-             "answer": "C.", "why": "It changes the world irreversibly; the others only read information."},
+             "answer": "C.", "why": "It changes the world irreversibly; the others only read information.", "key": {'choice': 2}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Replace the two <code>chat(…)</code> calls at the end of "
                                   "<code>tool_use.py</code> with the lines below and run it. (a) Which question triggers "
                                   "a tool call, with what arguments? (b) What does the model do with the other one, and "

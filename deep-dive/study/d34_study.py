@@ -39,7 +39,7 @@ here, the same matrix-vector oddity as episode 32; on a GPU it is about equal.)<
         "exercises": [
             {"kind": "tf", "q": "“Speculative decoding (greedy) can change the big model's output.”",
              "answer": "False.", "why": "Only tokens the target itself would have picked are kept; in all 8 runs the output "
-                                       "was identical token for token."},
+                                       "was identical token for token.", "key": {'value': False}},
         ],
     },
     {
@@ -72,11 +72,11 @@ in target steps).</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "k = 4, and the first 2 guesses match the target. How many tokens does this pass add?",
-             "answer": "3.", "why": "The 2 accepted guesses plus the target's own token at the first disagreement."},
+             "answer": "3.", "why": "The 2 accepted guesses plus the target's own token at the first disagreement.", "key": {'parts': [{'label': None, 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Estimate the code speed-up with k = 4: a round costs 4 draft steps (131 ms) and one "
                                     "5-token check (199 ms) and yields 4.7 tokens; plain decoding takes 332 ms per token.",
              "answer": "About 2.2x.", "why": "4 × 131 + 199 = 723 ms for 4.7 tokens = 154 ms per token; 332 / 154 ≈ 2.2 "
-                                            "(measured 2.31x)."},
+                                            "(measured 2.31x).", "key": {'parts': [{'label': None, 'value': 2, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why did 6 guesses make prose slower than plain decoding?",
              "answer": "Only 37% were accepted, so most of the 6 draft steps (131 ms each) were wasted, while each pass still "
                        "gained only about 3 tokens.", "why": "Draft cost grows with k; accepted tokens stop growing."},
@@ -102,7 +102,7 @@ target's distributions.</div>""",
             {"kind": "number", "q": "With p = (0.50, 0.30, 0.15, 0.05) and q = (0.25, 0.50, 0.20, 0.05): what fraction of "
                                     "guesses is accepted, and which token is drawn after a rejection?",
              "answer": "75%; always token 1.", "why": "Σ min(p, q) = 0.25 + 0.30 + 0.15 + 0.05 = 0.75; max(0, p − q) = "
-                                                     "(0.25, 0, 0, 0)."},
+                                                     "(0.25, 0, 0, 0).", "key": {'parts': [{'label': 'accepted', 'value': 75, 'tol': 0.5, 'unit': '%'}, {'label': 'token after rejection (numbered from 1)', 'value': 1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Check that the rule reproduces p.",
              "code": """import torch
 p = torch.tensor([0.50, 0.30, 0.15, 0.05]); q = torch.tensor([0.25, 0.50, 0.20, 0.05])

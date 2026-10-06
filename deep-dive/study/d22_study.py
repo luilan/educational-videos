@@ -48,7 +48,7 @@ range and gives up precision.</div>""",
              "why": "Checked with torch: float16 has a small range, bfloat16 coarse steps."},
             {"kind": "number", "q": "How many GB do the weights of a 7-billion-parameter model take in bfloat16, and in "
                                     "float32?",
-             "answer": "14 GB and 28 GB.", "why": "2 and 4 bytes per parameter."},
+             "answer": "14 GB and 28 GB.", "why": "2 and 4 bytes per parameter.", "key": {'parts': [{'label': 'bfloat16 (GB)', 'value': 14, 'tol': 0.5, 'unit': None}, {'label': 'float32 (GB)', 'value': 28, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -71,9 +71,9 @@ format needs higher-precision weights to keep small updates.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "In bfloat16, what is 1.0 + 1/256? And 1.0 + 1/128?",
-             "answer": "1.0 and 1.0078125.", "why": "The step after 1.0 is 1/128; half a step rounds back to 1.0."},
+             "answer": "1.0 and 1.0078125.", "why": "The step after 1.0 is 1/128; half a step rounds back to 1.0.", "key": {'parts': [{'label': '1.0 + 1/256', 'value': 1, 'tol': 0.001, 'unit': None}, {'label': '1.0 + 1/128', 'value': 1.0078125, 'tol': 0.0001, 'unit': None}]}},
             {"kind": "tf", "q": "“Loss scaling is needed with bfloat16 for the same reason as with float16.”",
-             "answer": "False.", "why": "bfloat16 has float32's exponent range, so tiny gradients do not underflow."},
+             "answer": "False.", "why": "bfloat16 has float32's exponent range, so tiny gradients do not underflow.", "key": {'value': False}},
         ],
     },
     {
@@ -98,7 +98,7 @@ accuracy of the second.</div>""",
             {"kind": "mc", "q": "Which setup matched float32 training in the episode?",
              "options": ["Pure bfloat16 weights", "bfloat16 math with float32 master weights", "float16 weights without "
                          "loss scaling", "None of them"],
-             "answer": "B.", "why": "1.645 vs 1.644."},
+             "answer": "B.", "why": "1.645 vs 1.644.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Check that bfloat16 cannot add 1 to 256.",
              "code": """a = torch.tensor(256.0, dtype=torch.bfloat16)
 print(a + 1)""",

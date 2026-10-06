@@ -39,9 +39,9 @@ repeated.</div>""",
             {"kind": "mc", "q": "You give an LLM the text <i>“The cat sat on the”</i>. What does it produce in one step?",
              "options": ["A complete paragraph continuing the story", "A guess about the single next word",
                          "A summary of the sentence", "A list of grammar corrections"],
-             "answer": "B.", "why": "One step = one prediction of the next word. Longer text comes from repeating the step."},
+             "answer": "B.", "why": "One step = one prediction of the next word. Longer text comes from repeating the step.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“An LLM writes its whole reply at once, as a single output.”",
-             "answer": "False.", "why": "The reply is produced one word at a time, each word predicted from the text so far."},
+             "answer": "False.", "why": "The reply is produced one word at a time, each word predicted from the text so far.", "key": {'value': False}},
             {"kind": "short", "q": "The input is <i>“Once upon a”</i>. In one sentence, describe the model's job. "
                                    "Which word would you expect it to rate as most likely?",
              "lines": 2,
@@ -65,18 +65,18 @@ between 0 and 1, and all of them together <b>add up to exactly 1</b> (100 %). Li
         "exercises": [
             {"kind": "number", "q": "In the chart, <i>mat</i> 41 %, <i>floor</i> 22 %, <i>sofa</i> 12 %, <i>bed</i> 9 % and "
                                     "<i>roof</i> 5 %. How much probability is left for all the other words together?",
-             "answer": "11 %.", "why": "41 + 22 + 12 + 9 + 5 = 89 %, and the whole distribution adds up to 100 %."},
+             "answer": "11 %.", "why": "41 + 22 + 12 + 9 + 5 = 89 %, and the whole distribution adds up to 100 %.", "key": {'parts': [{'label': None, 'value': 11, 'tol': 0.5, 'unit': '%'}]}},
             {"kind": "mc", "q": "Which list could be a probability distribution over three words?",
              "options": ["0.5, 0.3, 0.3", "0.6, 0.4, 0.0", "0.7, −0.1, 0.4", "0.2, 0.2, 0.2"],
              "answer": "B.", "why": "A adds up to 1.1; C has a negative value; D adds up to only 0.6. "
-                                   "B is fine: a 0 is allowed, and the total is exactly 1."},
+                                   "B is fine: a 0 is allowed, and the total is exactly 1.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Because <i>banana</i> is such an unlikely next word, the model gives it a probability "
                                 "of exactly 0.”",
              "answer": "False.", "why": "It gets a tiny probability (0.01 % in the video), not zero. Every word in the "
-                                        "vocabulary gets some probability."},
+                                        "vocabulary gets some probability.", "key": {'value': False}},
             {"kind": "number", "q": "A model's vocabulary has 50,000 words. How many probabilities does it produce each "
                                     "time it predicts the next word?",
-             "answer": "50,000.", "why": "One probability per word in the vocabulary, every single step."},
+             "answer": "50,000.", "why": "One probability per word in the vocabulary, every single step.", "key": {'parts': [{'label': None, 'value': 50000, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -99,14 +99,14 @@ into one actual word, which is then <b>appended</b> to the text.</div>""",
             {"kind": "number", "q": "You <b>sample</b> from that same distribution 100 separate times. About how many "
                                     "times would you expect <i>floor</i> to be picked?",
              "answer": "About 22.", "why": "Sampling picks each word in proportion to its probability: 22 % of 100 ≈ 22 "
-                                            "(the exact count varies from run to run)."},
+                                            "(the exact count varies from run to run).", "key": {'parts': [{'label': None, 'value': 22, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "The text is <i>“The cat sat on the”</i> and the picked word is <i>mat</i>. "
                                    "Write the new text.",
              "answer": "“The cat sat on the mat”.", "why": "Appending adds the word at the end; nothing else changes."},
             {"kind": "mc", "q": "Why pick a word that is not the single most likely one?",
              "options": ["Because the model is not accurate enough", "To add variety, so the text is not always the same "
                          "or repetitive", "Because the probabilities must add up to 1", "To make generation faster"],
-             "answer": "B.", "why": "Sampling makes the output varied. The model's probabilities are the same either way."},
+             "answer": "B.", "why": "Sampling makes the output varied. The model's probabilities are the same either way.", "key": {'choice': 1}},
         ],
     },
     {
@@ -126,15 +126,15 @@ its own earlier words as part of its input.</p>""",
         ],
         "exercises": [
             {"kind": "order", "q": "Put these steps in the right order: <i>append · repeat · predict · pick</i>.",
-             "answer": "predict → pick → append → repeat.", "why": "Predict probabilities, pick a word, append it, go again."},
+             "answer": "predict → pick → append → repeat.", "why": "Predict probabilities, pick a word, append it, go again.", "key": {'items': ['predict', 'pick', 'append', 'repeat']}},
             {"kind": "number", "q": "Starting from <i>“The cat sat on the”</i>, the model generates <i>mat</i>, <i>.</i>, "
                                     "<i>It</i>, <i>purred</i>. (a) How many times was the model run? (b) What text was its "
                                     "input on the third run?",
              "lines": 2,
              "answer": "(a) 4 times. (b) “The cat sat on the mat .”",
-             "why": "One run per new word. The third run sees the original text plus the first two generated words."},
+             "why": "One run per new word. The third run sees the original text plus the first two generated words.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“On later steps, the model reads the words it generated itself as part of its input.”",
-             "answer": "True.", "why": "The whole text, including everything generated so far, goes back in each time."},
+             "answer": "True.", "why": "The whole text, including everything generated so far, goes back in each time.", "key": {'value': True}},
             {"kind": "short", "q": "Name the two ways the loop can stop.",
              "answer": "A length limit, or the model producing the END token.",
              "why": "In the code of concept 5 these are <code>max_new</code> and <code>next_tok == END</code>."},
@@ -168,7 +168,7 @@ length limit; <code>END</code> is the model's own stop signal.</div>""",
              "options": ["The original tokens, unchanged", "The original tokens with END added at the end",
                          "An empty list", "An error"],
              "answer": "B.", "why": "<code>tokens.append(next_tok)</code> runs <i>before</i> the END check, so END is "
-                                   "appended and then the loop breaks. Real code often strips it off afterwards."},
+                                   "appended and then the loop breaks. Real code often strips it off afterwards.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Below is a toy “model” that looks only at the last word, and a "
                                   "version of <code>generate</code> that takes the picking function as an argument. "
                                   "(a) Write <code>greedy(probs)</code>, which returns the most likely word, and "
@@ -231,16 +231,16 @@ billions) of learned numbers. Data flows: <b>tokens → embeddings (+ position) 
         "exercises": [
             {"kind": "tf", "q": "“Inside an LLM there is a list of hand-written rules, such as ‘after <i>sat on the</i>, "
                                 "say <i>mat</i>’.”",
-             "answer": "False.", "why": "It is a function of learned numbers (parameters). Nobody writes the rules."},
+             "answer": "False.", "why": "It is a function of learned numbers (parameters). Nobody writes the rules.", "key": {'value': False}},
             {"kind": "order", "q": "Put these stages in the order data flows through the model: <i>probabilities · "
                                    "tokens · transformer blocks (attention + MLP) · embeddings</i>.",
              "answer": "tokens → embeddings → transformer blocks → probabilities.",
              "why": "Text is split into tokens, tokens become vectors, blocks process them, and the result is turned back "
-                    "into a probability for every word."},
+                    "into a probability for every word.", "key": {'items': ['tokens', 'embeddings', 'transformer blocks (attention + MLP)', 'probabilities']}},
             {"kind": "mc", "q": "Where do the model's numbers come from?",
              "options": ["Engineers write them by hand", "They are random and never change",
                          "They are learned from lots of text during training", "They are copied from a dictionary"],
-             "answer": "C.", "why": "They start random and training adjusts them to predict text better (episode 11)."},
+             "answer": "C.", "why": "They start random and training adjusts them to predict text better (episode 11).", "key": {'choice': 2}},
         ],
     },
 ]

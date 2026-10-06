@@ -40,22 +40,22 @@ the inputs with the weights, plus a bias, then the bend.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "Same neuron (weights 0.5 and 1, bias −1), inputs 4 and 1. What does it output?",
-             "answer": "2.", "why": "4 × 0.5 + 1 × 1 = 3, then 3 − 1 = 2. ReLU keeps positive numbers, so 2."},
+             "answer": "2.", "why": "4 × 0.5 + 1 × 1 = 3, then 3 − 1 = 2. ReLU keeps positive numbers, so 2.", "key": {'parts': [{'label': None, 'value': 2, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Same neuron, inputs 2 and −3. Compute the sum before the bend, and the output. "
                                     "Does the neuron fire?",
              "answer": "Sum −3, output 0: it does not fire.",
-             "why": "2 × 0.5 + (−3) × 1 − 1 = 1 − 3 − 1 = −3, and ReLU turns every negative number into 0."},
+             "why": "2 × 0.5 + (−3) × 1 − 1 = 1 − 3 − 1 = −3, and ReLU turns every negative number into 0.", "key": {'parts': [{'label': 'sum', 'value': -3, 'tol': 0.5, 'unit': None}, {'label': 'output', 'value': 0, 'tol': 0.5, 'unit': None}]}},
             {"kind": "order", "q": "Put a neuron's steps in order: <i>apply ReLU · add the bias · multiply each input "
                                    "by its weight · add up the products</i>.",
              "answer": "multiply by weights → add up → add the bias → apply ReLU.",
-             "why": "Weigh, add, bend: the bias shifts the sum before the bend decides what comes out."},
+             "why": "Weigh, add, bend: the bias shifts the sum before the bend decides what comes out.", "key": {'items': ['multiply each input by its weight', 'add up the products', 'add the bias', 'apply ReLU']}},
             {"kind": "mc", "q": "What does the bias do?",
              "options": ["It multiplies every input by the same number",
                          "It adds a fixed number to the weighted sum, shifting it up or down before the bend",
                          "It chooses which inputs the neuron ignores",
                          "It is the bend that turns negative numbers into 0"],
              "answer": "B.", "why": "In the example the bias −1 turned 4 into 3. Weights scale the inputs (A); ReLU "
-                                   "is the bend (D)."},
+                                   "is the bend (D).", "key": {'choice': 1}},
         ],
     },
     {
@@ -79,15 +79,15 @@ bend</b>: ReLU(x · W + b). It turns the input vector into one number per neuron
              "lines": 2,
              "answer": "x · W + b = [1, 1.1, −0.8]; output [1, 1.1, 0].",
              "why": "Column by column: 0 + 2 − 1 = 1; 0 + 0.6 + 0.5 = 1.1; 0 − 0.8 + 0 = −0.8. ReLU zeroes only the "
-                    "negative one, so two neurons fire this time."},
+                    "negative one, so two neurons fire this time.", "key": {'parts': [{'label': 'x · W + b 1st', 'value': 1, 'tol': 0.05, 'unit': None}, {'label': 'x · W + b 2nd', 'value': 1.1, 'tol': 0.05, 'unit': None}, {'label': 'x · W + b 3rd', 'value': -0.8, 'tol': 0.05, 'unit': None}, {'label': 'output 1st', 'value': 1, 'tol': 0.05, 'unit': None}, {'label': 'output 2nd', 'value': 1.1, 'tol': 0.05, 'unit': None}, {'label': 'output 3rd', 'value': 0, 'tol': 0.05, 'unit': None}]}},
             {"kind": "mc", "q": "A layer reads 4 inputs and has 10 neurons. What shape is W, and how many biases "
                                 "are there?",
              "options": ["4 × 10, and 10 biases", "10 × 4, and 4 biases", "4 × 10, and 4 biases",
                          "10 × 10, and 10 biases"],
-             "answer": "A.", "why": "One row per input (4), one column per neuron (10), and one bias per neuron (10)."},
+             "answer": "A.", "why": "One row per input (4), one column per neuron (10), and one bias per neuron (10).", "key": {'choice': 0}},
             {"kind": "tf", "q": "“In x · W, each <i>row</i> of W holds the weights of one neuron.”",
              "answer": "False.", "why": "Each <i>column</i> is one neuron; each row belongs to one input. Column 1, "
-                                        "[0.5, 1], is the neuron from concept 1."},
+                                        "[0.5, 1], is the neuron from concept 1.", "key": {'value': False}},
         ],
     },
     {
@@ -110,17 +110,17 @@ the input of the next</b>. Depth lets it build complex patterns out of simple on
             {"kind": "number", "q": "The next layer has a single neuron with weights [0.5, 4, −2] and bias 1. It reads "
                                     "[3, 0, 0]. What does it output?",
              "answer": "2.5.", "why": "3 × 0.5 + 0 × 4 + 0 × (−2) + 1 = 2.5, and ReLU keeps it. The silent neurons send "
-                                     "0, so their weights (4 and −2) make no difference for this input."},
+                                     "0, so their weights (4 and −2) make no difference for this input.", "key": {'parts': [{'label': None, 'value': 2.5, 'tol': 0.05, 'unit': None}]}},
             {"kind": "mc", "q": "According to the video, how do the layers of a deep network typically divide the "
                                 "work?",
              "options": ["Early layers find complex patterns, later layers simplify them",
                          "Early layers find simple patterns, later layers combine them into complex ones",
                          "Every layer finds the same patterns, for safety",
                          "Only the last layer finds patterns; the others pass the inputs through"],
-             "answer": "B.", "why": "Simple pieces first (like strokes), then combinations of pieces (like shapes)."},
+             "answer": "B.", "why": "Simple pieces first (like strokes), then combinations of pieces (like shapes).", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Two layers with <i>no bend</i> between them can do more than one layer.”",
              "answer": "False.", "why": "Without the bend, the two matrix multiplications collapse into one matrix "
-                                        "(F04). The bend is what makes depth worthwhile."},
+                                        "(F04). The bend is what makes depth worthwhile.", "key": {'value': False}},
         ],
     },
     {
@@ -138,18 +138,18 @@ inputs × neurons + neurons of them. Learning means changing these numbers, and 
         ],
         "exercises": [
             {"kind": "number", "q": "How many parameters does the layer of concept 2 (2 inputs, 3 neurons) have?",
-             "answer": "9.", "why": "2 × 3 = 6 weights (the entries of W) plus 3 biases."},
+             "answer": "9.", "why": "2 × 3 = 6 weights (the entries of W) plus 3 biases.", "key": {'parts': [{'label': None, 'value': 9, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "The network in the figure has 3 inputs and three layers of 4 neurons each. "
                                     "How many parameters does it have in total?",
              "answer": "56.", "why": "Layer 1: 3 × 4 + 4 = 16. Layers 2 and 3: 4 × 4 + 4 = 20 each. "
-                                    "16 + 20 + 20 = 56."},
+                                    "16 + 20 + 20 = 56.", "key": {'parts': [{'label': None, 'value': 56, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which of these is <b>not</b> a parameter of the network?",
              "options": ["The weight on the edge from input 1 to neuron 3", "The bias of neuron 2",
                          "The input numbers, such as 2 and 3", "An entry of the matrix W"],
              "answer": "C.", "why": "Inputs are the data the network reads; they change with every example. Parameters "
-                                   "belong to the network itself."},
+                                   "belong to the network itself.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“When a network learns, it grows new neurons and connections.”",
-             "answer": "False.", "why": "The shape stays fixed; only the values of the weights and biases change."},
+             "answer": "False.", "why": "The shape stays fixed; only the values of the weights and biases change.", "key": {'value': False}},
         ],
     },
     {
@@ -170,17 +170,17 @@ is 0.3, an error of 0.7. Training repeats this many times (F10, F13 and episode 
         "exercises": [
             {"kind": "mc", "q": "You ask a finished chatbot a question and it answers. What is the network doing?",
              "options": ["Training", "Inference", "Both at once", "Neither"],
-             "answer": "B.", "why": "It runs forward to make predictions; its parameters stay as they are."},
+             "answer": "B.", "why": "It runs forward to make predictions; its parameters stay as they are.", "key": {'choice': 1}},
             {"kind": "order", "q": "Put one training step in order: <i>nudge every parameter · compare the prediction "
                                    "with the right answer · run the inputs forward</i>.",
              "answer": "run forward → compare → nudge.",
-             "why": "You need a prediction before you can compare it, and the comparison tells you how to nudge."},
+             "why": "You need a prediction before you can compare it, and the comparison tells you how to nudge.", "key": {'items': ['run the inputs forward', 'compare the prediction with the right answer', 'nudge every parameter']}},
             {"kind": "number", "q": "Continue the video's example: the prediction is 0.3 and the right answer 1.0. "
                                     "The next nudge moves the prediction to 0.45. What is the new error, and by how "
                                     "much did it shrink?",
-             "answer": "Error 0.55, which is 0.15 smaller.", "why": "1.0 − 0.45 = 0.55, down from 0.7."},
+             "answer": "Error 0.55, which is 0.15 smaller.", "why": "1.0 − 0.45 = 0.55, down from 0.7.", "key": {'parts': [{'label': 'new error', 'value': 0.55, 'tol': 0.005, 'unit': None}, {'label': 'shrunk by', 'value': 0.15, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“During inference, the parameters are nudged after every prediction.”",
-             "answer": "False.", "why": "Nudging parameters is training. Inference only runs the network forward."},
+             "answer": "False.", "why": "Nudging parameters is training. Inference only runs the network forward.", "key": {'value': False}},
         ],
     },
     {
@@ -201,13 +201,13 @@ The <b>training data</b> chooses the values of the parameters.</div>""",
              "options": ["The weight between input 1 and neuron 3", "The number of layers",
                          "The bias of neuron 2", "The output for a particular input"],
              "answer": "B.", "why": "The number of layers is part of the shape. Weights and biases are learned, and "
-                                   "the outputs follow from them."},
+                                   "the outputs follow from them.", "key": {'choice': 1}},
             {"kind": "number", "q": "You choose the shape: 2 inputs → a layer of 3 neurons → a layer of 1 neuron. "
                                     "How many parameters will training have to set?",
-             "answer": "13.", "why": "First layer 2 × 3 + 3 = 9, second layer 3 × 1 + 1 = 4, and 9 + 4 = 13."},
+             "answer": "13.", "why": "First layer 2 × 3 + 3 = 9, second layer 3 × 1 + 1 = 4, and 9 + 4 = 13.", "key": {'parts': [{'label': None, 'value': 13, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“To teach a network something new, an engineer writes a new rule into it.”",
              "answer": "False.", "why": "Nobody writes rules inside. You train it on new data and the parameters "
-                                        "change."},
+                                        "change.", "key": {'value': False}},
         ],
     },
     {
@@ -240,7 +240,7 @@ def layer(x, W, b):
                          "np.maximum picks the neuron with the largest output",
                          "np.maximum also adds the bias"],
              "answer": "B.", "why": "<code>max(0.0, np.array([3, -0.6]))</code> raises a ValueError (“truth value of an "
-                                   "array … is ambiguous”). <code>np.maximum</code> works element by element."},
+                                   "array … is ambiguous”). <code>np.maximum</code> works element by element.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code below has the two functions from the video, the "
                                   "video's first layer (<code>W1</code>, <code>b1</code>) and a second layer with two "
                                   "neurons (<code>W2</code>, <code>b2</code>). (a) What does <code>layer(x, W1, b1)</code> "

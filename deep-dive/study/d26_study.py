@@ -47,7 +47,7 @@ worker produces a partial sum, and one all-reduce completes it.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "With 4 tensor-parallel workers, how many of the 512 hidden units does each compute?",
-             "answer": "128.", "why": "512 / 4, each worker keeping a quarter of the columns and rows."},
+             "answer": "128.", "why": "512 / 4, each worker keeping a quarter of the columns and rows.", "key": {'parts': [{'label': None, 'value': 128, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why does splitting the hidden units work with GELU in between?",
              "answer": "GELU is applied to each hidden unit independently, so each worker can apply it to its own half without "
                        "needing the other half.",
@@ -74,9 +74,9 @@ more micro-batches shrink the bubble.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "4 stages and 12 micro-batches: what fraction of the time is each stage idle?",
-             "answer": "20%.", "why": "(4 − 1) / (12 + 4 − 1) = 3 / 15."},
+             "answer": "20%.", "why": "(4 − 1) / (12 + 4 − 1) = 3 / 15.", "key": {'parts': [{'label': None, 'value': 20, 'tol': 0.5, 'unit': '%'}]}},
             {"kind": "number", "q": "With 8 stages, how many micro-batches are needed to bring the bubble under 10%?",
-             "answer": "64.", "why": "7 / (m + 7) < 0.1 → m > 63."},
+             "answer": "64.", "why": "7 / (m + 7) < 0.1 → m > 63.", "key": {'parts': [{'label': None, 'value': 64, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -96,9 +96,9 @@ one all-reduce; pipeline parallelism is a send and a receive between stages.</p>
             {"kind": "mc", "q": "Which split communicates in every layer?",
              "options": ["Data parallelism", "Tensor parallelism", "Pipeline parallelism", "None"],
              "answer": "B.", "why": "Every split layer ends with an all-reduce of its output; pipelines communicate only "
-                                   "between stages."},
+                                   "between stages.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Pipeline parallelism changes the model's output.”",
-             "answer": "False.", "why": "Same layers, same order: the episode's pipeline matches the full model exactly."},
+             "answer": "False.", "why": "Same layers, same order: the episode's pipeline matches the full model exactly.", "key": {'value': False}},
         ],
     },
 ]

@@ -44,9 +44,9 @@ key/value heads, and so the cache, shrinks.</div>""",
             {"kind": "mc", "q": "A model has 32 query heads and 8 key/value heads. What is it?",
              "options": ["Multi-head attention", "Grouped-query attention, groups of 4", "Multi-query attention",
                          "Grouped-query attention, groups of 8"],
-             "answer": "B.", "why": "32 / 8 = 4 query heads share each key/value head."},
+             "answer": "B.", "why": "32 / 8 = 4 query heads share each key/value head.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Multi-query attention uses a single query head.”",
-             "answer": "False.", "why": "It keeps all its query heads; they share a single key and value head."},
+             "answer": "False.", "why": "It keeps all its query heads; they share a single key and value head.", "key": {'value': False}},
         ],
     },
     {
@@ -71,13 +71,13 @@ bytes per number; GQA cuts the key/value heads.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many bytes per token would Qwen2.5-0.5B's cache take in float32 (4 bytes per "
                                     "number)?",
-             "answer": "24,576.", "why": "2 × 24 × 2 × 64 × 4; twice the bfloat16 figure."},
+             "answer": "24,576.", "why": "2 × 24 × 2 × 64 × 4; twice the bfloat16 figure.", "key": {'parts': [{'label': None, 'value': 24576, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "A model has 32 layers, 8 key/value heads of 128 numbers, in bfloat16. How many bytes "
                                     "of cache per token? And with 32 key/value heads?",
              "answer": "131,072 (128 KiB); 524,288 (512 KiB) with 32.",
-             "why": "2 × 32 × 8 × 128 × 2 = 131,072; four times the key/value heads, four times the cache."},
+             "why": "2 × 32 × 8 × 128 × 2 = 131,072; four times the key/value heads, four times the cache.", "key": {'parts': [{'label': '8 KV heads (bytes)', 'value': 131072, 'tol': 0.5, 'unit': None}, {'label': '32 KV heads (bytes)', 'value': 524288, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "About how many MiB does Qwen2.5-0.5B's cache take for a 1,000-token chat?",
-             "answer": "About 11.7 MiB.", "why": "12,288 × 1,000 / 2<sup>20</sup> ≈ 11.7."},
+             "answer": "About 11.7 MiB.", "why": "12,288 × 1,000 / 2<sup>20</sup> ≈ 11.7.", "key": {'parts': [{'label': None, 'value': 11.7, 'tol': 0.234, 'unit': None}]}},
         ],
     },
     {
@@ -108,10 +108,10 @@ trained model, it needs extra training.</div>""",
              "why": "The weights adapt to the architecture during training; afterwards, they cannot without more "
                     "training."},
             {"kind": "number", "q": "By what factor is the tiny model's cache smaller with 1 key/value head than with 8?",
-             "answer": "8.", "why": "1,024 / 128 = 8 numbers per token."},
+             "answer": "8.", "why": "1,024 / 128 = 8 numbers per token.", "key": {'parts': [{'label': None, 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“In the episode's GPT-2 test, fewer key/value heads always gave a higher loss.”",
              "answer": "False.", "why": "4 heads gave 6.65, 2 heads 6.41, 1 head 6.52: all far worse than 3.80, but not "
-                                       "in order. Without retraining, the damage is not graded."},
+                                       "in order. Without retraining, the damage is not graded.", "key": {'value': False}},
         ],
     },
     {
@@ -143,7 +143,7 @@ reasons long contexts are affordable.</div>""",
                                 "<code>k.repeat_interleave(4, dim=1)</code> produce from key heads [A, B]?",
              "options": ["[A, B, A, B, A, B, A, B]", "[A, A, A, A, B, B, B, B]", "[A, B]", "[A, A, B, B]"],
              "answer": "B.", "why": "repeat_interleave repeats each head in place, so query heads 0–3 use A and 4–7 use "
-                                   "B: consecutive groups."},
+                                   "B: consecutive groups.", "key": {'choice': 1}},
         ],
     },
 ]

@@ -43,11 +43,11 @@ function of the step: warm up, hold, decay.</div>""",
         "exercises": [
             {"kind": "number", "q": "With 200 warmup steps and peak 0.003, what is the learning rate at step 99 (the code "
                                     "uses (step + 1) / 200)?",
-             "answer": "0.0015.", "why": "100 / 200 of the peak."},
+             "answer": "0.0015.", "why": "100 / 200 of the peak.", "key": {'parts': [{'label': None, 'value': 0.0015, 'tol': 5e-05, 'unit': None}]}},
             {"kind": "number", "q": "At step 1,600 (halfway through the decay), what are the cosine, linear and WSD learning "
                                     "rates?",
              "answer": "0.00165, 0.00165 and 0.003.", "why": "Cosine and linear are both at 55% of the peak halfway; WSD is "
-                                                            "still in its stable phase until step 2,400."},
+                                                            "still in its stable phase until step 2,400.", "key": {'parts': [{'label': 'cosine', 'value': 0.00165, 'tol': 5e-06, 'unit': None}, {'label': 'linear', 'value': 0.00165, 'tol': 5e-06, 'unit': None}, {'label': 'WSD', 'value': 0.003, 'tol': 0.0005, 'unit': None}]}},
         ],
     },
     {
@@ -69,10 +69,10 @@ lets the loss settle lower at the end.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“The constant learning rate of 0.003 ended clearly better than 0.001.”",
-             "answer": "False.", "why": "1.598 vs 1.605: it was ahead early (1.90 vs 2.00 at step 500), but they nearly met."},
+             "answer": "False.", "why": "1.598 vs 1.605: it was ahead early (1.90 vs 2.00 at step 500), but they nearly met.", "key": {'value': False}},
             {"kind": "number", "q": "What is the cosine schedule's learning rate at step 2,700?",
              "answer": "About 0.000376.", "why": "warm × (0.1 + 0.45 (1 + cos(π · 2,500 / 2,800))) × 0.003, computed with the "
-                                                "episode's function."},
+                                                "episode's function.", "key": {'parts': [{'label': None, 'value': 0.000376, 'tol': 7.52e-06, 'unit': None}]}},
         ],
     },
     {
@@ -96,7 +96,7 @@ WSD gains 0.064 in its last 600 steps.</div>""",
             {"kind": "order", "q": "Order the five schedules from best to worst final loss: <i>constant 0.003 · cosine · "
                                    "WSD · constant 0.001 · linear</i>.",
              "answer": "WSD (1.542) → cosine (1.551) → linear (1.554) → constant 0.003 (1.598) → constant 0.001 (1.605).",
-             "why": "From the episode's run."},
+             "why": "From the episode's run.", "key": {'items': ['WSD', 'cosine', 'linear', 'constant 0.003', 'constant 0.001']}},
             {"kind": "short", "q": "Why is WSD convenient if you don't know in advance how long you will train?",
              "answer": "Its learning rate does not depend on the total length until the final decay: you can keep training "
                        "at the peak and start the decay whenever you decide to stop.",

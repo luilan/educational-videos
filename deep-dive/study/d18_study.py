@@ -44,7 +44,7 @@ of the local derivatives along the path from that weight to the loss (summed ove
         ],
         "exercises": [
             {"kind": "number", "q": "Same function, but w = 0 (x = 2). What is the gradient?",
-             "answer": "−12.", "why": "tanh(0) = 0: 2(0 − 3) × 1 × (1 − 0) × 2 = −12 (checked with autograd)."},
+             "answer": "−12.", "why": "tanh(0) = 0: 2(0 − 3) × 1 × (1 − 0) × 2 = −12 (checked with autograd).", "key": {'parts': [{'label': None, 'value': -12, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why does backprop run from the loss backward rather than from each weight forward?",
              "answer": "One loss and many weights: going backward reuses each intermediate derivative for every weight below "
                        "it, so one pass gives all the gradients.",
@@ -72,7 +72,7 @@ gradients; they need high precision because the changes are tiny.</div>""",
         "exercises": [
             {"kind": "number", "q": "To get every gradient of GPT-2 by finite differences (two forward passes per weight), "
                                     "how many forward passes would you need?",
-             "answer": "248,879,616.", "why": "2 × 124,439,808, against one forward and one backward pass with backprop."},
+             "answer": "248,879,616.", "why": "2 × 124,439,808, against one forward and one backward pass with backprop.", "key": {'parts': [{'label': None, 'value': 248879616, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Check another weight: entry [0, 0] of layer 0's attention "
                                   "(<code>model.transformer.h[0].attn.c_attn.weight</code>).",
              "code": """W = model.transformer.h[0].attn.c_attn.weight
@@ -107,10 +107,10 @@ pre-norm transformer the gradients reach the first layers intact.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“Only the embedding rows of tokens that appear in the text get a gradient.”",
              "answer": "False (for GPT-2).", "why": "GPT-2 ties the embedding to the output layer, and the softmax gives every "
-                                                   "vocabulary entry a gradient."},
+                                                   "vocabulary entry a gradient.", "key": {'value': False}},
             {"kind": "mc", "q": "Which layers got the smallest gradients in this run?",
              "options": ["Layers 0–1", "Layers 3–4", "Layers 10–11", "All about equal"],
-             "answer": "C.", "why": "Attention 0.51 and 0.66, MLP 0.65 and 0.73."},
+             "answer": "C.", "why": "Attention 0.51 and 0.66, MLP 0.65 and 0.73.", "key": {'choice': 2}},
         ],
     },
     {
@@ -133,9 +133,9 @@ saves (excluding the weights themselves): <b>1,443 MiB</b> of activations for on
         ],
         "exercises": [
             {"kind": "number", "q": "About how much activation memory would a batch of 8 such sequences need?",
-             "answer": "About 11,544 MiB (11.3 GiB).", "why": "8 × 1,443 MiB: each sequence keeps its own activations."},
+             "answer": "About 11,544 MiB (11.3 GiB).", "why": "8 × 1,443 MiB: each sequence keeps its own activations.", "key": {'parts': [{'label': None, 'value': 11544, 'tol': 230.88, 'unit': None}]}},
             {"kind": "number", "q": "GPT-2 small has 124,439,808 float32 parameters. How many MiB is that?",
-             "answer": "About 475 MiB.", "why": "124,439,808 × 4 bytes / 2²⁰ ≈ 474.7."},
+             "answer": "About 475 MiB.", "why": "124,439,808 × 4 bytes / 2²⁰ ≈ 474.7.", "key": {'parts': [{'label': None, 'value': 475, 'tol': 9.5, 'unit': None}]}},
         ],
     },
 ]

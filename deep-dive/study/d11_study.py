@@ -45,10 +45,10 @@ linear in the length.</div>""",
             {"kind": "number", "q": "How many query-key pairs does a window of 128 allow on 1,024 tokens (full causal: "
                                     "524,800)?",
              "answer": "122,944 (about 23%).", "why": "Token i sees min(i + 1, 128) keys; summing over 1,024 tokens gives "
-                                                     "122,944."},
+                                                     "122,944.", "key": {'parts': [{'label': None, 'value': 122944, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“With a window of 4, token 7 can attend to token 3.”",
              "answer": "False.", "why": "It sees tokens 4–7 only: 7 − 3 = 4 is not less than W = 4 (look at row 7 of the "
-                                       "printed mask)."},
+                                       "printed mask).", "key": {'value': False}},
         ],
     },
     {
@@ -67,7 +67,7 @@ a convolutional network, but reach is only a possibility, not a guarantee.</div>
         ],
         "exercises": [
             {"kind": "number", "q": "A model has 12 layers with a window of 512. What is its theoretical reach?",
-             "answer": "6,132 tokens.", "why": "12 × (512 − 1) = 6,132, by the same rule as 4 × 15 = 60."},
+             "answer": "6,132 tokens.", "why": "12 × (512 − 1) = 6,132, by the same rule as 4 × 15 = 60.", "key": {'parts': [{'label': None, 'value': 6132, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why measure reach with gradients rather than by looking at attention weights?",
              "answer": "A gradient is nonzero exactly when an input can influence the output through any path, across "
                        "all layers; attention weights show only one layer's direct links.",
@@ -98,12 +98,12 @@ recall far back. One benchmark can hide what another reveals.</div>""",
             {"kind": "mc", "q": "Which task would most likely suffer from a window of 16?",
              "options": ["Predicting the next letter of a word", "Answering a question about the first page of a long "
                          "report", "Closing a bracket opened 3 tokens earlier", "Choosing between “a” and “an”"],
-             "answer": "B.", "why": "It needs exact information from far back; the others are local."},
+             "answer": "B.", "why": "It needs exact information from far back; the others are local.", "key": {'choice': 1}},
             {"kind": "number", "q": "In the copy task, what loss does pure guessing among 16 symbols give?",
-             "answer": "About 2.77.", "why": "ln 16 ≈ 2.773; both windowed models scored 2.775."},
+             "answer": "About 2.77.", "why": "ln 16 ≈ 2.773; both windowed models scored 2.775.", "key": {'parts': [{'label': None, 'value': 2.77, 'tol': 0.0554, 'unit': None}]}},
             {"kind": "tf", "q": "“If a window's theoretical reach covers a distance, the model will learn to use it.”",
              "answer": "False.", "why": "Window 64 with 4 layers can reach 252 tokens in theory, but scored 2.775 on the "
-                                       "copy task, no better than guessing."},
+                                       "copy task, no better than guessing.", "key": {'value': False}},
         ],
     },
     {
@@ -126,7 +126,7 @@ layers keep long-range recall.</div>""",
         "exercises": [
             {"kind": "number", "q": "With a window of 4,096, how many tokens' keys and values must a layer keep in its "
                                     "cache while generating token 100,000?",
-             "answer": "4,096.", "why": "Only the last W tokens can be attended to; older entries can be dropped."},
+             "answer": "4,096.", "why": "Only the last W tokens can be attended to; older entries can be dropped.", "key": {'parts': [{'label': None, 'value': 4096, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Print <code>window_mask(10, 3).int()</code>. How many ones are "
                                   "in it?",
              "code": """print(window_mask(10, 3).int(), window_mask(10, 3).sum())""",

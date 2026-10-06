@@ -40,9 +40,9 @@ key by position-dependent angles.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "θ = 30° per position. By how many degrees is a query at position 5 rotated?",
-             "answer": "150°.", "why": "5 × 30° = 150°."},
+             "answer": "150°.", "why": "5 × 30° = 150°.", "key": {'parts': [{'label': None, 'value': 150, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Rotating a vector by RoPE changes its length.”",
-             "answer": "False.", "why": "A rotation preserves length: |rope(q, 7)| = |q| = 8.960271 in the code."},
+             "answer": "False.", "why": "A rotation preserves length: |rope(q, 7)| = |q| = 8.960271 in the code.", "key": {'value': False}},
         ],
     },
     {
@@ -64,10 +64,10 @@ only: RoPE turns absolute rotations into relative attention.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "In the code's example, what is the score for m = 1,000,003 and n = 1,000,000?",
-             "answer": "+5.924725.", "why": "m − n = 3, the same distance as (5, 2) (checked by running it)."},
+             "answer": "+5.924725.", "why": "m − n = 3, the same distance as (5, 2) (checked by running it).", "key": {'parts': [{'label': None, 'value': 5.924725, 'tol': 5e-07, 'unit': None}]}},
             {"kind": "mc", "q": "Which pair has the same score as (53, 3)?",
              "options": ["(53, 4)", "(1053, 1003)", "(103, 3)", "(3, 53)"],
-             "answer": "B.", "why": "Both are 50 apart; the code gives +11.24301 for each."},
+             "answer": "B.", "why": "Both are 50 apart; the code gives +11.24301 for each.", "key": {'choice': 1}},
             {"kind": "short", "q": "Why does the value vector not need to be rotated?",
              "answer": "Position only needs to affect who attends to whom, which is decided by the query-key scores; the "
                        "values are what is mixed once the weights are set.",
@@ -96,7 +96,7 @@ position information, like the second, minute and hour hands of a clock.</div>""
             {"kind": "number", "q": "Pair 16 rotates at base<sup>−32/64</sup> radians per token with base 1,000,000. What "
                                     "is that, and how many tokens per full turn (2π radians)?",
              "answer": "0.001 rad/token; about 6,283 tokens.", "why": "1,000,000<sup>−0.5</sup> = 0.001; 2π / 0.001 ≈ "
-                                                                    "6,283.2."},
+                                                                    "6,283.2.", "key": {'parts': [{'label': 'rad/token', 'value': 0.001, 'tol': 0.0005, 'unit': None}, {'label': 'tokens per turn', 'value': 6283, 'tol': 125.66, 'unit': None}]}},
             {"kind": "short", "q": "Why are the fastest pairs alone not enough to encode position?",
              "answer": "They wrap around every few tokens, so positions 0 and 6 look almost the same to them; slow pairs "
                        "are needed to tell far-apart positions apart.",
@@ -123,7 +123,7 @@ why it can be adjusted after training.</div>""",
             {"kind": "tf", "q": "“RoPE adds a learned table of parameters to the model, like GPT-2's position "
                                 "embeddings.”",
              "answer": "False.", "why": "The rotation angles are computed from a formula (positions × fixed frequencies); "
-                                       "nothing is learned."},
+                                       "nothing is learned.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Using <code>rope</code>, <code>q</code> and <code>k</code> "
                                   "from <code>rope.py</code>, print the score for each pair below. Which scores are equal, "
                                   "and why?",

@@ -46,14 +46,14 @@ to fit in it too.</div>""",
                          "The whole prompt (system, earlier turns, documents) plus the reply",
                          "The model's training data"],
              "answer": "C.", "why": "The window counts everything in one request, including the tokens the model "
-                                   "writes."},
+                                   "writes.", "key": {'choice': 2}},
             {"kind": "number", "q": "A prompt is 30,000 tokens long. With a 32,768-token window, what is the longest "
                                     "reply the model can write?",
              "answer": "2,768 tokens.", "why": "32,768 − 30,000 = 2,768: the reply shares the window with the "
-                                              "prompt."},
+                                              "prompt.", "key": {'parts': [{'label': None, 'value': 2768, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Tiny Shakespeare is 301,829 tokens. How many 32,768-token windows is that, to one "
                                     "decimal place?",
-             "answer": "9.2.", "why": "301,829 / 32,768 ≈ 9.21."},
+             "answer": "9.2.", "why": "301,829 / 32,768 ≈ 9.21.", "key": {'parts': [{'label': None, 'value': 9.2, 'tol': 0.05, 'unit': None}]}},
         ],
     },
     {
@@ -80,13 +80,13 @@ positions, quadratic attention work and linear KV-cache memory.</div>""",
                                 "change?",
              "options": ["It stays the same", "It doubles", "It roughly quadruples", "It grows tenfold"],
              "answer": "C.", "why": "Every token attends to every earlier token, so the work grows with the square of "
-                                   "the length: 2² = 4."},
+                                   "the length: 2² = 4.", "key": {'choice': 2}},
             {"kind": "number", "q": "The KV cache of this model takes 12,288 bytes per token. How many MiB for a "
                                     "8,192-token conversation? (1 MiB = 1,048,576 bytes)",
-             "answer": "96 MiB.", "why": "12,288 × 8,192 = 100,663,296 bytes = 96 MiB."},
+             "answer": "96 MiB.", "why": "12,288 × 8,192 = 100,663,296 bytes = 96 MiB.", "key": {'parts': [{'label': None, 'value': 96, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“The KV cache memory grows with the square of the context length.”",
              "answer": "False.", "why": "It grows linearly: a fixed amount per token. It is the attention work that "
-                                       "grows with the square."},
+                                       "grows with the square.", "key": {'value': False}},
             {"kind": "short", "q": "A server holds 10 full-window conversations of this model at once. How much KV-cache "
                                    "memory is that?",
              "answer": "3,840 MiB (3.75 GiB).", "why": "10 × 384 MiB. This is why long contexts limit how many users "
@@ -112,7 +112,7 @@ retrieval keep the important parts inside the window.</div>""",
             {"kind": "mc", "q": "Why does the trimming code never drop the system prompt?",
              "options": ["It cannot be tokenized", "It sets the model's role and rules for every reply",
                          "It is always the shortest message", "The window does not count it"],
-             "answer": "B.", "why": "Losing it would change how the model behaves, not only what it remembers."},
+             "answer": "B.", "why": "Losing it would change how the model behaves, not only what it remembers.", "key": {'choice': 1}},
             {"kind": "short", "q": "In a long chat, the oldest turns (where you told the assistant you are vegetarian) "
                                    "were dropped. You ask for a dinner idea. What can go wrong, and name one fix?",
              "answer": "It may suggest meat, because that fact is no longer in the context. Fix: summarise old turns "
@@ -122,7 +122,7 @@ retrieval keep the important parts inside the window.</div>""",
                                    "stop when under budget · keep the system prompt aside</i>.",
              "answer": "keep the system prompt aside → count the tokens → drop the oldest exchange → stop when under "
                        "budget (repeat counting and dropping until it fits).",
-             "why": "This is the <code>fit</code> function of the episode's code."},
+             "why": "This is the <code>fit</code> function of the episode's code.", "key": {'items': ['keep the system prompt aside', 'count the tokens', 'drop the oldest exchange', 'stop when under budget']}},
         ],
     },
     {
@@ -145,11 +145,11 @@ matters.</div>""",
         "exercises": [
             {"kind": "number", "q": "The trimmed chat keeps 82 of the original 133 tokens. How many tokens were "
                                     "dropped?",
-             "answer": "51.", "why": "133 − 82 = 51: the two oldest user + assistant exchanges."},
+             "answer": "51.", "why": "133 − 82 = 51: the two oldest user + assistant exchanges.", "key": {'parts': [{'label': None, 'value': 51, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“With a 1-million-token window, it no longer matters where in the prompt you put the "
                                 "key instruction.”",
              "answer": "False.", "why": "Models tend to use the start and end of long contexts better than the middle, "
-                                       "and long prompts are slower and cost more."},
+                                       "and long prompts are slower and cost more.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>code/p02_context_window/fit_the_window.py</code>, "
                                   "change <code>budget = 100</code> to <code>budget = 60</code> and run it. (a) How many "
                                   "messages are kept? (b) Which user question is the first one kept? (c) What happens "

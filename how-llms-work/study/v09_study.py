@@ -55,18 +55,18 @@ way.</div>""",
             {"kind": "mc", "q": "What flows along the residual stream?",
              "options": ["Each token's vector", "The probabilities for the next word", "The text, as a list of words",
                          "The attention weights of the first layer"],
-             "answer": "A.", "why": "The stream carries each token's vector, from its embedding to the prediction."},
+             "answer": "A.", "why": "The stream carries each token's vector, from its embedding to the prediction.", "key": {'choice': 0}},
             {"kind": "order", "q": "Put these in the order a token's vector meets them: <i>prediction · embedding · "
                                    "attention and MLP halves</i>.",
              "answer": "embedding → attention and MLP halves → prediction.",
-             "why": "The stream starts at the embedding and ends at the prediction; the halves sit along it."},
+             "why": "The stream starts at the embedding and ends at the prediction; the halves sit along it.", "key": {'items': ['embedding', 'attention and MLP halves', 'prediction']}},
             {"kind": "short", "q": "Which half lets tokens share information, and which processes each token on its "
                                    "own?",
              "answer": "Attention shares; the MLP processes each token alone.",
              "why": "Attention is where tokens talk; the MLP is where each token thinks (episode 8)."},
             {"kind": "tf", "q": "“A text of 6 tokens has 6 vectors flowing along the residual stream, one per token.”",
              "answer": "True.", "why": "Each token's vector flows along the stream, from its own embedding to the "
-                                       "prediction."},
+                                       "prediction.", "key": {'value': True}},
         ],
     },
     {
@@ -88,10 +88,10 @@ stacks</b> of layers trainable (training is episode 11).</p>""",
         "exercises": [
             {"kind": "number", "q": "x = [1, 2]. Attention returns [0.5, −1]; then the MLP returns [0, 3]. What is x "
                                     "after each step?",
-             "answer": "[1.5, 1], then [1.5, 4].", "why": "x + attention(x) = [1 + 0.5, 2 − 1]; then add [0, 3]."},
+             "answer": "[1.5, 1], then [1.5, 4].", "why": "x + attention(x) = [1 + 0.5, 2 − 1]; then add [0, 3].", "key": {'parts': [{'label': 'after attention, 1st', 'value': 1.5, 'tol': 0.05, 'unit': None}, {'label': 'after attention, 2nd', 'value': 1, 'tol': 0.05, 'unit': None}, {'label': 'after MLP, 1st', 'value': 1.5, 'tol': 0.05, 'unit': None}, {'label': 'after MLP, 2nd', 'value': 4, 'tol': 0.05, 'unit': None}]}},
             {"kind": "tf", "q": "“After the attention half, the stream holds only attention's output; the original "
                                 "vector is gone.”",
-             "answer": "False.", "why": "The output is added to x, so the original is still part of the sum."},
+             "answer": "False.", "why": "The output is added to x, so the original is still part of the sum.", "key": {'value': False}},
             {"kind": "short", "q": "A half has learned nothing useful yet and always outputs zeros. What happens to x "
                                    "with <code>x&nbsp;=&nbsp;x&nbsp;+&nbsp;f(x)</code>? And with <code>x&nbsp;=&nbsp;f(x)</code>?",
              "lines": 2,
@@ -103,7 +103,7 @@ stacks</b> of layers trainable (training is episode 11).</p>""",
                          "It turns vectors into probabilities and removes the need for training",
                          "It lets the MLP see the other tokens"],
              "answer": "B.", "why": "Keeping the information and the direct path for training are why deep stacks can "
-                                   "be trained."},
+                                   "be trained.", "key": {'choice': 1}},
         ],
     },
     {
@@ -125,7 +125,7 @@ and bias, the output always has <b>mean 0 and standard deviation 1</b>.</div>"""
         "exercises": [
             {"kind": "number", "q": "Apply layer norm (gain 1, bias 0) to [1, 3].",
              "answer": "[−1, 1].", "why": "The mean is 2; both numbers are 1 away from it, so the standard deviation is "
-                                         "1; (x − 2) / 1."},
+                                         "1; (x − 2) / 1.", "key": {'parts': [{'label': '1st', 'value': -1, 'tol': 0.01, 'unit': None}, {'label': '2nd', 'value': 1, 'tol': 0.01, 'unit': None}]}},
             {"kind": "short", "q": "Without calculating: what does layer norm (gain 1, bias 0) give for "
                                    "[12, 14, 16, 18]? And for [20, 40, 60, 80]?",
              "answer": "Both give [−1.34, −0.45, 0.45, 1.34].",
@@ -134,9 +134,9 @@ and bias, the output always has <b>mean 0 and standard deviation 1</b>.</div>"""
             {"kind": "number", "q": "Apply a gain of 2 and a bias of 1 to [−1.34, −0.45, 0.45, 1.34]. Give each number "
                                     "to one decimal.",
              "answer": "[−1.7, 0.1, 1.9, 3.7].",
-             "why": "2 × value + 1. The learned gain and bias let the model pick its own scale and shift."},
+             "why": "2 × value + 1. The learned gain and bias let the model pick its own scale and shift.", "key": {'parts': [{'label': '1st', 'value': -1.7, 'tol': 0.05, 'unit': None}, {'label': '2nd', 'value': 0.1, 'tol': 0.05, 'unit': None}, {'label': '3rd', 'value': 1.9, 'tol': 0.05, 'unit': None}, {'label': '4th', 'value': 3.7, 'tol': 0.05, 'unit': None}]}},
             {"kind": "tf", "q": "“Layer norm is applied just once, at the start of the model.”",
-             "answer": "False.", "why": "There is one before each half: two in every block."},
+             "answer": "False.", "why": "There is one before each half: two in every block.", "key": {'value': False}},
         ],
     },
     {
@@ -158,15 +158,15 @@ halves, two layer norms, two additions.</div>""",
             {"kind": "order", "q": "Put the six steps of one block in order: <i>add · MLP · layer norm · attention · "
                                    "add · layer norm</i>.",
              "answer": "layer norm → attention → add → layer norm → MLP → add.",
-             "why": "Each half: normalize a copy, compute, add the result to the stream."},
+             "why": "Each half: normalize a copy, compute, add the result to the stream.", "key": {'items': ['layer norm', 'attention', 'add', 'layer norm', 'MLP', 'add']}},
             {"kind": "mc", "q": "Which line is the first half of the block?",
              "options": ["<code>x = attention(layer_norm(x))</code>", "<code>x = x + attention(layer_norm(x))</code>",
                          "<code>x = layer_norm(x) + attention(x)</code>", "<code>x = x + layer_norm(x)</code>"],
              "answer": "B.", "why": "A replaces x instead of adding; C puts a normalized copy into the stream and "
-                                   "feeds attention an un-normalized x; D has no attention at all."},
+                                   "feeds attention an un-normalized x; D has no attention at all.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“The layer norm changes the vector stored in the residual stream.”",
              "answer": "False.", "why": "It normalizes the copy fed into the half. Only the half's output is added to "
-                                        "the stream."},
+                                        "the stream.", "key": {'value': False}},
         ],
     },
     {
@@ -186,18 +186,18 @@ in every block</b>. Early blocks: local patterns. Late blocks: meaning and the n
         ],
         "exercises": [
             {"kind": "tf", "q": "“The 12 blocks of GPT-2 small are copies of one block that share the same weights.”",
-             "answer": "False.", "why": "Same design, but every block has its own weights."},
+             "answer": "False.", "why": "Same design, but every block has its own weights.", "key": {'value': False}},
             {"kind": "number", "q": "From episode 8, one GPT-2 small layer has 4,718,592 MLP weights and 2,359,296 "
                                     "attention weights. About how many weights do the 12 blocks hold together "
                                     "(ignoring biases and layer norms)?",
-             "answer": "84,934,656, about 85 million.", "why": "12 × (4,718,592 + 2,359,296) = 12 × 7,077,888."},
+             "answer": "84,934,656, about 85 million.", "why": "12 × (4,718,592 + 2,359,296) = 12 × 7,077,888.", "key": {'parts': [{'label': None, 'value': 84934656, 'tol': 1698690, 'unit': None}]}},
             {"kind": "number", "q": "How many layer norms are inside GPT-2 small's 12 blocks? And inside the largest "
                                     "GPT-2's 48?",
-             "answer": "24 and 96.", "why": "Two per block, one before each half."},
+             "answer": "24 and 96.", "why": "Two per block, one before each half.", "key": {'parts': [{'label': '12 blocks', 'value': 24, 'tol': 0.5, 'unit': None}, {'label': '48 blocks', 'value': 96, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "According to the rough pattern, which job is more typical of the later layers?",
              "options": ["Grammar and nearby words", "Abstract meaning and predicting the next token",
                          "Splitting the text into tokens", "Looking up each token's embedding"],
-             "answer": "B.", "why": "A is typical of the earlier layers; C and D happen before the first block."},
+             "answer": "B.", "why": "A is typical of the earlier layers; C and D happen before the first block.", "key": {'choice': 1}},
         ],
     },
     {
@@ -225,7 +225,7 @@ the model is one loop, and each block is two “normalize, compute, add” steps
             {"kind": "tf", "q": "“After the last block, each token's vector is already a list of probabilities for "
                                 "the next word.”",
              "answer": "False.", "why": "It is still a vector (768 numbers in GPT-2 small). Episode 10 turns it into "
-                                        "probabilities."},
+                                        "probabilities.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Below is the video's <code>layer_norm</code> and a toy block "
                                   "whose attention has learned nothing yet (it returns zeros) and whose “MLP” just "
                                   "returns 0.1 times its input. (a) Predict the first two printed lines. (b) Predict "

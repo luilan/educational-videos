@@ -39,10 +39,10 @@ values; all 12 heads are computed by the same matrix multiplication.</div>""",
         "exercises": [
             {"kind": "number", "q": "GPT-2's query-key-value matrix maps 768 numbers to 3 × 768. How many parameters does "
                                     "it have, including its 2,304 biases?",
-             "answer": "1,771,776.", "why": "768 × 2,304 = 1,769,472 weights, plus 2,304 biases."},
+             "answer": "1,771,776.", "why": "768 × 2,304 = 1,769,472 weights, plus 2,304 biases.", "key": {'parts': [{'label': None, 'value': 1771776, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "How many numbers per head would a model with 1,024-number vectors and 16 heads "
                                     "have?",
-             "answer": "64.", "why": "1,024 / 16 = 64, the same head size as GPT-2."},
+             "answer": "64.", "why": "1,024 / 16 = 64, the same head size as GPT-2.", "key": {'parts': [{'label': None, 'value': 64, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -66,7 +66,7 @@ is a softmax over the tokens a query is allowed to see.</div>""",
             {"kind": "number", "q": "If “it” could see only “The” (score −2.14) and “cat” (score 0.57), what weight would "
                                     "“cat” get?",
              "answer": "About 0.938.", "why": "e<sup>0.57</sup> / (e<sup>0.57</sup> + e<sup>−2.14</sup>) ≈ 0.938; fewer "
-                                             "competitors, more weight."},
+                                             "competitors, more weight.", "key": {'parts': [{'label': None, 'value': 0.938, 'tol': 0.01876, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Using <code>qh</code> and <code>kh</code> from "
                                   "<code>attention_matrix.py</code>, compute the same score with a single matrix product "
                                   "and check it.",
@@ -98,13 +98,13 @@ softmax stays soft, whatever the head size.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "A model uses heads of 128 numbers. By what does it divide each score?",
-             "answer": "About 11.31.", "why": "√128 ≈ 11.31."},
+             "answer": "About 11.31.", "why": "√128 ≈ 11.31.", "key": {'parts': [{'label': None, 'value': 11.31, 'tol': 0.2262, 'unit': None}]}},
             {"kind": "tf", "q": "“Without the division by 8, the row for “it” in this head would still give “cat” about "
                                 "84%.”",
              "answer": "False.", "why": "Scores 8 times larger make softmax sharper: “cat” gets 1.000 (checked by running "
-                                       "it)."},
+                                       "it).", "key": {'value': False}},
             {"kind": "number", "q": "In a causal 10 × 10 attention matrix, how many entries are not masked?",
-             "answer": "55.", "why": "10 + 9 + … + 1 = 55; the other 45 are masked."},
+             "answer": "55.", "why": "10 + 9 + … + 1 = 55; the other 45 are masked.", "key": {'parts': [{'label': None, 'value': 55, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -131,10 +131,10 @@ matrix then combines what all the heads found.</div>""",
             {"kind": "order", "q": "Put one head's steps in order: <i>softmax · multiply by the values · dot products of "
                                    "queries and keys · divide by √64 · mask the future</i>.",
              "answer": "dot products → divide by √64 → mask the future → softmax → multiply by the values.",
-             "why": "This is the order in the code (the mask must come before the softmax)."},
+             "why": "This is the order in the code (the mask must come before the softmax).", "key": {'items': ['dot products of queries and keys', 'divide by √64', 'mask the future', 'softmax', 'multiply by the values']}},
             {"kind": "number", "q": "How many attention weights would GPT-2 compute in one forward pass at 512 tokens?",
              "answer": "37,748,736.", "why": "144 × 512 × 512; a quarter of the 1,024-token figure, since the matrix grows "
-                                            "with the square of the length."},
+                                            "with the square of the length.", "key": {'parts': [{'label': None, 'value': 37748736, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "What does a “previous-token head” make possible for the layers above it?",
              "answer": "Each position now carries information about the token just before it, so later heads can match "
                        "pairs or patterns of tokens, not just single tokens.",

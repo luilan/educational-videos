@@ -43,13 +43,13 @@ the vectors themselves</b>.</p>""",
             {"kind": "tf", "q": "“Embeddings alone already tell <i>“The cat sat on the mat”</i> apart from <i>“The mat "
                                 "sat on the cat”</i>.”",
              "answer": "False.", "why": "Both sentences contain the same tokens, so they get exactly the same "
-                                        "vectors."},
+                                        "vectors.", "key": {'value': False}},
             {"kind": "mc", "q": "Which pair of sentences would look identical to a model with no position "
                                 "information?",
              "options": ["<i>The dog bit the man</i> / <i>The man bit the dog</i>",
                          "<i>The dog bit the man</i> / <i>A dog bit a man</i>",
                          "<i>The dog bit</i> / <i>The dog bites</i>", "<i>I like tea</i> / <i>I like coffee</i>"],
-             "answer": "A.", "why": "Same tokens, different order. Every other pair differs in at least one token."},
+             "answer": "A.", "why": "Same tokens, different order. Every other pair differs in at least one token.", "key": {'choice': 0}},
             {"kind": "short", "q": "Why can't attention work out the word order by itself?",
              "answer": "Nothing in its comparisons says which token came first.",
              "why": "It compares every token with every other token; unless the vectors carry position, order is "
@@ -72,15 +72,15 @@ as the meaning. Raw position numbers grow without limit and swamp it.</div>""",
         "exercises": [
             {"kind": "number", "q": "The meaning vector is (0.21, −0.47, 0.83). With idea 1, what is the input vector "
                                     "at position 3?",
-             "answer": "(3.21, 2.53, 3.83).", "why": "Add 3 to every number: −0.47 + 3 = 2.53."},
+             "answer": "(3.21, 2.53, 3.83).", "why": "Add 3 to every number: −0.47 + 3 = 2.53.", "key": {'parts': [{'label': '1st', 'value': 3.21, 'tol': 0.005, 'unit': None}, {'label': '2nd', 'value': 2.53, 'tol': 0.005, 'unit': None}, {'label': '3rd', 'value': 3.83, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "What goes wrong with idea 1 in a long text?",
              "options": ["Two positions get the same number", "The position numbers become huge and drown out the "
                          "meaning", "It needs a table with one row per position", "It only works for even positions"],
-             "answer": "B.", "why": "By token 5000 the numbers are around 5000, while the meaning is below 1."},
+             "answer": "B.", "why": "By token 5000 the numbers are around 5000, while the meaning is below 1.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“At position 5000, <i>cat</i> (0.21, −0.47, 0.83) and a word with meaning (0.25, "
                                 "−0.40, 0.80) give input vectors that are almost identical.”",
              "answer": "True.", "why": "(5000.21, 4999.53, 5000.83) vs (5000.25, 4999.60, 5000.80): the small "
-                                       "differences in meaning are lost next to 5000."},
+                                       "differences in meaning are lost next to 5000.", "key": {'value': True}},
         ],
     },
     {
@@ -100,17 +100,17 @@ positions it never saw in training.</div>""",
             {"kind": "number", "q": "Using the table in the figure, compute the first three numbers of <i>cat</i> at "
                                     "position <b>0</b>. (cat's embedding starts 0.35, −0.12, 0.61.)",
              "answer": "(1.15, −0.10, 1.47).", "why": "Row 0 is (0.80, 0.02, 0.86): 0.35 + 0.80, −0.12 + 0.02, "
-                                                      "0.61 + 0.86."},
+                                                      "0.61 + 0.86.", "key": {'parts': [{'label': '1st', 'value': 1.15, 'tol': 0.005, 'unit': None}, {'label': '2nd', 'value': -0.1, 'tol': 0.005, 'unit': None}, {'label': '3rd', 'value': 1.47, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "GPT-2 is given a text of 1,500 tokens. What is the problem?",
              "options": ["Tokens after position 1023 have no position vector", "The position numbers get too big",
                          "Its vocabulary is too small", "There is no problem"],
-             "answer": "A.", "why": "The table has 1,024 rows (positions 0–1023), all learned in training."},
+             "answer": "A.", "why": "The table has 1,024 rows (positions 0–1023), all learned in training.", "key": {'choice': 0}},
             {"kind": "number", "q": "GPT-2's position table has 1,024 rows of 768 numbers. How many numbers must be "
                                     "learned?",
-             "answer": "786,432.", "why": "1,024 × 768. Like the embedding matrix, every one of them is learned."},
+             "answer": "786,432.", "why": "1,024 × 768. Like the embedding matrix, every one of them is learned.", "key": {'parts': [{'label': None, 'value': 786432, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“In GPT-2, the position vectors are computed from a fixed formula.”",
              "answer": "False.", "why": "They are learned in training, just like the token embeddings. (The formula "
-                                        "is the next idea.)"},
+                                        "is the next idea.)", "key": {'value': False}},
         ],
     },
     {
@@ -135,14 +135,14 @@ many frequencies. Every value is between −1 and 1, and all the waves together 
             {"kind": "mc", "q": "Why is one fast wave not enough to encode position?",
              "options": ["Its values are too large", "It repeats quickly, so far-apart positions can look the same",
                          "It can't tell neighbours apart", "It needs a learned table"],
-             "answer": "B.", "why": "Like the second hand, which is back in the same place every minute."},
+             "answer": "B.", "why": "Like the second hand, which is back in the same place every minute.", "key": {'choice': 1}},
             {"kind": "short", "q": "A clock's second hand points at 12 and its minute hand at 3. Give two different "
                                    "times this could be. Which hand settles it?",
              "answer": "E.g. 1:15:00 or 4:15:00; the hour hand.",
              "why": "The fast hands only fix the time within the hour. The slowest hand tells which hour."},
             {"kind": "tf", "q": "“In sinusoidal encoding, the values for position 5000 are much larger than for "
                                 "position 5.”",
-             "answer": "False.", "why": "Every value is a sine or cosine, always between −1 and 1."},
+             "answer": "False.", "why": "Every value is a sine or cosine, always between −1 and 1.", "key": {'value': False}},
         ],
     },
     {
@@ -165,16 +165,16 @@ vector that carries both what the token is and where it is.</div>""",
              "lines": 2,
              "answer": "PE(0) = (0, 1, 0, 1); cat at 0 = (0.350, 0.880, 0.610, 1.080).",
              "why": "sin 0 = 0 and cos 0 = 1, so only the cosine dimensions change: −0.120 + 1 = 0.880, "
-                    "0.080 + 1 = 1.080."},
+                    "0.080 + 1 = 1.080.", "key": {'parts': [{'label': 'PE(0) 1st', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'PE(0) 2nd', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'PE(0) 3rd', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': 'PE(0) 4th', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': 'cat 1st', 'value': 0.35, 'tol': 0.0005, 'unit': None}, {'label': 'cat 2nd', 'value': 0.88, 'tol': 0.0005, 'unit': None}, {'label': 'cat 3rd', 'value': 0.61, 'tol': 0.0005, 'unit': None}, {'label': 'cat 4th', 'value': 1.08, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "tf", "q": "“Adding position vectors changes the rows of the embedding matrix <code>E</code>.”",
              "answer": "False.", "why": "<code>E</code> is unchanged. The sum is computed for each input: "
-                                        "<code>x = E[ids] + PE</code>."},
+                                        "<code>x = E[ids] + PE</code>.", "key": {'value': False}},
             {"kind": "mc", "q": "<i>cat</i> appears at positions 2 and 6 of a sentence. Which statement is true?",
              "options": ["Both get exactly the same input vector", "Their input vectors differ, because different "
                          "position vectors were added", "Only the first <i>cat</i> gets a position vector",
                          "The second <i>cat</i> is removed"],
              "answer": "B.", "why": "Same embedding, different PE: (1.259, −0.536, 0.630, 1.080) vs (0.071, 0.840, "
-                                   "0.670, 1.078)."},
+                                   "0.670, 1.078).", "key": {'choice': 1}},
         ],
     },
     {
@@ -204,12 +204,12 @@ wave is slower.</div>""",
             {"kind": "number", "q": "With <code>d_model = 4</code>, the pairs use i = 0 and i = 2. What are the two "
                                     "angles at position 2?",
              "answer": "2 and 0.02.", "why": "10000<sup>0/4</sup> = 1 and 10000<sup>2/4</sup> = 100, so PE(2) = "
-                                             "(sin 2, cos 2, sin 0.02, cos 0.02) = (0.909, −0.416, 0.020, 1.000)."},
+                                             "(sin 2, cos 2, sin 0.02, cos 0.02) = (0.909, −0.416, 0.020, 1.000).", "key": {'parts': [{'label': 'i = 0', 'value': 2, 'tol': 0.05, 'unit': None}, {'label': 'i = 2', 'value': 0.02, 'tol': 0.005, 'unit': None}]}},
             {"kind": "number", "q": "A sine wave repeats each time its angle grows by 2π ≈ 6.28. With "
                                     "<code>d_model = 4</code>, about how many positions does it take for pair 1 to "
                                     "repeat? And pair 2?",
              "answer": "About 6.3 and about 628.", "why": "Pair 1's angle is pos; pair 2's is pos / 100, so it needs "
-                                                          "100 times as many positions: the fast and the slow hand."},
+                                                          "100 times as many positions: the fast and the slow hand.", "key": {'parts': [{'label': 'pair 1', 'value': 6.3, 'tol': 0.126, 'unit': None}, {'label': 'pair 2', 'value': 628, 'tol': 12.56, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Copy <code>positional_encoding</code> from above (with "
                                   "<code>import numpy as np</code>) and run the lines below. (a) What are rows 0 and 2 "
                                   "of <code>pe</code>? (b) What is the largest absolute value anywhere in "
@@ -248,22 +248,22 @@ of adding a vector. A comparison of two tokens then depends only on their <b>dis
         "exercises": [
             {"kind": "number", "q": "With RoPE, token A is at position 4 and token B at position 10. By what angles "
                                     "are they rotated, and what angle gap does the comparison see?",
-             "answer": "4θ and 10θ; a gap of 6θ.", "why": "Angle = position · θ, and the gap is (10 − 4)θ."},
+             "answer": "4θ and 10θ; a gap of 6θ.", "why": "Angle = position · θ, and the gap is (10 − 4)θ.", "key": {'self': True}},
             {"kind": "number", "q": "Take θ = 10°. Two tokens sit at positions 3 and 7. Later in the text, the same "
                                     "two tokens sit at positions 103 and 107. What gap does the comparison see each "
                                     "time?",
              "answer": "40° both times.", "why": "30° vs 70°, and 1030° vs 1070°: the distance is 4 positions either "
-                                                 "way."},
+                                                 "way.", "key": {'parts': [{'label': None, 'value': 40, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "How is RoPE different from sinusoidal encoding?",
              "options": ["It adds a larger position vector", "It rotates pairs of numbers by a position-dependent angle "
                          "instead of adding a vector", "It uses a learned table, like GPT-2",
                          "It ignores position"],
              "answer": "B.", "why": "Sinusoidal encoding adds PE(pos) to the embedding; RoPE turns pairs of numbers "
-                                   "in the vectors attention compares."},
+                                   "in the vectors attention compares.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“With RoPE, what a comparison sees depends on the tokens' exact positions, not just "
                                 "on how far apart they are.”",
              "answer": "False.", "why": "Only the difference of the angles matters, and that depends only on the "
-                                        "distance."},
+                                        "distance.", "key": {'value': False}},
         ],
     },
 ]

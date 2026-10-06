@@ -41,7 +41,7 @@ the behaviour: answer in the expected form, then stop.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“The base model fails in chat format mainly because it does not know the capitals.”",
              "answer": "False.", "why": "With a plain prompt it gets 75% right; the chat tokens are simply unfamiliar "
-                                       "territory for it."},
+                                       "territory for it.", "key": {'value': False}},
         ],
     },
     {
@@ -68,7 +68,7 @@ loss masked to the assistant's part, end token included.</div>""",
         "exercises": [
             {"kind": "number", "q": "A conversation has 18 prompt tokens and a 12-token answer (end token included). What "
                                     "share of the tokens contribute to the loss?",
-             "answer": "40%.", "why": "12 / 30."},
+             "answer": "40%.", "why": "12 / 30.", "key": {'parts': [{'label': None, 'value': 40, 'tol': 0.5, 'unit': '%'}]}},
             {"kind": "short", "q": "What would go wrong if the end token were left out of the trained labels?",
              "answer": "The model would never learn to emit it, so it would keep generating after the answer.",
              "why": "Stopping is a learned behaviour like any other token."},
@@ -103,7 +103,7 @@ skills still come from pre-training, and its errors show through.</div>""",
              "options": ["The test leaked into training", "The model already knew them from pre-training; SFT taught it how "
                                                          "to answer", "Fine-tuning taught it geography",
                          "It guessed"],
-             "answer": "B.", "why": "The plain-prompt test showed the knowledge was there before fine-tuning."},
+             "answer": "B.", "why": "The plain-prompt test showed the knowledge was there before fine-tuning.", "key": {'choice': 1}},
         ],
     },
 ]

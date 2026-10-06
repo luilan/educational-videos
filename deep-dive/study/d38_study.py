@@ -46,7 +46,7 @@ batch can't move the policy too far.</div>""",
             {"kind": "number", "q": "The clipped objective min(ratio · A, clip(ratio, 0.8, 1.2) · A): what is it for ratio 1.5 "
                                     "and A = +1? For ratio 1.5 and A = −1?",
              "answer": "1.2; −1.5.", "why": "For A > 0 the clip caps the gain at 1.2; for A < 0 the minimum keeps the "
-                                           "unclipped, more negative value, so bad moves are still corrected."},
+                                           "unclipped, more negative value, so bad moves are still corrected.", "key": {'parts': [{'label': 'A = +1', 'value': 1.2, 'tol': 0.05, 'unit': None}, {'label': 'A = −1', 'value': -1.5, 'tol': 0.05, 'unit': None}]}},
         ],
     },
     {
@@ -89,10 +89,10 @@ original model; it must be large relative to the reward the hack could earn.</di
         "exercises": [
             {"kind": "number", "q": "With β = 0.5, what does one token cost if the new model gives it probability 0.5 and "
                                     "GPT-2 gave it 0.05?",
-             "answer": "About 1.15.", "why": "0.5 × ln(0.5 / 0.05) = 0.5 × ln 10."},
+             "answer": "About 1.15.", "why": "0.5 × ln(0.5 / 0.05) = 0.5 × ln 10.", "key": {'parts': [{'label': None, 'value': 1.15, 'tol': 0.023, 'unit': None}]}},
             {"kind": "number", "q": "Why did β = 0.05 fail? Compare the total penalty at KL 25 with the hacked reward.",
              "answer": "Penalty ≈ 1.25, reward 24.", "why": "0.05 × 25 = 1.25 is tiny next to a reward of 24, so the hack "
-                                                            "still pays."},
+                                                            "still pays.", "key": {'parts': [{'label': 'penalty', 'value': 1.25, 'tol': 0.025, 'unit': None}, {'label': 'hacked reward', 'value': 24, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Evaluate the clipped objective for a few ratios.",
              "code": """import torch
 ratio = torch.tensor([0.5, 0.9, 1.0, 1.1, 1.5])

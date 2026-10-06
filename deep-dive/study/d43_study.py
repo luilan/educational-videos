@@ -42,7 +42,7 @@ lost.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "With S = 0.97 and 5 features, how many features are active in an average example?",
-             "answer": "0.15.", "why": "5 × (1 − 0.97) = 0.15: most examples have no active feature at all."},
+             "answer": "0.15.", "why": "5 × (1 − 0.97) = 0.15: most examples have no active feature at all.", "key": {'parts': [{'label': None, 'value': 0.15, 'tol': 0.005, 'unit': None}]}},
         ],
     },
     {
@@ -74,7 +74,7 @@ superposition, at the cost of interference.</div>""",
         "exercises": [
             {"kind": "number", "q": "Five unit vectors evenly spaced in a plane: what is the angle between neighbours, and "
                                     "their cosine?",
-             "answer": "72°; cos 72° ≈ 0.31.", "why": "360° / 5 = 72°."},
+             "answer": "72°; cos 72° ≈ 0.31.", "why": "360° / 5 = 72°.", "key": {'parts': [{'label': 'angle (degrees)', 'value': 72, 'tol': 0.5, 'unit': None}, {'label': 'cosine', 'value': 0.31, 'tol': 0.0062, 'unit': None}]}},
             {"kind": "short", "q": "Why can two features share one direction with opposite signs (cosine −1)?",
              "answer": "Each is non-negative; after the ReLU, a positive reading means one feature and a negative reading "
                        "the other. It only fails when both are active at once, which is rare when features are sparse.",
@@ -108,7 +108,7 @@ many sparse features into few dimensions.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“If a neuron responds to two unrelated concepts, the model must be poorly trained.”",
-             "answer": "False.", "why": "Superposition is an efficient solution when features are sparse."},
+             "answer": "False.", "why": "Superposition is an efficient solution when features are sparse.", "key": {'value': False}},
         ],
     },
 ]

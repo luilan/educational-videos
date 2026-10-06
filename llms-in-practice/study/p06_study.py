@@ -46,7 +46,7 @@ know: is the answer retrieved, and at what cost?</div>""",
              "why": "A test only measures retrieval if each question has one right answer."},
             {"kind": "tf", "q": "“Only the first measurement (answer found) matters; the number of words sent is "
                                 "irrelevant.”",
-             "answer": "False.", "why": "Every extra word costs time and money and can bury the key fact (episode 2)."},
+             "answer": "False.", "why": "Every extra word costs time and money and can bury the key fact (episode 2).", "key": {'value': False}},
         ],
     },
     {
@@ -67,14 +67,14 @@ silently ignored, so long chunks hide their endings.</div>""",
         "exercises": [
             {"kind": "number", "q": "The handbook is 327 tokens and the model reads 256. What fraction of the handbook is "
                                     "ignored, to the nearest percent?",
-             "answer": "22%.", "why": "71 / 327 ≈ 0.217."},
+             "answer": "22%.", "why": "71 / 327 ≈ 0.217.", "key": {'parts': [{'label': None, 'value': 22, 'tol': 0.5, 'unit': '%'}]}},
             {"kind": "mc", "q": "Whole-document retrieval still scored 10 / 10, even for questions about the ignored end. "
                                 "Why?",
              "options": ["The ignored text is read later by the LLM", "The rest of the handbook is clearly about the "
                          "bakery, so the bakery document still wins against the bike shop and the gym",
                          "The model memorised the handbook", "Truncation never happens with sentence models"],
              "answer": "B.", "why": "With only three very different documents, topic alone picks the right one. In a "
-                                   "library of many bakery documents it would not."},
+                                   "library of many bakery documents it would not.", "key": {'choice': 1}},
         ],
     },
     {
@@ -99,7 +99,7 @@ the words that make it findable.</div>""",
              "why": "The question's key words and the answer ended up in different chunks."},
             {"kind": "tf", "q": "“Smaller fixed chunks are always more precise, so 15 words beats 30.”",
              "answer": "False.", "why": "In the same test, 15-word chunks found only 4 / 10 answers: more cuts, more "
-                                       "facts split."},
+                                       "facts split.", "key": {'value': False}},
         ],
     },
     {
@@ -124,12 +124,12 @@ enough neighbouring text that no fact is split.</div>""",
             {"kind": "order", "q": "Order the four strategies from most to fewest words sent per question: <i>sentence + "
                                    "neighbours · whole document · one per section · fixed 30 words</i>.",
              "answer": "whole document (255) → one per section (38) → fixed 30 words (30) → sentence + neighbours (28).",
-             "why": "Values from the episode's table."},
+             "why": "Values from the episode's table.", "key": {'items': ['whole document', 'one per section', 'fixed 30 words', 'sentence + neighbours']}},
             {"kind": "mc", "q": "A user asks “refund rules?” but the policy says “returns are accepted within 14 days”. "
                                 "Which fix targets this failure?",
              "options": ["Bigger chunks", "Rewrite the question (or add keyword search with synonyms)",
                          "Fewer chunks", "A higher temperature"],
-             "answer": "B.", "why": "The problem is different words for the same thing, not chunk size."},
+             "answer": "B.", "why": "The problem is different words for the same thing, not chunk size.", "key": {'choice': 1}},
         ],
     },
     {

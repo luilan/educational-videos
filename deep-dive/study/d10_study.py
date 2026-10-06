@@ -42,10 +42,10 @@ it is what makes long contexts run out of memory.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many GiB would the score matrices of one layer take for 8,192 tokens and 12 "
                                     "heads, in float32?",
-             "answer": "3 GiB.", "why": "8,192² × 12 × 4 bytes = 3,221,225,472 bytes = 3 GiB."},
+             "answer": "3 GiB.", "why": "8,192² × 12 × 4 bytes = 3,221,225,472 bytes = 3 GiB.", "key": {'parts': [{'label': None, 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Doubling the length doubles the memory of the score matrix.”",
              "answer": "False.", "why": "It is T × T: doubling T multiplies it by 4 (99 → 386 → 1,557 MiB in the "
-                                       "measurements)."},
+                                       "measurements).", "key": {'value': False}},
         ],
     },
     {
@@ -68,7 +68,7 @@ by chunk: when the max grows, multiply what you have by e<sup>old max − new ma
                                     "output so far? And the final output?",
              "answer": "7.3106 after the first chunk; 15.7521 at the end.",
              "why": "Chunk 1: (e<sup>−1</sup>·0 + 1·10) / (e<sup>−1</sup> + 1) = 7.3106. Then rescale by e<sup>2 − 3</sup> "
-                    "and add e<sup>0</sup>·20: the same as the full softmax, 15.7521."},
+                    "and add e<sup>0</sup>·20: the same as the full softmax, 15.7521.", "key": {'parts': [{'label': 'after first chunk', 'value': 7.3106, 'tol': 0.001, 'unit': None}, {'label': 'final', 'value': 15.7521, 'tol': 0.001, 'unit': None}]}},
             {"kind": "short", "q": "Why subtract the running max at all, instead of just adding up e<sup>score</sup>?",
              "answer": "To avoid overflow: e<sup>score</sup> for large scores is too big for floating point. Subtracting "
                        "the max keeps every exponent at most 0.",
@@ -96,9 +96,9 @@ that no longer grows with T².</div>""",
         "exercises": [
             {"kind": "number", "q": "With 1,024 tokens and blocks of 64, how many query-key blocks does causal tiled "
                                     "attention compute (out of 256)?",
-             "answer": "136.", "why": "16 blocks per side; the lower triangle including the diagonal is 16 × 17 / 2 = 136."},
+             "answer": "136.", "why": "16 blocks per side; the lower triangle including the diagonal is 16 × 17 / 2 = 136.", "key": {'parts': [{'label': None, 'value': 136, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "How large is one tile of scores with blocks of 128, in float32?",
-             "answer": "64 KiB.", "why": "128 × 128 × 4 bytes = 65,536 bytes."},
+             "answer": "64 KiB.", "why": "128 × 128 × 4 bytes = 65,536 bytes.", "key": {'parts': [{'label': None, 'value': 64, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Run <code>tiled</code> from <code>flash_attention.py</code> "
                                   "with blocks of 128 and 16. Does the output change?",
              "code": """for B in (128, 16):
@@ -138,10 +138,10 @@ arithmetic: the work is still quadratic.</div>""",
                          "It computes exact attention without storing the T × T matrix",
                          "It only works without a causal mask"],
              "answer": "C.", "why": "Same result (to rounding), memory per tile only, and the causal mask is handled by "
-                                   "skipping and masking blocks."},
+                                   "skipping and masking blocks.", "key": {'choice': 2}},
             {"kind": "number", "q": "From 2,048 to 4,096 tokens, by what factor did standard attention's measured memory "
                                     "grow?",
-             "answer": "About 4 (386 → 1,557 MiB, ×4.03).", "why": "The score matrix is T × T."},
+             "answer": "About 4 (386 → 1,557 MiB, ×4.03).", "why": "The score matrix is T × T.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
         ],
     },
 ]

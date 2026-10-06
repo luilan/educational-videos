@@ -42,15 +42,15 @@ CONCEPTS = [
         "exercises": [
             {"kind": "mc", "q": "The point is at the very top of the circle, at 90°. What are cos 90° and sin 90°?",
              "options": ["cos = 1, sin = 0", "cos = 0, sin = 1", "cos = 1, sin = 1", "cos = 0.5, sin = 0.5"],
-             "answer": "B.", "why": "At the top the point is (0, 1): no horizontal offset, full height."},
+             "answer": "B.", "why": "At the top the point is (0, 1): no horizontal offset, full height.", "key": {'choice': 1}},
             {"kind": "number", "q": "Where is the point at 180°? Give (cos 180°, sin 180°).",
-             "answer": "(−1, 0).", "why": "Half a turn puts the point on the far left, at height 0."},
+             "answer": "(−1, 0).", "why": "Half a turn puts the point on the far left, at height 0.", "key": {'parts': [{'label': 'cos 180°', 'value': -1, 'tol': 0.5, 'unit': None}, {'label': 'sin 180°', 'value': 0, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“For some angle θ, sin θ = 1.5.”",
              "answer": "False.", "why": "sin θ is the height of a point on a circle of radius 1, so it is always between "
-                                        "−1 and 1."},
+                                        "−1 and 1.", "key": {'value': False}},
             {"kind": "number", "q": "At 60° the height is sin 60° ≈ 0.866. Use cos²θ + sin²θ = 1 to find cos 60°.",
              "answer": "0.5.", "why": "cos² 60° = 1 − 0.75 = 0.25, and √0.25 = 0.5 (positive, because at 60° the point is "
-                                     "right of the center)."},
+                                     "right of the center).", "key": {'parts': [{'label': None, 'value': 0.5, 'tol': 0.05, 'unit': None}]}},
         ],
     },
     {
@@ -72,15 +72,15 @@ the angle. It repeats every full turn: <b>360° = 2π ≈ 6.28 radians</b>.</div
             {"kind": "number", "q": "Convert to radians: (a) 180° (b) 90° (c) 30°.",
              "answer": "(a) π ≈ 3.14 (b) π/2 ≈ 1.57 (c) π/6 ≈ 0.52.",
              "why": "360° = 2π, so 180° = π and 90° = π/2. 30° is a twelfth of a turn: 2π ÷ 12 = π/6 (the video's code "
-                    "writes <code>np.pi / 6</code>)."},
+                    "writes <code>np.pi / 6</code>).", "key": {'parts': [{'label': '(a) 180°', 'value': 3.14, 'tol': 0.0628, 'unit': None}, {'label': '(b) 90°', 'value': 1.57, 'tol': 0.0314, 'unit': None}, {'label': '(c) 30°', 'value': 0.52, 'tol': 0.0104, 'unit': None}]}},
             {"kind": "tf", "q": "“sin(1) and sin(1 + 2π) are equal.”",
-             "answer": "True.", "why": "Adding a full turn brings the point back to the same place (both ≈ 0.841)."},
+             "answer": "True.", "why": "Adding a full turn brings the point back to the same place (both ≈ 0.841).", "key": {'value': True}},
             {"kind": "mc", "q": "The cosine wave is…",
              "options": ["the sine wave flipped upside down", "the sine wave shifted by a quarter turn",
                          "the sine wave, twice as fast", "a straight line"],
-             "answer": "B.", "why": "It has the same shape, shifted by a quarter turn (π/2)."},
+             "answer": "B.", "why": "It has the same shape, shifted by a quarter turn (π/2).", "key": {'choice': 1}},
             {"kind": "number", "q": "How many full periods does sin θ complete between θ = 0 and θ = 4π ≈ 12.57?",
-             "answer": "2.", "why": "One period is 2π, and 4π ÷ 2π = 2. The video draws exactly these two."},
+             "answer": "2.", "why": "One period is 2π, and 4π ÷ 2π = 2. The video draws exactly these two.", "key": {'parts': [{'label': None, 'value': 2, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -97,16 +97,16 @@ faster wave (a higher frequency); a smaller w, a slower one.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How long is one period of sin(3x)?",
-             "answer": "2π/3 ≈ 2.09.", "why": "Three times as fast, so a third of 6.28."},
+             "answer": "2π/3 ≈ 2.09.", "why": "Three times as fast, so a third of 6.28.", "key": {'parts': [{'label': None, 'value': 2.09, 'tol': 0.0418, 'unit': None}]}},
             {"kind": "order", "q": "Order these waves by the length of their period, shortest first: "
                                    "<i>sin(x/2) · sin(4x) · sin(x) · sin(2x)</i>.",
              "answer": "sin(4x) → sin(2x) → sin(x) → sin(x/2).",
-             "why": "Periods 1.57, 3.14, 6.28 and 12.57: the bigger the multiplier, the shorter the period."},
+             "why": "Periods 1.57, 3.14, 6.28 and 12.57: the bigger the multiplier, the shorter the period.", "key": {'items': ['sin(4x)', 'sin(2x)', 'sin(x)', 'sin(x/2)']}},
             {"kind": "tf", "q": "“Multiplying the input by 2 makes the wave twice as tall.”",
-             "answer": "False.", "why": "It makes the wave repeat twice as fast. The height still only goes from −1 to 1."},
+             "answer": "False.", "why": "It makes the wave repeat twice as fast. The height still only goes from −1 to 1.", "key": {'value': False}},
             {"kind": "number", "q": "You want a wave that repeats exactly every 100 units. What should w be in "
                                     "sin(w·x)?",
-             "answer": "w = 2π ÷ 100 ≈ 0.0628.", "why": "The period is 2π ÷ w, so w = 2π ÷ period."},
+             "answer": "w = 2π ÷ 100 ≈ 0.0628.", "why": "The period is 2π ÷ w, so w = 2π ÷ period.", "key": {'parts': [{'label': None, 'value': 0.0628, 'tol': 0.00126, 'unit': None}]}},
         ],
     },
     {
@@ -127,19 +127,19 @@ positions apart. Several waves with different frequencies give every position it
         "exercises": [
             {"kind": "number", "q": "With a calculator in radian mode, compute sin(p/4) at p = 10. Which of the four "
                                     "values in the picture is it?",
-             "answer": "sin(2.5) ≈ 0.60: the third value.", "why": "10 ÷ 4 = 2.5, and sin(2.5) ≈ 0.598."},
+             "answer": "sin(2.5) ≈ 0.60: the third value.", "why": "10 ÷ 4 = 2.5, and sin(2.5) ≈ 0.598.", "key": {'parts': [{'label': None, 'value': 0.6, 'tol': 0.012, 'unit': None}]}},
             {"kind": "mc", "q": "Why not mark positions with the fast wave sin(p) alone?",
              "options": ["It repeats every 6.28 positions, so far-apart positions can get almost the same value",
                          "It is always 0 at whole-number positions",
                          "It changes too slowly to tell neighbors apart",
                          "Sine cannot take whole numbers as input"],
              "answer": "A.", "why": "For example sin(0) = 0 and sin(44) ≈ 0.02, but the slower sin(p/4) tells them apart: "
-                                   "0 vs −1.00."},
+                                   "0 vs −1.00.", "key": {'choice': 0}},
             {"kind": "number", "q": "How many positions does the slowest wave, sin(p/8), take to repeat?",
-             "answer": "About 50.3.", "why": "2π ÷ (1/8) = 16π ≈ 50.3."},
+             "answer": "About 50.3.", "why": "2π ÷ (1/8) = 16π ≈ 50.3.", "key": {'parts': [{'label': None, 'value': 50.3, 'tol': 1.006, 'unit': None}]}},
             {"kind": "tf", "q": "“From one position to the next, sin(p) changes more than sin(p/8) does.”",
              "answer": "True.", "why": "sin(p) is the fast wave, like the second hand; sin(p/8) moves slowly, like the "
-                                       "hour hand."},
+                                       "hour hand.", "key": {'value': True}},
         ],
     },
     {
@@ -158,17 +158,17 @@ x sin θ + y cos θ)</b>. The direction turns by θ; the length stays the same.<
         "exercises": [
             {"kind": "number", "q": "Rotate (0, 1) by 30°. (cos 30° ≈ 0.866, sin 30° = 0.5.)",
              "answer": "(−0.5, 0.866).", "why": "x = 0, y = 1: (0 − 1 × 0.5, 0 + 1 × 0.866). The arrow pointed at 90° "
-                                               "and now points at 120°."},
+                                               "and now points at 120°.", "key": {'parts': [{'label': 'x', 'value': -0.5, 'tol': 0.0005, 'unit': None}, {'label': 'y', 'value': 0.866, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "number", "q": "Rotate (3, 4) by 90° (cos 90° = 0, sin 90° = 1). Check that the length is "
                                     "unchanged.",
              "lines": 2,
              "answer": "(−4, 3); length 5 before and after.",
-             "why": "(3 × 0 − 4 × 1, 3 × 1 + 4 × 0) = (−4, 3). √(9 + 16) = √(16 + 9) = 5."},
+             "why": "(3 × 0 − 4 × 1, 3 × 1 + 4 × 0) = (−4, 3). √(9 + 16) = √(16 + 9) = 5.", "key": {'parts': [{'label': 'x', 'value': -4, 'tol': 0.5, 'unit': None}, {'label': 'y', 'value': 3, 'tol': 0.5, 'unit': None}, {'label': 'length', 'value': 5, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Rotating a vector by a large enough angle makes it longer.”",
-             "answer": "False.", "why": "A rotation only changes the direction, never the length."},
+             "answer": "False.", "why": "A rotation only changes the direction, never the length.", "key": {'value': False}},
             {"kind": "mc", "q": "Rotating (2, 0) by 30° gives…",
              "options": ["(1.732, 1)", "(0.866, 0.5)", "(2, 0.5)", "(1, 1.732)"],
-             "answer": "A.", "why": "Twice the video's result, 2 × (0.866, 0.5): the length stays 2. D is a turn of 60°."},
+             "answer": "A.", "why": "Twice the video's result, 2 × (0.866, 0.5): the length stays 2. D is a turn of 60°.", "key": {'choice': 0}},
         ],
     },
     {
@@ -198,10 +198,10 @@ from any starting direction: only the difference in steps shows. A rotation is a
                                     "Answer (a) and (b) again.",
              "lines": 2,
              "answer": "(a) 40° and 100°. (b) 60°. (c) 90° and 150°; still 60°.",
-             "why": "The shared start adds the same 50° to both, so the difference 3θ = 60° does not change."},
+             "why": "The shared start adds the same 50° to both, so the difference 3θ = 60° does not change.", "key": {'parts': [{'label': '(a) 2θ', 'value': 40, 'tol': 0.5, 'unit': None}, {'label': '(a) 5θ', 'value': 100, 'tol': 0.5, 'unit': None}, {'label': '(b) between', 'value': 60, 'tol': 0.5, 'unit': None}, {'label': '(c) 2θ', 'value': 90, 'tol': 0.5, 'unit': None}, {'label': '(c) 5θ', 'value': 150, 'tol': 0.5, 'unit': None}, {'label': '(c) between', 'value': 60, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which pair of positions gives the same relative angle as positions 5 and 2?",
              "options": ["7 and 1", "10 and 7", "5 and 3", "6 and 2"],
-             "answer": "B.", "why": "10 − 7 = 3 steps, like 5 − 2. The others are 6, 2 and 4 steps apart."},
+             "answer": "B.", "why": "10 − 7 = 3 steps, like 5 − 2. The others are 6, 2 and 4 steps apart.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code wraps the video's matrix in a function "
                                   "<code>rot</code>. Predict, then run: (a) <code>rot(theta) @ np.array([0.0, 1.0])</code>. "
                                   "(b) <code>rot(theta) @ rot(theta) @ v</code>: by what angle has <code>v</code> turned? "

@@ -43,11 +43,11 @@ first position, regardless of its content.</div>""",
         "exercises": [
             {"kind": "number", "q": "If 39% of attention goes to the first token on average, how much is left for the "
                                     "other 255 tokens together?",
-             "answer": "61%.", "why": "Each row of weights sums to 1 (100%)."},
+             "answer": "61%.", "why": "Each row of weights sums to 1 (100%).", "key": {'parts': [{'label': None, 'value': 61, 'tol': 0.5, 'unit': '%'}]}},
             {"kind": "tf", "q": "“GPT-2 attends to the first token because it is usually an important word like "
                                 "“The”.”",
              "answer": "False.", "why": "With a line break, “zebra” or a comma as the first token, the share stays at "
-                                       "about 0.39."},
+                                       "about 0.39.", "key": {'value': False}},
         ],
     },
     {
@@ -77,7 +77,7 @@ under the constraint that the weights must sum to 1.</div>""",
              "options": ["Its scores are negative", "Its value vectors are small", "It is masked", "It has no position "
                          "embedding"],
              "answer": "B.", "why": "The output is a weighted sum of values; a small value contributes little, whatever "
-                                   "its weight."},
+                                   "its weight.", "key": {'choice': 1}},
         ],
     },
     {
@@ -100,7 +100,7 @@ four tokens are enough to bring the model back.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "With a window of 256 plus 4 sink tokens, at most how many keys does a query see?",
-             "answer": "260.", "why": "The last 256 tokens plus tokens 0–3 (when they are not already in the window)."},
+             "answer": "260.", "why": "The last 256 tokens plus tokens 0–3 (when they are not already in the window).", "key": {'parts': [{'label': None, 'value': 260, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>attention_sinks.py</code>, keep only the first token "
                                   "(or the first two) instead of four. What perplexity do you get?",
              "code": """for n in (1, 2):
@@ -129,7 +129,7 @@ sparse, or windowed plus sinks.</div>""",
             {"kind": "order", "q": "Order these masks from fewest to most allowed pairs on 1,024 tokens: <i>full causal · "
                                    "window 256 + 4 sinks · window 256</i>.",
              "answer": "window 256 → window 256 + 4 sinks → full causal.",
-             "why": "The sinks add a few pairs to the window; full causal allows every earlier key."},
+             "why": "The sinks add a few pairs to the window; full causal allows every earlier key.", "key": {'items': ['window 256', 'window 256 + 4 sinks', 'full causal']}},
         ],
     },
 ]

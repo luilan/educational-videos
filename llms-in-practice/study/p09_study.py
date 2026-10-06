@@ -44,11 +44,11 @@ behaviour cannot be prompted or retrieved.</div>""",
             {"kind": "mc", "q": "Your assistant must know this week's prices, which change every Monday. Best tool?",
              "options": ["Fine-tuning every week", "RAG over the current price list", "A higher temperature",
                          "Training a new model"],
-             "answer": "B.", "why": "Changing facts belong in the library, not in the weights."},
+             "answer": "B.", "why": "Changing facts belong in the library, not in the weights.", "key": {'choice': 1}},
             {"kind": "mc", "q": "You need every reply in a strict house style that is hard to describe, and you have "
                                 "2,000 example replies. Best tool?",
              "options": ["Prompting alone", "RAG", "Fine-tuning (e.g. LoRA)", "Sampling at temperature 0"],
-             "answer": "C.", "why": "A consistent style learned from many examples is what fine-tuning is for."},
+             "answer": "C.", "why": "A consistent style learned from many examples is what fine-tuning is for.", "key": {'choice': 2}},
         ],
     },
     {
@@ -70,10 +70,10 @@ model knew, and every task needs its own full copy.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "By how much did the Shakespeare loss rise after full fine-tuning?",
-             "answer": "2.80.", "why": "4.40 − 1.60 = 2.80."},
+             "answer": "2.80.", "why": "4.40 − 1.60 = 2.80.", "key": {'parts': [{'label': None, 'value': 2.8, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“After full fine-tuning on recipes, the model is better at both recipes and "
                                 "Shakespeare.”",
-             "answer": "False.", "why": "Recipes improved (2.77 → 0.25) but Shakespeare got much worse (1.60 → 4.40)."},
+             "answer": "False.", "why": "Recipes improved (2.77 → 0.25) but Shakespeare got much worse (1.60 → 4.40).", "key": {'value': False}},
         ],
     },
     {
@@ -97,14 +97,14 @@ express them with a small fraction of the parameters.</div>""",
         "exercises": [
             {"kind": "number", "q": "A frozen layer maps 128 inputs to 384 outputs (the attention's qkv). How many "
                                     "trainable numbers do A and B add with rank r = 4?",
-             "answer": "2,048.", "why": "A is 4 × 128 = 512, B is 384 × 4 = 1,536; 512 + 1,536 = 2,048."},
+             "answer": "2,048.", "why": "A is 4 × 128 = 512, B is 384 × 4 = 1,536; 512 + 1,536 = 2,048.", "key": {'parts': [{'label': None, 'value': 2048, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Why does B start at zero?",
              "answer": "So that B × A is zero at the start: the model behaves exactly like the base model until training "
                        "begins.",
              "why": "The code confirms it: before training, the recipe loss is 2.77, identical to the base model."},
             {"kind": "number", "q": "A full 128 → 384 weight matrix has how many numbers, and what fraction of that is "
                                     "the rank-4 LoRA pair?",
-             "answer": "49,152; about 4.2%.", "why": "128 × 384 = 49,152; 2,048 / 49,152 ≈ 0.042."},
+             "answer": "49,152; about 4.2%.", "why": "128 × 384 = 49,152; 2,048 / 49,152 ≈ 0.042.", "key": {'parts': [{'label': 'numbers in full matrix', 'value': 49152, 'tol': 0.5, 'unit': None}, {'label': 'LoRA fraction', 'value': 4.2, 'tol': 0.084, 'unit': '%'}]}},
         ],
     },
     {
@@ -127,7 +127,7 @@ stays intact and shareable.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“With the LoRA adapter switched on, the Shakespeare loss is also 1.60.”",
              "answer": "False.", "why": "With the adapter on it is 3.92: the adapter steers the model toward recipes. "
-                                       "Only switched off is it exactly 1.60."},
+                                       "Only switched off is it exactly 1.60.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> In <code>code/p09_lora/lora.py</code>, change "
                                   "<code>add_lora(tuned, r=4)</code> to <code>r=1</code> and run it. (a) How many "
                                   "trainable parameters, and what recipe loss? (b) Compare a sample with rank 4's.",

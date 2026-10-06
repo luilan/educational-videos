@@ -45,12 +45,12 @@ lookups.</div>""",
              "options": ["The model cannot handle more than 65 numbers", "Each token is one character, and the text "
                          "uses only 65 different characters", "Rare words were removed from the text",
                          "65 is the length of the context"],
-             "answer": "B.", "why": "<code>sorted(set(text))</code> collects the distinct characters of the file."},
+             "answer": "B.", "why": "<code>sorted(set(text))</code> collects the distinct characters of the file.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“With this tokenizer, the word <i>the</i> is a single token.”",
              "answer": "False.", "why": "Every character is a token: <i>t</i>, <i>h</i>, <i>e</i> are three. (The "
-                                        "GPT-2 tokenizer of episode 2 makes <i>the</i> one token.)"},
+                                        "GPT-2 tokenizer of episode 2 makes <i>the</i> one token.)", "key": {'value': False}},
             {"kind": "number", "q": "How many tokens is the text <i>“First Citizen:”</i>?",
-             "answer": "14.", "why": "One per character, and the space counts: 5 + 1 + 8."},
+             "answer": "14.", "why": "One per character, and the space counts: 5 + 1 + 8.", "key": {'parts': [{'label': None, 'value': 14, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> This code rebuilds the real 65-character vocabulary of "
                                   "<code>tiny_gpt.py</code> (the same list <code>sorted(set(text))</code> finds in the "
                                   "Shakespeare file) and its tokenizer. (a) Which IDs do the newline and the space get, "
@@ -96,18 +96,18 @@ time.</p>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many learned numbers are in the two tables together?",
-             "answer": "16,512.", "why": "Token table 65 × 128 = 8,320; position table 64 × 128 = 8,192."},
+             "answer": "16,512.", "why": "Token table 65 × 128 = 8,320; position table 64 × 128 = 8,192.", "key": {'parts': [{'label': None, 'value': 16512, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Input <i>hi</i> = [46, 47]. Which two rows are added to make the vector for <i>i</i>?",
              "answer": "Row 47 of the token table + row 1 of the position table.",
              "why": "<i>i</i> is token 47 and sits at position 1 (positions count from 0)."},
             {"kind": "number", "q": "A batch is 32 sequences of 64 characters. What is the shape of <code>x</code> "
                                     "after the embeddings?",
              "answer": "32 × 64 × 128.", "why": "Each of the 32 × 64 characters becomes a vector of <code>n_embd</code> = 128 "
-                                   "numbers."},
+                                   "numbers.", "key": {'parts': [{'label': 'dim 1', 'value': 32, 'tol': 0.5, 'unit': None}, {'label': 'dim 2', 'value': 64, 'tol': 0.5, 'unit': None}, {'label': 'dim 3', 'value': 128, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“The tiny GPT can read a context of any length, since positions are added, not stored.”",
              "answer": "False.", "why": "<code>pos_emb</code> has only 64 rows, so position 64 has no row (PyTorch "
                                         "raises an error). That is why <code>generate</code> feeds only the last 64 "
-                                        "characters: <code>idx[:, -block_size:]</code>."},
+                                        "characters: <code>idx[:, -block_size:]</code>.", "key": {'value': False}},
         ],
     },
     {
@@ -133,19 +133,19 @@ mask) + <b>MLP</b> (each token thinks: 128 → 512 → 128), each added to the r
                                     "(b) What are the scores divided by?",
              "answer": "(a) 32. (b) √32 ≈ 5.66.",
              "why": "<code>C // n_head</code> = 128 // 4 = 32, and the code divides by "
-                    "<code>k.size(-1) ** 0.5</code> = √32."},
+                    "<code>k.size(-1) ** 0.5</code> = √32.", "key": {'parts': [{'label': '(a)', 'value': 32, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 5.66, 'tol': 0.113, 'unit': None}]}},
             {"kind": "mc", "q": "What does <code>att.masked_fill(~self.mask[:T, :T], float(\"-inf\"))</code> achieve?",
              "options": ["It removes padding characters", "No position can attend to later ones, so it cannot see "
                          "what it must predict", "It keeps only the highest score in each row",
                          "It switches off some heads at random"],
              "answer": "B.", "why": "−∞ becomes 0 after the softmax. Without the mask, training would let the model "
-                                   "read the answer."},
+                                   "read the answer.", "key": {'choice': 1}},
             {"kind": "number", "q": "With <code>n_embd</code> = 256 and 4 heads, how wide is the MLP's hidden layer, "
                                     "and how big is each head?",
-             "answer": "1,024 and 64.", "why": "4 × 256 = 1,024 and 256 / 4 = 64."},
+             "answer": "1,024 and 64.", "why": "4 × 256 = 1,024 and 256 / 4 = 64.", "key": {'parts': [{'label': 'MLP hidden', 'value': 1024, 'tol': 0.5, 'unit': None}, {'label': 'head size', 'value': 64, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“In each block, the attention output replaces <code>x</code>.”",
              "answer": "False.", "why": "It is <i>added</i>: <code>x = x + self.attn(self.ln1(x))</code>. That running "
-                                        "sum is the residual stream."},
+                                        "sum is the residual stream.", "key": {'value': False}},
         ],
     },
     {
@@ -166,15 +166,15 @@ logits</b> per position. In total <b>818,241 parameters</b>, almost all of them 
         ],
         "exercises": [
             {"kind": "number", "q": "How many parameters does <code>head = nn.Linear(128, 65)</code> have?",
-             "answer": "8,385.", "why": "128 × 65 = 8,320 weights plus 65 biases."},
+             "answer": "8,385.", "why": "128 × 65 = 8,320 weights plus 65 biases.", "key": {'parts': [{'label': None, 'value': 8385, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "For each position, what comes out of the model?",
              "options": ["The ID of the next character", "65 logits, one per character; softmax turns them into "
                          "probabilities", "A vector of 128 numbers", "64 probabilities, one per position"],
              "answer": "B.", "why": "<code>head</code> maps 128 numbers to <code>vocab_size</code> = 65 scores. "
-                                   "Picking a character happens later, in <code>generate</code>."},
+                                   "Picking a character happens later, in <code>generate</code>.", "key": {'choice': 1}},
             {"kind": "number", "q": "About how many times more parameters does GPT-2 small (124 million) have?",
              "answer": "About 150 times.", "why": "124,000,000 / 818,241 ≈ 152: a bit more than two steps of ×10 on "
-                                                  "the log scale."},
+                                                  "the log scale.", "key": {'parts': [{'label': None, 'value': 150, 'tol': 3, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Count the parameters by hand, then let PyTorch check. The "
                                   "code builds the layers of one block with the real sizes. (a) Before running, work out "
                                   "<code>count(qkv)</code>. (b) Predict the second number printed: one whole block. "
@@ -223,7 +223,7 @@ on an ordinary 8-core CPU.</div>""",
             {"kind": "number", "q": "How many next-character predictions does one step score? About how many in "
                                     "5,000 steps?",
              "answer": "2,048 per step; about 10 million in all.", "why": "32 chunks × 64 positions = 2,048, and "
-                                                                          "2,048 × 5,000 = 10,240,000."},
+                                                                          "2,048 × 5,000 = 10,240,000.", "key": {'parts': [{'label': 'per step', 'value': 2048, 'tol': 0.5, 'unit': None}, {'label': '5,000 steps (millions)', 'value': 10, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "With <code>block_size</code> = 4, a chunk starts at the <i>F</i> of <i>“First "
                                    "Citizen:”</i>. What are <code>x</code> and <code>y</code>?",
              "answer": "x = “Firs”, y = “irst”.",
@@ -232,11 +232,11 @@ on an ordinary 8-core CPU.</div>""",
             {"kind": "number", "q": "<code>logits</code> is 32 × 64 × 65. What shape is "
                                     "<code>logits.view(-1, vocab_size)</code>?",
              "answer": "2,048 × 65.", "why": "All positions of all chunks in one list: one row of 65 logits per "
-                                            "prediction, and the loss is the average over the 2,048 rows."},
+                                            "prediction, and the loss is the average over the 2,048 rows.", "key": {'parts': [{'label': 'rows', 'value': 2048, 'tol': 0.5, 'unit': None}, {'label': 'cols', 'value': 65, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Of the 1,115,394 characters, the first 90 % are for training. How many does the "
                                     "model never train on?",
              "answer": "111,540.", "why": "<code>int(0.9 × 1,115,394)</code> = 1,003,854 for training; the other "
-                                         "111,540 are the validation text."},
+                                         "111,540 are the validation text.", "key": {'parts': [{'label': None, 'value': 111540, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -262,18 +262,18 @@ learned only from next-character prediction. Real LLMs: <b>the same recipe, much
                                    "<code>GLOUCESTER: Then shall we are 'twere?</code> · <i>(C)</i> "
                                    "<code>RYcb!FkBYGF</code>.",
              "answer": "C → A → B.", "why": "Noise at step 0, made-up words at step 250, real words and a character "
-                                           "name at step 5,000."},
+                                           "name at step 5,000.", "key": {'items': ['(C) RYcb!FkBYGF', '(A) Reabe my thamfors be make hakeate', "(B) GLOUCESTER: Then shall we are 'twere?"]}},
             {"kind": "number", "q": "Which p, given to the correct character every time, matches the loss at step 0 "
                                     "(4.41) and at step 5,000 (1.59)?",
              "answer": "About 0.012 (1 in 82) at the start, 0.20 (1 in 5) at the end.",
-             "why": "loss = −ln p, so p = e<sup>−loss</sup>: e<sup>−4.41</sup> ≈ 0.012 and e<sup>−1.59</sup> ≈ 0.20."},
+             "why": "loss = −ln p, so p = e<sup>−loss</sup>: e<sup>−4.41</sup> ≈ 0.012 and e<sup>−1.59</sup> ≈ 0.20.", "key": {'parts': [{'label': 'step 0', 'value': 0.012, 'tol': 0.0005, 'unit': None}, {'label': 'step 5,000', 'value': 0.2, 'tol': 0.005, 'unit': None}]}},
             {"kind": "short", "q": "At step 250 the model writes <i>thamfors</i> and <i>hakeate</i>. What has it "
                                    "learned, and what not yet?",
              "answer": "Common letters, spaces, short lines; not yet real words.",
              "why": "The easy statistics of the text come first; words and names need more training."},
             {"kind": "tf", "q": "“Real LLMs are trained with a completely different recipe from the tiny GPT.”",
              "answer": "False.", "why": "Same recipe: next-token prediction, the same kind of blocks, the same training "
-                                        "loop. Just far more data, layers and compute."},
+                                        "loop. Just far more data, layers and compute.", "key": {'value': False}},
         ],
     },
 ]

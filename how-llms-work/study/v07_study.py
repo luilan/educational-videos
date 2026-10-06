@@ -66,11 +66,11 @@ questions at once.</div>""",
              "options": ["The token vectors X", "The matrices W<sub>Q</sub>, W<sub>K</sub> and W<sub>V</sub>",
                          "The vocabulary of tokens", "The text, in a different order"],
              "answer": "B.", "why": "All heads read the same token vectors. Their own matrices let them ask "
-                                   "different questions."},
+                                   "different questions.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“With a single head, <i>sat</i> gets one row of attention weights, so it can blend in "
                                 "only one mix of the other tokens.”",
              "answer": "True.", "why": "One head = one set of weights per token = one kind of question. Several heads "
-                                       "give several rows, so several different mixes."},
+                                       "give several rows, so several different mixes.", "key": {'value': True}},
             {"kind": "short", "q": "In <i>“The dog quickly ran home”</i>, the token <i>ran</i> asks “who is "
                                    "running?” and “what came just before?”. Which token should each question find?",
              "answer": "<i>dog</i>; <i>quickly</i>.", "why": "Like <i>cat</i> and <i>slowly</i> for <i>sat</i> in "
@@ -94,16 +94,16 @@ attention on its own 64-number pieces, scaling by √64 = 8.</p>""",
         ],
         "exercises": [
             {"kind": "number", "q": "A model has vectors of 1,024 numbers and 16 heads. What is the head size?",
-             "answer": "64.", "why": "1,024 ÷ 16 = 64."},
+             "answer": "64.", "why": "1,024 ÷ 16 = 64.", "key": {'parts': [{'label': None, 'value': 64, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "A model has d = 512 and a head size of 64. How many heads does it have?",
-             "answer": "8.", "why": "512 ÷ 64 = 8."},
+             "answer": "8.", "why": "512 ÷ 64 = 8.", "key": {'parts': [{'label': None, 'value': 8, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Each GPT-2 small head only ever reads 64 of the token's original 768 numbers.”",
              "answer": "False.", "why": "X · W<sub>Q</sub> uses all 768 numbers; it is the resulting query (and key "
                                         "and value) that is cut into 64-number pieces. Every head's 64 numbers are "
-                                        "computed from the whole vector."},
+                                        "computed from the whole vector.", "key": {'value': False}},
             {"kind": "number", "q": "For a 10-token text, how many attention scores does one head compute? And all "
                                     "12 heads together?",
-             "answer": "100; 1,200.", "why": "Each head makes its own 10 × 10 grid (episode 6), and 12 × 100 = 1,200."},
+             "answer": "100; 1,200.", "why": "Each head makes its own 10 × 10 grid (episode 6), and 12 × 100 = 1,200.", "key": {'parts': [{'label': 'one head', 'value': 100, 'tol': 0.5, 'unit': None}, {'label': '12 heads', 'value': 1200, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -129,11 +129,11 @@ Some are easy to interpret (previous token, verb → object, induction); many ar
                          "Just left of the diagonal: row i, column i − 1",
                          "All in the first column", "Above the diagonal"],
              "answer": "B.", "why": "Token i looks at token i − 1. D is impossible: the causal mask keeps everything "
-                                   "above the diagonal empty."},
+                                   "above the diagonal empty.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Engineers decide which head does what, for example ‘head 2 links verbs to their "
                                 "objects’.”",
              "answer": "False.", "why": "The patterns are learned in training. Researchers find them afterwards, and "
-                                        "many heads have no clear job at all."},
+                                        "many heads have no clear job at all.", "key": {'value': False}},
             {"kind": "short", "q": "A text contains <i>“… the Golden Gate Bridge … the Golden Gate”</i>. What would a "
                                    "repeated-phrase (induction) head help predict next, and why?",
              "lines": 2,
@@ -162,18 +162,18 @@ not replaced, just like the weighted mix in episode 5.</p>""",
              "lines": 2,
              "answer": "project and split → every head runs attention → concatenate → multiply by W<sub>O</sub> → add.",
              "why": "Split before the heads work, glue after; W<sub>O</sub> mixes the glued result, which is then "
-                    "added."},
+                    "added.", "key": {'items': ['project and split into heads', 'every head runs attention', 'concatenate the heads', 'multiply by WO', "add to the token's vector"]}},
             {"kind": "number", "q": "In GPT-2 small, W<sub>O</sub> takes 768 numbers to 768 numbers. How many learned "
                                     "numbers does it hold?",
-             "answer": "589,824.", "why": "It is a 768 × 768 matrix: 768 × 768 = 589,824."},
+             "answer": "589,824.", "why": "It is a 768 × 768 matrix: 768 × 768 = 589,824.", "key": {'parts': [{'label': None, 'value': 589824, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "What is W<sub>O</sub> for?",
              "options": ["It mixes what the different heads found into one result", "It applies the causal mask",
                          "It turns the scores into weights that add up to 1", "It splits the vector into heads"],
              "answer": "A.", "why": "After gluing, each block of 64 numbers holds one head's findings; W<sub>O</sub> "
-                                   "lets them combine. B and C happen inside every head, D before."},
+                                   "lets them combine. B and C happen inside every head, D before.", "key": {'choice': 0}},
             {"kind": "tf", "q": "“After multi-head attention, the token's vector is replaced by the result.”",
              "answer": "False.", "why": "The result is <b>added</b> to the token's vector (“residual: add, don't "
-                                        "replace”), so the token keeps what it had and gains context."},
+                                        "replace”), so the token keeps what it had and gains context.", "key": {'value': False}},
         ],
     },
     {
@@ -192,19 +192,19 @@ twelve heads' 768 × 64 slices side by side. We get many points of view, for the
         "exercises": [
             {"kind": "number", "q": "How many numbers are in one GPT-2 small layer's W<sub>Q</sub>, W<sub>K</sub> and "
                                     "W<sub>V</sub> together?",
-             "answer": "1,769,472.", "why": "3 × 768 × 768 = 3 × 589,824 = 1,769,472."},
+             "answer": "1,769,472.", "why": "3 × 768 × 768 = 3 × 589,824 = 1,769,472.", "key": {'parts': [{'label': None, 'value': 1769472, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "One head's slice of W<sub>Q</sub> is 768 × 64. How many numbers is that? And for "
                                     "all 12 heads?",
              "answer": "49,152; 589,824.", "why": "768 × 64 = 49,152, and 12 × 49,152 = 589,824: exactly one "
-                                                 "768 × 768 matrix."},
+                                                 "768 × 768 matrix.", "key": {'parts': [{'label': 'one head', 'value': 49152, 'tol': 0.5, 'unit': None}, {'label': '12 heads', 'value': 589824, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Using 24 heads instead of 12 (still with d = 768) would double the query, key and "
                                 "value weights.”",
-             "answer": "False.", "why": "The head size halves to 768 ÷ 24 = 32, and 24 × 768 × 32 = 768 × 768 again."},
+             "answer": "False.", "why": "The head size halves to 768 ÷ 24 = 32, and 24 × 768 × 32 = 768 × 768 again.", "key": {'value': False}},
             {"kind": "mc", "q": "What do 12 heads of size 64 give you that one head of size 768 does not?",
              "options": ["Twelve separate attention patterns for every token", "Twelve times as many weights",
                          "Longer token vectors", "The ability to look at future tokens"],
              "answer": "A.", "why": "Same cost, but each token can now look in twelve different ways at once. B and C "
-                                   "are false, and D is still forbidden by the mask."},
+                                   "are false, and D is still forbidden by the mask.", "key": {'choice': 0}},
         ],
     },
     {
@@ -231,10 +231,10 @@ every head at once, <b>merge</b> back to (n, d), then <b>@ W<sub>O</sub></b>.</d
              "lines": 2,
              "answer": "(a) (12, 7, 64). (b) (12, 7, 7). (c) (7, 768).",
              "why": "(heads, n, hd); one n × n grid per head; merging glues the heads back into one 768-number vector "
-                    "per token."},
+                    "per token.", "key": {'parts': [{'label': '(a) dim 1', 'value': 12, 'tol': 0.5, 'unit': None}, {'label': '(a) dim 2', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': '(a) dim 3', 'value': 64, 'tol': 0.5, 'unit': None}, {'label': '(b) dim 1', 'value': 12, 'tol': 0.5, 'unit': None}, {'label': '(b) dim 2', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': '(b) dim 3', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': '(c) dim 1', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': '(c) dim 2', 'value': 768, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“In every layer, attention lets tokens share information, and the MLP then works on "
                                 "each token on its own.”",
-             "answer": "True.", "why": "That is the outro's picture: every layer is attention, then MLP."},
+             "answer": "True.", "why": "That is the outro's picture: every layer is attention, then MLP.", "key": {'value': True}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code runs the video's <code>multi_head_attention</code> "
                                   "and episode 6's one-head <code>attention</code> on 3 tokens with d = 4, using a "
                                   "“do nothing” output projection (W<sub>O</sub> = identity). (a) With "

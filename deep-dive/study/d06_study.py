@@ -43,10 +43,10 @@ understanding a long text: low and flat is good, a climb means trouble.</div>"""
         "exercises": [
             {"kind": "number", "q": "The model is trained on 64 characters and tested on 256. By what factor is the test "
                                     "longer?",
-             "answer": "4.", "why": "256 / 64 = 4; every method below is tuned for this factor."},
+             "answer": "4.", "why": "256 / 64 = 4; every method below is tuned for this factor.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“The tiny model has a learned table with one vector per position.”",
              "answer": "False.", "why": "It has no position table at all: position comes only from RoPE rotating the "
-                                       "queries and keys."},
+                                       "queries and keys.", "key": {'value': False}},
         ],
     },
     {
@@ -69,11 +69,11 @@ interpolating keeps the angles familiar but crowds neighbouring tokens together.
         ],
         "exercises": [
             {"kind": "number", "q": "With position interpolation at scale ¼, which position's angles does token 200 get?",
-             "answer": "50.", "why": "200 × ¼ = 50, inside the trained range 0–63."},
+             "answer": "50.", "why": "200 × ¼ = 50, inside the trained range 0–63.", "key": {'parts': [{'label': None, 'value': 50, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Why does interpolation without training hurt even the first 64 positions?",
              "options": ["The model's weights change", "Neighbouring tokens become ¼ step apart, which the fast pairs never "
                          "saw", "The text is longer", "The vocabulary changes"],
-             "answer": "B.", "why": "Every position is scaled, short texts included; the model was trained on steps of 1."},
+             "answer": "B.", "why": "Every position is scaled, short texts included; the model was trained on steps of 1.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Load the trained model from <code>long_context.py</code> and "
                                   "try a milder squeeze: scale ½ on 128 characters. Does halving the squeeze save "
                                   "interpolation without training?",
@@ -107,10 +107,10 @@ everything and briefly retrain (interpolation + fine-tune): both beat doing noth
                                     "factor of 4?",
              "answer": "4× (exactly).", "why": "Its frequency drops from 0.000178 to 0.0000445 rad per token; the "
                                               "exponent HD/(HD − 2) is chosen so the slowest pair stretches by the full "
-                                              "factor."},
+                                              "factor.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“NTK-aware scaling slows every pair down by 4×.”",
              "answer": "False.", "why": "The fastest pair is unchanged (1.0 rad per token) and pair 1 slows by only 1.10×; "
-                                       "only the slowest pairs stretch by the full factor."},
+                                       "only the slowest pairs stretch by the full factor.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Use NTK scaling for a factor of 2 and read 128 characters. "
                                   "What is the loss on positions 64–127, compared with 2.17 with no change?",
              "code": """m = copy.deepcopy(base)
@@ -142,7 +142,7 @@ context can be extended after training by changing its scale or base, plus a lit
         ],
         "exercises": [
             {"kind": "number", "q": "By what factor does YaRN stretch Qwen2.5's context, according to its documentation?",
-             "answer": "4.", "why": "131,072 / 32,768 = 4, the same factor as the episode's 64 → 256."},
+             "answer": "4.", "why": "131,072 / 32,768 = 4, the same factor as the episode's 64 → 256.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "A model's window is stretched from 32,768 to 131,072 tokens. Name two costs or limits "
                                    "that remain.",
              "answer": "The KV cache (memory) grows with every token, and the model may still use the middle of a long "
@@ -151,7 +151,7 @@ context can be extended after training by changing its scale or base, plus a lit
             {"kind": "order", "q": "Order from worst to best average loss on positions 128–255: <i>NTK-aware scaling · "
                                    "interpolation + 200 steps · no change · interpolation only</i>.",
              "answer": "Interpolation only (3.59), no change (3.23), NTK (2.51), interpolation + 200 steps (1.58).",
-             "why": "From the episode's run; note that interpolation without training is worst even here."},
+             "why": "From the episode's run; note that interpolation without training is worst even here.", "key": {'items': ['interpolation only', 'no change', 'NTK-aware scaling', 'interpolation + 200 steps']}},
         ],
     },
 ]

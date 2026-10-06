@@ -47,15 +47,15 @@ processed <b>by itself</b>, with the <b>same weights at every position</b>. It i
                          "It uses a different set of weights for each position in the text",
                          "It only processes the last token of the text"],
              "answer": "B.", "why": "A describes attention. C and D are wrong: it is one MLP, applied to every "
-                                   "position."},
+                                   "position.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Inside the MLP, the vector for <i>sat</i> can read information from the vector for "
                                 "<i>cat</i>.”",
              "answer": "False.", "why": "The MLP sees only one token's vector. Moving information between tokens is "
-                                        "attention's job."},
+                                        "attention's job.", "key": {'value': False}},
             {"kind": "number", "q": "A text has 5 tokens. In one layer, (a) how many times is the MLP applied, and "
                                     "(b) how many different sets of MLP weights are used?",
              "answer": "(a) 5 times. (b) 1 set.", "why": "One application per token, but it is the same MLP (the same "
-                                                         "weights) every time."},
+                                                         "weights) every time.", "key": {'parts': [{'label': '(a)', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "Two tokens reach a layer's MLP with exactly the same vector. What can you say "
                                    "about the two outputs?",
              "answer": "They are identical.", "why": "The MLP sees only the vector and uses the same weights everywhere, "
@@ -80,19 +80,19 @@ leaves the MLP with the same size it came in with.</div>""",
             {"kind": "order", "q": "Put the three MLP steps in order: <i>project back down · expand to 4× · apply the "
                                    "nonlinear function</i>.",
              "answer": "expand to 4× → apply the nonlinear function → project back down.",
-             "why": "Expand, bend, project."},
+             "why": "Expand, bend, project.", "key": {'items': ['expand to 4×', 'apply the nonlinear function', 'project back down']}},
             {"kind": "number", "q": "GPT-2 small has vectors of 768 numbers. (a) How many numbers does the expanded "
                                     "(hidden) vector have? (b) How many does the MLP's output have?",
-             "answer": "(a) 3,072. (b) 768.", "why": "4 × 768 = 3,072, and the projection brings it back to 768."},
+             "answer": "(a) 3,072. (b) 768.", "why": "4 × 768 = 3,072, and the projection brings it back to 768.", "key": {'parts': [{'label': '(a)', 'value': 3072, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 768, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Another model has vectors of 1,024 numbers and uses the same 4× rule. How many "
                                     "numbers are in one token's hidden vector? And in the hidden vectors of a "
                                     "10-token text, all together?",
              "answer": "4,096 per token; 40,960 for 10 tokens.",
-             "why": "4 × 1,024 = 4,096, and every token gets its own hidden vector: 10 × 4,096."},
+             "why": "4 × 1,024 = 4,096, and every token gets its own hidden vector: 10 × 4,096.", "key": {'parts': [{'label': 'per token', 'value': 4096, 'tol': 0.5, 'unit': None}, {'label': '10 tokens', 'value': 40960, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“The MLP makes the vector permanently bigger: a token enters with 768 numbers and "
                                 "leaves with 3,072.”",
              "answer": "False.", "why": "The 3,072 numbers exist only inside the MLP. The projection brings the vector "
-                                        "back to 768."},
+                                        "back to 768.", "key": {'value': False}},
         ],
     },
     {
@@ -116,17 +116,17 @@ gives a big number when the token's vector <b>points along w</b>: a detector for
                                     "x′ = [−1, 2, −1]. Which of the two tokens matches the neuron's pattern?",
              "answer": "2.5 and −3. The first (x).",
              "why": "1·0.5 + 0·(−1) + 2·1 = 2.5 and 1·(−1) + 0·2 + 2·(−1) = −3. A large positive value means the "
-                    "vector points along w."},
+                    "vector points along w.", "key": {'self': True}},
             {"kind": "mc", "q": "Four token vectors all have the same length. Which one gives the neuron the largest "
                                 "value?",
              "options": ["The one pointing the same way as w", "The one pointing the opposite way to w",
                          "The one at right angles to w", "They all give the same value"],
              "answer": "A.", "why": "Aligned gives a large positive dot product; right angles gives 0; opposite gives a "
-                                   "negative one."},
+                                   "negative one.", "key": {'choice': 0}},
             {"kind": "tf", "q": "“In GPT-2 small, each neuron's weight vector w has 768 numbers, and each MLP has "
                                 "3,072 neurons.”",
              "answer": "True.", "why": "w must be as long as the token vector (768). The 3,072 such vectors together "
-                                       "are the expand matrix: 3,072 × 768 = 2,359,296 weights."},
+                                       "are the expand matrix: 3,072 × 768 = 2,359,296 weights.", "key": {'value': True}},
         ],
     },
     {
@@ -147,15 +147,15 @@ A neuron <b>fires</b> only when its dot product is clearly positive.</div>""",
         "exercises": [
             {"kind": "mc", "q": "Which value is closest to GELU(3)?",
              "options": ["0", "1", "3", "9"],
-             "answer": "C.", "why": "Large positive inputs pass through almost unchanged: GELU(3) ≈ 2.996."},
+             "answer": "C.", "why": "Large positive inputs pass through almost unchanged: GELU(3) ≈ 2.996.", "key": {'choice': 2}},
             {"kind": "number", "q": "Four neurons have dot products 2.5, −2, 4 and −3. Roughly what are the four values "
                                     "after GELU? Which neurons fire?",
              "lines": 2,
              "answer": "≈ 2.5, ≈ −0.05, ≈ 4, ≈ 0. The first and the third fire.",
-             "why": "Exact values: 2.485, −0.045, 4.000, −0.004. Positive inputs pass, negative ones are squashed."},
+             "why": "Exact values: 2.485, −0.045, 4.000, −0.004. Positive inputs pass, negative ones are squashed.", "key": {'self': True}},
             {"kind": "tf", "q": "“GELU turns every negative input into exactly 0.”",
              "answer": "False.", "why": "It squashes them <i>close to</i> zero (−0.05 at −2), not exactly to zero. "
-                                        "Exactly 0 for every negative input is what ReLU does."},
+                                        "Exactly 0 for every negative input is what ReLU does.", "key": {'value': False}},
         ],
     },
     {
@@ -180,7 +180,7 @@ lines.</div>""",
              "lines": 2,
              "answer": "(a) W = [[2, 4], [1, 3]]. (b) Both give [6, 4].",
              "why": "W₁x = [3, 1], then W₂[3, 1] = [6, 4]; and Wx = [2 + 4, 1 + 3] = [6, 4]. Two matrices in a row act "
-                    "like one."},
+                    "like one.", "key": {'parts': [{'label': 'W row 1, col 1', 'value': 2, 'tol': 0.05, 'unit': None}, {'label': 'W row 1, col 2', 'value': 4, 'tol': 0.05, 'unit': None}, {'label': 'W row 2, col 1', 'value': 1, 'tol': 0.05, 'unit': None}, {'label': 'W row 2, col 2', 'value': 3, 'tol': 0.05, 'unit': None}, {'label': 'result 1st', 'value': 6, 'tol': 0.05, 'unit': None}, {'label': 'result 2nd', 'value': 4, 'tol': 0.05, 'unit': None}]}},
             {"kind": "short", "q": "In GPT-2 small, W1 is 768 × 3,072 and W2 is 3,072 × 768. If you removed GELU, "
                                    "the MLP would collapse into a single matrix. What shape, and how many numbers?",
              "answer": "768 × 768: 589,824 numbers.",
@@ -188,13 +188,13 @@ lines.</div>""",
                     "wasted."},
             {"kind": "tf", "q": "“Ten matrix multiplications in a row, with no nonlinearity between them, can learn "
                                 "curves that a single matrix cannot.”",
-             "answer": "False.", "why": "The ten matrices collapse into one, which can still only fit straight lines."},
+             "answer": "False.", "why": "The ten matrices collapse into one, which can still only fit straight lines.", "key": {'value': False}},
             {"kind": "mc", "q": "What is the job of the nonlinear function in the MLP?",
              "options": ["To make the vector four times bigger",
                          "To stop the two matrix multiplications collapsing into one, so the network can learn curves",
                          "To turn the vector into probabilities", "To move information between tokens"],
              "answer": "B.", "why": "A is the expand matrix, C comes at the very end of the model (episode 10), "
-                                   "D is attention."},
+                                   "D is attention.", "key": {'choice': 1}},
         ],
     },
     {
@@ -217,16 +217,16 @@ projection <b>adds its direction</b> (for example, a fact) to the token's vector
             {"kind": "number", "q": "After GELU, three neurons have values h = [2, 0, 0.5]. Their output directions "
                                     "(rows of W2) are [1, 0], [0, 1] and [−2, 2]. What does the MLP add to the vector?",
              "answer": "[1, 1].",
-             "why": "2·[1, 0] + 0·[0, 1] + 0.5·[−2, 2] = [2 − 1, 0 + 1] = [1, 1]. The quiet neuron adds nothing."},
+             "why": "2·[1, 0] + 0·[0, 1] + 0.5·[−2, 2] = [2 − 1, 0 + 1] = [1, 1]. The quiet neuron adds nothing.", "key": {'parts': [{'label': '1st', 'value': 1, 'tol': 0.05, 'unit': None}, {'label': '2nd', 'value': 1, 'tol': 0.05, 'unit': None}]}},
             {"kind": "mc", "q": "In the simplified picture, what happens when the <i>Eiffel Tower</i> neuron fires?",
              "options": ["The token is replaced by the word Paris",
                          "A direction meaning Paris is added to the token's vector",
                          "Attention searches the other tokens for Paris",
                          "The model immediately outputs the word Paris"],
-             "answer": "B.", "why": "The down projection adds a push: the vector keeps “Tower” and gains “Paris”."},
+             "answer": "B.", "why": "The down projection adds a push: the vector keeps “Tower” and gains “Paris”.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Researchers have found that facts like <i>the Eiffel Tower is in Paris</i> are "
                                 "largely recalled in the attention layers.”",
-             "answer": "False.", "why": "In the MLP layers. Attention's job is moving information between tokens."},
+             "answer": "False.", "why": "In the MLP layers. Attention's job is moving information between tokens.", "key": {'value': False}},
         ],
     },
     {
@@ -250,20 +250,20 @@ thinks</b>. Episode 9 wires them together into a transformer block.</p>""",
         ],
         "exercises": [
             {"kind": "number", "q": "What fraction of a GPT-2 small layer's weights (MLP + attention) is in the MLP?",
-             "answer": "2/3 (about 67 %).", "why": "4,718,592 / (4,718,592 + 2,359,296) = 2/3."},
+             "answer": "2/3 (about 67 %).", "why": "4,718,592 / (4,718,592 + 2,359,296) = 2/3.", "key": {'parts': [{'label': None, 'value': 67, 'tol': 1.34, 'unit': '%'}]}},
             {"kind": "number", "q": "A model has vectors of 1,024 numbers, a 4× hidden layer, and attention with "
                                     "four 1,024 × 1,024 matrices. How many weights do the MLP and attention each "
                                     "have per layer? Is the MLP still twice as big?",
              "lines": 2,
              "answer": "MLP 8,388,608; attention 4,194,304. Yes, 2×.",
              "why": "2 × 1,024 × 4,096 and 4 × 1,024 × 1,024. With the 4× rule the MLP always has 8 × d × d weights "
-                    "and attention 4 × d × d."},
+                    "and attention 4 × d × d.", "key": {'parts': [{'label': 'MLP', 'value': 8388608, 'tol': 0.5, 'unit': None}, {'label': 'attention', 'value': 4194304, 'tol': 0.5, 'unit': None}, {'label': 'MLP ÷ attention', 'value': 2, 'tol': 0.05, 'unit': None}]}},
             {"kind": "mc", "q": "In <code>h = gelu(x @ W1 + b1)</code>, x is one token's vector (768 numbers). What "
                                 "does h hold?",
              "options": ["768 numbers: the output of the MLP", "3,072 numbers: one value per neuron, after the bend",
                          "50,257 numbers: one per word in the vocabulary", "12 numbers: one per layer"],
              "answer": "B.", "why": "x @ W1 expands to 3,072 neuron values, and gelu bends each one. The output is "
-                                   "only 768 after <code>@ W2</code>."},
+                                   "only 768 after <code>@ W2</code>.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The first two functions are the code from the video; the "
                                   "rest builds a random MLP of GPT-2-small size and runs it on 5 tokens at once. "
                                   "(a) What does the first <code>print</code> show? (b) What does the second show, and "

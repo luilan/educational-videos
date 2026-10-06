@@ -41,17 +41,17 @@ multiplies by the same factor, so it soon outruns anything that adds: 2¹⁰ = 1
             {"kind": "mc", "q": "Which sequence grows exponentially?",
              "options": ["2, 4, 6, 8, 10", "1, 4, 9, 16, 25", "3, 6, 12, 24, 48", "5, 10, 15, 20, 25"],
              "answer": "C.", "why": "Each term is the previous one × 2. A and D add a fixed amount; B are squares "
-                                   "(1², 2², 3², …), whose step-to-step factor keeps shrinking."},
+                                   "(1², 2², 3², …), whose step-to-step factor keeps shrinking.", "key": {'choice': 2}},
             {"kind": "number", "q": "Start from 1. (a) Double it 10 times. (b) Instead, add 2 ten times. "
                                     "(c) Double it 20 times.",
              "answer": "(a) 1,024 (b) 21 (c) 1,048,576.",
-             "why": "2²⁰ = 2¹⁰ × 2¹⁰ = 1,024 × 1,024: past a million, while adding only reaches 21."},
+             "why": "2²⁰ = 2¹⁰ × 2¹⁰ = 1,024 × 1,024: past a million, while adding only reaches 21.", "key": {'parts': [{'label': '(a)', 'value': 1024, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 21, 'tol': 0.5, 'unit': None}, {'label': '(c)', 'value': 1048576, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "A number starts at 1 and is multiplied by 3 at every step. What is it after "
                                     "5 steps?",
-             "answer": "243.", "why": "3⁵ = 3 × 3 × 3 × 3 × 3 = 243. Same idea as doubling, with factor 3."},
+             "answer": "243.", "why": "3⁵ = 3 × 3 × 3 × 3 × 3 = 243. Same idea as doubling, with factor 3.", "key": {'parts': [{'label': None, 'value': 243, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“In exponential growth, the amount added at each step stays the same.”",
              "answer": "False.", "why": "The <i>factor</i> stays the same (× 2); the amount added keeps growing: "
-                                       "+2, +4, +8, +16, …"},
+                                       "+2, +4, +8, +16, …", "key": {'value': False}},
         ],
     },
     {
@@ -72,19 +72,19 @@ positive outputs, e⁰ = 1, and each +1 in x multiplies the output by e ≈ 2.71
         ],
         "exercises": [
             {"kind": "tf", "q": "“For a very negative input, such as x = −100, eˣ is exactly zero.”",
-             "answer": "False.", "why": "It is extremely small, but still positive. eˣ never reaches zero."},
+             "answer": "False.", "why": "It is extremely small, but still positive. eˣ never reaches zero.", "key": {'value': False}},
             {"kind": "mc", "q": "Which list could be the outputs of eˣ for three inputs?",
              "options": ["1, 0.37, 7.39", "−1, 1, 2.72", "0, 1, 2.72", "2.72, −7.39, 20.1"],
              "answer": "A.", "why": "These are e⁰, e⁻¹ and e². The others contain 0 or a negative number, which eˣ "
-                                   "never produces."},
+                                   "never produces.", "key": {'choice': 0}},
             {"kind": "number", "q": "Using e ≈ 2.718, find (a) e⁰, (b) e² and (c) e⁻¹ = 1/e.",
              "answer": "(a) 1 (b) ≈ 7.39 (c) ≈ 0.368.",
-             "why": "e² = 2.718 × 2.718 ≈ 7.39; e⁻¹ = 1 ÷ 2.718 ≈ 0.368; zero steps of multiplying leaves 1."},
+             "why": "e² = 2.718 × 2.718 ≈ 7.39; e⁻¹ = 1 ÷ 2.718 ≈ 0.368; zero steps of multiplying leaves 1.", "key": {'parts': [{'label': '(a) e⁰', 'value': 1, 'tol': 0.02, 'unit': None}, {'label': '(b) e²', 'value': 7.39, 'tol': 0.148, 'unit': None}, {'label': '(c) e⁻¹', 'value': 0.368, 'tol': 0.00736, 'unit': None}]}},
             {"kind": "number", "q": "The scores −2, 0 and 3 go through eˣ. Roughly what comes out? Is any output "
                                     "negative?",
              "answer": "≈ 0.135, 1 and 20.1. None is negative.",
              "why": "Even the negative score gives a positive number. This is what lets softmax (F07) turn any scores "
-                    "into positive numbers."},
+                    "into positive numbers.", "key": {'parts': [{'label': 'e⁻²', 'value': 0.135, 'tol': 0.0027, 'unit': None}, {'label': 'e⁰', 'value': 1, 'tol': 0.02, 'unit': None}, {'label': 'e³', 'value': 20.1, 'tol': 0.402, 'unit': None}]}},
         ],
     },
     {
@@ -106,16 +106,16 @@ output.</div>""",
         "exercises": [
             {"kind": "number", "q": "e¹ ≈ 2.718 and e³ ≈ 20.09. Compute e³ ÷ e¹ to two decimals. Which power of e "
                                     "is it?",
-             "answer": "≈ 7.39 = e².", "why": "20.09 ÷ 2.718 ≈ 7.39: two extra factors of e."},
+             "answer": "≈ 7.39 = e².", "why": "20.09 ÷ 2.718 ≈ 7.39: two extra factors of e.", "key": {'parts': [{'label': None, 'value': 7.39, 'tol': 0.1478, 'unit': None}]}},
             {"kind": "number", "q": "The inputs 10 and 12 also differ by 2. How many times bigger is e¹² than e¹⁰?",
              "answer": "≈ 7.39 times, the same as before.",
-             "why": "Only the difference matters: e¹² ÷ e¹⁰ = e² ≈ 7.39."},
+             "why": "Only the difference matters: e¹² ÷ e¹⁰ = e² ≈ 7.39.", "key": {'parts': [{'label': None, 'value': 7.39, 'tol': 0.1478, 'unit': None}]}},
             {"kind": "mc", "q": "Two scores are 2 and 5. After eˣ, how does the larger output compare with the smaller?",
              "options": ["2.5 times bigger (5 ÷ 2)", "Exactly 3 bigger", "About 20 times bigger", "About the same"],
-             "answer": "C.", "why": "The inputs differ by 3, so the outputs differ by a factor e³ ≈ 20.1."},
+             "answer": "C.", "why": "The inputs differ by 3, so the outputs differ by a factor e³ ≈ 20.1.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“eˣ keeps ratios: if one input is 3 times another, its output is also 3 times "
                                 "bigger.”",
-             "answer": "False.", "why": "Inputs 1 and 3 (ratio 3) give 2.7 and 20.1 (ratio ≈ 7.4). eˣ exaggerates."},
+             "answer": "False.", "why": "Inputs 1 and 3 (ratio 3) give 2.7 and 20.1 (ratio ≈ 7.4). eˣ exaggerates.", "key": {'value': False}},
         ],
     },
     {
@@ -136,15 +136,15 @@ and heads to −∞ as x approaches 0; it is positive for x &gt; 1.</div>""",
         "exercises": [
             {"kind": "number", "q": "Without a calculator: (a) ln(e⁵) (b) ln 1 (c) ln e (d) ln 7.39 (hint: concept 3).",
              "answer": "(a) 5 (b) 0 (c) 1 (d) ≈ 2.",
-             "why": "ln asks “e to what?”: e⁵, e⁰, e¹ and e² ≈ 7.39."},
+             "why": "ln asks “e to what?”: e⁵, e⁰, e¹ and e² ≈ 7.39.", "key": {'parts': [{'label': '(a)', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 0, 'tol': 0.5, 'unit': None}, {'label': '(c)', 'value': 1, 'tol': 0.5, 'unit': None}, {'label': '(d)', 'value': 2, 'tol': 0.5, 'unit': None}]}},
             {"kind": "order", "q": "Put in order from smallest to largest: <i>ln 2 · ln 0.01 · ln 1 · ln 0.5</i>.",
              "answer": "ln 0.01 → ln 0.5 → ln 1 → ln 2.",
-             "why": "About −4.61, −0.69, 0 and 0.69. Bigger input, bigger log."},
+             "why": "About −4.61, −0.69, 0 and 0.69. Bigger input, bigger log.", "key": {'items': ['ln 0.01', 'ln 0.5', 'ln 1', 'ln 2']}},
             {"kind": "tf", "q": "“ln 0.5 is a positive number.”",
-             "answer": "False.", "why": "ln 0.5 ≈ −0.693. Every number between 0 and 1 has a negative log."},
+             "answer": "False.", "why": "ln 0.5 ≈ −0.693. Every number between 0 and 1 has a negative log.", "key": {'value': False}},
             {"kind": "mc", "q": "What happens to ln x as x gets closer and closer to 0 (0.1, 0.01, 0.001, …)?",
              "options": ["It approaches 0", "It approaches 1", "It dives toward −∞", "It becomes positive"],
-             "answer": "C.", "why": "ln 0.1 ≈ −2.3, ln 0.01 ≈ −4.6, ln 0.001 ≈ −6.9, … with no lower limit."},
+             "answer": "C.", "why": "ln 0.1 ≈ −2.3, ln 0.01 ≈ −4.6, ln 0.001 ≈ −6.9, … with no lower limit.", "key": {'choice': 2}},
         ],
     },
     {
@@ -166,14 +166,14 @@ negative</b>: likely events sit near 0 (ln 0.9 ≈ −0.105), unlikely ones far 
              "options": ["A's log-probability (≈ −0.105) is closer to 0, so A did better",
                          "B's log-probability is closer to 0, so B did better",
                          "Both log-probabilities are positive", "Logs can't compare probabilities"],
-             "answer": "A.", "why": "ln 0.9 ≈ −0.105 is near 0; ln 0.01 ≈ −4.605 is far below. Closer to 0 = more likely."},
+             "answer": "A.", "why": "ln 0.9 ≈ −0.105 is near 0; ln 0.01 ≈ −4.605 is far below. Closer to 0 = more likely.", "key": {'choice': 0}},
             {"kind": "tf", "q": "“The log of a probability is never positive.”",
-             "answer": "True.", "why": "A probability is at most 1, and ln 1 = 0; anything below 1 has a negative log."},
+             "answer": "True.", "why": "A probability is at most 1, and ln 1 = 0; anything below 1 has a negative log.", "key": {'value': True}},
             {"kind": "number", "q": "Without a calculator, using the two landmarks above: (a) is ln 0.99 closer to 0 "
                                     "or to −1? (b) Is ln 0.001 above or below −4.605?",
              "answer": "(a) Very close to 0 (≈ −0.01). (b) Below (≈ −6.9).",
              "why": "0.99 is even more likely than 0.9, so its log is even nearer 0. 0.001 is less likely than 0.01, so "
-                    "its log is more negative."},
+                    "its log is more negative.", "key": {'self': True}},
             {"kind": "short", "q": "A model's log-probability for the correct word is −4.605. What probability did it "
                                    "give that word? Was it confident?",
              "answer": "0.01: not confident at all.",
@@ -201,15 +201,15 @@ become sums of logs. On a log scale, equal steps mean equal <b>factors</b> (× 1
                                     "(b) Add their logs: ln 0.5 ≈ −0.693, ln 0.2 ≈ −1.609, ln 0.1 ≈ −2.303. "
                                     "(c) Compare (b) with ln 0.01 from concept 5.",
              "answer": "(a) 0.01 (b) −4.605 (c) the same.",
-             "why": "The sum of the logs is the log of the product: ln 0.01 ≈ −4.605."},
+             "why": "The sum of the logs is the log of the product: ln 0.01 ≈ −4.605.", "key": {'parts': [{'label': '(a) product', 'value': 0.01, 'tol': 0.0005, 'unit': None}, {'label': '(b) sum of logs', 'value': -4.605, 'tol': 0.002, 'unit': None}]}},
             {"kind": "number", "q": "ln 0.2 ≈ −1.609 and ln 0.1 ≈ −2.303. By how much does the log drop when a "
                                     "probability halves? Use it to predict ln 0.005 from ln 0.01 ≈ −4.605.",
              "answer": "By ≈ 0.693 each time; ln 0.005 ≈ −5.298.",
-             "why": "Halving is × 0.5, which adds ln 0.5 ≈ −0.693, wherever you start."},
+             "why": "Halving is × 0.5, which adds ln 0.5 ≈ −0.693, wherever you start.", "key": {'parts': [{'label': 'drop per halving', 'value': 0.693, 'tol': 0.0139, 'unit': None}, {'label': 'ln 0.005', 'value': -5.298, 'tol': 0.106, 'unit': None}]}},
             {"kind": "number", "q": "On the video's log-scale axis (1, 10, 100, 1K, …, 1B), how many × 10 steps "
                                     "is it from a thousand to a billion? Between which two ticks is 50,000?",
              "answer": "6 steps; between 10K and 100K.",
-             "why": "1K → 10K → 100K → 1M → 10M → 100M → 1B. 50,000 is more than 10,000 and less than 100,000."},
+             "why": "1K → 10K → 100K → 1M → 10M → 100M → 1B. 50,000 is more than 10,000 and less than 100,000.", "key": {'parts': [{'label': None, 'value': 6, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -237,7 +237,7 @@ exaggerated numbers; <code>np.log</code> turns probabilities into negative numbe
              "options": ["<code>np.log(p).sum()</code>", "<code>np.exp(p).sum()</code>",
                          "<code>np.log(p.sum())</code>", "<code>np.log(p).prod()</code>"],
              "answer": "A.", "why": "The log of a product is the sum of the logs. C takes the log of a sum (wrong rule); "
-                                   "D multiplies the logs."},
+                                   "D multiplies the logs.", "key": {'choice': 0}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Predict each printed line before running the code. "
                                   "(a) What do the first two lines print (2 decimals)? Which number from concept 3 is "
                                   "the second one? (b) What does the third line print, and why? (c) The fourth line "

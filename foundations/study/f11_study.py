@@ -45,11 +45,11 @@ size of each dimension, rows first. In the series, a matrix of shape (tokens, nu
             {"kind": "mc", "q": "An array holds 3 rows of 2 numbers each. What is its shape?",
              "options": ["(2, 3)", "(3, 2)", "(6,)", "(3,)"],
              "answer": "B.", "why": "Rows first, then the numbers in each row. (6,) would be the same 6 numbers as one "
-                                   "flat vector."},
+                                   "flat vector.", "key": {'choice': 1}},
             {"kind": "number", "q": "A sentence has 7 tokens, and each token is a vector of 768 numbers. Stacked as one "
                                     "matrix (one row per token, as in the picture), what is its shape, and how many "
                                     "numbers does it hold?",
-             "answer": "(7, 768), 5,376 numbers.", "why": "One row per token, 768 numbers per row: 7 × 768 = 5,376."},
+             "answer": "(7, 768), 5,376 numbers.", "why": "One row per token, 768 numbers per row: 7 × 768 = 5,376.", "key": {'parts': [{'label': 'rows', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': 'columns', 'value': 768, 'tol': 0.5, 'unit': None}, {'label': 'numbers', 'value': 5376, 'tol': 0.5, 'unit': None}]}},
             {"kind": "code", "q": "Predict the three shapes this prints. (<code>X[0]</code> is the first row.)",
              "code": """import numpy as np
 v = np.array([0.3, -1.1, 2.4, 0.8])
@@ -86,11 +86,11 @@ print(A * B)""",
                     "<code>*</code> multiplies matching elements: 1 × 10, 2 × 20, …, 6 × 60 = 360."},
             {"kind": "tf", "q": "“A of shape (2, 3) plus B of shape (3, 2) works, because both hold 6 numbers.”",
              "answer": "False.", "why": "Element-wise needs the elements to match up. NumPy raises an error: "
-                                        "“operands could not be broadcast together”."},
+                                        "“operands could not be broadcast together”.", "key": {'value': False}},
             {"kind": "mc", "q": "<code>x = np.array([1.0, 2.0, 3.0])</code>. Which expression gives [1, 4, 9]?",
              "options": ["<code>x ** 2</code>", "<code>x @ x</code>", "<code>x * 2</code>", "<code>np.sum(x) ** 2</code>"],
              "answer": "A.", "why": "<code>**</code> squares each element. <code>x @ x</code> is the dot product 14 "
-                                   "(next concept), <code>x * 2</code> is [2, 4, 6], and D squares the total: 36."},
+                                   "(next concept), <code>x * 2</code> is [2, 4, 6], and D squares the total: 36.", "key": {'choice': 0}},
         ],
     },
     {
@@ -112,11 +112,11 @@ match. <code>@</code> means dot products of rows with columns; <code>*</code> is
              "answer": "(a) (5, 8) · (b) (5, 5) · (c) an error.",
              "why": "Rows from the left, columns from the right. (b) gives one dot product for every pair of the 5 "
                     "rows, like the scores <code>Q @ K.T</code> in episode 6. (c) Rows of 5 numbers can't be dotted with "
-                    "columns of 4: the inner sizes don't match."},
+                    "columns of 4: the inner sizes don't match.", "key": {'self': True}},
             {"kind": "tf", "q": "“In (5, 4) @ (4, 4), each of the 20 cells of the result is a dot product of 4 pairs "
                                 "of numbers.”",
              "answer": "True.", "why": "The result is (5, 4), so 20 cells. Each is one row (4 numbers) dotted with one "
-                                       "column (4 numbers)."},
+                                       "column (4 numbers).", "key": {'value': True}},
             {"kind": "code", "q": "Predict both results by hand, then run it. Why are they different?",
              "code": """import numpy as np
 A = np.array([[1, 2], [3, 4]])
@@ -147,12 +147,12 @@ shape <b>(5, 1)</b>, a column.</p>""",
             {"kind": "number", "q": "For the Y in the picture, work out <code>Y.sum(axis=0)</code>, which sums along "
                                     "the first axis: down each column. What is its shape?",
              "answer": "[7 10 10 9], shape (4,).", "why": "Column by column: 2 + 1 + 0 + 3 + 1 = 7, 1 + 4 + 2 + 3 + 0 = 10, "
-                                                          "0 + 2 + 5 + 1 + 2 = 10, 3 + 1 + 1 + 2 + 2 = 9."},
+                                                          "0 + 2 + 5 + 1 + 2 = 10, 3 + 1 + 1 + 2 + 2 = 9.", "key": {'parts': [{'label': 'col 1', 'value': 7, 'tol': 0.5, 'unit': None}, {'label': 'col 2', 'value': 10, 'tol': 0.5, 'unit': None}, {'label': 'col 3', 'value': 10, 'tol': 0.5, 'unit': None}, {'label': 'col 4', 'value': 9, 'tol': 0.5, 'unit': None}, {'label': 'shape (length)', 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which call gives the row totals of Y as a column, shape (5, 1)?",
              "options": ["<code>Y.sum(axis=0)</code>", "<code>Y.sum(axis=-1)</code>",
                          "<code>Y.sum(axis=-1, keepdims=True)</code>", "<code>Y.sum(axis=0, keepdims=True)</code>"],
              "answer": "C.", "why": "A gives the column totals (4,), B the same row totals as C but flat, (5,), and "
-                                   "D the column totals kept as a row, (1, 4)."},
+                                   "D the column totals kept as a row, (1, 4).", "key": {'choice': 2}},
             {"kind": "code", "q": "Other functions take an axis too. Predict the three lines.",
              "code": "import numpy as np\n" + Y_CODE + """
 print(Y.max(axis=-1))
@@ -182,12 +182,12 @@ normalizes every row (F07): afterwards, every row adds up to 1.</p>""",
                                     "that the result adds up to 1.",
              "answer": "Total 25 → [0.2, 0.2, 0.4, 0.12, 0.08].", "why": "5/25 = 0.2, 10/25 = 0.4, 3/25 = 0.12, "
                                                                         "2/25 = 0.08, and 0.2 + 0.2 + 0.4 + 0.12 + 0.08 "
-                                                                        "= 1, as in the picture."},
+                                                                        "= 1, as in the picture.", "key": {'parts': [{'label': 'total', 'value': 25, 'tol': 0.5, 'unit': None}, {'label': '1st', 'value': 0.2, 'tol': 0.005, 'unit': None}, {'label': '2nd', 'value': 0.2, 'tol': 0.005, 'unit': None}, {'label': '3rd', 'value': 0.4, 'tol': 0.005, 'unit': None}, {'label': '4th', 'value': 0.12, 'tol': 0.005, 'unit': None}, {'label': '5th', 'value': 0.08, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "E has shape (5, 5). Which line raises an error?",
              "options": ["<code>E / E.sum(axis=-1, keepdims=True)</code>", "<code>E + 1</code>",
                          "<code>E * np.ones((1, 5))</code>", "<code>E + np.ones((5, 2))</code>"],
              "answer": "D.", "why": "A size of 2 can't be stretched to 5; only size 1 can. A stretches a column, B a "
-                                   "single number, C a row (1, 5)."},
+                                   "single number, C a row (1, 5).", "key": {'choice': 3}},
             {"kind": "short", "q": "<b>Write it yourself.</b> S is a (5, 5) array of scores. In two lines, using "
                                    "<code>np.exp</code>, a sum with axis and keepdims, and a division, compute P, the "
                                    "softmax of every row.",
@@ -228,7 +228,7 @@ or their order, so the sizes must multiply to the same total. <code>.T</code> sw
             {"kind": "mc", "q": "Which of these raises an error for <code>np.arange(768)</code>?",
              "options": ["<code>.reshape(12, 64)</code>", "<code>.reshape(8, 96)</code>",
                          "<code>.reshape(10, 76)</code>", "<code>.reshape(3, 256)</code>"],
-             "answer": "C.", "why": "10 × 76 = 760, not 768. The others all multiply to 768."},
+             "answer": "C.", "why": "10 × 76 = 760, not 768. The others all multiply to 768.", "key": {'choice': 2}},
             {"kind": "code", "q": "Both results have shape (3, 2). Predict them. Are they the same array?",
              "code": """import numpy as np
 a = np.arange(6)
@@ -240,10 +240,10 @@ print(a.reshape(2, 3).T)""",
             {"kind": "number", "q": "x has shape (5, 64). What is the shape of <code>x.T</code>? And of "
                                     "<code>x @ x.T</code>?",
              "answer": "(64, 5) and (5, 5).", "why": "(5, 64) @ (64, 5) → (5, 5): a dot product for every pair of rows. "
-                                                     "This is how episode 6 computes <code>Q @ K.T</code>."},
+                                                     "This is how episode 6 computes <code>Q @ K.T</code>.", "key": {'parts': [{'label': 'x.T rows', 'value': 64, 'tol': 0.5, 'unit': None}, {'label': 'x.T columns', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': 'x @ x.T rows', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': 'x @ x.T columns', 'value': 5, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Reshaping 768 numbers into (12, 64) changes some of the numbers.”",
              "answer": "False.", "why": "The same 768 numbers stay in the same order; they are only grouped into 12 rows "
-                                        "of 64."},
+                                        "of 64.", "key": {'value': False}},
         ],
     },
     {
@@ -265,14 +265,14 @@ diagonal: the future.</div>""",
         "exercises": [
             {"kind": "number", "q": "How many cells are set to −∞ by the causal mask for 5 tokens? For 10 tokens?",
              "answer": "10 and 45.", "why": "The cells above the diagonal: 4 + 3 + 2 + 1 + 0 = 10 for 5 tokens, and "
-                                           "9 + 8 + … + 1 = 45 for 10."},
+                                           "9 + 8 + … + 1 = 45 for 10.", "key": {'parts': [{'label': '5 tokens', 'value': 10, 'tol': 0.5, 'unit': None}, {'label': '10 tokens', 'value': 45, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "In the picture, which tokens can <i>sat</i> (the third row) still look at?",
              "options": ["Only <i>sat</i>", "<i>The</i>, <i>cat</i> and <i>sat</i>", "<i>sat</i>, <i>on</i> and "
                          "<i>the</i>", "All five"],
              "answer": "B.", "why": "Its row has 0 in the first three columns and −∞ for <i>on</i> and <i>the</i>, "
-                                   "which come later. A token sees itself and everything before it."},
+                                   "which come later. A token sees itself and everything before it.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“<code>np.triu(np.ones((5, 5)), k=1)</code> already contains −∞ values.”",
-             "answer": "False.", "why": "It holds only 1s and 0s. The −∞ comes from <code>scores[mask] = -np.inf</code>."},
+             "answer": "False.", "why": "It holds only 1s and 0s. The −∞ comes from <code>scores[mask] = -np.inf</code>.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> This is the code from the video, with two prints added. "
                                   "(a) What does <code>mask.sum()</code> print? (b) What does <code>scores[1]</code> "
                                   "print? (c) With <code>k=0</code> instead of <code>k=1</code>, how many cells would be "

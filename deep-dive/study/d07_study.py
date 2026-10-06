@@ -43,11 +43,11 @@ proper distribution over the past only.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "In a causal mask for 64 tokens, how many of the 64 × 64 scores are set to −∞?",
-             "answer": "2,016.", "why": "The strict upper triangle: 64 × 63 / 2 = 2,016; the other 2,080 are allowed."},
+             "answer": "2,016.", "why": "The strict upper triangle: 64 × 63 / 2 = 2,016; the other 2,080 are allowed.", "key": {'parts': [{'label': None, 'value': 2016, 'tol': 0.5, 'unit': None}]}},
             {"kind": "number", "q": "Row 3 has scores 0.5, 1.0, 2.0 for the tokens it may see. What weight goes to "
                                     "token 3?",
              "answer": "0.629.", "why": "e<sup>2</sup> / (e<sup>0.5</sup> + e<sup>1</sup> + e<sup>2</sup>) = 7.389 / "
-                                       "11.75 ≈ 0.629, as on screen."},
+                                       "11.75 ≈ 0.629, as on screen.", "key": {'parts': [{'label': None, 'value': 0.629, 'tol': 0.0005, 'unit': None}]}},
         ],
     },
     {
@@ -72,7 +72,7 @@ print(masked0.softmax(dim=-1).round(decimals=3))""",
              "why": "Each zero score still contributes e<sup>0</sup> = 1 to the softmax; only the last row, which has no "
                     "future, is unchanged."},
             {"kind": "tf", "q": "“Setting future scores to 0 is enough to hide the future.”",
-             "answer": "False.", "why": "Softmax turns a score of 0 into a positive weight; you need −∞."},
+             "answer": "False.", "why": "Softmax turns a score of 0 into a positive weight; you need −∞.", "key": {'value': False}},
         ],
     },
     {
@@ -100,7 +100,7 @@ print([(ha[i] - hb[i]).abs().max().item() for i in range(6)])""",
              "why": "Every later token can see “dog”, so all of them are affected; “The” cannot."},
             {"kind": "mc", "q": "In a causal model, the first token's attention weights in every head are…",
              "options": ["uniform over the sentence", "1.0 on itself", "0 everywhere", "1.0 on the last token"],
-             "answer": "B.", "why": "It may only see itself, and softmax over one score gives 1.0."},
+             "answer": "B.", "why": "It may only see itself, and softmax over one score gives 1.0.", "key": {'choice': 1}},
         ],
     },
     {
@@ -125,7 +125,7 @@ what it will see when used. Without the mask, the task becomes copying.</div>"""
         "exercises": [
             {"kind": "number", "q": "What loss does a model get by guessing uniformly among 65 characters?",
              "answer": "About 4.17.", "why": "−ln(1/65) = ln 65 ≈ 4.17; the unmasked model's 7.36 is worse because it is "
-                                             "confidently wrong."},
+                                             "confidently wrong.", "key": {'parts': [{'label': None, 'value': 4.17, 'tol': 0.0834, 'unit': None}]}},
             {"kind": "short", "q": "Why is a very low training loss a warning sign here, not a success?",
              "answer": "The model could see the answer, so the loss measured copying, not prediction; the honest test shows "
                        "it cannot predict at all.",
@@ -153,15 +153,15 @@ text in parallel, while keeping each one honest.</div>""",
         "exercises": [
             {"kind": "number", "q": "A batch of 32 texts of 64 characters: how many next-character predictions are "
                                     "trained in one step?",
-             "answer": "2,048.", "why": "32 × 64; every position of every text is a training example."},
+             "answer": "2,048.", "why": "32 × 64; every position of every text is a training example.", "key": {'parts': [{'label': None, 'value': 2048, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“When generating one new token with a KV cache, the causal mask must still be "
                                 "applied.”",
              "answer": "False.", "why": "The single new query is the last position; every cached key is in its past, so "
-                                       "nothing needs masking."},
+                                       "nothing needs masking.", "key": {'value': False}},
             {"kind": "mc", "q": "Which model is trained without a causal mask?",
              "options": ["GPT-2", "Qwen2.5", "BERT", "The episode's masked tiny GPT"],
              "answer": "C.", "why": "BERT sees both sides of each token; it fills in blanks rather than writing left to "
-                                   "right."},
+                                   "right.", "key": {'choice': 2}},
         ],
     },
 ]

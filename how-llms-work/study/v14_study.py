@@ -45,10 +45,10 @@ but its only habit is to continue text. It is not yet a helpful assistant.</div>
                          "like a quiz", "It gives an error: base models cannot read questions",
                          "It refuses, because it was never trained on questions"],
              "answer": "B.", "why": "A base model only continues text, and a list of questions is a perfectly "
-                                   "plausible continuation."},
+                                   "plausible continuation.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Most of the training compute goes into the later stages that turn a base model into a "
                                 "chatbot.”",
-             "answer": "False.", "why": "Almost all the computing goes into pretraining."},
+             "answer": "False.", "why": "Almost all the computing goes into pretraining.", "key": {'value': False}},
             {"kind": "short", "q": "Where does a chatbot's knowledge mostly come from?",
              "answer": "Pretraining, on trillions of tokens of text.",
              "why": "The later stages teach format, style and judgment; the knowledge was learned in stage 1."},
@@ -77,16 +77,16 @@ conversations teach format and style.</div>""",
              "options": ["The model's architecture", "The loss function", "The training data",
                          "The number of layers"],
              "answer": "C.", "why": "Same model, same next-token loss; only the data changes, to example "
-                                   "conversations."},
+                                   "conversations.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“Supervised fine-tuning starts again from a new, random model.”",
              "answer": "False.", "why": "We keep training the same model, so everything it learned in pretraining is "
-                                        "kept."},
+                                        "kept.", "key": {'value': False}},
             {"kind": "mc", "q": "Which of these is an SFT training example?",
              "options": ["A web page about cats", "A user's question followed by a helpful assistant answer",
                          "Two answers, with a person's pick of the better one",
                          "A math problem whose answer can be checked"],
              "answer": "B.", "why": "A is pretraining data, C is preference data (stage 3), and D is for reinforcement "
-                                   "learning on checkable answers (concept 6)."},
+                                   "learning on checkable answers (concept 6).", "key": {'choice': 1}},
             {"kind": "short", "q": "Name the two things the model learns from SFT examples, with a few words on each.",
              "answer": "Format and style.", "why": "Format: who speaks, and when. Style: helpful, clear, friendly."},
         ],
@@ -113,11 +113,11 @@ tokens, with special tokens marking the speakers. The model learns to predict th
                                 "<code>&lt;|assistant|&gt;</code>?",
              "options": ["Ordinary words the model read on the internet", "Special tokens that mark who is speaking",
                          "Comments that are deleted before training", "The names of two separate models"],
-             "answer": "B.", "why": "They are special tokens added to the text so the model can tell the turns apart."},
+             "answer": "B.", "why": "They are special tokens added to the text so the model can tell the turns apart.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“A chatbot reads a conversation in a completely different way from how a base model "
                                 "reads text.”",
              "answer": "False.", "why": "To the model, a chat is just one long document, and it predicts the next token "
-                                        "as always."},
+                                        "as always.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code below turns the video's chat into tokens with a toy "
                                   "template (one token per word) and marks which tokens the model is trained to "
                                   "predict. (a) What do the two <code>print</code>s show? (b) Add a second exchange to "
@@ -170,15 +170,15 @@ answers</b>, and <b>which one a person preferred</b>. Many thousands of them tea
              "options": ["A prompt and one ideal answer written by a person",
                          "A prompt, two answers from the model, and which one a person preferred",
                          "A single answer with a grammar check", "A list of words the model must never use"],
-             "answer": "B.", "why": "People compare two of the model's own answers and pick the better one."},
+             "answer": "B.", "why": "People compare two of the model's own answers and pick the better one.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“In the preference stage, people write the ideal answers themselves, and the model "
                                 "learns to copy them.”",
              "answer": "False.", "why": "People only compare and pick. Learning from written example answers is closer "
-                                        "to SFT."},
+                                        "to SFT.", "key": {'value': False}},
             {"kind": "order", "q": "Put the three training stages in order: <i>preferences · supervised fine-tuning · "
                                    "pretraining</i>.",
              "answer": "pretraining → supervised fine-tuning → preferences.",
-             "why": "Knowledge first, then the format and style of an assistant, then judgment."},
+             "why": "Knowledge first, then the format and style of an assistant, then judgment.", "key": {'items': ['pretraining', 'supervised fine-tuning', 'preferences']}},
             {"kind": "short", "q": "Both answers to <i>“Why do cats love boxes?”</i> are in the right format. So what "
                                    "does a person's pick of answer B teach the model?",
              "answer": "Judgment: which of two well-formed answers is better.",
@@ -207,16 +207,16 @@ nudge the chatbot toward higher scores. <b>DPO</b>: pairs → chatbot, directly.
                                    "model</i>.",
              "answer": "collect preference pairs → train a reward model → the reward model scores the chatbot's "
                        "answers → nudge the chatbot toward higher scores.",
-             "why": "The reward model must learn from people's picks before it can score new answers."},
+             "why": "The reward model must learn from people's picks before it can score new answers.", "key": {'items': ['collect preference pairs', 'train a reward model', "the reward model scores the chatbot's answers", 'nudge the chatbot toward higher scores']}},
             {"kind": "mc", "q": "The reward model scores two of the chatbot's answers 0.2 and 0.9. What does RLHF do "
                                 "with this?",
              "options": ["Nothing: the scores are only for people to read", "Nudges the chatbot toward answers like the "
                          "0.9 one", "Nudges the chatbot toward the 0.2 one", "Uses the reward model as the chatbot "
                          "from now on"],
              "answer": "B.", "why": "The chatbot is nudged toward answers that score higher, i.e. that people would "
-                                   "probably prefer."},
+                                   "probably prefer.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“DPO first trains a reward model, then uses it to nudge the chatbot.”",
-             "answer": "False.", "why": "That is RLHF. DPO learns from the preference pairs directly."},
+             "answer": "False.", "why": "That is RLHF. DPO learns from the preference pairs directly.", "key": {'value': False}},
             {"kind": "short", "q": "What do RLHF and DPO have in common, and what is the main difference?",
              "answer": "Both learn from the same preference pairs.",
              "why": "RLHF goes through a reward model and nudges the chatbot toward higher scores; DPO learns from the "
@@ -241,9 +241,9 @@ by written principles, or, for problems like math and code, from <b>checking the
              "options": ["Writing a poem about autumn", "Working out 17 × 24",
                          "Choosing a friendly tone for an email", "Describing the mood of a painting"],
              "answer": "B.", "why": "A calculation has one right answer that can be checked. The others are matters "
-                                   "of judgment."},
+                                   "of judgment.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“With AI feedback, an AI gives the feedback, guided by written principles.”",
-             "answer": "True.", "why": "That is how the video describes it (one example is Constitutional AI)."},
+             "answer": "True.", "why": "That is how the video describes it (one example is Constitutional AI).", "key": {'value': True}},
             {"kind": "short", "q": "A model writes a function <code>add(a, b)</code>. How can its answer be checked "
                                    "without a person?",
              "answer": "Run tests on it, like <code>assert add(2, 3) == 5</code>.",
@@ -275,7 +275,7 @@ every episode. What makes it an assistant is <b>the data and the training signal
             {"kind": "mc", "q": "What is different between a base model and the chatbot made from it?",
              "options": ["A new kind of network architecture", "The data and the training signal it was trained with",
                          "Attention is replaced by a reward model", "It no longer predicts the next token"],
-             "answer": "B.", "why": "Same transformer, same next-token prediction; only the training changes."},
+             "answer": "B.", "why": "Same transformer, same next-token prediction; only the training changes.", "key": {'choice': 1}},
             {"kind": "short", "q": "For each stage, name the data it trains on: (a) pretraining, (b) supervised "
                                    "fine-tuning, (c) preferences and RL.",
              "answer": "(a) Internet text. (b) Conversations. (c) Feedback.",
@@ -283,10 +283,10 @@ every episode. What makes it an assistant is <b>the data and the training signal
             {"kind": "order", "q": "Put in order: <i>probabilities · tokens · transformer blocks · pick a token · embeddings with positions</i>.",
              "answer": "tokens → embeddings with positions → transformer blocks → probabilities → pick a token "
                        "(then repeat).",
-             "why": "This is the data flow of episodes 2–10, closed into the loop of episode 1."},
+             "why": "This is the data flow of episodes 2–10, closed into the loop of episode 1.", "key": {'items': ['tokens', 'embeddings with positions', 'transformer blocks', 'probabilities', 'pick a token']}},
             {"kind": "tf", "q": "“A chatbot still writes its reply one token at a time, with episode 1's loop.”",
              "answer": "True.", "why": "Nothing about generation changes: the reply is still produced token by token, as "
-                                       "a continuation of the chat document."},
+                                       "a continuation of the chat document.", "key": {'value': True}},
         ],
     },
 ]

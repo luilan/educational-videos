@@ -41,9 +41,9 @@ token). Lower is better; 0 means certainty and correctness.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "The model gives the right token 25%. What is its loss?",
-             "answer": "About 1.39.", "why": "−ln 0.25 = ln 4 ≈ 1.386."},
+             "answer": "About 1.39.", "why": "−ln 0.25 = ln 4 ≈ 1.386.", "key": {'parts': [{'label': None, 'value': 1.39, 'tol': 0.0278, 'unit': None}]}},
             {"kind": "tf", "q": "“A loss of 0 is possible only if the model gives the right token 100%.”",
-             "answer": "True.", "why": "−ln p = 0 only when p = 1."},
+             "answer": "True.", "why": "−ln p = 0 only when p = 1.", "key": {'value': True}},
         ],
     },
     {
@@ -65,9 +65,9 @@ units; a few very wrong predictions can dominate the average.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "A model's loss is 1.0. What are its perplexity and its bits per token?",
-             "answer": "Perplexity about 2.72; about 1.44 bits.", "why": "e¹ ≈ 2.718; 1 / ln 2 ≈ 1.443."},
+             "answer": "Perplexity about 2.72; about 1.44 bits.", "why": "e¹ ≈ 2.718; 1 / ln 2 ≈ 1.443.", "key": {'parts': [{'label': 'perplexity', 'value': 2.72, 'tol': 0.0544, 'unit': None}, {'label': 'bits per token', 'value': 1.44, 'tol': 0.0288, 'unit': None}]}},
             {"kind": "number", "q": "Perplexity 54.6 on Shakespeare. What loss is that?",
-             "answer": "4.0.", "why": "ln 54.6 ≈ 4.000, matching the measured loss."},
+             "answer": "4.0.", "why": "ln 54.6 ≈ 4.000, matching the measured loss.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.05, 'unit': None}]}},
             {"kind": "short", "q": "Why does a model that is wrong but unsure lose less than one that is wrong and sure?",
              "answer": "The loss depends only on the probability given to the right token; an unsure model leaves more "
                        "probability for it, so −ln p is smaller.",
@@ -97,10 +97,10 @@ miscalibration often points to a mismatch between the data and what the model ex
             {"kind": "mc", "q": "A perfectly calibrated model says 40% for its top guess on 500 tokens. About how many of "
                                 "those guesses are right?",
              "options": ["50", "200", "400", "500"],
-             "answer": "B.", "why": "40% of 500 = 200."},
+             "answer": "B.", "why": "40% of 500 = 200.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“GPT-2 was overconfident on Shakespeare at every confidence level.”",
              "answer": "False.", "why": "Below 0.8 it was close to calibrated (even slightly underconfident at 0.11 → "
-                                       "0.14 and 0.29 → 0.33); only the top bucket was far off."},
+                                       "0.14 and 0.29 → 0.33); only the top bucket was far off.", "key": {'value': False}},
         ],
     },
     {
@@ -122,7 +122,7 @@ That is the signal that starts every backward pass.</p>""",
         "exercises": [
             {"kind": "number", "q": "Softmax gives the right token 0.7. What is the gradient for its logit? For a wrong "
                                     "token with 0.2?",
-             "answer": "−0.3 and +0.2.", "why": "0.7 − 1 and 0.2 − 0."},
+             "answer": "−0.3 and +0.2.", "why": "0.7 − 1 and 0.2 − 0.", "key": {'parts': [{'label': 'right token', 'value': -0.3, 'tol': 0.05, 'unit': None}, {'label': 'wrong token', 'value': 0.2, 'tol': 0.05, 'unit': None}]}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Check that the gradient sums to zero over the logits, for any "
                                   "input.",
              "code": """z = torch.randn(5, requires_grad=True)

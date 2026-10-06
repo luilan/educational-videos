@@ -48,7 +48,7 @@ vector to mean “riverbank”: context changes meaning.</div>""",
                          "Look the word up in a built-in dictionary of meanings",
                          "Delete the words that don't matter from the text"],
              "answer": "B.", "why": "The token stays the same token (<i>bank</i> never becomes a new token); only its "
-                                   "vector is updated with information from the other tokens."},
+                                   "vector is updated with information from the other tokens.", "key": {'choice': 1}},
             {"kind": "short", "q": "In <i>“The baseball player swung the bat”</i>, which earlier word should "
                                    "<i>bat</i> pay most attention to, and what should its updated vector mean?",
              "lines": 2,
@@ -73,19 +73,19 @@ up to 1</b>. Here <i>bank</i> spends 0.72 of its attention on <i>river</i>, and 
         "exercises": [
             {"kind": "number", "q": "From the chart, how much of <i>bank</i>'s attention goes to tokens other than "
                                     "<i>river</i>?",
-             "answer": "0.28.", "why": "1 − 0.72 = 0.28 (check: 0.03 + 0.05 + 0.04 + 0.04 + 0.12 = 0.28)."},
+             "answer": "0.28.", "why": "1 − 0.72 = 0.28 (check: 0.03 + 0.05 + 0.04 + 0.04 + 0.12 = 0.28).", "key": {'parts': [{'label': None, 'value': 0.28, 'tol': 0.005, 'unit': None}]}},
             {"kind": "mc", "q": "Which list could be one token's attention weights over four tokens?",
              "options": ["0.5, 0.5, 0.5, 0.5", "0.1, 0.2, 0.3, 0.4", "0.9, 0.2, −0.1, 0.0", "0.25, 0.25, 0.25, 0.2"],
              "answer": "B.", "why": "A adds up to 2; C adds up to 1 but has a negative weight; D adds up to only "
-                                   "0.95. B is all ≥ 0 and adds up to exactly 1."},
+                                   "0.95. B is all ≥ 0 and adds up to exactly 1.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“If <i>bank</i> starts paying more attention to <i>river</i>, it must pay less "
                                 "attention to at least one other token.”",
              "answer": "True.", "why": "The total is fixed at 1, like a budget: spending more in one place means "
-                                       "spending less somewhere else."},
+                                       "spending less somewhere else.", "key": {'value': True}},
             {"kind": "number", "q": "In <i>“I paid money into the bank”</i>, suppose <i>bank</i> gives 0.60 to "
                                     "<i>money</i>, 0.12 to itself, and splits the rest equally over <i>I</i>, "
                                     "<i>paid</i>, <i>into</i> and <i>the</i>. What weight does each of those four get?",
-             "answer": "0.07.", "why": "1 − 0.60 − 0.12 = 0.28 is left, and 0.28 ÷ 4 = 0.07."},
+             "answer": "0.07.", "why": "1 − 0.60 − 0.12 = 0.28 is left, and 0.28 ÷ 4 = 0.07.", "key": {'parts': [{'label': None, 'value': 0.07, 'tol': 0.005, 'unit': None}]}},
         ],
     },
     {
@@ -109,13 +109,13 @@ match, the more you read from that book's contents: its <b>value</b>.</p>""",
              "options": ["The question you bring", "The title on a book's spine", "The text inside the book",
                          "The shelf the book stands on"],
              "answer": "B.", "why": "A is the query and C is the value. The key is what your question is compared "
-                                   "with."},
+                                   "with.", "key": {'choice': 1}},
             {"kind": "mc", "q": "To decide how much <i>bank</i> listens to <i>river</i>, which two vectors are "
                                 "compared?",
              "options": ["bank's query and river's key", "bank's key and river's query",
                          "bank's value and river's value", "bank's query and river's value"],
              "answer": "A.", "why": "The token that asks uses its query; the token being considered offers its key. "
-                                   "Values do not decide the amount; they are only used afterwards, for the mix."},
+                                   "Values do not decide the amount; they are only used afterwards, for the mix.", "key": {'choice': 0}},
             {"kind": "short", "q": "The library's match scores were <i>Rivers &amp; Lakes</i> 0.9, <i>Banking "
                                    "101</i> 0.6, <i>Cooking</i> 0.1, <i>Poetry</i> 0.2. Which book do you read most "
                                    "from, and which of the three vectors is the text you read?",
@@ -141,22 +141,22 @@ score → more attention. At a right angle the score is 0; pointing away, it is 
         "exercises": [
             {"kind": "number", "q": "<i>bank</i>'s query is (1.6, 1.2) and <i>river</i>'s key is (1.2, 0.9). "
                                     "Compute the score.",
-             "answer": "3.00.", "why": "1.6 × 1.2 + 1.2 × 0.9 = 1.92 + 1.08 = 3.00, the value in the video."},
+             "answer": "3.00.", "why": "1.6 × 1.2 + 1.2 × 0.9 = 1.92 + 1.08 = 3.00, the value in the video.", "key": {'parts': [{'label': None, 'value': 3, 'tol': 0.005, 'unit': None}]}},
             {"kind": "number", "q": "Two new keys: <i>water</i> (0.8, 0.6) and <i>money</i> (−0.6, 0.8). Compute each "
                                     "one's score with bank's query (1.6, 1.2). Which would bank listen to more?",
              "answer": "water 2.00, money 0.00; water.",
              "why": "1.28 + 0.72 = 2.00 and −0.96 + 0.96 = 0. <i>water</i> points exactly the same way as the query "
-                    "(it is half of it); <i>money</i> is at a right angle to it."},
+                    "(it is half of it); <i>money</i> is at a right angle to it.", "key": {'self': True}},
             {"kind": "mc", "q": "As river's key turns towards bank's query, its length stays 1.5. What happens to its "
                                 "score?",
              "options": ["It goes down", "It goes up, from −1.18 to 3.00", "It stays the same, because the length "
                          "does not change", "It becomes exactly 1"],
              "answer": "B.", "why": "The dot product depends on direction as well as length: the smaller the angle to "
-                                   "the query, the bigger the score."},
+                                   "the query, the bigger the score.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“<i>sat</i>'s score is −0.60. A negative score means the angle between the query "
                                 "and the key is more than 90°.”",
              "answer": "True.", "why": "Less than 90° gives a positive score, exactly 90° gives 0, more than 90° "
-                                       "(pointing away) gives a negative score."},
+                                       "(pointing away) gives a negative score.", "key": {'value': True}},
         ],
     },
     {
@@ -177,14 +177,14 @@ values</b> (weight × value, added up over all tokens). The weights decide how m
             {"kind": "number", "q": "River's value is (0.80, −0.50, 0.60) and its weight is 0.72. What does river "
                                     "alone contribute to the mix? Round to two decimals.",
              "answer": "(0.58, −0.36, 0.43).", "why": "0.72 × each entry = (0.576, −0.36, 0.432). That is most of the "
-                                                     "full mix (0.61, −0.30, 0.40)."},
+                                                     "full mix (0.61, −0.30, 0.40).", "key": {'parts': [{'label': '1st', 'value': 0.58, 'tol': 0.005, 'unit': None}, {'label': '2nd', 'value': -0.36, 'tol': 0.005, 'unit': None}, {'label': '3rd', 'value': 0.43, 'tol': 0.005, 'unit': None}]}},
             {"kind": "number", "q": "A token attends to just two tokens, with weights 0.25 and 0.75. Their values are "
                                     "(0.8, 0.2) and (0.0, 0.4). What is the weighted mix?",
              "answer": "(0.20, 0.35).", "why": "0.25 × (0.8, 0.2) + 0.75 × (0.0, 0.4) = (0.20, 0.05) + (0.00, 0.30) = "
-                                              "(0.20, 0.35). It lies closer to the value with the bigger weight."},
+                                              "(0.20, 0.35). It lies closer to the value with the bigger weight.", "key": {'parts': [{'label': '1st', 'value': 0.2, 'tol': 0.005, 'unit': None}, {'label': '2nd', 'value': 0.35, 'tol': 0.005, 'unit': None}]}},
             {"kind": "tf", "q": "“After attention, <i>bank</i>'s vector is replaced by the weighted mix.”",
              "answer": "False.", "why": "The mix is <b>added</b> to bank's own vector: (0.30, 0.50, −0.30) + (0.61, "
-                                        "−0.30, 0.40) = (0.91, 0.20, 0.10). Bank keeps what it was and gains context."},
+                                        "−0.30, 0.40) = (0.91, 0.20, 0.10). Bank keeps what it was and gains context.", "key": {'value': False}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code computes bank's update with NumPy, using the "
                                   "video's numbers. (a) What does it print? (b) In words, what does <code>w @ V</code> "
                                   "compute for each of the 3 columns? (c) Change <code>w</code> so that bank listens "
@@ -234,17 +234,17 @@ written yet. In <i>“The cat sat on the”</i>, <i>cat</i> can look at <i>The</
                                     "pairs are forbidden?",
              "lines": 2,
              "answer": "15 allowed, 10 forbidden.", "why": "The sees 1 token, cat 2, sat 3, on 4, the 5: "
-                                                           "1 + 2 + 3 + 4 + 5 = 15, and 25 − 15 = 10."},
+                                                           "1 + 2 + 3 + 4 + 5 = 15, and 25 − 15 = 10.", "key": {'parts': [{'label': 'allowed', 'value': 15, 'tol': 0.5, 'unit': None}, {'label': 'forbidden', 'value': 10, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Why can a token not look at the tokens after it?",
              "options": ["Looking forward would be too slow to compute",
                          "When the model generates text, the later words have not been written yet",
                          "Later words never help with meaning", "The dot product only works in one direction"],
              "answer": "B.", "why": "Only the earlier words exist when each new word is predicted. C is false: later "
-                                   "words can help, but they are not available yet."},
+                                   "words can help, but they are not available yet.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“In <i>“I sat on the river bank”</i>, <i>bank</i> is allowed to look at every token "
                                 "of the sentence.”",
              "answer": "True.", "why": "<i>bank</i> is the last token, so every other token comes before it. That is "
-                                       "why it can use <i>river</i>."},
+                                       "why it can use <i>river</i>.", "key": {'value': True}},
         ],
     },
     {
@@ -264,23 +264,23 @@ matrices</b>: what to look for, what to advertise and what to share are all <b>l
              "options": ["Engineers write rules into them, like “river explains bank”",
                          "They are learned from data during training",
                          "They are copied from the embedding table", "They are random and never change"],
-             "answer": "B.", "why": "They start random and training adjusts them; no rules are written by hand."},
+             "answer": "B.", "why": "They start random and training adjusts them; no rules are written by hand.", "key": {'choice': 1}},
             {"kind": "number", "q": "In the video's picture, the token vector x has 4 numbers and each matrix is a "
                                     "4 × 4 grid. (a) How many numbers are in the query q? (b) How many learned numbers "
                                     "are in W<sub>Q</sub>, W<sub>K</sub> and W<sub>V</sub> together?",
              "answer": "(a) 4. (b) 48.", "why": "A 4-number vector times a 4 × 4 matrix gives 4 numbers; each matrix "
-                                               "holds 16, and 3 × 16 = 48."},
+                                               "holds 16, and 3 × 16 = 48.", "key": {'parts': [{'label': '(a)', 'value': 4, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 48, 'tol': 0.5, 'unit': None}]}},
             {"kind": "order", "q": "Put the steps of attention for <i>bank</i> in order: <i>add the mix to bank's "
                                    "vector · make q, k and v for every token · take the weighted mix of the values · "
                                    "compare bank's query with every key · turn the scores into weights that add up "
                                    "to 1</i>.",
              "answer": "make q, k, v → compare query with every key → weights → weighted mix of values → add to "
                        "bank's vector.",
-             "why": "Matching (query · key) decides the weights; the weights decide the mix; the mix is added."},
+             "why": "Matching (query · key) decides the weights; the weights decide the mix; the mix is added.", "key": {'items': ['make q, k and v for every token', "compare bank's query with every key", 'turn the scores into weights that add up to 1', 'take the weighted mix of the values', "add the mix to bank's vector"]}},
             {"kind": "tf", "q": "“Every token is multiplied by the same W<sub>Q</sub>, so <i>bank</i> and "
                                 "<i>river</i> get different queries only because their vectors x are different.”",
              "answer": "True.", "why": "One set of learned matrices serves every token; each token's own vector makes "
-                                       "its query, key and value different."},
+                                       "its query, key and value different.", "key": {'value': True}},
         ],
     },
 ]

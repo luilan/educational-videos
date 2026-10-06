@@ -48,19 +48,19 @@ called <b>logits</b>. In GPT-2 this matrix is the <b>embedding matrix again</b>,
             {"kind": "mc", "q": "Which vector is used to predict the word after <i>“The cat sat on the”</i>?",
              "options": ["The vector on the first word, <i>The</i>", "The average of all five vectors",
                          "The vector on the last token, <i>the</i>", "The vector on <i>cat</i>, the most important word"],
-             "answer": "C.", "why": "The prediction for the next token is read from the last position's vector."},
+             "answer": "C.", "why": "The prediction for the next token is read from the last position's vector.", "key": {'choice': 2}},
             {"kind": "number", "q": "GPT-2 small has vectors of 768 numbers and a vocabulary of 50,257 tokens. "
                                     "(a) How many logits does one prediction produce? (b) How many numbers are in the "
                                     "unembedding matrix?",
              "answer": "(a) 50,257. (b) 768 × 50,257 = 38,597,376.",
              "why": "One column of 768 numbers per vocabulary token. With tied weights, these are the same numbers as "
-                    "the embedding matrix."},
+                    "the embedding matrix.", "key": {'parts': [{'label': '(a)', 'value': 50257, 'tol': 0.5, 'unit': None}, {'label': '(b)', 'value': 38597376, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“In GPT-2, the unembedding matrix is learned separately from the embedding matrix.”",
-             "answer": "False.", "why": "It is the embedding matrix again (transposed), reused: tied weights."},
+             "answer": "False.", "why": "It is the embedding matrix again (transposed), reused: tied weights.", "key": {'value': False}},
             {"kind": "order", "q": "Put in order: <i>unembedding matrix · last transformer block · logits · final "
                                    "layer norm</i>.",
              "answer": "last transformer block → final layer norm → unembedding matrix → logits.",
-             "why": "The last vector is normalized once more, then multiplied by the matrix to give the scores."},
+             "why": "The last vector is normalized once more, then multiplied by the matrix to give the scores.", "key": {'items': ['last transformer block', 'final layer norm', 'unembedding matrix', 'logits']}},
         ],
     },
     {
@@ -83,16 +83,16 @@ angles → 0, <b>opposite → negative</b>.</div>""",
             {"kind": "number", "q": "With h = (2, 1), compute the logits for <i>sofa</i>, w = (0.5, 0.9), and for "
                                     "<i>bed</i>, w = (0.4, 0.8).",
              "answer": "1.9 and 1.6.",
-             "why": "2·0.5 + 1·0.9 = 1.9 and 2·0.4 + 1·0.8 = 1.6: the values of the toy vocabulary in concept 3."},
+             "why": "2·0.5 + 1·0.9 = 1.9 and 2·0.4 + 1·0.8 = 1.6: the values of the toy vocabulary in concept 3.", "key": {'parts': [{'label': 'sofa', 'value': 1.9, 'tol': 0.05, 'unit': None}, {'label': 'bed', 'value': 1.6, 'tol': 0.05, 'unit': None}]}},
             {"kind": "short", "q": "A new token <i>rug</i> has w = (1.2, 0.7). Would it beat <i>mat</i> (3.0)?",
              "answer": "Yes: its logit is 3.1.", "why": "2·1.2 + 1·0.7 = 3.1 > 3.0: it lines up with h even better."},
             {"kind": "mc", "q": "With h = (2, 1), which token direction gives the most negative logit?",
              "options": ["(2, 1)", "(1, −2)", "(−2, −1)", "(0, 0)"],
              "answer": "C.", "why": "(−2, −1) points exactly opposite to h: −5. (1, −2) is at right angles (0), (0, 0) "
-                                   "gives 0, and (2, 1) gives +5."},
+                                   "gives 0, and (2, 1) gives +5.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“A logit is always a number between 0 and 1.”",
              "answer": "False.", "why": "Logits can be any number, positive or negative (<i>banana</i>: −2.0). Softmax "
-                                        "turns them into probabilities."},
+                                        "turns them into probabilities.", "key": {'value': False}},
         ],
     },
     {
@@ -115,16 +115,16 @@ e<sup>logit</sup>). A bigger logit gives a bigger probability; every probability
             {"kind": "number", "q": "Compute the softmax of the logits [2, 1, 0], as percentages (e² ≈ 7.39, "
                                     "e¹ ≈ 2.72, e⁰ = 1).",
              "answer": "≈ 66.5 %, 24.5 %, 9.0 %.", "why": "The total is 11.11: 7.39 / 11.11, 2.72 / 11.11 and "
-                                                          "1 / 11.11."},
+                                                          "1 / 11.11.", "key": {'parts': [{'label': 'logit 2', 'value': 66.5, 'tol': 1.33, 'unit': '%'}, {'label': 'logit 1', 'value': 24.5, 'tol': 0.49, 'unit': '%'}, {'label': 'logit 0', 'value': 9.0, 'tol': 0.18, 'unit': '%'}]}},
             {"kind": "number", "q": "In the toy vocabulary, e<sup>2.4</sup> ≈ 11.02. Using the total 48.72, what is "
                                     "<i>floor</i>'s probability?",
-             "answer": "≈ 22.6 %.", "why": "11.02 / 48.72 ≈ 0.226, as in the chart."},
+             "answer": "≈ 22.6 %.", "why": "11.02 / 48.72 ≈ 0.226, as in the chart.", "key": {'parts': [{'label': None, 'value': 22.6, 'tol': 0.452, 'unit': '%'}]}},
             {"kind": "short", "q": "You add 10 to every logit. What happens to the probabilities?",
              "answer": "Nothing: they stay exactly the same.",
              "why": "e<sup>logit + 10</sup> = e<sup>10</sup> · e<sup>logit</sup>. Every term and the total get the same "
                     "factor, which cancels in the division: only the differences between logits matter."},
             {"kind": "tf", "q": "“A token with a negative logit gets a negative probability.”",
-             "answer": "False.", "why": "e<sup>x</sup> is positive for every x: <i>banana</i>'s −2.0 becomes 0.3 %."},
+             "answer": "False.", "why": "e<sup>x</sup> is positive for every x: <i>banana</i>'s −2.0 becomes 0.3 %.", "key": {'value': False}},
         ],
     },
     {
@@ -146,16 +146,16 @@ flatter, more variety. T = 1: the model's own probabilities.</div>""",
             {"kind": "number", "q": "At T = 0.5, what do the logits of <i>mat</i> (3.0) and <i>floor</i> (2.4) become? "
                                     "How does the gap between them change?",
              "answer": "6.0 and 4.8: the gap doubles from 0.6 to 1.2.",
-             "why": "Dividing by 0.5 doubles every logit, so the differences grow and the top choice pulls ahead."},
+             "why": "Dividing by 0.5 doubles every logit, so the differences grow and the top choice pulls ahead.", "key": {'parts': [{'label': 'mat', 'value': 6.0, 'tol': 0.05, 'unit': None}, {'label': 'floor', 'value': 4.8, 'tol': 0.05, 'unit': None}, {'label': 'new gap', 'value': 1.2, 'tol': 0.05, 'unit': None}]}},
             {"kind": "number", "q": "At T = 1, <i>mat</i> (41.2 %) is about 1.8 times as likely as <i>floor</i> "
                                     "(22.6 %). Using the two charts above, how many times as likely is it at T = 0.5, "
                                     "and at T = 2?",
              "answer": "About 3.3 and about 1.35.",
              "why": "66.3 / 20.0 ≈ 3.3 and 26.4 / 19.5 ≈ 1.35. (Exactly: e<sup>1.2</sup> and e<sup>0.3</sup>, the gap "
-                    "divided by T.)"},
+                    "divided by T.)", "key": {'parts': [{'label': 'T = 0.5', 'value': 3.3, 'tol': 0.066, 'unit': None}, {'label': 'T = 2', 'value': 1.35, 'tol': 0.027, 'unit': None}]}},
             {"kind": "tf", "q": "“A very low temperature, such as T = 0.1, makes sampling behave almost like greedy "
                                 "picking.”",
-             "answer": "True.", "why": "At T = 0.1, <i>mat</i> gets 99.75 %, so it is picked almost every time."},
+             "answer": "True.", "why": "At T = 0.1, <i>mat</i> gets 99.75 %, so it is picked almost every time.", "key": {'value': True}},
             {"kind": "short", "q": "You want a story generator to be more surprising. Should you raise or lower the "
                                    "temperature?",
              "answer": "Raise it (T &gt; 1).", "why": "A higher T flattens the distribution, so less likely words are "
@@ -182,18 +182,18 @@ running total first reaches 90 % at <i>roof</i> (93.9 %), so five tokens stay.</
             {"kind": "number", "q": "Use top-k with k = 2 on the T = 1 chart (<i>mat</i> 41.2 %, <i>floor</i> 22.6 %). "
                                     "What are the new probabilities?",
              "answer": "≈ 64.6 % and 35.4 %.",
-             "why": "41.2 / 63.8 and 22.6 / 63.8: the kept tokens are rescaled to add up to 100 %."},
+             "why": "41.2 / 63.8 and 22.6 / 63.8: the kept tokens are rescaled to add up to 100 %.", "key": {'parts': [{'label': 'mat', 'value': 64.6, 'tol': 1.292, 'unit': '%'}, {'label': 'floor', 'value': 35.4, 'tol': 0.708, 'unit': '%'}]}},
             {"kind": "number", "q": "The running totals at T = 1 are 41.2, 63.9, 77.6, 87.7, 93.9 and 98.5 %. How many "
                                     "tokens does top-p keep for p = 0.5? And for p = 0.8?",
              "answer": "2 and 4.", "why": "The smallest set that reaches p: 63.9 % ≥ 50 % after two tokens, "
-                                          "87.7 % ≥ 80 % after four."},
+                                          "87.7 % ≥ 80 % after four.", "key": {'parts': [{'label': 'p = 0.5', 'value': 2, 'tol': 0.5, 'unit': None}, {'label': 'p = 0.8', 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "At T = 2 the chart is flatter: the running totals are 26.4, 45.9, 61.2, 74.3, 84.5, "
                                    "93.2 and 97.8 %. How many tokens does top-p (p = 0.9) keep now? And top-k (k = 3)?",
              "answer": "Six; still three.",
              "why": "Top-p adapts to the shape of the distribution (flatter means more tokens); top-k always keeps "
                     "exactly k."},
             {"kind": "tf", "q": "“After the cut, the kept probabilities are rescaled so they add up to 1 again.”",
-             "answer": "True.", "why": "53.1 + 29.2 + 17.7 = 100 %: each kept token grows in proportion."},
+             "answer": "True.", "why": "53.1 + 29.2 + 17.7 = 100 %: each kept token grows in proportion.", "key": {'value': True}},
         ],
     },
     {
@@ -213,13 +213,13 @@ next-token predictions at the same time, each checked against the real next toke
         ],
         "exercises": [
             {"kind": "number", "q": "A training text has 10 tokens. How many next-token predictions can be checked?",
-             "answer": "9.", "why": "Every position except the last has a real next token to be checked against."},
+             "answer": "9.", "why": "Every position except the last has a real next token to be checked against.", "key": {'parts': [{'label': None, 'value': 9, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "In <i>“The cat sat on the mat”</i>, what should the position on <i>sat</i> "
                                    "predict? And the position on the second <i>the</i>?",
              "answer": "<i>on</i>; <i>mat</i>.", "why": "Each position's target is simply the next token in the text."},
             {"kind": "tf", "q": "“During training, the model generates the sentence one word at a time, and only the "
                                 "final word is checked.”",
-             "answer": "False.", "why": "All positions predict at the same time, and every prediction is checked."},
+             "answer": "False.", "why": "All positions predict at the same time, and every prediction is checked.", "key": {'value': False}},
         ],
     },
     {
@@ -241,7 +241,7 @@ softmax → sample. Put it inside the episode 1 loop and the model writes text.<
             {"kind": "order", "q": "Put the whole forward pass in order: <i>sample · blocks × N · tokens · unembed · "
                                    "+ position · embed</i>.",
              "answer": "tokens → embed → + position → blocks × N → unembed → sample.",
-             "why": "Episodes 2 → 3 → 4 → 5–9 → 10."},
+             "why": "Episodes 2 → 3 → 4 → 5–9 → 10.", "key": {'items': ['tokens', 'embed', '+ position', 'blocks × N', 'unembed', 'sample']}},
             {"kind": "mc", "q": "The line <code>p = np.exp(logits[top] - logits[top].max())</code> subtracts the "
                                 "largest logit before exponentiating. Why is that safe?",
              "options": ["It changes the probabilities in favour of rarer tokens",
@@ -249,7 +249,7 @@ softmax → sample. Put it inside the episode 1 loop and the model writes text.<
                          "e<sup>x</sup> from getting huge",
                          "It is a bug, fixed by the next line", "It is how the temperature is applied"],
              "answer": "B.", "why": "Concept 3, exercise 3.3: only differences between logits matter. The largest "
-                                   "value becomes e<sup>0</sup> = 1, so nothing overflows."},
+                                   "value becomes e<sup>0</sup> = 1, so nothing overflows.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Here is a version of <code>next_token</code> that takes the "
                                   "logits directly (and also returns <code>top</code> and <code>p</code>), with the "
                                   "toy vocabulary. (a) What does the <code>print</code> show? (b) Call "

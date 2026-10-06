@@ -45,7 +45,7 @@ bag of tokens: reorder the input, and the outputs are simply reordered.</div>"""
              "why": "Sums and dot products treat their inputs as a set."},
             {"kind": "tf", "q": "“Permutation equivariance means the outputs are identical for every order.”",
              "answer": "False.", "why": "The outputs are the same vectors in a different order: each token's own output "
-                                       "does not change, only its position in the list."},
+                                       "does not change, only its position in the list.", "key": {'value': False}},
         ],
     },
     {
@@ -70,7 +70,7 @@ tell “dog bites man” from “man bites dog”.</div>""",
                                 "mouse” and “the mouse chased the cat”?",
              "options": ["Clearly different vectors for “cat”", "Identical vectors for “cat”, just reordered",
                          "An error", "Random vectors"],
-             "answer": "B.", "why": "Checked by running it: cosine similarity 1.000000."},
+             "answer": "B.", "why": "Checked by running it: cosine similarity 1.000000.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Using <code>last_layer</code> from <code>position.py</code>, "
                                   "compare “ cat” (token 1 in the first sentence, token 4 in the second) with positions "
                                   "off and on. Why is the “on” number so close to 1, unlike dog's 0.96?",
@@ -101,7 +101,7 @@ information makes order a first-class input.</div>""",
         "exercises": [
             {"kind": "number", "q": "In a 4-token causal mask (as on screen), how many of the 16 query-key pairs are "
                                     "allowed?",
-             "answer": "10.", "why": "1 + 2 + 3 + 4 = 10: each token sees itself and all earlier tokens."},
+             "answer": "10.", "why": "1 + 2 + 3 + 4 = 10: each token sees itself and all earlier tokens.", "key": {'parts': [{'label': None, 'value': 10, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "With a causal mask, why does the first token's output depend on its position?",
              "answer": "It can only attend to itself, while a later token can attend to several; so the set of tokens it "
                        "mixes depends on where it sits.",
@@ -128,10 +128,10 @@ size and say nothing directly about distance between tokens.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "How many numbers are in GPT-2's position-embedding table?",
-             "answer": "786,432.", "why": "1,024 positions × 768 numbers."},
+             "answer": "786,432.", "why": "1,024 positions × 768 numbers.", "key": {'parts': [{'label': None, 'value': 786432, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“GPT-2 can process a 2,000-token document in one pass.”",
              "answer": "False.", "why": "Its learned position table has 1,024 entries; there is no vector for position "
-                                       "1,025 or beyond."},
+                                       "1,025 or beyond.", "key": {'value': False}},
         ],
     },
 ]

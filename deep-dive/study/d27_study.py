@@ -62,9 +62,9 @@ computed.</div>""",
         ],
         "exercises": [
             {"kind": "number", "q": "With 8 workers, how much Adam state would each hold for the tiny model?",
-             "answer": "About 0.78 MiB.", "why": "6.24 MiB / 8."},
+             "answer": "About 0.78 MiB.", "why": "6.24 MiB / 8.", "key": {'parts': [{'label': None, 'value': 0.78, 'tol': 0.0156, 'unit': None}]}},
             {"kind": "tf", "q": "“Sharding the optimizer state changes the training result.”",
-             "answer": "False.", "why": "The episode's losses were identical to every printed digit."},
+             "answer": "False.", "why": "The episode's losses were identical to every printed digit.", "key": {'value': False}},
         ],
     },
     {
@@ -89,15 +89,15 @@ weights: each step saves memory and adds communication.</div>""",
         "exercises": [
             {"kind": "number", "q": "GPT-2 small (124,439,808 parameters, 16 bytes each) fully sharded over 8 workers: how "
                                     "much per worker?",
-             "answer": "About 249 MB.", "why": "124,439,808 × 16 / 8 ≈ 2.49 × 10⁸ bytes."},
+             "answer": "About 249 MB.", "why": "124,439,808 × 16 / 8 ≈ 2.49 × 10⁸ bytes.", "key": {'parts': [{'label': None, 'value': 249, 'tol': 4.98, 'unit': None}]}},
             {"kind": "number", "q": "For 7B parameters on 64 workers, show where 56.9 GB comes from.",
              "answer": "8 bytes × 7 × 10⁹ (weights + gradients, full) = 56 GB, plus 8 bytes × 7 × 10⁹ / 64 (Adam's share) "
                        "≈ 0.875 GB.",
-             "why": "Only m and v are divided among the workers."},
+             "why": "Only m and v are divided among the workers.", "key": {'self': True}},
             {"kind": "mc", "q": "What does full sharding (weights too) cost?",
              "options": ["Lower accuracy", "More communication: weights gathered before each layer", "More memory",
                          "Nothing"],
-             "answer": "B.", "why": "Memory is traded for traffic."},
+             "answer": "B.", "why": "Memory is traded for traffic.", "key": {'choice': 1}},
         ],
     },
 ]

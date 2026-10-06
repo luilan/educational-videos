@@ -41,17 +41,17 @@ means</b>.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“IDs 3796 and 3797 are neighbours, so <i>rief</i> and <i>␣cat</i> must have similar "
                                 "meanings.”",
-             "answer": "False.", "why": "IDs are just labels; neighbouring numbers are unrelated tokens."},
+             "answer": "False.", "why": "IDs are just labels; neighbouring numbers are unrelated tokens.", "key": {'value': False}},
             {"kind": "mc", "q": "A token's embedding is…",
              "options": ["its ID written in binary", "a list of numbers (a vector) that places it as a point in space",
                          "how often it appears in the training text", "the list of its letters"],
-             "answer": "B.", "why": "The vector works like coordinates, so every token becomes a point."},
+             "answer": "B.", "why": "The vector works like coordinates, so every token becomes a point.", "key": {'choice': 1}},
             {"kind": "mc", "q": "Why not feed the raw ID numbers into the network as they are?",
              "options": ["They are too big to store", "The network would treat 3797 and 3798 as almost equal, though "
                          "<i>␣cat</i> and <i>esc</i> are unrelated", "IDs change every time you tokenize",
                          "There are not enough IDs for every token"],
              "answer": "B.", "why": "The size and closeness of IDs mean nothing, so arithmetic on them would be "
-                                   "misleading."},
+                                   "misleading.", "key": {'choice': 1}},
         ],
     },
     {
@@ -75,18 +75,18 @@ vector (768 for GPT-2 small).</div>""",
         "exercises": [
             {"kind": "number", "q": "GPT-2 small's embedding matrix has 50,257 rows and 768 columns. How many numbers "
                                     "does it hold?",
-             "answer": "38,597,376 (about 38.6 million).", "why": "50,257 × 768: one number per token per dimension."},
+             "answer": "38,597,376 (about 38.6 million).", "why": "50,257 × 768: one number per token per dimension.", "key": {'parts': [{'label': None, 'value': 38597376, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "To embed <i>␣on</i> (ID 319), the model…",
              "options": ["multiplies 319 by every row of <code>E</code>", "takes row 319 of <code>E</code>",
                          "searches <code>E</code> for the row closest to 319", "averages all the rows of <code>E</code>"],
-             "answer": "B.", "why": "Embedding is just a lookup: ID 319 grabs row 319."},
+             "answer": "B.", "why": "Embedding is just a lookup: ID 319 grabs row 319.", "key": {'choice': 1}},
             {"kind": "short", "q": "A toy model has a vocabulary of 1,000 tokens and uses 64 numbers per token. What "
                                    "is the shape of its embedding matrix (rows × columns)?",
              "answer": "1,000 × 64.", "why": "One row per token, one column per number in each vector."},
             {"kind": "tf", "q": "“The same token, used in two different sentences, gets two different embedding "
                                 "vectors.”",
              "answer": "False.", "why": "It's a lookup: the same ID always grabs the same row. This is the catch at the "
-                                        "end of the video, and the topic of episode 4."},
+                                        "end of the video, and the topic of episode 4.", "key": {'value': False}},
         ],
     },
     {
@@ -106,7 +106,7 @@ tokens used in similar ways get nearby points. Position reflects how a token is 
             {"kind": "mc", "q": "The word <i>puppy</i> is added and the model is trained. In the figure's picture, "
                                 "which group would you expect it to join?",
              "options": ["cat, dog, kitten", "mat, rug, carpet", "one, two, three", "sat, ran, jumped"],
-             "answer": "A.", "why": "<i>puppy</i> is used much like <i>dog</i> and <i>kitten</i>."},
+             "answer": "A.", "why": "<i>puppy</i> is used much like <i>dog</i> and <i>kitten</i>.", "key": {'choice': 0}},
             {"kind": "short", "q": "<i>rug</i> and <i>carpet</i> share no letters. Why do they still end up close "
                                    "together?",
              "answer": "They are used in similar ways.",
@@ -114,7 +114,7 @@ tokens used in similar ways get nearby points. Position reflects how a token is 
                     "similar sentences."},
             {"kind": "tf", "q": "“After training, <i>sat</i> is closer to <i>ran</i> than to <i>rug</i>.”",
              "answer": "True.", "why": "<i>sat</i> and <i>ran</i> are both verbs and are used in similar ways; verbs "
-                                       "gather in one region."},
+                                       "gather in one region.", "key": {'value': True}},
         ],
     },
     {
@@ -134,19 +134,19 @@ unrelated, negative = opposite. <b>cos θ = a · b / (‖a‖ ‖b‖)</b> ignor
         ],
         "exercises": [
             {"kind": "number", "q": "Compute the dot product of (2, −1, 3) and (1, 4, 2).",
-             "answer": "4.", "why": "2·1 + (−1)·4 + 3·2 = 2 − 4 + 6 = 4. Same rule in any number of dimensions."},
+             "answer": "4.", "why": "2·1 + (−1)·4 + 3·2 = 2 − 4 + 6 = 4. Same rule in any number of dimensions.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Which pair has a <b>negative</b> dot product?",
              "options": ["(1, 0) and (0, 1)", "(2, 1) and (1, 2)", "(3, 1) and (−3, −1)", "(1, 1) and (5, 5)"],
              "answer": "C.", "why": "They point in opposite directions: −9 − 1 = −10. A is 0 (perpendicular), B is 4, "
-                                   "D is 10."},
+                                   "D is 10.", "key": {'choice': 2}},
             {"kind": "number", "q": "Compute the cosine similarity of (3, 4) and (6, 8). What does the result tell "
                                     "you?",
              "answer": "1: same direction.", "why": "50 / (5 · 10) = 1. (6, 8) is just (3, 4) stretched; cosine "
-                                                    "ignores length."},
+                                                    "ignores length.", "key": {'parts': [{'label': None, 'value': 1, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“<i>a</i> = (3, 1) scores 10 with (0, 10) but only 8 with <i>b</i> = (2, 2), so "
                                 "(0, 10) points more nearly the same way as <i>a</i>.”",
              "answer": "False.", "why": "(0, 10) is just long. Its cosine with <i>a</i> is 10 / (3.16 · 10) ≈ 0.32, far "
-                                        "below 0.89. That's why we divide by the lengths."},
+                                        "below 0.89. That's why we divide by the lengths.", "key": {'value': False}},
         ],
     },
     {
@@ -167,14 +167,14 @@ stand for a relationship. Adding the <i>man</i> → <i>woman</i> step to <i>king
             {"kind": "number", "q": "Toy 2-D embeddings: man = (1, 1), woman = (1, 3), king = (5, 1). Compute "
                                     "king − man + woman.",
              "answer": "(5, 3).", "why": "The step man → woman is (0, 2); adding it to king gives (5, 3), where queen "
-                                         "would be."},
+                                         "would be.", "key": {'parts': [{'label': 'x', 'value': 5, 'tol': 0.5, 'unit': None}, {'label': 'y', 'value': 3, 'tol': 0.5, 'unit': None}]}},
             {"kind": "short", "q": "If the step from <i>France</i> to <i>Paris</i> means “capital of”, which word would "
                                    "you expect near <i>Paris − France + Italy</i>?",
              "answer": "Rome.", "why": "Paris − France is the “capital of” step; adding it to Italy lands near Italy's "
                                        "capital."},
             {"kind": "tf", "q": "“king − man + woman gives exactly the vector of queen.”",
              "answer": "False.", "why": "It lands close to queen, not exactly on it: the two steps are only roughly "
-                                        "the same."},
+                                        "the same.", "key": {'value': False}},
         ],
     },
     {
@@ -193,11 +193,11 @@ clusters of concept 3 are a result of training, not a design.</p>""",
         "exercises": [
             {"kind": "tf", "q": "“Engineers place <i>cat</i> near <i>dog</i> by hand, using a dictionary.”",
              "answer": "False.", "why": "Nobody writes the numbers. Training moves the vectors until similar words "
-                                        "are close."},
+                                        "are close.", "key": {'value': False}},
             {"kind": "mc", "q": "Before training, where are <i>cat</i> and <i>dog</i> in the embedding space?",
              "options": ["Already next to each other", "At random places, unrelated to their meaning",
                          "Both exactly at the origin", "At positions given by their IDs"],
-             "answer": "B.", "why": "The vectors start random; meaning only shows up after training."},
+             "answer": "B.", "why": "The vectors start random; meaning only shows up after training.", "key": {'choice': 1}},
             {"kind": "short", "q": "The same model is trained twice, starting from different random numbers. Would "
                                    "<i>cat</i> get exactly the same vector both times? Would it still end up near "
                                    "<i>dog</i>?",
@@ -237,7 +237,7 @@ sentence.</div>""",
              "options": ["It's a bug; real models use zeros", "It's only the starting point: training then adjusts "
                          "the numbers", "Random vectors work as well as trained ones", "To hide the token IDs"],
              "answer": "B.", "why": "Embeddings start random and are learned (concept 6), hence the comment "
-                                   "<code># learned in training</code>."},
+                                   "<code># learned in training</code>.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> The code below builds a toy <code>E</code> with 4 numbers "
                                   "per token and embeds the two sentences from the video. (a) Write "
                                   "<code>cosine(u, v)</code> (hint: <code>np.dot</code>, <code>np.linalg.norm</code>) "

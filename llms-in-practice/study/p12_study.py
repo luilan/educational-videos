@@ -39,7 +39,7 @@ often a plausible-sounding answer, not “I don't know”.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“A hallucination is a rare software bug that better code would remove.”",
              "answer": "False.", "why": "It follows from how the model works: it generates likely text, which can be "
-                                       "false."},
+                                       "false.", "key": {'value': False}},
             {"kind": "short", "q": "Why test with questions the handbook <b>cannot</b> answer?",
              "answer": "They show whether the model admits missing information or invents an answer.",
              "why": "Questions with answers in the source cannot reveal this failure."},
@@ -73,7 +73,7 @@ and quoted sources you can verify.</div>""",
              "options": ["It does not look at numbers", "6 appears in the handbook (the sourdough price), so the number "
                          "looks grounded", "The model hid the number", "The check only reads the first sentence"],
              "answer": "B.", "why": "The check verifies that the number exists in the source, not that it belongs to the "
-                                   "same thing."},
+                                   "same thing.", "key": {'choice': 1}},
             {"kind": "short", "q": "Describe a check that would catch the 6-euro baguette.",
              "answer": "Require the answer to quote the supporting sentence and verify the quote exists in the source "
                        "and mentions “baguette”.",
@@ -103,11 +103,11 @@ text in its context is a potential instruction.</div>""",
              "options": ["A chatbot that only answers from a fixed FAQ", "An agent that reads incoming emails and can send "
                          "emails and payments", "A model that summarises your own notes", "A translation tool"],
              "answer": "B.", "why": "It reads untrusted text and has powerful tools: an injected instruction could "
-                                   "trigger real actions."},
+                                   "trigger real actions.", "key": {'choice': 1}},
             {"kind": "tf", "q": "“Telling the model to ignore instructions inside documents fully solves prompt "
                                 "injection.”",
              "answer": "False.", "why": "It helped in this test, but the instruction is itself just text; attackers can "
-                                       "phrase injections that still work."},
+                                       "phrase injections that still work.", "key": {'value': False}},
         ],
     },
     {
@@ -131,7 +131,7 @@ model: context, retrieval, tools, limits, checks and evaluation.</div>""",
             {"kind": "order", "q": "Put these in the order a RAG agent uses them for one question: <i>check the output · "
                                    "retrieve chunks · generate · embed the question · build the prompt</i>.",
              "answer": "embed the question → retrieve chunks → build the prompt → generate → check the output.",
-             "why": "Episodes 4–6 (retrieval), 1 (prompt), 3 (generation) and 11–12 (checking)."},
+             "why": "Episodes 4–6 (retrieval), 1 (prompt), 3 (generation) and 11–12 (checking).", "key": {'items': ['embed the question', 'retrieve chunks', 'build the prompt', 'generate', 'check the output']}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Run <code>ungrounded()</code> from "
                                   "<code>code/p12_safety/safety.py</code> on the answers below. (a) What does it flag for "
                                   "each? (b) One flag is a false alarm. Which, and why?",

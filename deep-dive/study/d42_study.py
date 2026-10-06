@@ -41,7 +41,7 @@ can predict them.</div>""",
         "exercises": [
             {"kind": "number", "q": "A loss of 0.25 means the model gives the right token what probability, on average "
                                     "(geometric mean)? And a loss of 12.8?",
-             "answer": "About 0.78; about 0.000003.", "why": "e^−0.25 ≈ 0.78; e^−12.8 ≈ 2.8 × 10⁻⁶."},
+             "answer": "About 0.78; about 0.000003.", "why": "e^−0.25 ≈ 0.78; e^−12.8 ≈ 2.8 × 10⁻⁶.", "key": {'parts': [{'label': 'loss 0.25', 'value': 0.78, 'tol': 0.0156, 'unit': None}, {'label': 'loss 12.8', 'value': 3e-06, 'tol': 5e-07, 'unit': None}]}},
         ],
     },
     {
@@ -73,12 +73,12 @@ a large ablation effect identifies a mechanism.</div>""",
         "exercises": [
             {"kind": "number", "q": "In the second copy, position t (counting from 0, with T = 50 tokens per copy) holds the "
                                     "same token as position t − 50. Which position should an induction head attend to?",
-             "answer": "t − 49.", "why": "The token after the earlier occurrence: (t − 50) + 1."},
+             "answer": "t − 49.", "why": "The token after the earlier occurrence: (t − 50) + 1.", "key": {'parts': [{'label': None, 'value': 49, 'tol': 0.5, 'unit': None}]}},
             {"kind": "mc", "q": "Why compare removing the top induction heads with removing random heads?",
              "options": ["To speed up the experiment", "To show the effect comes from those heads, not from removing any "
                                                          "6 heads", "Because random heads are induction heads",
                          "To measure the first copy"],
-             "answer": "B.", "why": "Any ablation hurts a little; the control shows how much is specific."},
+             "answer": "B.", "why": "Any ablation hurts a little; the control shows how much is specific.", "key": {'choice': 1}},
             {"kind": "code", "q": "<b>Try it yourself.</b> Compute one head's induction score.",
              "code": """import torch
 from transformers import GPT2LMHeadModel
@@ -103,7 +103,7 @@ circuits.</div>""",
         ],
         "exercises": [
             {"kind": "tf", "q": "“An induction head can copy a token sequence it never saw during training.”",
-             "answer": "True.", "why": "The sequences here are random; the head copies whatever the context contains."},
+             "answer": "True.", "why": "The sequences here are random; the head copies whatever the context contains.", "key": {'value': True}},
         ],
     },
 ]

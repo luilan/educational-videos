@@ -42,12 +42,12 @@ Choosing the word is a separate step, and you control it.</div>""",
         "exercises": [
             {"kind": "tf", "q": "“The model itself decides the next word; the app only displays it.”",
              "answer": "False.", "why": "The model outputs probabilities; a decoding rule (greedy, sampling, …) set by "
-                                       "the app picks the token."},
+                                       "the app picks the token.", "key": {'value': False}},
             {"kind": "number", "q": "After “The cat sat on the”, the top 9 tokens have probabilities 8.1, 5.7, 5.2, 4.8, "
                                     "4.8, 2.8, 2.7, 2.5 and 2.0 percent. What percentage is left for the other "
                                     "151,927 tokens?",
              "answer": "About 61.4%.", "why": "100 − 38.6 = 61.4: most of the probability is spread over the long "
-                                             "tail."},
+                                             "tail.", "key": {'parts': [{'label': None, 'value': 61.4, 'tol': 1.228, 'unit': '%'}]}},
             {"kind": "short", "q": "Why does “mat” come only ninth, although it is the classic example?",
              "answer": "Many continuations are plausible (couch, bed, window, …); the model spreads probability over "
                        "all of them.",
@@ -73,10 +73,10 @@ varied, because every step is a weighted random draw.</div>""",
         "exercises": [
             {"kind": "mc", "q": "You run greedy decoding on the same prompt three times. What do you get?",
              "options": ["Three different texts", "The same text three times", "An error", "Only the first token"],
-             "answer": "B.", "why": "Greedy always picks the top token, so nothing is random."},
+             "answer": "B.", "why": "Greedy always picks the top token, so nothing is random.", "key": {'choice': 1}},
             {"kind": "number", "q": "With plain sampling (temperature 1), how many times out of 1,000 would you expect "
                                     "the first token to be “couch” (8.1%)?",
-             "answer": "About 81.", "why": "1,000 × 0.081 = 81."},
+             "answer": "About 81.", "why": "1,000 × 0.081 = 81.", "key": {'parts': [{'label': None, 'value': 81, 'tol': 1.62, 'unit': None}]}},
             {"kind": "short", "q": "Why does one different early token lead to a completely different story?",
              "answer": "Each new token is appended and becomes part of the input for every later step.",
              "why": "That is the generation loop of How LLMs Work episode 1: predict, pick, append, repeat."},
@@ -100,12 +100,12 @@ T &gt; 1 flattens. The ranking of tokens never changes, only how peaked it is.</
             {"kind": "number", "q": "Three tokens have scores 2, 1 and 0. At temperature 1 the softmax gives 0.665, "
                                     "0.245 and 0.090. What is the top token's probability at temperature 0.5? "
                                     "(Hint: the scores become 4, 2, 0.)",
-             "answer": "0.867.", "why": "e⁴ / (e⁴ + e² + e⁰) = 54.6 / 63.0 ≈ 0.867: lower temperature sharpens."},
+             "answer": "0.867.", "why": "e⁴ / (e⁴ + e² + e⁰) = 54.6 / 63.0 ≈ 0.867: lower temperature sharpens.", "key": {'parts': [{'label': None, 'value': 0.867, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "mc", "q": "Same scores, temperature 2. Which is closest to the top token's probability?",
              "options": ["0.87", "0.67", "0.51", "0.33"],
-             "answer": "C.", "why": "Scores 1, 0.5, 0 give 0.506: flatter, moving toward 1/3 each."},
+             "answer": "C.", "why": "Scores 1, 0.5, 0 give 0.506: flatter, moving toward 1/3 each.", "key": {'choice': 2}},
             {"kind": "tf", "q": "“Raising the temperature can make a token that was ranked 5th become ranked 1st.”",
-             "answer": "False.", "why": "Dividing all scores by the same positive number keeps their order."},
+             "answer": "False.", "why": "Dividing all scores by the same positive number keeps their order.", "key": {'value': False}},
         ],
     },
     {
@@ -129,14 +129,14 @@ when the model is sure, and many when it is not.</div>""",
                                     "their probabilities after renormalising?",
              "answer": "The first two: 0.625 and 0.375.",
              "why": "Mass before the 3rd token is 0.8, not below 0.8, so it is cut. 0.5 / 0.8 = 0.625; 0.3 / 0.8 = "
-                    "0.375."},
+                    "0.375.", "key": {'parts': [{'label': 'token 1 (0.5)', 'value': 0.625, 'tol': 0.0005, 'unit': None}, {'label': 'token 2 (0.3)', 'value': 0.375, 'tol': 0.0005, 'unit': None}]}},
             {"kind": "tf", "q": "“Top-p 0.9 always keeps the same number of tokens.”",
              "answer": "False.", "why": "It keeps as many as needed to reach 90% of the probability, which depends on "
-                                       "the distribution at that step."},
+                                       "the distribution at that step.", "key": {'value': False}},
             {"kind": "order", "q": "Put the top-p steps in order: <i>sample · sort by probability · renormalise · add up "
                                    "until p</i>.",
              "answer": "sort by probability → add up until p → renormalise → sample.",
-             "why": "This is what the episode's code does."},
+             "why": "This is what the episode's code does.", "key": {'items': ['sort by probability', 'add up until p', 'renormalise', 'sample']}},
         ],
     },
     {
@@ -159,7 +159,7 @@ randomness, creativity wants more, and testing wants a fixed seed.</div>""",
             {"kind": "mc", "q": "You extract invoice totals from emails into a spreadsheet. Which setting?",
              "options": ["Temperature 1.5, top-p 1.0", "Temperature 0 (greedy)", "Temperature 1.2, top-p 0.9",
                          "A different random seed for each email"],
-             "answer": "B.", "why": "You want the single most likely, consistent answer, not variety."},
+             "answer": "B.", "why": "You want the single most likely, consistent answer, not variety.", "key": {'choice': 1}},
             {"kind": "short", "q": "Why fix the random seed when testing a prompt that uses sampling?",
              "answer": "So the same input gives the same output, and changes in results come from your prompt changes, "
                        "not from chance.",

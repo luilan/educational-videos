@@ -39,10 +39,10 @@ learned from its own examples.</div>""",
         "exercises": [
             {"kind": "number", "q": "GPT-2 ids: “␣World” 2159, “World” 10603, “␣world” 995, “world” 6894. How many different "
                                     "tokens is that for one word?",
-             "answer": "4.", "why": "Case and the leading space each produce a separate vocabulary entry."},
+             "answer": "4.", "why": "Case and the leading space each produce a separate vocabulary entry.", "key": {'parts': [{'label': None, 'value': 4, 'tol': 0.5, 'unit': None}]}},
             {"kind": "tf", "q": "“Token ids that are numerically close (like 995 and 996) have similar meanings.”",
              "answer": "False.", "why": "Ids are just positions in the vocabulary, in merge order; meaning lives in the "
-                                       "learned embeddings."},
+                                       "learned embeddings.", "key": {'value': False}},
         ],
     },
     {
@@ -64,7 +64,7 @@ operations on digits, the way we do on paper.</div>""",
                        "up ones, tens, hundreds consistently.",
              "why": "Column addition needs aligned digits; irregular chunks hide the columns."},
             {"kind": "number", "q": "How many tokens is 1000000 for Qwen2.5 (one token per digit)?",
-             "answer": "7.", "why": "Seven digits, seven tokens (GPT-2: 2)."},
+             "answer": "7.", "why": "Seven digits, seven tokens (GPT-2: 2).", "key": {'parts': [{'label': None, 'value': 7, 'tol': 0.5, 'unit': None}]}},
         ],
     },
     {
@@ -85,7 +85,7 @@ with a trailing space.</div>""",
              "options": ["“ blue” jumps to the top", "Nothing changes", "Digits take over: “1” (0.31), “3”, “5”",
                          "The model refuses"],
              "answer": "C.", "why": "Checked by running the model: the trailing space makes the text unusual, and digits "
-                                   "become the likeliest continuation."},
+                                   "become the likeliest continuation.", "key": {'choice': 2}},
             {"kind": "short", "q": "Why does “ Paris” (with a leading space) become unlikely after a trailing space?",
              "answer": "The space is already in the text, so a second space token is unlikely; and “Paris” without a space "
                        "is a rare token in that position.",
