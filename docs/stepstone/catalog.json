@@ -9,12 +9,12 @@
    "subject": "Machine learning",
    "order": 1,
    "requires": [],
-   "version": 1,
-   "content_hash": "c8379f30b3408965",
-   "file": "foundations-v1.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/foundations-v1.zip",
-   "size": 7772055,
-   "sha256": "51996a1fa7f457ca84c96ac315eb90de214105c46ab0934e3194a0fa63d25806",
+   "version": 2,
+   "content_hash": "8231904d135ea96c",
+   "file": "foundations-v2.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/foundations-v2.zip",
+   "size": 7769554,
+   "sha256": "f0a46fb6ef3ae7f60c63621aab2d821a89d14985bb8c508b7e847862d7353909",
    "lessons": 14
   },
   {
@@ -26,12 +26,12 @@
    "requires": [
     "foundations"
    ],
-   "version": 1,
-   "content_hash": "ba70dc66343afa22",
-   "file": "how-llms-work-v1.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/how-llms-work-v1.zip",
-   "size": 9546164,
-   "sha256": "4c5ae506c29a5cedcb49295a264f71b36e591dd83a1d7d12f0fa613e1a80d6ea",
+   "version": 2,
+   "content_hash": "39f28197eb343450",
+   "file": "how-llms-work-v2.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/how-llms-work-v2.zip",
+   "size": 9543671,
+   "sha256": "a3b3c8b6f37c306f7d3712282c52f2975d566f265734211146af949f8f940559",
    "lessons": 14
   },
   {
@@ -43,12 +43,12 @@
    "requires": [
     "how-llms-work"
    ],
-   "version": 1,
-   "content_hash": "e437c216815048e4",
-   "file": "llms-in-practice-v1.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/llms-in-practice-v1.zip",
-   "size": 6401146,
-   "sha256": "44dec8ac5adbf21639cf7dba44a2e5e4629fba71ab12f0a5d0fed9337569e19e",
+   "version": 2,
+   "content_hash": "b9a886d00016422d",
+   "file": "llms-in-practice-v2.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/llms-in-practice-v2.zip",
+   "size": 6399058,
+   "sha256": "ab8164b32c18274bdbb11ce7776f578f92ec14ad2c2235264243ae28ec8cd248",
    "lessons": 12
   },
   {
@@ -60,13 +60,18 @@
    "requires": [
     "how-llms-work"
    ],
-   "version": 1,
-   "content_hash": "40ed88df91a158b0",
-   "file": "deep-dive-v1.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/deep-dive-v1.zip",
-   "size": 17965181,
-   "sha256": "406fae8eb6bc4353113bb0321e213e624cd1c7aa40db938c986403734f12a23a",
+   "version": 2,
+   "content_hash": "51b8bed7a6734a70",
+   "file": "deep-dive-v2.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/deep-dive-v2.zip",
+   "size": 17957647,
+   "sha256": "237c37711250382d527d0ec125b44ed1fa909c2c074258f7dc08fb4166bcd449",
    "lessons": 45
   }
- ]
+ ],
+ "app": {
+  "version_code": 1,
+  "version_name": "0.1.0",
+  "url": "https://github.com/luilan/educational-videos/releases/latest/download/StepStone.apk"
+ }
 }
