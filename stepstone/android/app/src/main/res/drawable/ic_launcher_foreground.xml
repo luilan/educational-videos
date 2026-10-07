@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Three stepping stones, the last one gold: one concept at a time. -->
+<!-- 'S of stones': seven stones walked from the bottom to the gold one at the top. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
-    <path android:fillColor="#2A9D8F" android:pathData="M27,66 C27,60 33,57 39,57 C46,57 50,61 50,66 C50,71 45,74 38,74 C31,74 27,71 27,66 Z" />
-    <path android:fillColor="#2A9D8F" android:pathData="M45,49 C45,43 51,40 57,40 C64,40 68,44 68,49 C68,54 63,57 56,57 C49,57 45,54 45,49 Z" />
-    <path android:fillColor="#E9C46A" android:pathData="M60,33 C60,28 65,25 71,25 C77,25 81,29 81,33 C81,38 76,41 70,41 C64,41 60,38 60,33 Z" />
+    <group android:rotation="-10" android:pivotX="39" android:pivotY="75">
+        <path android:fillColor="#2A9D8F" android:pathData="M31.4,75.27 C31.4,71.72 34.8,69.6 39.38,69.6 C43.4,69.6 46.6,72.32 46.6,75.11 C46.6,77.98 42.99,80.29 38.85,80.4 C34.8,80.4 31.4,78.13 31.4,75.27 Z" />
+        <path android:fillColor="#1F7A6F" android:fillAlpha="0.55" android:pathData="M32.54,76.35 C34.44,80.13 43.56,80.13 45.84,76.08 C44.32,80.4 33.68,80.67 32.54,76.35 Z" />
+        <group android:rotation="-12" android:pivotX="39" android:pivotY="75">
+            <path android:fillColor="#FFFFFF" android:fillAlpha="0.22" android:pathData="M34.44,72.73 a2.13,0.86 0 1,0 4.26,0 a2.13,0.86 0 1,0 -4.26,0 Z" />
+        </group>
+    </group>
+    <group android:rotation="-6" android:pivotX="55" android:pivotY="76">
+        <path android:fillColor="#2A9D8F" android:pathData="M47.4,76.27 C47.4,72.72 50.8,70.6 55.38,70.6 C59.4,70.6 62.6,73.32 62.6,76.11 C62.6,78.98 58.99,81.29 54.85,81.4 C50.8,81.4 47.4,79.13 47.4,76.27 Z" />
+        <path android:fillColor="#1F7A6F" android:fillAlpha="0.55" android:pathData="M48.54,77.35 C50.44,81.13 59.56,81.13 61.84,77.08 C60.32,81.4 49.68,81.67 48.54,77.35 Z" />
+        <group android:rotation="-12" android:pivotX="55" android:pivotY="76">
+            <path android:fillColor="#FFFFFF" android:fillAlpha="0.22" android:pathData="M50.44,73.73 a2.13,0.86 0 1,0 4.26,0 a2.13,0.86 0 1,0 -4.26,0 Z" />
+        </group>
+    </group>
+    <group android:rotation="-2" android:pivotX="66" android:pivotY="63">
+        <path android:fillColor="#2A9D8F" android:pathData="M58.4,63.27 C58.4,59.72 61.8,57.6 66.38,57.6 C70.4,57.6 73.6,60.32 73.6,63.11 C73.6,65.98 69.99,68.29 65.85,68.4 C61.8,68.4 58.4,66.13 58.4,63.27 Z" />
+        <path android:fillColor="#1F7A6F" android:fillAlpha="0.55" android:pathData="M59.54,64.35 C61.44,68.13 70.56,68.13 72.84,64.08 C71.32,68.4 60.68,68.67 59.54,64.35 Z" />
+        <group android:rotation="-12" android:pivotX="66" android:pivotY="63">
+            <path android:fillColor="#FFFFFF" android:fillAlpha="0.22" android:pathData="M61.44,60.73 a2.13,0.86 0 1,0 4.26,0 a2.13,0.86 0 1,0 -4.26,0 Z" />
+        </group>
+    </group>
+    <group android:rotation="2" android:pivotX="52" android:pivotY="52">
+        <path android:fillColor="#2A9D8F" android:pathData="M44.4,52.27 C44.4,48.72 47.8,46.6 52.38,46.6 C56.4,46.6 59.6,49.32 59.6,52.11 C59.6,54.98 55.99,57.29 51.85,57.4 C47.8,57.4 44.4,55.13 44.4,52.27 Z" />
+        <path android:fillColor="#1F7A6F" android:fillAlpha="0.55" android:pathData="M45.54,53.35 C47.44,57.13 56.56,57.13 58.84,53.08 C57.32,57.4 46.68,57.67 45.54,53.35 Z" />
+        <group android:rotation="-12" android:pivotX="52" android:pivotY="52">
+            <path android:fillColor="#FFFFFF" android:fillAlpha="0.22" android:pathData="M47.44,49.73 a2.13,0.86 0 1,0 4.26,0 a2.13,0.86 0 1,0 -4.26,0 Z" />
+        </group>
+    </group>
+    <group android:rotation="6" android:pivotX="40" android:pivotY="40">
+        <path android:fillColor="#2A9D8F" android:pathData="M32.4,40.27 C32.4,36.72 35.8,34.6 40.38,34.6 C44.4,34.6 47.6,37.32 47.6,40.11 C47.6,42.98 43.99,45.29 39.85,45.4 C35.8,45.4 32.4,43.13 32.4,40.27 Z" />
+        <path android:fillColor="#1F7A6F" android:fillAlpha="0.55" android:pathData="M33.54,41.35 C35.44,45.13 44.56,45.13 46.84,41.08 C45.32,45.4 34.68,45.67 33.54,41.35 Z" />
+        <group android:rotation="-12" android:pivotX="40" android:pivotY="40">
+            <path android:fillColor="#FFFFFF" android:fillAlpha="0.22" android:pathData="M35.44,37.73 a2.13,0.86 0 1,0 4.26,0 a2.13,0.86 0 1,0 -4.26,0 Z" />
+        </group>
+    </group>
+    <group android:rotation="10" android:pivotX="52" android:pivotY="30">
+        <path android:fillColor="#2A9D8F" android:pathData="M44.4,30.27 C44.4,26.72 47.8,24.6 52.38,24.6 C56.4,24.6 59.6,27.32 59.6,30.11 C59.6,32.98 55.99,35.29 51.85,35.4 C47.8,35.4 44.4,33.13 44.4,30.27 Z" />
+        <path android:fillColor="#1F7A6F" android:fillAlpha="0.55" android:pathData="M45.54,31.35 C47.44,35.13 56.56,35.13 58.84,31.08 C57.32,35.4 46.68,35.67 45.54,31.35 Z" />
+        <group android:rotation="-12" android:pivotX="52" android:pivotY="30">
+            <path android:fillColor="#FFFFFF" android:fillAlpha="0.22" android:pathData="M47.44,27.73 a2.13,0.86 0 1,0 4.26,0 a2.13,0.86 0 1,0 -4.26,0 Z" />
+        </group>
+    </group>
+    <group android:rotation="14" android:pivotX="68" android:pivotY="31">
+        <path android:fillColor="#E9C46A" android:pathData="M60.4,31.27 C60.4,27.72 63.8,25.6 68.38,25.6 C72.4,25.6 75.6,28.32 75.6,31.11 C75.6,33.98 71.99,36.29 67.85,36.4 C63.8,36.4 60.4,34.13 60.4,31.27 Z" />
+        <path android:fillColor="#C99A32" android:fillAlpha="0.55" android:pathData="M61.54,32.35 C63.44,36.13 72.56,36.13 74.84,32.08 C73.32,36.4 62.68,36.67 61.54,32.35 Z" />
+        <group android:rotation="-12" android:pivotX="68" android:pivotY="31">
+            <path android:fillColor="#FFFFFF" android:fillAlpha="0.22" android:pathData="M63.44,28.73 a2.13,0.86 0 1,0 4.26,0 a2.13,0.86 0 1,0 -4.26,0 Z" />
+        </group>
+    </group>
 </vector>
