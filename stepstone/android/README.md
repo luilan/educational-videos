@@ -1,5 +1,7 @@
 # StepStone (Android)
 
+*Learn one concept at a time.*
+
 A study companion for the lesson series in this repo. It downloads lesson packs (the same content, frames and
 questions as the study-guide PDFs), walks through each lesson **one concept at a time**, and only unlocks the next
 concept once you pass the current one (75% of its questions). Every answer is recorded: retake lessons, practise what

@@ -66,6 +66,8 @@ private fun Header(title: @Composable () -> Unit, action: (@Composable () -> Uni
     }
 }
 
+const val TAGLINE = "Learn one concept at a time"
+
 @Composable
 fun Brand() = Text(androidx.compose.ui.text.buildAnnotatedString {
     append("Step"); pushStyle(androidx.compose.ui.text.SpanStyle(color = C.accent)); append("Stone"); pop()
@@ -89,7 +91,12 @@ private fun LibraryTab(s: AppState) {
     val installed = s.installed
     val available = cat?.packs?.filter { p -> installed.none { it.id == p.id } } ?: emptyList()
     Column(Modifier.fillMaxSize()) {
-        Header({ Brand() }) {
+        Header({
+            Column {
+                Brand()
+                Text(TAGLINE, color = C.muted, fontSize = 12.5.sp)
+            }
+        }) {
             if (s.checking) CircularProgressIndicator(Modifier.size(22.dp).padding(2.dp), strokeWidth = 2.dp, color = C.accent)
             else TextButton(onClick = { s.refresh() }) { Text("⟳ Check", color = C.ink2) }
         }
@@ -107,6 +114,7 @@ private fun LibraryTab(s: AppState) {
             if (installed.isEmpty() && available.isEmpty()) item {
                 CardBox {
                     Text("Welcome to StepStone", fontWeight = FontWeight.SemiBold)
+                    Text("$TAGLINE: each concept unlocks when you've mastered the one before it.", color = C.ink2, fontSize = 14.sp)
                     Text(if (s.checking) "Looking for lessons…" else "Tap ⟳ Check to load the lesson catalog.", color = C.ink2, fontSize = 14.sp)
                 }
             }
