@@ -26,12 +26,12 @@
    "requires": [
     "foundations"
    ],
-   "version": 3,
-   "content_hash": "ba70dc66343afa22",
-   "file": "how-llms-work-v3.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/how-llms-work-v3.zip",
-   "size": 9546164,
-   "sha256": "4c5ae506c29a5cedcb49295a264f71b36e591dd83a1d7d12f0fa613e1a80d6ea",
+   "version": 4,
+   "content_hash": "9b55adc8ac3883f0",
+   "file": "how-llms-work-v4.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/how-llms-work-v4.zip",
+   "size": 9546211,
+   "sha256": "9e5ad78781cfa9a60f022fb0bf7badc0b0077f6a4fcddced7e57cb55a400a943",
    "lessons": 14
   },
   {
