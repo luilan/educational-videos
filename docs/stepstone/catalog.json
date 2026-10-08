@@ -43,12 +43,12 @@
    "requires": [
     "how-llms-work"
    ],
-   "version": 3,
-   "content_hash": "e437c216815048e4",
-   "file": "llms-in-practice-v3.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/llms-in-practice-v3.zip",
-   "size": 6401146,
-   "sha256": "44dec8ac5adbf21639cf7dba44a2e5e4629fba71ab12f0a5d0fed9337569e19e",
+   "version": 4,
+   "content_hash": "01861865ec4f8074",
+   "file": "llms-in-practice-v4.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/llms-in-practice-v4.zip",
+   "size": 6401320,
+   "sha256": "91f1e8ef383330b156f2d55deff775e98f86007d5a04cb46c00b696b95f28d0e",
    "lessons": 12
   },
   {
