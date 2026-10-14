@@ -60,12 +60,12 @@
    "requires": [
     "how-llms-work"
    ],
-   "version": 7,
-   "content_hash": "3696eff1b3cbc916",
-   "file": "deep-dive-v7.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/deep-dive-v7.zip",
-   "size": 17965814,
-   "sha256": "9c67fd6074534992ec1b8c8a5bd8566092cc5a520460bb443daf2c2e3fbf0bbe",
+   "version": 8,
+   "content_hash": "72cbabd04dbd06ca",
+   "file": "deep-dive-v8.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/deep-dive-v8.zip",
+   "size": 17965960,
+   "sha256": "5bdc39a0c6dee105f782fd6f9386146f6092a34d29b27e2cddd0a562f84a7188",
    "lessons": 45
   }
  ],
