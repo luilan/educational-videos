@@ -167,6 +167,15 @@ BATCHED = {
                      "episode is built on real code you can run, with a study guide (PDF). Start with How LLMs Work."),
         "where": "Episode {n} of How LLMs Work: Deep Dive. Prerequisite: the How LLMs Work playlist.",
     },
+    "agents": {
+        "prefix": "a", "label": "How AI Agents Work",
+        "playlist": ("How AI Agents Work: Inside the Harness",
+                     "How coding agents really run: the agent loop, tool calling, reading and editing code, running "
+                     "commands, sandboxes and approvals, instructions and AGENTS.md, the context budget, MCP, sub-agents "
+                     "and evaluation. Built from the open-source Codex CLI and a tiny harness we write step by step, with "
+                     "real traces from a local model. Every episode has a study guide (PDF) and runnable code."),
+        "where": "Episode {n} of How AI Agents Work: Inside the Harness. Background: the LLMs in Practice playlist.",
+    },
 }
 PRACTICE = "llms-in-practice"
 

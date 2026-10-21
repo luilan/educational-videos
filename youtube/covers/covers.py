@@ -83,3 +83,23 @@ class DeepDiveCover(Scene):
                     Text("Deep Dive", font_size=60, weight=BOLD, color=YELLOW),
                     Text("Inside a modern LLM, piece by piece", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
         self.add(fit(tb, art, Text("real code · study guides", font_size=22, color=GREY_C)))
+
+
+class AgentsCover(Scene):
+    def construct(self):
+        # a model inside its harness: the parts the series explains around it
+        box = RoundedRectangle(corner_radius=0.2, width=2.2, height=1.1, color=MODEL_COLOR,
+                               fill_color=MODEL_COLOR, fill_opacity=0.25)
+        model = VGroup(box, Text("model", font_size=34, weight=BOLD).move_to(box))
+        chips = VGroup(*[token(h, color=c, font_size=22) for h, c in
+                         [("tools", GOLD), ("loop", TEAL_C), ("sandbox", RED_C), ("approvals", MAROON_C),
+                          ("AGENTS.md", BLUE_C), ("context", GREEN_C), ("MCP", TOKEN_COLOR), ("sub-agents", PURPLE_B)]])
+        top, bottom = chips[:4].arrange(RIGHT, buff=0.25), chips[4:].arrange(RIGHT, buff=0.25)
+        inner = VGroup(top, model, bottom).arrange(DOWN, buff=0.35)
+        harness = SurroundingRectangle(inner, buff=0.35, corner_radius=0.3, color=TEAL_C, stroke_width=4)
+        label = Text("the harness", font_size=22, color=TEAL_C).next_to(harness, UP, buff=0.12)
+        art = VGroup(label, harness, inner)
+        tb = VGroup(Text("How AI Agents Work", font_size=60, weight=BOLD),
+                    Text("Inside the Harness", font_size=56, weight=BOLD, color=TEAL_C),
+                    Text("How coding agents really run", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
+        self.add(fit(tb, art, Text("real traces · open-source code · study guides", font_size=22, color=GREY_C)))

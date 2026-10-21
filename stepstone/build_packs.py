@@ -55,6 +55,11 @@ SERIES = {
                   "description": "Inside a modern LLM, piece by piece: tokenization, position, attention, "
                                  "normalization, training and scaling, mixture of experts, inference tricks, "
                                  "post-training and interpretability."},
+    "agents": {"prefix": "a", "title": "How AI Agents Work: Inside the Harness", "order": 5, "requires": ["llms-in-practice"],
+               "subject": "Machine learning", "cover": "youtube/covers/AgentsCover.jpg",
+               "description": "How coding agents really run: the agent loop, tool calling, editing and running code, "
+                              "sandboxes and approvals, instructions, the context budget, MCP and sub-agents, from the "
+                              "open-source Codex CLI and a tiny harness built step by step."},
 }
 
 
