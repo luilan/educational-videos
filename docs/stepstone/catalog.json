@@ -67,6 +67,23 @@
    "size": 17966318,
    "sha256": "0c34716cb7c8dc7f9e2e1747d0744c01b2f06de06009b4bd83bccb3e920129f6",
    "lessons": 45
+  },
+  {
+   "id": "agents",
+   "title": "How AI Agents Work: Inside the Harness",
+   "description": "How coding agents really run: the agent loop, tool calling, editing and running code, sandboxes and approvals, instructions, the context budget, MCP and sub-agents, from the open-source Codex CLI and a tiny harness built step by step.",
+   "subject": "Machine learning",
+   "order": 5,
+   "requires": [
+    "llms-in-practice"
+   ],
+   "version": 1,
+   "content_hash": "7cfc23cd27d58caf",
+   "file": "agents-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/agents-v1.zip",
+   "size": 624907,
+   "sha256": "0b6022e460d0ee2a34f917ca59f2b0dbc654174a25a9518a8ec7c5628f1dcfa8",
+   "lessons": 1
   }
  ],
  "app": {
