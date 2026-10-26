@@ -1,0 +1,17 @@
+<|im_start|>assistant
+<tool_call>
+{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}
+</tool_call><|im_end|>
+<|im_start|>user
+<tool_response>
+exit code 1
+AssertionError
+</tool_response><|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+
+tokens for the call + result: 43
+tokens for the call JSON alone: 19

@@ -1,0 +1,22 @@
+--- sample 0: valid, 388 tokens out, 1570 chars before the call, 18 s
+'ctory? The user probably expects that the command is run from the project root. So the command should work.\n\nI think that\'s it. Let me output the tool call.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 1: valid, 459 tokens out, 1776 chars before the call, 26 s
+'so this is the correct step.\n\nSo the tool_call is:\n\n{\n  "name": "shell",\n  "arguments": {\n    "command": "python3 test_stats.py"\n  }\n}\n\nYes, that\'s correct.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 2: valid, 494 tokens out, 2034 chars before the call, 31 s
+'ectory structure, but the user says "in the project folder", so the command should be run from the current directory.\n\nSo the correct tool call is as above.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 3: valid, 251 tokens out, 1039 chars before the call, 20 s
+'tax. The required parameter is command, which is a string. Yes, that\'s correct.\n\nNo other parameters needed. So the tool_call should be correctly formatted.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 4: valid, 406 tokens out, 1619 chars before the call, 37 s
+'st, so this command is the right one. The shell tool will execute it and return the output, which the user can see. So the answer is to make that tool call.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 5: valid, 300 tokens out, 1149 chars before the call, 28 s
+'hell",\n  "arguments": {\n    "command": "python3 test_stats.py"\n  }\n}\n\nI need to put this in a tool_call XML tag as specified. Let me structure it correctly.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 6: valid, 256 tokens out, 1034 chars before the call, 12 s
+'ython3 test_stats.py"}.\n\nI think that\'s all. Let me make sure there\'s no typo in the command. The user specified "python3 test_stats.py", so that\'s correct.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 7: valid, 324 tokens out, 1346 chars before the call, 17 s
+'ction name is "shell", and the arguments should be {"command": "python3 test_stats.py"}.\n\nI need to output this as a tool_call XML block. Let me write that.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 8: valid, 268 tokens out, 1077 chars before the call, 14 s
+'e to run it, so my job is to execute the command via the shell tool.\n\nSo the tool call should be shell with command "python3 test as per user\'s instruction.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+--- sample 9: valid, 288 tokens out, 1135 chars before the call, 13 s
+'need to output a tool_call with name "shell" and arguments {"command": "python3 test_stats.py"}.\n\nYes, that\'s the right approach. Let me structure the JSON.\n</think>\n\n<tool_call>\n{"name": "shell", "arguments": {"command": "python3 test_stats.py"}}\n</tool_call>'
+
+ Counter({'valid': 10}) median tokens 324

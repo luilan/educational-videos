@@ -1,0 +1,16 @@
+[
+ {
+  "type": "function_call",
+  "status": "completed",
+  "id": "fc_455683_0",
+  "name": "exec_command",
+  "arguments": "{\"cmd\":\"ls\",\"workdir\":\"/work\"}",
+  "call_id": "call_2tfwp3m3"
+ },
+ {
+  "type": "function_call_output",
+  "id": "fco_01a178f7-a0ec-7e90-a2d5-6e405cef9a76",
+  "call_id": "call_2tfwp3m3",
+  "output": "Chunk ID: 876fef\nWall time: 0.0000 seconds\nProcess exited with code 0\nOriginal token count: 3\nOutput:\nhello.py\n"
+ }
+]

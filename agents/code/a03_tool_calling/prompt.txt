@@ -1,0 +1,23 @@
+<|im_start|>system
+You are a coding agent working in a project folder. Use the shell tool to inspect, edit and test files.
+
+# Tools
+
+You may call one or more functions to assist with the user query.
+
+You are provided with function signatures within <tools></tools> XML tags:
+<tools>
+{"type": "function", "function": {"name": "shell", "description": "Run a bash command in the project folder and return its output.", "parameters": {"type": "object", "properties": {"command": {"type": "string"}}, "required": ["command"]}}}
+</tools>
+
+For each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:
+<tool_call>
+{"name": <function-name>, "arguments": <args-json-object>}
+</tool_call><|im_end|>
+<|im_start|>user
+The test in test_stats.py fails. Run it with: python3 test_stats.py.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
