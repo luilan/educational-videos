@@ -58,7 +58,8 @@ def load(path):
 
 
 def plain(text):
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", text))).strip()
+    text = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", text))).strip()
+    return text.replace("<", "\u2039").replace(">", "\u203a")  # YouTube rejects < and > (e.g. <tool_call>)
 
 
 def mmss(t):
