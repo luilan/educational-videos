@@ -77,12 +77,12 @@
    "requires": [
     "llms-in-practice"
    ],
-   "version": 2,
-   "content_hash": "421bafd0ea723471",
-   "file": "agents-v2.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/agents-v2.zip",
-   "size": 1585776,
-   "sha256": "55fbcc967738ff3bcc0d6ae0b4a6c4ef3f002248b2cbd978b3f399ecb65bbcb4",
+   "version": 3,
+   "content_hash": "5fdaf195e71dea88",
+   "file": "agents-v3.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/agents-v3.zip",
+   "size": 1585825,
+   "sha256": "449a4c0866028c31409861b94c5ebe7fda5357ac0524a2f5ff8bc56da073d185",
    "lessons": 3
   }
  ],
