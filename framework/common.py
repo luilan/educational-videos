@@ -5,6 +5,9 @@ TOKEN_COLOR = BLUE_D
 MODEL_COLOR = PURPLE_B
 MONO = "DejaVu Sans Mono"
 MAX_WIDTH = 12.8  # usable frame width
+SERIF = "DejaVu Serif"  # the series' text face; set explicitly so hosts without a DejaVu "sans" fallback match
+Text.set_default(font=SERIF)
+MarkupText.set_default(font=SERIF)
 
 
 def token(word, color=TOKEN_COLOR, font_size=28):

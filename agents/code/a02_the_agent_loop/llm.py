@@ -19,7 +19,7 @@ def respond(input_items, tools=None, instructions=None):
     t0 = time.time()
     for attempt in range(3):                          # servers fail now and then: retry, like real harnesses do
         try:
-            with urllib.request.urlopen(req, timeout=1800) as r:
+            with urllib.request.urlopen(req, timeout=7200) as r:
                 out = json.load(r)
             break
         except urllib.error.HTTPError as e:
