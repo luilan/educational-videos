@@ -56,7 +56,8 @@ def run():
             break
         for c in calls:
             cmd = json.loads(c["arguments"]).get("command", "")
-            p = subprocess.run(bwrap(work, home) + ["bash", "-c", cmd], capture_output=True, text=True, timeout=60)
+            p = subprocess.run(bwrap(work, home) + ["bash", "-c", cmd], capture_output=True, text=True, timeout=60,
+                               stdin=subprocess.DEVNULL)
             out = f"exit code {p.returncode}\n{p.stdout}{p.stderr}"
             commands += 1
             hit = next((b for b in BLOCKED if b in out), None)

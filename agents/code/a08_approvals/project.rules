@@ -1,0 +1,9 @@
+# Codex execpolicy rules (Starlark): which commands run without asking, which ask, which never run.
+prefix_rule(pattern = ["python3", ["test_invoice.py", "invoice.py"]], decision = "allow",
+            justification = "running the project's own code is fine")
+prefix_rule(pattern = ["git", ["status", "diff", "log"]], decision = "allow")
+prefix_rule(pattern = ["pip", "install"], decision = "prompt",
+            justification = "installs code from the internet")
+prefix_rule(pattern = ["git", "push"], decision = "prompt", justification = "publishes changes")
+prefix_rule(pattern = ["rm", "-rf"], decision = "forbidden",
+            justification = "never delete recursively; move files to ./trash instead")

@@ -1,0 +1,27 @@
+$ codex execpolicy check --rules project.rules python3 test_invoice.py
+{"matchedRules":[{"prefixRuleMatch":{"matchedPrefix":["python3","test_invoice.py"],"decision":"allow","justification":"running the project's own code is fine"}}],"decision":"allow"}
+
+$ codex execpolicy check --rules project.rules git status
+{"matchedRules":[{"prefixRuleMatch":{"matchedPrefix":["git","status"],"decision":"allow"}}],"decision":"allow"}
+
+$ codex execpolicy check --rules project.rules pip install requests
+{"matchedRules":[{"prefixRuleMatch":{"matchedPrefix":["pip","install"],"decision":"prompt","justification":"installs code from the internet"}}],"decision":"prompt"}
+
+$ codex execpolicy check --rules project.rules git push origin main
+{"matchedRules":[{"prefixRuleMatch":{"matchedPrefix":["git","push"],"decision":"prompt","justification":"publishes changes"}}],"decision":"prompt"}
+
+$ codex execpolicy check --rules project.rules rm -rf build
+{"matchedRules":[{"prefixRuleMatch":{"matchedPrefix":["rm","-rf"],"decision":"forbidden","justification":"never delete recursively; move files to ./trash instead"}}],"decision":"forbidden"}
+
+$ codex execpolicy check --rules project.rules ls -la
+{"matchedRules":[]}
+
+$ codex execpolicy check --rules project.rules ./venv/bin/pip install -r requirements.txt
+{"matchedRules":[]}
+
+$ codex execpolicy check --rules project.rules --resolve-host-executables ./venv/bin/pip install -r requirements.txt
+{"matchedRules":[{"prefixRuleMatch":{"matchedPrefix":["pip","install"],"decision":"prompt","resolvedProgram":"/data/videos/educational-videos/agents/code/a08_approvals/venv/bin/pip","justification":"installs code from the internet"}}],"decision":"prompt"}
+
+$ codex execpolicy check --rules project.rules --resolve-host-executables /usr/bin/pip install requests
+{"matchedRules":[{"prefixRuleMatch":{"matchedPrefix":["pip","install"],"decision":"prompt","resolvedProgram":"/usr/bin/pip","justification":"installs code from the internet"}}],"decision":"prompt"}
+
