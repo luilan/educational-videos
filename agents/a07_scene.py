@@ -16,9 +16,10 @@ SERIES_LABEL = "HOW AI AGENTS WORK  ·  EPISODE 7"
 MODEL_C, HARNESS_C, TOOL_C = PURPLE_B, TEAL_C, GOLD
 ACTIONS = ["write in the project", "write outside it", "write to /tmp", "read a system file", "open a connection"]
 MATRIX = {":read-only": [0, 0, 0, 1, 0], ":workspace": [1, 0, 1, 1, 0], ":danger-full-access": [1, 1, 1, 1, 1]}
-RUN1 = [("npm install", "exit 1"), ("sudo npm test", "exit 1"), ("sudo setcap cap_net_admin=ep /usr/bin/node", "exit 1"),
-        ("sudo setcap cap_net_admin=ep /usr/bin/bwrap", "exit 1"), ("sudo apt update && sudo apt install -y bwrap", "exit 1"),
-        ("sudo apt install -y libcap", "exit 1"), ("sudo apt install -y busybox", "exit 1")]
+RUN1 = [("npm install", "exit 254: npm error code ENOENT", GREY_B), ("npm init --yes", "exit 0", GREY_B),
+        ("echo 'export INVOICE_API=…' >> ~/.bashrc && python3 test_invoice.py",
+         "exit 1: Read-only file system", RED_B),
+        ("export INVOICE_API=… && python3 test_invoice.py", "exit 0: ok", GREEN_B)]
 CODE = """def bwrap(work, home):
     args = ["bwrap", "--die-with-parent", "--new-session",
             "--unshare-net", "--unshare-pid",          # no network
@@ -187,29 +188,28 @@ class SandboxingVideo(VoicedScene):
     def run1(self):
         self.section(7)
         self.clear_stage()
-        h = Text("run 1: 10 model calls, every command inside the sandbox", font_size=26).to_edge(UP, buff=0.4)
+        h = Text("run 1 (run 2 went the same way; run 3 went straight to the tests)", font_size=24).to_edge(UP, buff=0.4)
         self.play(FadeIn(h), run_time=0.3)
-        rows = VGroup(*[VGroup(Text("$ " + c, font=MONO, font_size=19), Text(o, font=MONO, font_size=17, color=RED_B))
-                        .arrange(RIGHT, buff=0.4) for c, o in RUN1]).arrange(DOWN, aligned_edge=LEFT, buff=0.18)
-        rows.move_to([0, 0.15, 0])
+        rows = VGroup(*[VGroup(Text("$ " + c, font=MONO, font_size=18), Text(o, font=MONO, font_size=16, color=col))
+                        .arrange(RIGHT, buff=0.35) for c, o, col in RUN1]).arrange(DOWN, aligned_edge=LEFT, buff=0.22)
+        if rows.width > 12.8:
+            rows.scale_to_fit_width(12.8)
+        rows.move_to([0, 0.3, 0])
         self.at("node")
-        self.play(FadeIn(rows[0]), run_time=0.3)
-        self.at("sudo")
-        self.play(FadeIn(rows[1]), run_time=0.3)
-        self.at("give")
-        self.play(FadeIn(rows[2]), run_time=0.3)
-        self.at("bubble", "bubblewrap")
-        self.play(FadeIn(rows[3]), run_time=0.3)
-        self.at("install")
-        self.play(FadeIn(rows[4:]), run_time=0.5)
-        r2 = Text("run 2: sudo usermod -a -G netdev / netlink / docker $USER   → exit 1", font=MONO, font_size=18,
-                  color=GREY_A).next_to(rows, DOWN, buff=0.35).align_to(rows, LEFT)
-        self.at("second")
-        self.play(FadeIn(r2), run_time=0.3)
-        no = Text("sudo: The \"no new privileges\" flag is set, which prevents sudo from running as root.",
-                  font=MONO, font_size=16, color=YELLOW).to_edge(DOWN, buff=0.35)
+        self.play(FadeIn(rows[0]), FadeIn(rows[1]), run_time=0.4)
+        self.at("appended")
+        self.play(FadeIn(rows[2]), run_time=0.4)
         self.at("refused")
-        self.play(FadeIn(no), run_time=0.4)
+        self.play(Indicate(rows[2][1], color=RED_B, scale_factor=1.0), run_time=0.6)
+        self.at("variable")
+        self.play(FadeIn(rows[3]), run_time=0.4)
+        res = Text("5 model calls · 1 command blocked · tests pass · ~/.bashrc unchanged", font_size=22, color=GREEN_B)
+        res.to_edge(DOWN, buff=0.9)
+        self.at("passed")
+        self.play(FadeIn(res), run_time=0.3)
+        nev = Text("no run tried: pip install -r requirements.txt", font_size=20, color=GREY_A).next_to(res, DOWN, buff=0.25)
+        self.at("none")
+        self.play(FadeIn(nev), run_time=0.3)
         self.end_section()
 
     # ------------------------------------------------------------------ 8
@@ -222,7 +222,7 @@ class SandboxingVideo(VoicedScene):
                       Text("…: [Errno -3] Temporary failure in name resolution", font=MONO, font_size=19),
                       Text("sudo: The \"no new privileges\" flag is set …", font=MONO, font_size=19)).arrange(DOWN, aligned_edge=LEFT, buff=0.35)
         errs.move_to([0, 0.5, 0])
-        src = Text("(our sandbox, commands run by hand)", font_size=18, color=GREY_B).next_to(errs, UP, buff=0.3).align_to(errs, LEFT)
+        src = Text("(the first from run 1; the other two run by hand in the same sandbox)", font_size=18, color=GREY_B).next_to(errs, UP, buff=0.3).align_to(errs, LEFT)
         self.add(src)
         self.at("read")
         self.play(FadeIn(errs[0]), run_time=0.3)
