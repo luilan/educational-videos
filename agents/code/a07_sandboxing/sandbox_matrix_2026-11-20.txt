@@ -1,0 +1,18 @@
+## :read-only
+write in the project folder:  exit 1
+write outside the project:    exit 1
+write to /tmp:                exit 1
+read a system file:           exit 0
+open a network connection:    exit 1
+## :workspace
+write in the project folder:  exit 0
+write outside the project:    exit 1
+write to /tmp:                exit 0
+read a system file:           exit 0
+open a network connection:    exit 1
+## :danger-full-access
+write in the project folder:  exit 0
+write outside the project:    exit 0
+write to /tmp:                exit 0
+read a system file:           exit 0
+open a network connection:    exit 0
