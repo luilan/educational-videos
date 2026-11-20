@@ -1,0 +1,50 @@
+=== blocking-1 (crashed after step 2: the slim container had no pkill; fixed afterwards)
+step 1: model  871 s
+   shell: python3 server.py &   [30.0 s]  -> command timed out after 30 s and was killed
+   shell: python3 check.py   [ 0.1 s]  -> exit code 0
+   shell: python3 server.py &   [ 0.1 s]  -> exit code 0
+   shell: python3 check.py   [ 0.1 s]  -> exit code 0
+   shell: python3 server.py &   [ 0.0 s]  -> exit code 0
+   shell: python3 check.py   [ 0.1 s]  -> exit code 0
+step 2: model   86 s
+FileNotFoundError: [Errno 2] No such file or directory: 'pkill'
+
+=== blocking-2
+step 1: model  842 s
+   shell: python3 check.py   [ 0.1 s]  -> exit code 1
+step 2: model   65 s
+
+blocking: 2 model calls, 0 s waiting for commands, 907 s total
+answer (end): The server is not running yet. Please start the web service with `python3 server.py` first, then run `python3 check.py` to check the version. The error `Connection refused` occurs because the server process hasn't been started before attempting to check it.
+check: WRONG or incomplete
+
+=== blocking-3
+step 1: model  692 s
+   shell: python3 server.py &   [30.0 s]  -> command timed out after 30 s and was killed
+   shell: python3 check.py   [ 0.1 s]  -> exit code 0
+   shell: python3 server.py &   [ 0.0 s]  -> exit code 0
+   shell: python3 check.py   [ 0.1 s]  -> exit code 0
+step 2: model   61 s
+
+blocking: 2 model calls, 30 s waiting for commands, 783 s total
+answer (end):  output after starting the server. The subsequent port conflict error occurred because the server was already running (the port 8000 was already in use when trying to start a second instance), but the initial check correctly returned the version.   **Final Answer**: The service version is **1.4.2**.
+check: RIGHT (1.4.2)
+
+=== sessions-2
+step 1: model  375 s
+   exec_command: python3 server.py   [10.1 s]  -> Process running with session ID 1
+   exec_command: python3 check.py   [ 0.2 s]  -> Process exited with code 0
+step 2: model   29 s
+
+sessions: 2 model calls, 10 s waiting for commands, 415 s total
+answer (end): The web service reports version `1.4.2`.
+check: RIGHT (1.4.2)
+
+=== sessions-3
+step 1: model  457 s
+
+sessions: 1 model calls, 0 s waiting for commands, 457 s total
+answer (end): 
+check: WRONG or incomplete
+
+(sessions-1 was stopped before it finished: it had the same pkill problem)
