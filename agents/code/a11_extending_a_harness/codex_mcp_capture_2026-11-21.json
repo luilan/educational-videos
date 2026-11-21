@@ -1,0 +1,68 @@
+{
+ "note": "Codex CLI 0.163.0 with `-c mcp_servers.tickets.command=\"python3\" -c mcp_servers.tickets.args=[\"/work/tickets_mcp.py\"]`, asked to read ticket T-42; captured through a logging proxy, 2026-11-21",
+ "tool_names": [
+  "exec_command",
+  "write_stdin",
+  "list_mcp_resources",
+  "list_mcp_resource_templates",
+  "read_mcp_resource",
+  "request_user_input",
+  "view_image",
+  "multi_agent_v1",
+  "mcp__tickets",
+  "get_goal",
+  "create_goal",
+  "update_goal",
+  "web_search"
+ ],
+ "mcp_namespace_tool": {
+  "type": "namespace",
+  "name": "mcp__tickets",
+  "description": "Tools in the mcp__tickets namespace.",
+  "tools": [
+   {
+    "type": "function",
+    "name": "get_ticket",
+    "description": "Get the text of a support ticket by its ID, e.g. T-42.",
+    "strict": false,
+    "parameters": {
+     "type": "object",
+     "properties": {
+      "id": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "id"
+     ]
+    }
+   }
+  ]
+ },
+ "call_and_result": [
+  {
+   "type": "function_call",
+   "status": "completed",
+   "id": "fc_455688_0",
+   "name": "get_ticket",
+   "namespace": "mcp__tickets",
+   "arguments": "{\"id\":\"T-42\"}",
+   "call_id": "call_1z08fgh5"
+  },
+  {
+   "type": "function_call_output",
+   "id": "fco_01a1fc4d-d6f7-7032-9bce-9a9221517b65",
+   "call_id": "call_1z08fgh5",
+   "output": [
+    {
+     "type": "input_text",
+     "text": "Wall time: 0.0104 seconds\nOutput:"
+    },
+    {
+     "type": "input_text",
+     "text": "Customer reports invoice totals are too high by exactly the discount amount. Seen on invoice 2026-0042 (loyalty discount 10%). Expected: total = subtotal - discount + VAT."
+    }
+   ]
+  }
+ ]
+}

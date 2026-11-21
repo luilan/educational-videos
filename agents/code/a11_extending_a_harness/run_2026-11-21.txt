@@ -1,0 +1,47 @@
+=== mcp-1
+tools offered to the model: shell, mcp__tickets__get_ticket
+definition sizes (chars): shell 225, mcp__tickets__get_ticket 225
+step 1: model   60 s
+   MCP tickets.get_ticket({'id': 'T-42'})   -> Customer reports invoice totals are too high by exactly the discount a…
+step 2: model  577 s
+   $ python3 test_invoice.py   -> exit 1
+   $ python3 test_invoice.py   -> exit 1
+step 3: model  714 s
+   $ sed -i 's/total = subtotal * 1.10 - discount/total = (subtotal - discount) * 1.1   -> exit 0
+   $ sed -i 's/total = subtotal * (1 + vat) - discount/total = (subtotal - discount)    -> exit 0
+step 4: model   45 s
+
+4 model calls; tests pass: False
+
+=== mcp-2
+tools offered to the model: shell, mcp__tickets__get_ticket
+definition sizes (chars): shell 225, mcp__tickets__get_ticket 225
+step 1: model   95 s
+   MCP tickets.get_ticket({'id': 'T-42'})   -> Customer reports invoice totals are too high by exactly the discount a…
+step 2: model  448 s
+   $ python3 test_invoice.py   -> exit 1
+step 3: model  348 s
+   $ sed -i 's/total = subtotal + discount + vat/total = subtotal - discount + vat/g'   -> exit 1
+step 4: model  927 s
+   $ sed -i 's/total = subtotal + (discount * subtotal) + vat/total = subtotal - (dis   -> exit 1
+   $ sed -i 's/total = subtotal + (discount * subtotal) + vat/total = subtotal - (dis   -> exit 1
+step 5: model  635 s
+   $ sed -i 's/total = subtotal + discount * subtotal + vat/total = subtotal - discou   -> exit 1
+step 6: model  467 s
+   $ sed -i 's/total = subtotal + discount\*subtotal + vat/total = subtotal - discoun   -> exit 1
+step 7: model  341 s
+   $ sed -i 's/total = subtotal + discount + vat/total = subtotal - discount + vat/g'   -> exit 1
+step 8: model  751 s
+   $ sed -i 's/total = subtotal + discount\*subtotal + vat/total = subtotal - discoun   -> exit 1
+step 9: model  358 s
+   $ sed -i 's/total = subtotal + discount + vat/total = subtotal - discount + vat/g'   -> exit 1
+step 10: model  809 s
+   $ sed -i 's/total = subtotal + discount + vat/total = subtotal - discount + vat/g'   -> exit 1
+
+10 model calls; tests pass: False
+
+=== Codex CLI 0.163.0 with the tickets server: 'Use the get_ticket tool to read ticket T-42, then summarize it in one sentence.'
+proxy files after resp_258.txt up to resp_263.txt
+  msg: ite the JSON for the tool call. The name is mcp__tickets.get_ticket and the arguments should be {"id": "T-42"}.  I don't think there's any need to add justification or other fields because the user just wants the ticket read and summarized. The next step after getting the ticket text would be to summarize it, but that's after the tool call.  So the first tool call is to get_ticket T-42. </think>  
+  msg: nvoice 2026-0042 is overstated by the full 10% loyalty discount, as the total should be calculated as subtotal minus discount plus VAT."  Yes, that's one sentence.  I think that's a good summary. Let me write it. </think>  **Summary of Ticket T-42**   Customer reports invoice 2026-0042 is overstated by the full 10% loyalty discount, as the total should be calculated as `subtotal - discount + VAT`.
+  usage: {'input_tokens': 16899, 'cached_input_tokens': 8244, 'cache_write_input_tokens': 0, 'output_tokens': 1342, 'reasoning_output_tokens': 0}
