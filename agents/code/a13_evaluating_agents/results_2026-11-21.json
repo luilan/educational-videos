@@ -1,0 +1,66 @@
+[
+ {
+  "task": "stats",
+  "pass": true,
+  "note": "",
+  "model_calls": 4,
+  "tokens_sent": 1270,
+  "seconds": 853
+ },
+ {
+  "task": "fix",
+  "pass": false,
+  "note": "",
+  "model_calls": 4,
+  "tokens_sent": 7754,
+  "seconds": 1954
+ },
+ {
+  "task": "search",
+  "pass": false,
+  "note": "missing study_guide.py, 42",
+  "model_calls": 5,
+  "tokens_sent": 3354,
+  "seconds": 1321
+ },
+ {
+  "task": "server",
+  "pass": true,
+  "note": "",
+  "model_calls": 2,
+  "tokens_sent": 773,
+  "seconds": 534
+ },
+ {
+  "task": "stats",
+  "pass": false,
+  "note": "",
+  "model_calls": 3,
+  "tokens_sent": 859,
+  "seconds": 709
+ },
+ {
+  "task": "fix",
+  "pass": true,
+  "note": "",
+  "model_calls": 6,
+  "tokens_sent": 11053,
+  "seconds": 2681
+ },
+ {
+  "task": "search",
+  "pass": false,
+  "note": "missing study_guide.py, 42",
+  "model_calls": 5,
+  "tokens_sent": 4308,
+  "seconds": 1302
+ },
+ {
+  "task": "server",
+  "pass": true,
+  "note": "",
+  "model_calls": 2,
+  "tokens_sent": 493,
+  "seconds": 649
+ }
+]

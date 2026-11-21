@@ -1,0 +1,15 @@
+run 1 stats   PASS   4 calls  1,270 tokens  853 s  
+run 1 fix     FAIL   4 calls  7,754 tokens 1954 s  
+run 1 search  FAIL   5 calls  3,354 tokens 1321 s  missing study_guide.py, 42
+run 1 server  PASS   2 calls    773 tokens  534 s  
+run 2 stats   FAIL   3 calls    859 tokens  709 s  
+run 2 fix     PASS   6 calls 11,053 tokens 2681 s  
+run 2 search  FAIL   5 calls  4,308 tokens 1302 s  missing study_guide.py, 42
+run 2 server  PASS   2 calls    493 tokens  649 s  
+
+task      pass@1  pass^2   tokens  seconds
+stats       0.50   False    1,064      781
+fix         0.50   False    9,404     2318
+search      0.00   False    3,831     1312
+server      1.00    True      633      592
+overall pass@1: 0.50
