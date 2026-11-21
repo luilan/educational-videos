@@ -1,0 +1,75 @@
+=== unlimited-1
+step 1: sent    224 tokens
+   $ cat stepstone/build_packs.py   -> 14,859 chars
+   $ cat youtube/build_manifests.py   -> 13,092 chars
+   $ cat framework/intro.py   -> 1,800 chars
+step 2: sent  7,887 tokens  (over the 4,096 window!)
+
+unlimited: 2 model calls, 0 compactions, largest request 7,887 tokens
+tokens sent per call: 224, 7,887
+answers right: 3 of 3 [True, True, True]
+answer (end): 1. The agents series uses the cover image file: `youtube/covers/AgentsCover.jpg` (found in stepstone/build_packs.py)  2. The value of MIN_CHAPTER is `10` (found in youtube/build_manifests.py)  3. The value of MAX_TITLE_WIDTH is `12.8` (found in framework/intro.py)
+
+=== compact-1
+step 1: sent    224 tokens
+   $ cat stepstone/build_packs.py   -> 14,859 chars
+   $ cat youtube/build_manifests.py   -> 13,092 chars
+   $ cat framework/intro.py   -> 1,800 chars
+   [compacted: 7,835 tokens -> summary of 746 written, 1,102 chars kept]
+step 2: sent    595 tokens
+
+compact: 2 model calls, 1 compactions, largest request 595 tokens
+tokens sent per call: 224, 595
+answers right: 3 of 3 [True, True, True]
+answer (end): 1. AgentsCover.jpg 2. 10 3. 12.8
+
+=== compact-2
+step 1: sent    224 tokens
+   $ cat stepstone/build_packs.py   -> 14,859 chars
+   $ cat youtube/build_manifests.py   -> 13,092 chars
+   $ cat framework/intro.py   -> 1,800 chars
+   [compacted: 7,835 tokens -> summary of 527 written, 1,105 chars kept]
+step 2: sent    545 tokens
+
+compact: 2 model calls, 1 compactions, largest request 545 tokens
+tokens sent per call: 224, 545
+answers right: 3 of 3 [True, True, True]
+answer (end): ework/intro.py`)  These values were directly confirmed by parsing the target files and have been verified against the current implementation with no observed changes. No additional tool execution was required since the answers were already accurately extracted and validated by the previous analysis.
+
+=== compact-3
+step 1: sent    224 tokens
+   $ cat stepstone/build_packs.py   -> 14,859 chars
+   $ cat youtube/build_manifests.py   -> 13,092 chars
+   $ cat framework/intro.py   -> 1,800 chars
+   [compacted: 7,835 tokens -> summary of 1,727 written, 1,181 chars kept]
+step 2: sent    554 tokens
+
+compact: 2 model calls, 1 compactions, largest request 554 tokens
+tokens sent per call: 224, 554
+answers right: 3 of 3 [True, True, True]
+answer (end): s **10** (from `youtube/build_manifests.py`).   3. The value of `MAX_TITLE_WIDTH` is **12.8** (from `framework/intro.py`).    <no_tool_calls>   The previous model has already completed all three queries with verified values from source files. No further tool execution is required.   </no_tool_calls>
+
+=== capped-1
+step 1: sent    224 tokens
+   $ cat stepstone/build_packs.py   -> 14,859 chars, 2,025 shown
+   $ cat youtube/build_manifests.py   -> 13,092 chars, 2,025 shown
+   $ cat framework/intro.py   -> 1,800 chars
+step 2: sent  1,850 tokens
+
+capped: 2 model calls, 0 compactions, largest request 1,850 tokens
+tokens sent per call: 224, 1,850
+answers right: 2 of 3 [False, True, True]
+answer (end): ified in stepstone/build_packs.py) is **cover.jpg**. The file structure description explicitly states: `cover.jpg            series artwork (when available)`.  2. The value of `MIN_CHAPTER` in youtube/build_manifests.py is **10**.  3. The value of `MAX_TITLE_WIDTH` in framework/intro.py is **12.8**.
+
+=== capped-2
+step 1: sent    224 tokens
+   $ cat stepstone/build_packs.py   -> 14,859 chars, 2,025 shown
+   $ cat youtube/build_manifests.py   -> 13,092 chars, 2,025 shown
+   $ cat framework/intro.py   -> 1,800 chars
+step 2: sent  1,850 tokens
+
+capped: 2 model calls, 0 compactions, largest request 1,850 tokens
+tokens sent per call: 224, 1,850
+answers right: 2 of 3 [False, True, True]
+answer (end): over image file **cover.jpg** (as specified in stepstone/build_packs.py's documentation where it states "cover.jpg" is the series artwork when available).  2. The value of `MIN_CHAPTER` in `youtube/build_manifests.py` is **10**.  3. The value of `MAX_TITLE_WIDTH` in `framework/intro.py` is **12.8**.
+
