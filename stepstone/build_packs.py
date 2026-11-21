@@ -60,6 +60,12 @@ SERIES = {
                "description": "How coding agents really run: the agent loop, tool calling, editing and running code, "
                               "sandboxes and approvals, instructions, the context budget, MCP and sub-agents, from the "
                               "open-source Codex CLI and a tiny harness built step by step."},
+    "generative": {"prefix": "g", "title": "How Generative Models Work: Images and Sound", "order": 6,
+                   "requires": ["how-llms-work"], "subject": "Machine learning",
+                   "cover": "youtube/covers/GenerativeCover.jpg",
+                   "description": "How models make pictures and voices: autoencoders, VAEs and GANs, diffusion and "
+                                  "flow matching, conditioning and guidance, CLIP, latent diffusion, then sound: "
+                                  "spectrograms, audio codecs, text to speech and Whisper."},
 }
 
 
