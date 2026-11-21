@@ -177,6 +177,16 @@ BATCHED = {
                      "real traces from a local model. Every episode has a study guide (PDF) and runnable code."),
         "where": "Episode {n} of How AI Agents Work: Inside the Harness. Background: the LLMs in Practice playlist.",
     },
+    "generative": {
+        "prefix": "g", "label": "How Generative Models Work",
+        "playlist": ("How Generative Models Work: Images and Sound",
+                     "How models make pictures and voices: autoencoders, VAEs and GANs, diffusion and flow matching, "
+                     "U-Nets, conditioning and classifier-free guidance, CLIP, latent diffusion and diffusion "
+                     "transformers, then sound: spectrograms, neural audio codecs, text to speech and Whisper. Every "
+                     "model is small enough to train on a laptop CPU. Every episode has a study guide (PDF) and "
+                     "runnable code."),
+        "where": "Episode {n} of How Generative Models Work. Background: the Foundations and How LLMs Work playlists.",
+    },
 }
 PRACTICE = "llms-in-practice"
 

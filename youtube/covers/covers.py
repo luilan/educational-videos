@@ -103,3 +103,33 @@ class AgentsCover(Scene):
                     Text("Inside the Harness", font_size=56, weight=BOLD, color=TEAL_C),
                     Text("How coding agents really run", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
         self.add(fit(tb, art, Text("real traces · open-source code · study guides", font_size=22, color=GREY_C)))
+
+
+class GenerativeCover(Scene):
+    def construct(self):
+        # noise → picture, and a waveform: the series turns noise into images and sound
+        rng = np.random.default_rng(7)
+        n, s = 12, 0.16
+
+        def grid(f):
+            g = VGroup()
+            for i in range(n):
+                for j in range(n):
+                    x, y = (j - n / 2 + 0.5) / n, (n / 2 - i - 0.5) / n
+                    inside = x * x + y * y < 0.13
+                    clean = np.array([0.95, 0.45, 0.25]) if inside else np.array([0.12, 0.14, 0.2])
+                    v = np.clip((1 - f) * clean + f * rng.uniform(0, 1, 3), 0, 1)
+                    g.add(Square(side_length=s, stroke_width=0, fill_color=rgb_to_color(v), fill_opacity=1)
+                          .move_to([(j - n / 2 + 0.5) * s, (n / 2 - i - 0.5) * s, 0]))
+            return g
+        steps = VGroup(*[grid(f) for f in (1.0, 0.55, 0.0)]).arrange(RIGHT, buff=0.55)
+        arrows = VGroup(*[Arrow(steps[k].get_right(), steps[k + 1].get_left(), buff=0.08, color=GREY_B,
+                                max_tip_length_to_length_ratio=0.35) for k in range(2)])
+        xs = np.linspace(-2.9, 2.9, 300)
+        wave = VMobject(color=TEAL_C, stroke_width=4).set_points_smoothly(
+            [[x, 0.45 * np.sin(5 * x) * np.exp(-0.25 * x * x) + 0.15 * np.sin(17 * x), 0] for x in xs])
+        art = VGroup(VGroup(steps, arrows), wave).arrange(DOWN, buff=0.5)
+        tb = VGroup(Text("How Generative Models Work", font_size=56, weight=BOLD),
+                    Text("Images and Sound", font_size=56, weight=BOLD, color=ORANGE),
+                    Text("From noise to pictures and voices", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
+        self.add(fit(tb, art, Text("small models · runnable code · study guides", font_size=22, color=GREY_C)))
