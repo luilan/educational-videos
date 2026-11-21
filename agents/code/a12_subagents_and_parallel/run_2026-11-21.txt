@@ -1,0 +1,85 @@
+=== serial-1
+agent step 1: sent   191 tokens, 3 tool calls in the reply
+   $ python3 check.py lint
+   $ python3 check.py types
+   $ python3 check.py tests
+   tools took 9.0 s
+agent step 2: sent   304 tokens, 0 tool calls in the reply
+
+serial: 2 model calls, 495 tokens sent by the top agent, 196 s in total
+answer (end): Lint check: 0 problems   Types check: 0 errors   Tests: 14 passed
+check: RIGHT
+
+=== parallel-1
+agent step 1: sent   191 tokens, 3 tool calls in the reply
+   $ python3 check.py lint
+   $ python3 check.py types
+   $ python3 check.py tests
+   tools took 3.0 s
+agent step 2: sent   304 tokens, 0 tool calls in the reply
+
+parallel: 2 model calls, 495 tokens sent by the top agent, 135 s in total
+answer (end): The checks completed with the following results: - Lint check: 0 problems - Types check: 0 errors - Tests check: 14 passed
+check: RIGHT
+
+=== parallel-2
+agent step 1: sent   191 tokens, 3 tool calls in the reply
+   $ python3 check.py lint
+   $ python3 check.py types
+   $ python3 check.py tests
+   tools took 3.0 s
+agent step 2: sent   304 tokens, 0 tool calls in the reply
+
+parallel: 2 model calls, 495 tokens sent by the top agent, 87 s in total
+answer (end): The checks completed with the following results:   - **Lint**: 0 problems   - **Types**: 0 errors   - **Tests**: 14 passed
+check: RIGHT
+
+=== single-1
+agent step 1: sent   224 tokens, 1 tool calls in the reply
+   $ grep -rn 'study-guide'
+   tools took 0.0 s
+agent step 2: sent   313 tokens, 1 tool calls in the reply
+   $ grep -rn 'figure' framework/study_guide.py
+   tools took 0.0 s
+agent step 3: sent   616 tokens, 0 tool calls in the reply
+
+single: 3 model calls, 1,153 tokens sent by the top agent, 593 s in total
+answer (end): framework/study_guide.py:224, the exact format string is `f'<img src="{fig["file"]}"'`
+check: WRONG or incomplete
+
+=== subagent-1
+parent step 1: sent   237 tokens, 1 tool calls in the reply
+   spawn_agent: 'Find the line in the project that specifies the file name of a figure image for the study-guide PDF.'
+      child step 1: sent   225 tokens, 1 tool calls in the reply
+         $ grep -rn 'study-guide' .
+         tools took 0.0 s
+      child step 2: sent   317 tokens, 1 tool calls in the reply
+         $ grep -rn 'figure' .
+         tools took 0.0 s
+      child step 3: sent   819 tokens, 1 tool calls in the reply
+         $ sed -n '224p' ./framework/study_guide.py
+         tools took 0.0 s
+      child step 4: sent   898 tokens, 0 tool calls in the reply
+   child finished: 4 model calls, 2,259 tokens sent (not in our context)
+   tools took 658.1 s
+parent step 2: sent   382 tokens, 0 tool calls in the reply
+
+subagent: 2 model calls, 619 tokens sent by the top agent, 842 s in total
+answer (end): The line specifying the figure image file name for the study-guide PDF is located at **`./framework/study_guide.py`** on **line 224** with the following exact format string:  ```     return (f'<figure{cls}><img src="{fig["file"]}"><figcaption><span class="chip play">{mmss(fig["t"])}</span> ' ```
+check: WRONG or incomplete
+
+=== subagent-2
+parent step 1: sent   237 tokens, 1 tool calls in the reply
+   spawn_agent: 'Search through the project code to find the exact line that specifies the filename for figure images'
+      child step 1: sent   226 tokens, 1 tool calls in the reply
+         $ grep -rn 'figure' .
+         tools took 0.0 s
+      child step 2: sent   728 tokens, 0 tool calls in the reply
+   child finished: 2 model calls, 954 tokens sent (not in our context)
+   tools took 408.6 s
+parent step 2: sent   411 tokens, 0 tool calls in the reply
+
+subagent: 2 model calls, 648 tokens sent by the top agent, 569 s in total
+answer (end): The exact line specifying the filename for figure images in the study-guide PDF is located at:  **File Path**: `framework/study_guide.py`   **Line Number**: `224`   **Exact Format String**: `fig["file"]`
+check: WRONG or incomplete
+
