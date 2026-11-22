@@ -77,13 +77,30 @@
    "requires": [
     "llms-in-practice"
    ],
-   "version": 4,
-   "content_hash": "ea3387619c692e2c",
-   "file": "agents-v4.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/agents-v4.zip",
-   "size": 4388552,
-   "sha256": "d5f00c6b864663000d20eca0652e6d950450cd72805417b0b8e367f1404e9514",
-   "lessons": 8
+   "version": 5,
+   "content_hash": "17368d991ccfb923",
+   "file": "agents-v5.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/agents-v5.zip",
+   "size": 7489567,
+   "sha256": "7bf3ad0ba0942417d936a9489ebcf14c0614f27b5d8c16fa4f80d7efb3c31659",
+   "lessons": 14
+  },
+  {
+   "id": "generative",
+   "title": "How Generative Models Work: Images and Sound",
+   "description": "How models make pictures and voices: autoencoders, VAEs and GANs, diffusion and flow matching, conditioning and guidance, CLIP, latent diffusion, then sound: spectrograms, audio codecs, text to speech and Whisper.",
+   "subject": "Machine learning",
+   "order": 6,
+   "requires": [
+    "how-llms-work"
+   ],
+   "version": 1,
+   "content_hash": "7af6e3387a2a46ba",
+   "file": "generative-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/generative-v1.zip",
+   "size": 3604260,
+   "sha256": "86f4a4a99075fe659efb71fd04a393d4e42388fe301e0e94d373dcd3a5460a4a",
+   "lessons": 7
   }
  ],
  "app": {
