@@ -1,0 +1,100 @@
+{
+ "waveform": {
+  "text": "Sound is a long list of numbers. Our narrator makes thousands of them every second, and a model can learn to make them too.",
+  "sample_rate": 24000,
+  "samples": 172544,
+  "seconds": 7.189333333333333,
+  "min": -0.3772486448287964,
+  "max": 0.5786911845207214,
+  "bytes_16bit": 345088,
+  "kbit_per_s_16bit": 384.0
+ },
+ "pitch": {
+  "frames": 715,
+  "voiced_frames": 390,
+  "median_hz": 200.0,
+  "p10_hz": 171.42857142857142,
+  "p90_hz": 258.06451612903226
+ },
+ "closeup": {
+  "start_s": 5.345,
+  "samples": 720
+ },
+ "sample_rates": {
+  "energy_above_4000_hz": 0.05864455064288529,
+  "energy_above_8000_hz": 0.03236169177801309,
+  "16000": {
+   "samples": 115030
+  },
+  "8000": {
+   "samples": 57515
+  }
+ },
+ "aliasing": {
+  "tone_hz": 5000,
+  "sample_rate": 8000,
+  "heard_hz": 3000.0
+ },
+ "spectrogram": {
+  "window_ms": 25.0,
+  "hop_ms": 10.0,
+  "frames": 717,
+  "bins": 513,
+  "bin_hz": 23.4375,
+  "numbers": 367821,
+  "frames_per_second": 100.0
+ },
+ "mel": {
+  "filters": 80,
+  "frames": 717,
+  "numbers": 57360,
+  "numbers_per_second": 8000.0,
+  "first_filter_width_hz": 51.92961956018456,
+  "last_filter_width_hz": 877.0849707983252,
+  "filters_below_1000_hz": 24,
+  "filters_above_6000_hz": 17,
+  "mel_of_1000_hz": 999.9855371396244,
+  "mel_of_12000_hz": 3266.3412420437116
+ },
+ "phase": {
+  "original": {
+   "whisper": "Sound is a long list of numbers. Our narrator makes thousands of them every second, and a model can learn to make them, too.",
+   "word_error_rate": 0.0,
+   "spectral_distance": 2.325382306501006e-16
+  },
+  "random_phase": {
+   "whisper": "Sound is a long list of numbers. Our narrator makes thousands of them every second, and a model can learn to make them too.",
+   "word_error_rate": 0.0,
+   "spectral_distance": 0.5574547563288461
+  },
+  "griffin_lim_60": {
+   "whisper": "Sound is a long list of numbers. Our narrator makes thousands of them every second and a model can learn to make them too.",
+   "word_error_rate": 0.0,
+   "spectral_distance": 0.0994294312833437
+  },
+  "from_mel_griffin_lim_60": {
+   "whisper": "Sound is a long list of numbers. Our narrator makes thousands of them every second, and a model can learn to make them too.",
+   "word_error_rate": 0.0,
+   "spectral_distance": 0.1840525076806848
+  },
+  "8k": {
+   "whisper": "Sound is a long list of numbers. Our narrator makes thousands of them every second, and a model can learn to make them, too.",
+   "word_error_rate": 0.0,
+   "spectral_distance": 0.24297816216701879
+  },
+  "16k": {
+   "whisper": "Sound is a long list of numbers. Our narrator makes thousands of them every second, and a model can learn to make them, too.",
+   "word_error_rate": 0.0,
+   "spectral_distance": 0.17807232928329705
+  }
+ },
+ "clip": {
+  "seconds": 2.14,
+  "versions": [
+   "original",
+   "8k",
+   "random_phase",
+   "griffin_lim_60"
+  ]
+ }
+}
