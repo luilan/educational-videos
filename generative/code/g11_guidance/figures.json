@@ -1,0 +1,117 @@
+{
+ "fixes": {
+  "pictures": 254,
+  "fixed": 31,
+  "broken": 3,
+  "shown": [
+   {
+    "request": "blue circle, top",
+    "w1_judge": null
+   },
+   {
+    "request": "red square, bottom",
+    "w1_judge": null
+   },
+   {
+    "request": "green square, center",
+    "w1_judge": null
+   },
+   {
+    "request": "blue square, bottom",
+    "w1_judge": "blue square, bottom right"
+   },
+   {
+    "request": "red triangle, bottom left",
+    "w1_judge": null
+   },
+   {
+    "request": "red triangle, bottom right",
+    "w1_judge": null
+   },
+   {
+    "request": "green triangle, center",
+    "w1_judge": null
+   },
+   {
+    "request": "purple triangle, bottom",
+    "w1_judge": "purple triangle, bottom left"
+   }
+  ]
+ },
+ "ladder": {
+  "requests": [
+   "red circle, center",
+   "blue square, top left",
+   "yellow triangle, bottom right",
+   "purple square, right",
+   "green triangle, top right",
+   "yellow circle, bottom left",
+   "red square, bottom",
+   "blue triangle, top"
+  ],
+  "rows": [
+   "w = 1",
+   "w = 2",
+   "w = 3",
+   "w = 3, only t < 500"
+  ],
+  "follows": [
+   [
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true
+   ],
+   [
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false
+   ],
+   [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+   ],
+   [
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    false
+   ]
+  ]
+ },
+ "predictions": {
+  "request": "red circle, center",
+  "w": 3,
+  "steps_t": [
+   898,
+   694,
+   490,
+   286,
+   83
+  ],
+  "rows": [
+   "no request",
+   "request",
+   "guided"
+  ]
+ }
+}

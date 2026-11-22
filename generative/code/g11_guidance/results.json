@@ -1,0 +1,252 @@
+{
+ "steps": 50,
+ "scales": [
+  0,
+  1,
+  1.5,
+  2,
+  3,
+  5,
+  8
+ ],
+ "runs": [
+  {
+   "w": 0,
+   "recognizable": 0.9094488024711609,
+   "follows": 0.0,
+   "held_out_follows": 0.0,
+   "diversity": 0.03195034200325608,
+   "diversity_follows": 0.0,
+   "clipped_late": 3.8447342376457527e-07,
+   "red_follows": 0.171875,
+   "red_shapes": [
+    23,
+    10,
+    20
+   ],
+   "red_positions": [
+    8,
+    6,
+    6,
+    7,
+    6,
+    4,
+    4,
+    5,
+    7
+   ],
+   "per_attribute": [
+    0.32283464074134827,
+    0.21653543412685394,
+    0.11417322605848312
+   ]
+  },
+  {
+   "w": 1,
+   "recognizable": 0.9763779640197754,
+   "follows": 0.9685039520263672,
+   "held_out_follows": 0.96484375,
+   "diversity": 0.010360764805227518,
+   "diversity_follows": 0.9765625,
+   "clipped_late": 1.0252624633722007e-06,
+   "red_follows": 0.859375,
+   "red_shapes": [
+    19,
+    16,
+    20
+   ],
+   "red_positions": [
+    5,
+    7,
+    5,
+    9,
+    7,
+    3,
+    6,
+    3,
+    10
+   ],
+   "per_attribute": [
+    0.9921259880065918,
+    1.0,
+    0.9960629940032959
+   ]
+  },
+  {
+   "w": 1.5,
+   "recognizable": 0.9685039520263672,
+   "follows": 0.9645669460296631,
+   "held_out_follows": 0.95703125,
+   "diversity": 0.010187151026912034,
+   "diversity_follows": 1.0,
+   "clipped_late": 1.409735887136776e-06,
+   "red_follows": 0.78125,
+   "red_shapes": [
+    21,
+    11,
+    18
+   ],
+   "red_positions": [
+    7,
+    6,
+    4,
+    8,
+    5,
+    3,
+    5,
+    4,
+    8
+   ],
+   "per_attribute": [
+    0.9921259880065918,
+    1.0,
+    1.0
+   ]
+  },
+  {
+   "w": 2,
+   "recognizable": 0.8385826945304871,
+   "follows": 0.586614191532135,
+   "held_out_follows": 0.55859375,
+   "diversity": 0.018590496154502034,
+   "diversity_follows": 0.5703125,
+   "clipped_late": 0.00036166133795632047,
+   "red_follows": 0.859375,
+   "red_shapes": [
+    19,
+    12,
+    24
+   ],
+   "red_positions": [
+    7,
+    7,
+    5,
+    11,
+    5,
+    3,
+    5,
+    4,
+    8
+   ],
+   "late": {
+    "recognizable": 0.9842519760131836,
+    "follows": 0.9566929340362549
+   },
+   "per_attribute": [
+    0.7322834730148315,
+    0.9881889820098877,
+    0.7952755689620972
+   ]
+  },
+  {
+   "w": 3,
+   "recognizable": 0.5905511975288391,
+   "follows": 0.03937007859349251,
+   "held_out_follows": 0.015625,
+   "diversity": 0.04207935510203242,
+   "diversity_follows": 0.0234375,
+   "clipped_late": 0.0020805138703508417,
+   "red_follows": 0.640625,
+   "red_shapes": [
+    17,
+    11,
+    13
+   ],
+   "red_positions": [
+    6,
+    5,
+    5,
+    7,
+    1,
+    4,
+    4,
+    3,
+    6
+   ],
+   "late": {
+    "recognizable": 0.9173228144645691,
+    "follows": 0.7795275449752808
+   },
+   "per_attribute": [
+    0.22440944612026215,
+    0.913385808467865,
+    0.18897637724876404
+   ]
+  },
+  {
+   "w": 5,
+   "recognizable": 0.26771652698516846,
+   "follows": 0.0,
+   "held_out_follows": 0.0,
+   "diversity": 0.0415953123010695,
+   "diversity_follows": 0.0,
+   "clipped_late": 0.009352188067168754,
+   "red_follows": 0.15625,
+   "red_shapes": [
+    6,
+    2,
+    2
+   ],
+   "red_positions": [
+    0,
+    0,
+    2,
+    1,
+    1,
+    1,
+    2,
+    2,
+    1
+   ],
+   "late": {
+    "recognizable": 0.8976377844810486,
+    "follows": 0.6299212574958801
+   },
+   "per_attribute": [
+    0.19685038924217224,
+    0.8937007784843445,
+    0.027559055015444756
+   ]
+  },
+  {
+   "w": 8,
+   "recognizable": 0.09842519462108612,
+   "follows": 0.0,
+   "held_out_follows": 0.0,
+   "diversity": 0.0392961879260838,
+   "diversity_follows": 0.0,
+   "clipped_late": 0.020344154830672777,
+   "red_follows": 0.0,
+   "red_shapes": [
+    0,
+    0,
+    0
+   ],
+   "red_positions": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "late": {
+    "recognizable": 0.8031495809555054,
+    "follows": 0.437007874250412
+   },
+   "per_attribute": [
+    0.3700787425041199,
+    0.8858267664909363,
+    0.019685039296746254
+   ]
+  }
+ ],
+ "show": [
+  "red circle, center",
+  "blue square, top left",
+  "yellow triangle, bottom right"
+ ]
+}

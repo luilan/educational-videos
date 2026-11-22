@@ -1,0 +1,252 @@
+{
+ "steps": 50,
+ "scales": [
+  0,
+  1,
+  1.5,
+  2,
+  3,
+  5,
+  8
+ ],
+ "runs": [
+  {
+   "w": 0,
+   "recognizable": 0.5944882035255432,
+   "follows": 0.0,
+   "held_out_follows": 0.0,
+   "diversity": 0.02933018747717142,
+   "diversity_follows": 0.0,
+   "clipped_late": 0.00018070251098833978,
+   "red_follows": 0.15625,
+   "red_shapes": [
+    17,
+    8,
+    17
+   ],
+   "red_positions": [
+    7,
+    6,
+    3,
+    4,
+    4,
+    4,
+    1,
+    6,
+    7
+   ],
+   "per_attribute": [
+    0.30708661675453186,
+    0.20866142213344574,
+    0.11023622006177902
+   ]
+  },
+  {
+   "w": 1,
+   "recognizable": 0.8110235929489136,
+   "follows": 0.7362204790115356,
+   "held_out_follows": 0.671875,
+   "diversity": 0.011252363212406635,
+   "diversity_follows": 0.8515625,
+   "clipped_late": 0.00019377460666873957,
+   "red_follows": 0.609375,
+   "red_shapes": [
+    15,
+    3,
+    21
+   ],
+   "red_positions": [
+    4,
+    6,
+    5,
+    4,
+    4,
+    3,
+    3,
+    4,
+    6
+   ],
+   "per_attribute": [
+    0.9251968264579773,
+    0.9921259880065918,
+    0.8976377844810486
+   ]
+  },
+  {
+   "w": 1.5,
+   "recognizable": 0.874015748500824,
+   "follows": 0.8464567065238953,
+   "held_out_follows": 0.84765625,
+   "diversity": 0.009866424603387713,
+   "diversity_follows": 0.9140625,
+   "clipped_late": 0.00023965510190464555,
+   "red_follows": 0.65625,
+   "red_shapes": [
+    17,
+    6,
+    19
+   ],
+   "red_positions": [
+    6,
+    7,
+    5,
+    5,
+    4,
+    3,
+    3,
+    4,
+    5
+   ],
+   "per_attribute": [
+    0.9724409580230713,
+    1.0,
+    0.960629940032959
+   ]
+  },
+  {
+   "w": 2,
+   "recognizable": 0.7992125749588013,
+   "follows": 0.7637795209884644,
+   "held_out_follows": 0.7734375,
+   "diversity": 0.012149859219789505,
+   "diversity_follows": 0.828125,
+   "clipped_late": 0.0001913396092277253,
+   "red_follows": 0.625,
+   "red_shapes": [
+    18,
+    1,
+    21
+   ],
+   "red_positions": [
+    3,
+    7,
+    2,
+    5,
+    3,
+    4,
+    3,
+    5,
+    8
+   ],
+   "late": {
+    "recognizable": 0.8188976645469666,
+    "follows": 0.748031497001648
+   },
+   "per_attribute": [
+    0.9330708384513855,
+    1.0,
+    0.9448819160461426
+   ]
+  },
+  {
+   "w": 3,
+   "recognizable": 0.19291338324546814,
+   "follows": 0.09842519462108612,
+   "held_out_follows": 0.1171875,
+   "diversity": 0.03909548278898001,
+   "diversity_follows": 0.078125,
+   "clipped_late": 0.0012654302307055331,
+   "red_follows": 0.1875,
+   "red_shapes": [
+    7,
+    2,
+    3
+   ],
+   "red_positions": [
+    0,
+    3,
+    1,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1
+   ],
+   "late": {
+    "recognizable": 0.7992125749588013,
+    "follows": 0.7204724550247192
+   },
+   "per_attribute": [
+    0.8110235929489136,
+    0.9960629940032959,
+    0.33464565873146057
+   ]
+  },
+  {
+   "w": 5,
+   "recognizable": 0.0,
+   "follows": 0.0,
+   "held_out_follows": 0.0,
+   "diversity": 0.044783350080251694,
+   "diversity_follows": 0.0,
+   "clipped_late": 0.008488276103162207,
+   "red_follows": 0.015625,
+   "red_shapes": [
+    1,
+    0,
+    0
+   ],
+   "red_positions": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "late": {
+    "recognizable": 0.4488188922405243,
+    "follows": 0.3976377844810486
+   },
+   "per_attribute": [
+    0.7559055089950562,
+    0.9330708384513855,
+    0.10629921406507492
+   ]
+  },
+  {
+   "w": 8,
+   "recognizable": 0.0,
+   "follows": 0.0,
+   "held_out_follows": 0.0,
+   "diversity": 0.04102994641289115,
+   "diversity_follows": 0.0,
+   "clipped_late": 0.0270880751486402,
+   "red_follows": 0.0,
+   "red_shapes": [
+    0,
+    0,
+    0
+   ],
+   "red_positions": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "late": {
+    "recognizable": 0.11417322605848312,
+    "follows": 0.10629921406507492
+   },
+   "per_attribute": [
+    0.6732283234596252,
+    0.5944882035255432,
+    0.07874015718698502
+   ]
+  }
+ ],
+ "show": [
+  "red circle, center",
+  "blue square, top left",
+  "yellow triangle, bottom right"
+ ]
+}
