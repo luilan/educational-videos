@@ -1,0 +1,42 @@
+{
+ "n": 500,
+ "steps": 50,
+ "results": {
+  "full": {
+   "eta0": {
+    "recognizable": 0.699999988079071,
+    "combinations": 127,
+    "nearest_train_mse": 0.0015048000495880842
+   },
+   "eta1": {
+    "recognizable": 0.9520000219345093,
+    "combinations": 130,
+    "nearest_train_mse": 0.00090275943512097
+   }
+  },
+  "noskip": {
+   "eta0": {
+    "recognizable": 0.0,
+    "combinations": 0,
+    "nearest_train_mse": 0.018252180889248848
+   },
+   "eta1": {
+    "recognizable": 0.08399999886751175,
+    "combinations": 33,
+    "nearest_train_mse": 0.00784473679959774
+   }
+  },
+  "notime": {
+   "eta0": {
+    "recognizable": 0.014000000432133675,
+    "combinations": 7,
+    "nearest_train_mse": 0.09063746780157089
+   },
+   "eta1": {
+    "recognizable": 0.328000009059906,
+    "combinations": 101,
+    "nearest_train_mse": 0.026489609852433205
+   }
+  }
+ }
+}
