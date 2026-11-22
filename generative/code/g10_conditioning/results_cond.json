@@ -1,0 +1,136 @@
+{
+ "steps": 50,
+ "sampler": "fresh noise (eta = 1)",
+ "trained": {
+  "combinations": 127,
+  "samples": 508,
+  "recognizable": 0.9822834730148315,
+  "follows": 0.9665354490280151,
+  "per_attribute": {
+   "shape": 0.9724409580230713,
+   "color": 0.9822834730148315,
+   "position": 0.9763779640197754
+  }
+ },
+ "held_out": {
+  "samples": 400,
+  "recognizable": 0.987500011920929,
+  "follows": 0.9700000286102295,
+  "per_attribute": {
+   "shape": 0.9800000190734863,
+   "color": 0.9850000143051147,
+   "position": 0.9800000190734863
+  },
+  "by_combination": [
+   {
+    "request": "purple triangle, top left",
+    "follows": 0.9200000166893005
+   },
+   {
+    "request": "yellow circle, bottom right",
+    "follows": 0.9800000190734863
+   },
+   {
+    "request": "red square, center",
+    "follows": 0.9800000190734863
+   },
+   {
+    "request": "green triangle, bottom left",
+    "follows": 0.9800000190734863
+   },
+   {
+    "request": "blue circle, top right",
+    "follows": 1.0
+   },
+   {
+    "request": "purple square, bottom",
+    "follows": 0.9800000190734863
+   },
+   {
+    "request": "yellow triangle, right",
+    "follows": 0.9599999785423279
+   },
+   {
+    "request": "red circle, left",
+    "follows": 0.9599999785423279
+   }
+  ]
+ },
+ "requests_png": [
+  "red triangle, center",
+  "yellow circle, top left",
+  "blue square, bottom right",
+  "purple circle, right"
+ ],
+ "partial": {
+  "red": {
+   "recognizable": 0.8600000143051147,
+   "follows": 0.8600000143051147,
+   "spread_of_unsaid": {
+    "shape": {
+     "circle": 51,
+     "square": 50,
+     "triangle": 71
+    },
+    "position": {
+     "top left": 25,
+     "top": 17,
+     "top right": 24,
+     "left": 22,
+     "center": 17,
+     "right": 16,
+     "bottom left": 17,
+     "bottom": 19,
+     "bottom right": 15
+    }
+   }
+  },
+  "triangle": {
+   "recognizable": 0.8999999761581421,
+   "follows": 0.8650000095367432,
+   "spread_of_unsaid": {
+    "color": {
+     "red": 43,
+     "green": 35,
+     "blue": 43,
+     "yellow": 30,
+     "purple": 29
+    },
+    "position": {
+     "top left": 15,
+     "top": 19,
+     "top right": 20,
+     "left": 28,
+     "center": 18,
+     "right": 16,
+     "bottom left": 19,
+     "bottom": 25,
+     "bottom right": 20
+    }
+   }
+  },
+  "top right": {
+   "recognizable": 0.9150000214576721,
+   "follows": 0.875,
+   "spread_of_unsaid": {
+    "shape": {
+     "circle": 59,
+     "square": 64,
+     "triangle": 60
+    },
+    "color": {
+     "red": 34,
+     "green": 35,
+     "blue": 41,
+     "yellow": 45,
+     "purple": 28
+    }
+   }
+  }
+ },
+ "unconditional": {
+  "samples": 500,
+  "recognizable": 0.8999999761581421,
+  "combinations": 131
+ }
+}
