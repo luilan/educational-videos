@@ -1,0 +1,12 @@
+{
+ "eta1_steps5": {
+  "recognizable": 0.06800000369548798,
+  "combinations": 27,
+  "nearest_train_mse": 0.004492172505706549
+ },
+ "eta1_steps10": {
+  "recognizable": 0.8500000238418579,
+  "combinations": 127,
+  "nearest_train_mse": 0.0011038079392164946
+ }
+}
