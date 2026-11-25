@@ -1,0 +1,8 @@
+numpy>=1.26
+soundfile>=0.12
+torch>=2.2
+transformers>=4.40
+huggingface_hub>=0.20
+kokoro==0.9.4
+kokoro-onnx>=0.4
+faster-whisper>=1.0
