@@ -1,0 +1,178 @@
+{
+ "codec": {
+  "sample_rate": 24000,
+  "frames_per_second": 75.0,
+  "hop": 320,
+  "latent_dim": 64,
+  "codebooks": 8,
+  "codebook_size": 1024,
+  "bits_per_token": 10,
+  "kbps_per_codebook": 0.75,
+  "encoder_parameters": 849504,
+  "decoder_parameters": 914977,
+  "train_steps": 12000,
+  "train_minutes_of_audio": 30.01086666666667,
+  "train_wall_minutes": 153.35
+ },
+ "data": {
+  "train_sentences": 379,
+  "voices": [
+   "af_heart",
+   "af_bella",
+   "af_nicole",
+   "af_sarah",
+   "am_michael",
+   "am_adam",
+   "bf_emma",
+   "bm_george"
+  ],
+  "test_sentences": 40,
+  "test_voice": "af_heart"
+ },
+ "systems": {
+  "ours_1": {
+   "system": "ours",
+   "setting": 1,
+   "kbps": 0.75,
+   "word_error_rate": 0.07472749472749471,
+   "mel_distance": 0.9398617804050445,
+   "words_changed": 0.043795544733044735,
+   "sentences_unchanged": 30
+  },
+  "ours_2": {
+   "system": "ours",
+   "setting": 2,
+   "kbps": 1.5,
+   "word_error_rate": 0.0541381882006882,
+   "mel_distance": 0.8445232346653938,
+   "words_changed": 0.015079365079365078,
+   "sentences_unchanged": 34
+  },
+  "ours_4": {
+   "system": "ours",
+   "setting": 4,
+   "kbps": 3.0,
+   "word_error_rate": 0.055995705683205686,
+   "mel_distance": 0.8148263841867447,
+   "words_changed": 0.011626984126984126,
+   "sentences_unchanged": 36
+  },
+  "ours_8": {
+   "system": "ours",
+   "setting": 8,
+   "kbps": 6.0,
+   "word_error_rate": 0.055995705683205686,
+   "mel_distance": 0.8100107997655869,
+   "words_changed": 0.014126984126984127,
+   "sentences_unchanged": 35
+  },
+  "ours_unquantized_0": {
+   "system": "ours_unquantized",
+   "setting": 0,
+   "kbps": 153.6,
+   "word_error_rate": 0.055995705683205686,
+   "mel_distance": 0.8094446048140526,
+   "words_changed": 0.014126984126984127,
+   "sentences_unchanged": 35
+  },
+  "encodec_1.5": {
+   "system": "encodec",
+   "setting": 1.5,
+   "kbps": 1.5,
+   "word_error_rate": 0.06734796453546453,
+   "mel_distance": 1.1679362058639526,
+   "words_changed": 0.0446031746031746,
+   "sentences_unchanged": 31
+  },
+  "encodec_3": {
+   "system": "encodec",
+   "setting": 3.0,
+   "kbps": 3.0,
+   "word_error_rate": 0.05843770812520812,
+   "mel_distance": 0.9764954924583436,
+   "words_changed": 0.018055555555555554,
+   "sentences_unchanged": 36
+  },
+  "encodec_6": {
+   "system": "encodec",
+   "setting": 6.0,
+   "kbps": 6.0,
+   "word_error_rate": 0.05129485098235098,
+   "mel_distance": 0.8310477778315544,
+   "words_changed": 0.008134920634920634,
+   "sentences_unchanged": 38
+  },
+  "encodec_12": {
+   "system": "encodec",
+   "setting": 12.0,
+   "kbps": 12.0,
+   "word_error_rate": 0.04937177405927406,
+   "mel_distance": 0.7242037445306778,
+   "words_changed": 0.0027777777777777775,
+   "sentences_unchanged": 39
+  },
+  "mimi_8": {
+   "system": "mimi",
+   "setting": 8,
+   "kbps": 1.1,
+   "word_error_rate": 0.05022647491397492,
+   "mel_distance": 1.220006400346756,
+   "words_changed": 0.00734126984126984,
+   "sentences_unchanged": 37
+  },
+  "mimi_32": {
+   "system": "mimi",
+   "setting": 32,
+   "kbps": 4.4,
+   "word_error_rate": 0.05407262876012876,
+   "mel_distance": 0.9650438889861107,
+   "words_changed": 0.005357142857142857,
+   "sentences_unchanged": 39
+  },
+  "original": {
+   "system": "original",
+   "setting": 0,
+   "kbps": 384.0,
+   "word_error_rate": 0.05214955183705183,
+   "mel_distance": 0.0,
+   "words_changed": 0.0,
+   "sentences_unchanged": 40
+  }
+ },
+ "rvq_remaining_energy": [
+  0.05320651065558195,
+  0.019039258314296603,
+  0.008535693888552487,
+  0.004356375825591385,
+  0.0025290880643296988,
+  0.001657718705246225,
+  0.0012035983934765681,
+  0.0009427453376702033
+ ],
+ "codebook_entropy_bits": [
+  8.345448384473706,
+  9.60156697586034,
+  9.731564363218931,
+  9.789257591293074,
+  9.778702205248246,
+  9.73104913334866,
+  9.747270483938301,
+  9.65686851940792
+ ],
+ "example": {
+  "text": "Each channel lights up where the shape is.",
+  "seconds": 2.0906666666666665,
+  "samples": 50176,
+  "text_tokens_gpt2": 9,
+  "ours_frames": 157,
+  "ours_tokens": 1256,
+  "encodec_6k_codebooks": 8,
+  "encodec_frames": 157,
+  "mimi_codebooks": 8,
+  "mimi_frames": 27
+ },
+ "parameters": {
+  "encodec": 14851810,
+  "mimi": 79308609
+ }
+}

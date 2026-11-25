@@ -1,0 +1,1938 @@
+{
+ "encoder_parameters": 849504,
+ "decoder_parameters": 914977,
+ "steps": 12000,
+ "batch": 16,
+ "segment_s": 0.5333333333333333,
+ "train_minutes": 30.01086666666667,
+ "log": [
+  {
+   "step": 0,
+   "n_q": 6,
+   "mel": 5.3757,
+   "commit": 0.0,
+   "codes_used_first_book": 466,
+   "minutes": 0.01
+  },
+  {
+   "step": 50,
+   "n_q": 7,
+   "mel": 3.8195,
+   "commit": 0.0015,
+   "codes_used_first_book": 1,
+   "minutes": 0.43
+  },
+  {
+   "step": 100,
+   "n_q": 6,
+   "mel": 3.5628,
+   "commit": 0.0006,
+   "codes_used_first_book": 2,
+   "minutes": 0.85
+  },
+  {
+   "step": 150,
+   "n_q": 5,
+   "mel": 3.4872,
+   "commit": 0.0015,
+   "codes_used_first_book": 3,
+   "minutes": 1.27
+  },
+  {
+   "step": 200,
+   "n_q": 5,
+   "mel": 3.6294,
+   "commit": 0.0049,
+   "codes_used_first_book": 4,
+   "minutes": 1.68
+  },
+  {
+   "step": 250,
+   "n_q": 8,
+   "mel": 3.209,
+   "commit": 0.0857,
+   "codes_used_first_book": 5,
+   "minutes": 2.1
+  },
+  {
+   "step": 300,
+   "n_q": 2,
+   "mel": 2.8565,
+   "commit": 0.0083,
+   "codes_used_first_book": 210,
+   "minutes": 2.54
+  },
+  {
+   "step": 350,
+   "n_q": 4,
+   "mel": 2.6848,
+   "commit": 0.048,
+   "codes_used_first_book": 99,
+   "minutes": 2.96
+  },
+  {
+   "step": 400,
+   "n_q": 6,
+   "mel": 2.497,
+   "commit": 0.0622,
+   "codes_used_first_book": 173,
+   "minutes": 3.37
+  },
+  {
+   "step": 450,
+   "n_q": 1,
+   "mel": 2.3435,
+   "commit": 0.0184,
+   "codes_used_first_book": 177,
+   "minutes": 3.8
+  },
+  {
+   "step": 500,
+   "n_q": 2,
+   "mel": 2.129,
+   "commit": 0.0189,
+   "codes_used_first_book": 172,
+   "minutes": 4.21
+  },
+  {
+   "step": 550,
+   "n_q": 7,
+   "mel": 2.1044,
+   "commit": 0.0514,
+   "codes_used_first_book": 199,
+   "minutes": 4.63
+  },
+  {
+   "step": 600,
+   "n_q": 7,
+   "mel": 2.0635,
+   "commit": 0.0498,
+   "codes_used_first_book": 291,
+   "minutes": 5.04
+  },
+  {
+   "step": 650,
+   "n_q": 2,
+   "mel": 2.0439,
+   "commit": 0.0217,
+   "codes_used_first_book": 314,
+   "minutes": 5.48
+  },
+  {
+   "step": 700,
+   "n_q": 1,
+   "mel": 1.9735,
+   "commit": 0.0242,
+   "codes_used_first_book": 294,
+   "minutes": 5.95
+  },
+  {
+   "step": 750,
+   "n_q": 5,
+   "mel": 1.9142,
+   "commit": 0.0663,
+   "codes_used_first_book": 321,
+   "minutes": 6.38
+  },
+  {
+   "step": 800,
+   "n_q": 1,
+   "mel": 1.8414,
+   "commit": 0.0245,
+   "codes_used_first_book": 277,
+   "minutes": 6.79
+  },
+  {
+   "step": 850,
+   "n_q": 1,
+   "mel": 1.6744,
+   "commit": 0.0394,
+   "codes_used_first_book": 287,
+   "minutes": 7.2
+  },
+  {
+   "step": 900,
+   "n_q": 5,
+   "mel": 1.5549,
+   "commit": 0.0679,
+   "codes_used_first_book": 306,
+   "minutes": 7.64
+  },
+  {
+   "step": 950,
+   "n_q": 6,
+   "mel": 1.6484,
+   "commit": 0.0568,
+   "codes_used_first_book": 333,
+   "minutes": 8.16
+  },
+  {
+   "step": 1000,
+   "n_q": 2,
+   "mel": 1.6499,
+   "commit": 0.0385,
+   "codes_used_first_book": 324,
+   "minutes": 8.58
+  },
+  {
+   "step": 1050,
+   "n_q": 7,
+   "mel": 1.4188,
+   "commit": 0.0507,
+   "codes_used_first_book": 326,
+   "minutes": 8.99
+  },
+  {
+   "step": 1100,
+   "n_q": 5,
+   "mel": 1.5307,
+   "commit": 0.0586,
+   "codes_used_first_book": 326,
+   "minutes": 9.4
+  },
+  {
+   "step": 1150,
+   "n_q": 1,
+   "mel": 1.6448,
+   "commit": 0.053,
+   "codes_used_first_book": 309,
+   "minutes": 10.91
+  },
+  {
+   "step": 1200,
+   "n_q": 1,
+   "mel": 1.4862,
+   "commit": 0.0244,
+   "codes_used_first_book": 353,
+   "minutes": 12.58
+  },
+  {
+   "step": 1250,
+   "n_q": 2,
+   "mel": 1.4912,
+   "commit": 0.0341,
+   "codes_used_first_book": 360,
+   "minutes": 12.99
+  },
+  {
+   "step": 1300,
+   "n_q": 1,
+   "mel": 1.5294,
+   "commit": 0.0214,
+   "codes_used_first_book": 321,
+   "minutes": 13.43
+  },
+  {
+   "step": 1350,
+   "n_q": 1,
+   "mel": 1.3921,
+   "commit": 0.0347,
+   "codes_used_first_book": 341,
+   "minutes": 13.86
+  },
+  {
+   "step": 1400,
+   "n_q": 2,
+   "mel": 1.3153,
+   "commit": 0.0341,
+   "codes_used_first_book": 387,
+   "minutes": 14.28
+  },
+  {
+   "step": 1450,
+   "n_q": 7,
+   "mel": 1.396,
+   "commit": 0.0717,
+   "codes_used_first_book": 350,
+   "minutes": 14.72
+  },
+  {
+   "step": 1500,
+   "n_q": 2,
+   "mel": 1.3594,
+   "commit": 0.0335,
+   "codes_used_first_book": 388,
+   "minutes": 15.87
+  },
+  {
+   "step": 1550,
+   "n_q": 3,
+   "mel": 1.3096,
+   "commit": 0.0647,
+   "codes_used_first_book": 379,
+   "minutes": 16.44
+  },
+  {
+   "step": 1600,
+   "n_q": 1,
+   "mel": 1.3526,
+   "commit": 0.0325,
+   "codes_used_first_book": 365,
+   "minutes": 16.89
+  },
+  {
+   "step": 1650,
+   "n_q": 7,
+   "mel": 1.3527,
+   "commit": 0.0804,
+   "codes_used_first_book": 370,
+   "minutes": 17.34
+  },
+  {
+   "step": 1700,
+   "n_q": 5,
+   "mel": 1.2232,
+   "commit": 0.0631,
+   "codes_used_first_book": 379,
+   "minutes": 17.78
+  },
+  {
+   "step": 1750,
+   "n_q": 8,
+   "mel": 1.302,
+   "commit": 0.082,
+   "codes_used_first_book": 371,
+   "minutes": 18.41
+  },
+  {
+   "step": 1800,
+   "n_q": 2,
+   "mel": 1.3669,
+   "commit": 0.0669,
+   "codes_used_first_book": 326,
+   "minutes": 19.56
+  },
+  {
+   "step": 1850,
+   "n_q": 6,
+   "mel": 1.2439,
+   "commit": 0.0781,
+   "codes_used_first_book": 390,
+   "minutes": 20.56
+  },
+  {
+   "step": 1900,
+   "n_q": 8,
+   "mel": 1.1765,
+   "commit": 0.0768,
+   "codes_used_first_book": 392,
+   "minutes": 21.96
+  },
+  {
+   "step": 1950,
+   "n_q": 2,
+   "mel": 1.2523,
+   "commit": 0.0497,
+   "codes_used_first_book": 385,
+   "minutes": 24.02
+  },
+  {
+   "step": 2000,
+   "n_q": 2,
+   "mel": 1.1154,
+   "commit": 0.0542,
+   "codes_used_first_book": 393,
+   "minutes": 24.78
+  },
+  {
+   "step": 2050,
+   "n_q": 7,
+   "mel": 1.3612,
+   "commit": 0.1061,
+   "codes_used_first_book": 379,
+   "minutes": 26.25
+  },
+  {
+   "step": 2100,
+   "n_q": 6,
+   "mel": 1.2482,
+   "commit": 0.0964,
+   "codes_used_first_book": 365,
+   "minutes": 27.5
+  },
+  {
+   "step": 2150,
+   "n_q": 7,
+   "mel": 1.2942,
+   "commit": 0.1462,
+   "codes_used_first_book": 346,
+   "minutes": 28.78
+  },
+  {
+   "step": 2200,
+   "n_q": 2,
+   "mel": 1.1671,
+   "commit": 0.0518,
+   "codes_used_first_book": 379,
+   "minutes": 30.02
+  },
+  {
+   "step": 2250,
+   "n_q": 7,
+   "mel": 1.1947,
+   "commit": 0.0741,
+   "codes_used_first_book": 363,
+   "minutes": 31.25
+  },
+  {
+   "step": 2300,
+   "n_q": 1,
+   "mel": 1.187,
+   "commit": 0.0353,
+   "codes_used_first_book": 376,
+   "minutes": 32.36
+  },
+  {
+   "step": 2350,
+   "n_q": 4,
+   "mel": 1.2075,
+   "commit": 0.0894,
+   "codes_used_first_book": 361,
+   "minutes": 33.47
+  },
+  {
+   "step": 2400,
+   "n_q": 1,
+   "mel": 1.2587,
+   "commit": 0.0457,
+   "codes_used_first_book": 392,
+   "minutes": 34.48
+  },
+  {
+   "step": 2450,
+   "n_q": 7,
+   "mel": 1.1162,
+   "commit": 0.0784,
+   "codes_used_first_book": 399,
+   "minutes": 35.59
+  },
+  {
+   "step": 2500,
+   "n_q": 4,
+   "mel": 1.0851,
+   "commit": 0.072,
+   "codes_used_first_book": 367,
+   "minutes": 36.85
+  },
+  {
+   "step": 2550,
+   "n_q": 8,
+   "mel": 1.1766,
+   "commit": 0.1065,
+   "codes_used_first_book": 360,
+   "minutes": 38.1
+  },
+  {
+   "step": 2600,
+   "n_q": 7,
+   "mel": 1.1262,
+   "commit": 0.1133,
+   "codes_used_first_book": 379,
+   "minutes": 39.32
+  },
+  {
+   "step": 2650,
+   "n_q": 1,
+   "mel": 1.13,
+   "commit": 0.057,
+   "codes_used_first_book": 409,
+   "minutes": 40.48
+  },
+  {
+   "step": 2700,
+   "n_q": 5,
+   "mel": 1.0635,
+   "commit": 0.1004,
+   "codes_used_first_book": 366,
+   "minutes": 41.71
+  },
+  {
+   "step": 2750,
+   "n_q": 6,
+   "mel": 1.1768,
+   "commit": 0.0868,
+   "codes_used_first_book": 365,
+   "minutes": 43.41
+  },
+  {
+   "step": 2800,
+   "n_q": 6,
+   "mel": 1.0666,
+   "commit": 0.0952,
+   "codes_used_first_book": 370,
+   "minutes": 44.57
+  },
+  {
+   "step": 2850,
+   "n_q": 2,
+   "mel": 1.136,
+   "commit": 0.0655,
+   "codes_used_first_book": 404,
+   "minutes": 45.76
+  },
+  {
+   "step": 2900,
+   "n_q": 4,
+   "mel": 1.0268,
+   "commit": 0.104,
+   "codes_used_first_book": 398,
+   "minutes": 47.0
+  },
+  {
+   "step": 2950,
+   "n_q": 3,
+   "mel": 1.0631,
+   "commit": 0.0961,
+   "codes_used_first_book": 394,
+   "minutes": 48.27
+  },
+  {
+   "step": 3000,
+   "n_q": 2,
+   "mel": 1.018,
+   "commit": 0.0627,
+   "codes_used_first_book": 352,
+   "minutes": 49.43
+  },
+  {
+   "step": 3050,
+   "n_q": 4,
+   "mel": 1.1207,
+   "commit": 0.1001,
+   "codes_used_first_book": 374,
+   "minutes": 50.64
+  },
+  {
+   "step": 3100,
+   "n_q": 6,
+   "mel": 0.9828,
+   "commit": 0.0905,
+   "codes_used_first_book": 370,
+   "minutes": 51.77
+  },
+  {
+   "step": 3150,
+   "n_q": 8,
+   "mel": 1.0457,
+   "commit": 0.1154,
+   "codes_used_first_book": 379,
+   "minutes": 53.12
+  },
+  {
+   "step": 3200,
+   "n_q": 1,
+   "mel": 1.1408,
+   "commit": 0.063,
+   "codes_used_first_book": 388,
+   "minutes": 54.37
+  },
+  {
+   "step": 3250,
+   "n_q": 1,
+   "mel": 1.1068,
+   "commit": 0.0619,
+   "codes_used_first_book": 367,
+   "minutes": 55.36
+  },
+  {
+   "step": 3300,
+   "n_q": 5,
+   "mel": 1.0152,
+   "commit": 0.0799,
+   "codes_used_first_book": 366,
+   "minutes": 56.43
+  },
+  {
+   "step": 3350,
+   "n_q": 5,
+   "mel": 0.9817,
+   "commit": 0.0909,
+   "codes_used_first_book": 387,
+   "minutes": 57.42
+  },
+  {
+   "step": 3400,
+   "n_q": 3,
+   "mel": 0.9364,
+   "commit": 0.0781,
+   "codes_used_first_book": 383,
+   "minutes": 58.51
+  },
+  {
+   "step": 3450,
+   "n_q": 8,
+   "mel": 0.9707,
+   "commit": 0.1202,
+   "codes_used_first_book": 376,
+   "minutes": 59.58
+  },
+  {
+   "step": 3500,
+   "n_q": 5,
+   "mel": 0.9522,
+   "commit": 0.083,
+   "codes_used_first_book": 356,
+   "minutes": 60.6
+  },
+  {
+   "step": 3550,
+   "n_q": 7,
+   "mel": 0.9459,
+   "commit": 0.1076,
+   "codes_used_first_book": 362,
+   "minutes": 61.59
+  },
+  {
+   "step": 3600,
+   "n_q": 1,
+   "mel": 1.0288,
+   "commit": 0.0556,
+   "codes_used_first_book": 361,
+   "minutes": 62.68
+  },
+  {
+   "step": 3650,
+   "n_q": 3,
+   "mel": 1.0273,
+   "commit": 0.0934,
+   "codes_used_first_book": 378,
+   "minutes": 63.66
+  },
+  {
+   "step": 3700,
+   "n_q": 8,
+   "mel": 0.9587,
+   "commit": 0.1047,
+   "codes_used_first_book": 362,
+   "minutes": 64.09
+  },
+  {
+   "step": 3750,
+   "n_q": 6,
+   "mel": 1.063,
+   "commit": 0.1189,
+   "codes_used_first_book": 348,
+   "minutes": 65.31
+  },
+  {
+   "step": 3800,
+   "n_q": 2,
+   "mel": 1.0133,
+   "commit": 0.0829,
+   "codes_used_first_book": 373,
+   "minutes": 66.6
+  },
+  {
+   "step": 3850,
+   "n_q": 2,
+   "mel": 0.9075,
+   "commit": 0.0665,
+   "codes_used_first_book": 365,
+   "minutes": 67.81
+  },
+  {
+   "step": 3900,
+   "n_q": 4,
+   "mel": 0.9251,
+   "commit": 0.0846,
+   "codes_used_first_book": 388,
+   "minutes": 69.06
+  },
+  {
+   "step": 3950,
+   "n_q": 6,
+   "mel": 1.0175,
+   "commit": 0.1238,
+   "codes_used_first_book": 371,
+   "minutes": 70.28
+  },
+  {
+   "step": 4000,
+   "n_q": 1,
+   "mel": 0.9815,
+   "commit": 0.0529,
+   "codes_used_first_book": 373,
+   "minutes": 71.64
+  },
+  {
+   "step": 4050,
+   "n_q": 7,
+   "mel": 0.9887,
+   "commit": 0.1111,
+   "codes_used_first_book": 378,
+   "minutes": 72.93
+  },
+  {
+   "step": 4100,
+   "n_q": 5,
+   "mel": 0.953,
+   "commit": 0.0957,
+   "codes_used_first_book": 334,
+   "minutes": 74.27
+  },
+  {
+   "step": 4150,
+   "n_q": 6,
+   "mel": 0.9383,
+   "commit": 0.1051,
+   "codes_used_first_book": 366,
+   "minutes": 76.08
+  },
+  {
+   "step": 4200,
+   "n_q": 1,
+   "mel": 1.0321,
+   "commit": 0.058,
+   "codes_used_first_book": 361,
+   "minutes": 77.35
+  },
+  {
+   "step": 4250,
+   "n_q": 7,
+   "mel": 0.9003,
+   "commit": 0.1025,
+   "codes_used_first_book": 368,
+   "minutes": 78.67
+  },
+  {
+   "step": 4300,
+   "n_q": 8,
+   "mel": 0.8974,
+   "commit": 0.0956,
+   "codes_used_first_book": 359,
+   "minutes": 79.95
+  },
+  {
+   "step": 4350,
+   "n_q": 1,
+   "mel": 0.9124,
+   "commit": 0.0636,
+   "codes_used_first_book": 369,
+   "minutes": 81.16
+  },
+  {
+   "step": 4400,
+   "n_q": 5,
+   "mel": 0.9167,
+   "commit": 0.1681,
+   "codes_used_first_book": 371,
+   "minutes": 82.44
+  },
+  {
+   "step": 4450,
+   "n_q": 5,
+   "mel": 0.9177,
+   "commit": 0.1271,
+   "codes_used_first_book": 364,
+   "minutes": 83.7
+  },
+  {
+   "step": 4500,
+   "n_q": 5,
+   "mel": 0.8675,
+   "commit": 0.0984,
+   "codes_used_first_book": 361,
+   "minutes": 84.91
+  },
+  {
+   "step": 4550,
+   "n_q": 2,
+   "mel": 0.8399,
+   "commit": 0.0673,
+   "codes_used_first_book": 363,
+   "minutes": 85.4
+  },
+  {
+   "step": 4600,
+   "n_q": 4,
+   "mel": 0.8984,
+   "commit": 0.0961,
+   "codes_used_first_book": 349,
+   "minutes": 85.85
+  },
+  {
+   "step": 4650,
+   "n_q": 2,
+   "mel": 0.8618,
+   "commit": 0.0635,
+   "codes_used_first_book": 340,
+   "minutes": 86.28
+  },
+  {
+   "step": 4700,
+   "n_q": 5,
+   "mel": 0.8845,
+   "commit": 0.1214,
+   "codes_used_first_book": 366,
+   "minutes": 86.88
+  },
+  {
+   "step": 4750,
+   "n_q": 3,
+   "mel": 0.8704,
+   "commit": 0.0799,
+   "codes_used_first_book": 353,
+   "minutes": 88.38
+  },
+  {
+   "step": 4800,
+   "n_q": 8,
+   "mel": 0.9094,
+   "commit": 0.1627,
+   "codes_used_first_book": 327,
+   "minutes": 90.13
+  },
+  {
+   "step": 4850,
+   "n_q": 5,
+   "mel": 0.9348,
+   "commit": 0.1161,
+   "codes_used_first_book": 345,
+   "minutes": 90.57
+  },
+  {
+   "step": 4900,
+   "n_q": 1,
+   "mel": 0.9323,
+   "commit": 0.0675,
+   "codes_used_first_book": 367,
+   "minutes": 90.99
+  },
+  {
+   "step": 4950,
+   "n_q": 1,
+   "mel": 0.9927,
+   "commit": 0.0597,
+   "codes_used_first_book": 331,
+   "minutes": 91.41
+  },
+  {
+   "step": 5000,
+   "n_q": 4,
+   "mel": 0.7477,
+   "commit": 0.0824,
+   "codes_used_first_book": 340,
+   "minutes": 91.82
+  },
+  {
+   "step": 5050,
+   "n_q": 1,
+   "mel": 0.8882,
+   "commit": 0.0572,
+   "codes_used_first_book": 366,
+   "minutes": 92.27
+  },
+  {
+   "step": 5100,
+   "n_q": 3,
+   "mel": 0.9263,
+   "commit": 0.1105,
+   "codes_used_first_book": 356,
+   "minutes": 92.72
+  },
+  {
+   "step": 5150,
+   "n_q": 2,
+   "mel": 0.8619,
+   "commit": 0.0742,
+   "codes_used_first_book": 359,
+   "minutes": 93.17
+  },
+  {
+   "step": 5200,
+   "n_q": 5,
+   "mel": 0.8117,
+   "commit": 0.107,
+   "codes_used_first_book": 345,
+   "minutes": 93.6
+  },
+  {
+   "step": 5250,
+   "n_q": 5,
+   "mel": 0.929,
+   "commit": 0.1248,
+   "codes_used_first_book": 366,
+   "minutes": 94.58
+  },
+  {
+   "step": 5300,
+   "n_q": 3,
+   "mel": 0.9165,
+   "commit": 0.1331,
+   "codes_used_first_book": 349,
+   "minutes": 95.06
+  },
+  {
+   "step": 5350,
+   "n_q": 1,
+   "mel": 0.9252,
+   "commit": 0.0635,
+   "codes_used_first_book": 357,
+   "minutes": 95.54
+  },
+  {
+   "step": 5400,
+   "n_q": 8,
+   "mel": 0.8855,
+   "commit": 0.138,
+   "codes_used_first_book": 373,
+   "minutes": 96.02
+  },
+  {
+   "step": 5450,
+   "n_q": 5,
+   "mel": 0.8231,
+   "commit": 0.1058,
+   "codes_used_first_book": 358,
+   "minutes": 96.49
+  },
+  {
+   "step": 5500,
+   "n_q": 7,
+   "mel": 0.8541,
+   "commit": 0.1252,
+   "codes_used_first_book": 353,
+   "minutes": 96.95
+  },
+  {
+   "step": 5550,
+   "n_q": 8,
+   "mel": 0.9222,
+   "commit": 0.1259,
+   "codes_used_first_book": 353,
+   "minutes": 97.42
+  },
+  {
+   "step": 5600,
+   "n_q": 4,
+   "mel": 0.8883,
+   "commit": 0.1374,
+   "codes_used_first_book": 352,
+   "minutes": 97.88
+  },
+  {
+   "step": 5650,
+   "n_q": 3,
+   "mel": 0.8415,
+   "commit": 0.1281,
+   "codes_used_first_book": 329,
+   "minutes": 98.34
+  },
+  {
+   "step": 5700,
+   "n_q": 7,
+   "mel": 0.7684,
+   "commit": 0.0976,
+   "codes_used_first_book": 339,
+   "minutes": 98.8
+  },
+  {
+   "step": 5750,
+   "n_q": 3,
+   "mel": 0.8931,
+   "commit": 0.1302,
+   "codes_used_first_book": 344,
+   "minutes": 99.27
+  },
+  {
+   "step": 5800,
+   "n_q": 3,
+   "mel": 0.8578,
+   "commit": 0.1108,
+   "codes_used_first_book": 364,
+   "minutes": 99.74
+  },
+  {
+   "step": 5850,
+   "n_q": 6,
+   "mel": 0.8072,
+   "commit": 0.135,
+   "codes_used_first_book": 329,
+   "minutes": 100.21
+  },
+  {
+   "step": 5900,
+   "n_q": 4,
+   "mel": 0.8552,
+   "commit": 0.1286,
+   "codes_used_first_book": 345,
+   "minutes": 100.68
+  },
+  {
+   "step": 5950,
+   "n_q": 3,
+   "mel": 0.8374,
+   "commit": 0.1249,
+   "codes_used_first_book": 379,
+   "minutes": 101.15
+  },
+  {
+   "step": 6000,
+   "n_q": 7,
+   "mel": 0.8326,
+   "commit": 0.1303,
+   "codes_used_first_book": 318,
+   "minutes": 101.61
+  },
+  {
+   "step": 6050,
+   "n_q": 4,
+   "mel": 0.7226,
+   "commit": 0.1213,
+   "codes_used_first_book": 343,
+   "minutes": 102.07
+  },
+  {
+   "step": 6100,
+   "n_q": 4,
+   "mel": 0.8052,
+   "commit": 0.1216,
+   "codes_used_first_book": 365,
+   "minutes": 102.55
+  },
+  {
+   "step": 6150,
+   "n_q": 6,
+   "mel": 0.8321,
+   "commit": 0.1395,
+   "codes_used_first_book": 366,
+   "minutes": 103.01
+  },
+  {
+   "step": 6200,
+   "n_q": 1,
+   "mel": 0.9345,
+   "commit": 0.0734,
+   "codes_used_first_book": 348,
+   "minutes": 103.47
+  },
+  {
+   "step": 6250,
+   "n_q": 7,
+   "mel": 0.8487,
+   "commit": 0.12,
+   "codes_used_first_book": 361,
+   "minutes": 103.91
+  },
+  {
+   "step": 6300,
+   "n_q": 1,
+   "mel": 0.9158,
+   "commit": 0.0761,
+   "codes_used_first_book": 351,
+   "minutes": 104.44
+  },
+  {
+   "step": 6350,
+   "n_q": 1,
+   "mel": 0.9214,
+   "commit": 0.0827,
+   "codes_used_first_book": 361,
+   "minutes": 104.89
+  },
+  {
+   "step": 6400,
+   "n_q": 5,
+   "mel": 0.8094,
+   "commit": 0.1404,
+   "codes_used_first_book": 364,
+   "minutes": 105.38
+  },
+  {
+   "step": 6450,
+   "n_q": 6,
+   "mel": 0.8467,
+   "commit": 0.1252,
+   "codes_used_first_book": 343,
+   "minutes": 105.85
+  },
+  {
+   "step": 6500,
+   "n_q": 4,
+   "mel": 0.8174,
+   "commit": 0.1106,
+   "codes_used_first_book": 354,
+   "minutes": 106.33
+  },
+  {
+   "step": 6550,
+   "n_q": 6,
+   "mel": 0.8624,
+   "commit": 0.1323,
+   "codes_used_first_book": 331,
+   "minutes": 106.8
+  },
+  {
+   "step": 6600,
+   "n_q": 6,
+   "mel": 0.8234,
+   "commit": 0.1303,
+   "codes_used_first_book": 361,
+   "minutes": 107.26
+  },
+  {
+   "step": 6650,
+   "n_q": 2,
+   "mel": 0.8121,
+   "commit": 0.0904,
+   "codes_used_first_book": 342,
+   "minutes": 107.74
+  },
+  {
+   "step": 6700,
+   "n_q": 7,
+   "mel": 0.7898,
+   "commit": 0.1214,
+   "codes_used_first_book": 345,
+   "minutes": 108.2
+  },
+  {
+   "step": 6750,
+   "n_q": 5,
+   "mel": 0.7296,
+   "commit": 0.1079,
+   "codes_used_first_book": 344,
+   "minutes": 108.67
+  },
+  {
+   "step": 6800,
+   "n_q": 1,
+   "mel": 0.9135,
+   "commit": 0.0645,
+   "codes_used_first_book": 341,
+   "minutes": 109.14
+  },
+  {
+   "step": 6850,
+   "n_q": 3,
+   "mel": 0.8193,
+   "commit": 0.0991,
+   "codes_used_first_book": 323,
+   "minutes": 109.61
+  },
+  {
+   "step": 6900,
+   "n_q": 4,
+   "mel": 0.7302,
+   "commit": 0.0999,
+   "codes_used_first_book": 342,
+   "minutes": 110.08
+  },
+  {
+   "step": 6950,
+   "n_q": 1,
+   "mel": 0.8013,
+   "commit": 0.0535,
+   "codes_used_first_book": 306,
+   "minutes": 110.55
+  },
+  {
+   "step": 7000,
+   "n_q": 1,
+   "mel": 0.8842,
+   "commit": 0.0657,
+   "codes_used_first_book": 352,
+   "minutes": 111.01
+  },
+  {
+   "step": 7050,
+   "n_q": 5,
+   "mel": 0.735,
+   "commit": 0.1311,
+   "codes_used_first_book": 360,
+   "minutes": 111.48
+  },
+  {
+   "step": 7100,
+   "n_q": 2,
+   "mel": 0.7681,
+   "commit": 0.1069,
+   "codes_used_first_book": 341,
+   "minutes": 111.95
+  },
+  {
+   "step": 7150,
+   "n_q": 6,
+   "mel": 0.7487,
+   "commit": 0.136,
+   "codes_used_first_book": 346,
+   "minutes": 112.41
+  },
+  {
+   "step": 7200,
+   "n_q": 4,
+   "mel": 0.7684,
+   "commit": 0.1362,
+   "codes_used_first_book": 333,
+   "minutes": 112.88
+  },
+  {
+   "step": 7250,
+   "n_q": 6,
+   "mel": 0.7856,
+   "commit": 0.1178,
+   "codes_used_first_book": 351,
+   "minutes": 113.34
+  },
+  {
+   "step": 7300,
+   "n_q": 3,
+   "mel": 0.779,
+   "commit": 0.1412,
+   "codes_used_first_book": 371,
+   "minutes": 113.82
+  },
+  {
+   "step": 7350,
+   "n_q": 6,
+   "mel": 0.7356,
+   "commit": 0.1163,
+   "codes_used_first_book": 369,
+   "minutes": 114.29
+  },
+  {
+   "step": 7400,
+   "n_q": 2,
+   "mel": 0.7867,
+   "commit": 0.1049,
+   "codes_used_first_book": 350,
+   "minutes": 114.71
+  },
+  {
+   "step": 7450,
+   "n_q": 5,
+   "mel": 0.7272,
+   "commit": 0.1057,
+   "codes_used_first_book": 338,
+   "minutes": 115.14
+  },
+  {
+   "step": 7500,
+   "n_q": 7,
+   "mel": 0.703,
+   "commit": 0.1098,
+   "codes_used_first_book": 347,
+   "minutes": 115.57
+  },
+  {
+   "step": 7550,
+   "n_q": 2,
+   "mel": 0.791,
+   "commit": 0.101,
+   "codes_used_first_book": 373,
+   "minutes": 115.99
+  },
+  {
+   "step": 7600,
+   "n_q": 4,
+   "mel": 0.7627,
+   "commit": 0.1126,
+   "codes_used_first_book": 360,
+   "minutes": 116.42
+  },
+  {
+   "step": 7650,
+   "n_q": 2,
+   "mel": 0.8054,
+   "commit": 0.1035,
+   "codes_used_first_book": 326,
+   "minutes": 116.84
+  },
+  {
+   "step": 7700,
+   "n_q": 5,
+   "mel": 0.7114,
+   "commit": 0.1125,
+   "codes_used_first_book": 349,
+   "minutes": 117.26
+  },
+  {
+   "step": 7750,
+   "n_q": 4,
+   "mel": 0.7748,
+   "commit": 0.1086,
+   "codes_used_first_book": 337,
+   "minutes": 117.67
+  },
+  {
+   "step": 7800,
+   "n_q": 4,
+   "mel": 0.7785,
+   "commit": 0.1067,
+   "codes_used_first_book": 346,
+   "minutes": 118.08
+  },
+  {
+   "step": 7850,
+   "n_q": 5,
+   "mel": 0.7091,
+   "commit": 0.1138,
+   "codes_used_first_book": 372,
+   "minutes": 118.51
+  },
+  {
+   "step": 7900,
+   "n_q": 1,
+   "mel": 0.9018,
+   "commit": 0.0686,
+   "codes_used_first_book": 344,
+   "minutes": 118.92
+  },
+  {
+   "step": 7950,
+   "n_q": 8,
+   "mel": 0.7466,
+   "commit": 0.1522,
+   "codes_used_first_book": 352,
+   "minutes": 119.34
+  },
+  {
+   "step": 8000,
+   "n_q": 4,
+   "mel": 0.7653,
+   "commit": 0.131,
+   "codes_used_first_book": 357,
+   "minutes": 119.76
+  },
+  {
+   "step": 8050,
+   "n_q": 5,
+   "mel": 0.7311,
+   "commit": 0.1194,
+   "codes_used_first_book": 362,
+   "minutes": 120.18
+  },
+  {
+   "step": 8100,
+   "n_q": 3,
+   "mel": 0.6857,
+   "commit": 0.0923,
+   "codes_used_first_book": 342,
+   "minutes": 120.6
+  },
+  {
+   "step": 8150,
+   "n_q": 4,
+   "mel": 0.651,
+   "commit": 0.0949,
+   "codes_used_first_book": 338,
+   "minutes": 121.03
+  },
+  {
+   "step": 8200,
+   "n_q": 4,
+   "mel": 0.7362,
+   "commit": 0.1057,
+   "codes_used_first_book": 335,
+   "minutes": 121.45
+  },
+  {
+   "step": 8250,
+   "n_q": 8,
+   "mel": 0.7538,
+   "commit": 0.1194,
+   "codes_used_first_book": 353,
+   "minutes": 121.87
+  },
+  {
+   "step": 8300,
+   "n_q": 1,
+   "mel": 0.8404,
+   "commit": 0.0695,
+   "codes_used_first_book": 376,
+   "minutes": 122.3
+  },
+  {
+   "step": 8350,
+   "n_q": 4,
+   "mel": 0.7303,
+   "commit": 0.1342,
+   "codes_used_first_book": 371,
+   "minutes": 122.72
+  },
+  {
+   "step": 8400,
+   "n_q": 6,
+   "mel": 0.7383,
+   "commit": 0.1408,
+   "codes_used_first_book": 345,
+   "minutes": 123.14
+  },
+  {
+   "step": 8450,
+   "n_q": 5,
+   "mel": 0.723,
+   "commit": 0.1114,
+   "codes_used_first_book": 331,
+   "minutes": 123.57
+  },
+  {
+   "step": 8500,
+   "n_q": 6,
+   "mel": 0.7318,
+   "commit": 0.1326,
+   "codes_used_first_book": 352,
+   "minutes": 123.99
+  },
+  {
+   "step": 8550,
+   "n_q": 5,
+   "mel": 0.7222,
+   "commit": 0.1164,
+   "codes_used_first_book": 356,
+   "minutes": 124.42
+  },
+  {
+   "step": 8600,
+   "n_q": 7,
+   "mel": 0.6883,
+   "commit": 0.1203,
+   "codes_used_first_book": 314,
+   "minutes": 124.84
+  },
+  {
+   "step": 8650,
+   "n_q": 7,
+   "mel": 0.7439,
+   "commit": 0.1356,
+   "codes_used_first_book": 327,
+   "minutes": 125.26
+  },
+  {
+   "step": 8700,
+   "n_q": 7,
+   "mel": 0.7756,
+   "commit": 0.1434,
+   "codes_used_first_book": 325,
+   "minutes": 125.67
+  },
+  {
+   "step": 8750,
+   "n_q": 8,
+   "mel": 0.712,
+   "commit": 0.1166,
+   "codes_used_first_book": 339,
+   "minutes": 126.11
+  },
+  {
+   "step": 8800,
+   "n_q": 6,
+   "mel": 0.6977,
+   "commit": 0.1125,
+   "codes_used_first_book": 362,
+   "minutes": 126.53
+  },
+  {
+   "step": 8850,
+   "n_q": 3,
+   "mel": 0.7532,
+   "commit": 0.1144,
+   "codes_used_first_book": 367,
+   "minutes": 126.95
+  },
+  {
+   "step": 8900,
+   "n_q": 7,
+   "mel": 0.7229,
+   "commit": 0.1172,
+   "codes_used_first_book": 343,
+   "minutes": 127.37
+  },
+  {
+   "step": 8950,
+   "n_q": 8,
+   "mel": 0.6468,
+   "commit": 0.0992,
+   "codes_used_first_book": 289,
+   "minutes": 127.79
+  },
+  {
+   "step": 9000,
+   "n_q": 3,
+   "mel": 0.7504,
+   "commit": 0.117,
+   "codes_used_first_book": 347,
+   "minutes": 128.2
+  },
+  {
+   "step": 9050,
+   "n_q": 1,
+   "mel": 0.7626,
+   "commit": 0.0717,
+   "codes_used_first_book": 328,
+   "minutes": 128.61
+  },
+  {
+   "step": 9100,
+   "n_q": 8,
+   "mel": 0.7163,
+   "commit": 0.1207,
+   "codes_used_first_book": 344,
+   "minutes": 129.04
+  },
+  {
+   "step": 9150,
+   "n_q": 2,
+   "mel": 0.7952,
+   "commit": 0.0918,
+   "codes_used_first_book": 324,
+   "minutes": 129.45
+  },
+  {
+   "step": 9200,
+   "n_q": 6,
+   "mel": 0.7101,
+   "commit": 0.1147,
+   "codes_used_first_book": 326,
+   "minutes": 129.88
+  },
+  {
+   "step": 9250,
+   "n_q": 2,
+   "mel": 0.6827,
+   "commit": 0.0802,
+   "codes_used_first_book": 330,
+   "minutes": 130.3
+  },
+  {
+   "step": 9300,
+   "n_q": 6,
+   "mel": 0.7713,
+   "commit": 0.1289,
+   "codes_used_first_book": 352,
+   "minutes": 130.72
+  },
+  {
+   "step": 9350,
+   "n_q": 3,
+   "mel": 0.7113,
+   "commit": 0.1171,
+   "codes_used_first_book": 336,
+   "minutes": 131.15
+  },
+  {
+   "step": 9400,
+   "n_q": 5,
+   "mel": 0.7548,
+   "commit": 0.1175,
+   "codes_used_first_book": 340,
+   "minutes": 131.57
+  },
+  {
+   "step": 9450,
+   "n_q": 6,
+   "mel": 0.6518,
+   "commit": 0.1213,
+   "codes_used_first_book": 343,
+   "minutes": 131.99
+  },
+  {
+   "step": 9500,
+   "n_q": 7,
+   "mel": 0.7405,
+   "commit": 0.1175,
+   "codes_used_first_book": 344,
+   "minutes": 132.4
+  },
+  {
+   "step": 9550,
+   "n_q": 7,
+   "mel": 0.7468,
+   "commit": 0.1297,
+   "codes_used_first_book": 343,
+   "minutes": 132.82
+  },
+  {
+   "step": 9600,
+   "n_q": 6,
+   "mel": 0.715,
+   "commit": 0.1274,
+   "codes_used_first_book": 327,
+   "minutes": 133.25
+  },
+  {
+   "step": 9650,
+   "n_q": 4,
+   "mel": 0.6503,
+   "commit": 0.1095,
+   "codes_used_first_book": 313,
+   "minutes": 133.67
+  },
+  {
+   "step": 9700,
+   "n_q": 3,
+   "mel": 0.6582,
+   "commit": 0.093,
+   "codes_used_first_book": 341,
+   "minutes": 134.08
+  },
+  {
+   "step": 9750,
+   "n_q": 5,
+   "mel": 0.6881,
+   "commit": 0.1211,
+   "codes_used_first_book": 359,
+   "minutes": 134.49
+  },
+  {
+   "step": 9800,
+   "n_q": 5,
+   "mel": 0.6463,
+   "commit": 0.1085,
+   "codes_used_first_book": 338,
+   "minutes": 134.9
+  },
+  {
+   "step": 9850,
+   "n_q": 3,
+   "mel": 0.6507,
+   "commit": 0.1104,
+   "codes_used_first_book": 331,
+   "minutes": 135.31
+  },
+  {
+   "step": 9900,
+   "n_q": 6,
+   "mel": 0.6701,
+   "commit": 0.135,
+   "codes_used_first_book": 335,
+   "minutes": 135.72
+  },
+  {
+   "step": 9950,
+   "n_q": 4,
+   "mel": 0.6669,
+   "commit": 0.116,
+   "codes_used_first_book": 355,
+   "minutes": 136.13
+  },
+  {
+   "step": 10000,
+   "n_q": 6,
+   "mel": 0.7047,
+   "commit": 0.151,
+   "codes_used_first_book": 311,
+   "minutes": 136.54
+  },
+  {
+   "step": 10050,
+   "n_q": 1,
+   "mel": 0.8436,
+   "commit": 0.0835,
+   "codes_used_first_book": 319,
+   "minutes": 136.97
+  },
+  {
+   "step": 10100,
+   "n_q": 4,
+   "mel": 0.6911,
+   "commit": 0.1211,
+   "codes_used_first_book": 330,
+   "minutes": 137.39
+  },
+  {
+   "step": 10150,
+   "n_q": 3,
+   "mel": 0.707,
+   "commit": 0.1273,
+   "codes_used_first_book": 335,
+   "minutes": 137.81
+  },
+  {
+   "step": 10200,
+   "n_q": 6,
+   "mel": 0.6802,
+   "commit": 0.1241,
+   "codes_used_first_book": 310,
+   "minutes": 138.23
+  },
+  {
+   "step": 10250,
+   "n_q": 1,
+   "mel": 0.7744,
+   "commit": 0.0697,
+   "codes_used_first_book": 330,
+   "minutes": 138.63
+  },
+  {
+   "step": 10300,
+   "n_q": 5,
+   "mel": 0.6056,
+   "commit": 0.1165,
+   "codes_used_first_book": 335,
+   "minutes": 139.05
+  },
+  {
+   "step": 10350,
+   "n_q": 4,
+   "mel": 0.6234,
+   "commit": 0.1158,
+   "codes_used_first_book": 325,
+   "minutes": 139.47
+  },
+  {
+   "step": 10400,
+   "n_q": 1,
+   "mel": 0.8192,
+   "commit": 0.0683,
+   "codes_used_first_book": 325,
+   "minutes": 139.89
+  },
+  {
+   "step": 10450,
+   "n_q": 5,
+   "mel": 0.7074,
+   "commit": 0.1274,
+   "codes_used_first_book": 339,
+   "minutes": 140.31
+  },
+  {
+   "step": 10500,
+   "n_q": 3,
+   "mel": 0.6898,
+   "commit": 0.1064,
+   "codes_used_first_book": 349,
+   "minutes": 140.73
+  },
+  {
+   "step": 10550,
+   "n_q": 5,
+   "mel": 0.6921,
+   "commit": 0.1117,
+   "codes_used_first_book": 321,
+   "minutes": 141.15
+  },
+  {
+   "step": 10600,
+   "n_q": 5,
+   "mel": 0.6395,
+   "commit": 0.1036,
+   "codes_used_first_book": 322,
+   "minutes": 141.57
+  },
+  {
+   "step": 10650,
+   "n_q": 5,
+   "mel": 0.7197,
+   "commit": 0.1109,
+   "codes_used_first_book": 334,
+   "minutes": 141.99
+  },
+  {
+   "step": 10700,
+   "n_q": 4,
+   "mel": 0.6541,
+   "commit": 0.1075,
+   "codes_used_first_book": 331,
+   "minutes": 142.41
+  },
+  {
+   "step": 10750,
+   "n_q": 8,
+   "mel": 0.667,
+   "commit": 0.1276,
+   "codes_used_first_book": 336,
+   "minutes": 142.84
+  },
+  {
+   "step": 10800,
+   "n_q": 2,
+   "mel": 0.7862,
+   "commit": 0.1171,
+   "codes_used_first_book": 338,
+   "minutes": 143.25
+  },
+  {
+   "step": 10850,
+   "n_q": 3,
+   "mel": 0.6191,
+   "commit": 0.089,
+   "codes_used_first_book": 303,
+   "minutes": 143.67
+  },
+  {
+   "step": 10900,
+   "n_q": 4,
+   "mel": 0.6544,
+   "commit": 0.1052,
+   "codes_used_first_book": 324,
+   "minutes": 144.08
+  },
+  {
+   "step": 10950,
+   "n_q": 8,
+   "mel": 0.6551,
+   "commit": 0.1249,
+   "codes_used_first_book": 357,
+   "minutes": 144.5
+  },
+  {
+   "step": 11000,
+   "n_q": 7,
+   "mel": 0.7223,
+   "commit": 0.1346,
+   "codes_used_first_book": 369,
+   "minutes": 144.92
+  },
+  {
+   "step": 11050,
+   "n_q": 6,
+   "mel": 0.6891,
+   "commit": 0.1156,
+   "codes_used_first_book": 341,
+   "minutes": 145.33
+  },
+  {
+   "step": 11100,
+   "n_q": 2,
+   "mel": 0.705,
+   "commit": 0.0943,
+   "codes_used_first_book": 340,
+   "minutes": 145.75
+  },
+  {
+   "step": 11150,
+   "n_q": 8,
+   "mel": 0.6822,
+   "commit": 0.1257,
+   "codes_used_first_book": 313,
+   "minutes": 146.17
+  },
+  {
+   "step": 11200,
+   "n_q": 6,
+   "mel": 0.7433,
+   "commit": 0.129,
+   "codes_used_first_book": 350,
+   "minutes": 146.6
+  },
+  {
+   "step": 11250,
+   "n_q": 6,
+   "mel": 0.6625,
+   "commit": 0.1074,
+   "codes_used_first_book": 308,
+   "minutes": 147.02
+  },
+  {
+   "step": 11300,
+   "n_q": 3,
+   "mel": 0.6695,
+   "commit": 0.103,
+   "codes_used_first_book": 307,
+   "minutes": 147.45
+  },
+  {
+   "step": 11350,
+   "n_q": 6,
+   "mel": 0.679,
+   "commit": 0.1183,
+   "codes_used_first_book": 325,
+   "minutes": 147.88
+  },
+  {
+   "step": 11400,
+   "n_q": 7,
+   "mel": 0.5941,
+   "commit": 0.101,
+   "codes_used_first_book": 320,
+   "minutes": 148.3
+  },
+  {
+   "step": 11450,
+   "n_q": 4,
+   "mel": 0.7048,
+   "commit": 0.1162,
+   "codes_used_first_book": 310,
+   "minutes": 148.71
+  },
+  {
+   "step": 11500,
+   "n_q": 1,
+   "mel": 0.7959,
+   "commit": 0.0743,
+   "codes_used_first_book": 335,
+   "minutes": 149.12
+  },
+  {
+   "step": 11550,
+   "n_q": 1,
+   "mel": 0.8882,
+   "commit": 0.0847,
+   "codes_used_first_book": 339,
+   "minutes": 149.53
+  },
+  {
+   "step": 11600,
+   "n_q": 6,
+   "mel": 0.6327,
+   "commit": 0.1144,
+   "codes_used_first_book": 323,
+   "minutes": 149.96
+  },
+  {
+   "step": 11650,
+   "n_q": 2,
+   "mel": 0.7101,
+   "commit": 0.0947,
+   "codes_used_first_book": 352,
+   "minutes": 150.38
+  },
+  {
+   "step": 11700,
+   "n_q": 3,
+   "mel": 0.7004,
+   "commit": 0.1254,
+   "codes_used_first_book": 324,
+   "minutes": 150.81
+  },
+  {
+   "step": 11750,
+   "n_q": 6,
+   "mel": 0.6608,
+   "commit": 0.1162,
+   "codes_used_first_book": 330,
+   "minutes": 151.23
+  },
+  {
+   "step": 11800,
+   "n_q": 5,
+   "mel": 0.7078,
+   "commit": 0.1178,
+   "codes_used_first_book": 363,
+   "minutes": 151.65
+  },
+  {
+   "step": 11850,
+   "n_q": 5,
+   "mel": 0.6847,
+   "commit": 0.1119,
+   "codes_used_first_book": 346,
+   "minutes": 152.05
+  },
+  {
+   "step": 11900,
+   "n_q": 7,
+   "mel": 0.6642,
+   "commit": 0.124,
+   "codes_used_first_book": 332,
+   "minutes": 152.48
+  },
+  {
+   "step": 11950,
+   "n_q": 8,
+   "mel": 0.6207,
+   "commit": 0.1051,
+   "codes_used_first_book": 315,
+   "minutes": 152.9
+  },
+  {
+   "step": 12000,
+   "n_q": 1,
+   "mel": 0.7681,
+   "commit": 0.0656,
+   "codes_used_first_book": 323,
+   "minutes": 153.35
+  }
+ ]
+}
