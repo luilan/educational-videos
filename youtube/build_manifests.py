@@ -130,7 +130,7 @@ def build(series):
                            if not re.search(r"questions ask you|your prediction", sentence))
         links = (f"Study guide for this lesson (PDF): {REPO}/blob/main/{series}/study/{vid}_study.pdf\n"
                  f"All lessons, study guides and source code: {REPO}")
-        parts = [script.TAGLINE + ".", links, summary, "Chapters\n" + "\n".join(chapters(study.CONCEPTS, duration)),
+        parts = [script.TAGLINE.rstrip(".") + ".", links, summary, "Chapters\n" + "\n".join(chapters(study.CONCEPTS, duration)),
                  where, CREDITS]
         if vid in ("v11", "v12", "f14"):
             parts[-1] += "\n" + TINY_SHAKESPEARE
@@ -222,7 +222,7 @@ def build_batch(series, numbers, playlist_id=None):
                  f"All lessons, study guides and source code: {REPO}")
         summary = plain(study.LESSON["intro"])
         summary = re.sub(r"\b([Tt]his (bonus )?)lesson\b", r"\1video", summary)
-        parts = [script.TAGLINE + ".", links, summary,
+        parts = [script.TAGLINE.rstrip(".") + ".", links, summary,
                  "Chapters\n" + "\n".join(chapters(study.CONCEPTS, duration)), cfg["where"].format(n=n), CREDITS]
         if os.path.exists(os.path.join(ROOT, "how-llms-work", "tiny_gpt", "input.txt")) and \
                 "Shakespeare" in open(f["script"]).read():

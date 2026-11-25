@@ -6,3 +6,4 @@ transformers>=4.45
 onnxruntime>=1.17
 kokoro-onnx>=0.4
 faster-whisper>=1.0
+num2words>=0.5
