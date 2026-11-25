@@ -94,12 +94,12 @@
    "requires": [
     "how-llms-work"
    ],
-   "version": 3,
-   "content_hash": "61a7c69ee778a011",
-   "file": "generative-v3.zip",
-   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/generative-v3.zip",
-   "size": 8190386,
-   "sha256": "33b6d0bbda87e5164ea71674751351749bbd626ddaf37b7cca3a5fa14611fe3d",
+   "version": 4,
+   "content_hash": "25e3703954ba2e9f",
+   "file": "generative-v4.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/generative-v4.zip",
+   "size": 8190452,
+   "sha256": "5a4ea6eb2e9e4691639acf5c133607c975890f437f5a4914301979ba9d3b7add",
    "lessons": 15
   }
  ],
