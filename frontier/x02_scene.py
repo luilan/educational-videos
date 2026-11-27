@@ -292,7 +292,7 @@ class WSPVideo(VoicedScene):
         self.play(FadeIn(rows), run_time=0.8)
         pts = VGroup(Text("finds and undoes structural damage, often with tiny edits", font_size=24, color=GOOD),
                      Text("the same question can get a different answer on another run", font_size=24, color=EDIT_C),
-                     Text("repairing is not teaching it something new", font_size=24, color=GREY_A)).arrange(DOWN, aligned_edge=LEFT, buff=0.3)
+                     Text("repairing is not teaching it something new", font_size=24, color=GREY_A)).arrange(DOWN, aligned_edge=LEFT, buff=0.5)
         pts.move_to([0, -1.3, 0])
         self.play(FadeIn(pts[0]), run_time=0.4)
         cite = Text("papers this month report the same (e.g. arXiv 2611.04268)", font_size=16, color=GREY_B).next_to(pts[0], DOWN, buff=0.08).align_to(pts[0], LEFT)
