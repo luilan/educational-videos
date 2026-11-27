@@ -17,7 +17,7 @@ This lesson sets up the task used through the whole series (two-digit addition w
 model that has seen only 500 worked examples. It introduces the RL vocabulary (policy, action, episode, reward), then
 looks at what the model's own graded tries contain, which is everything RL has to work with.</p>""",
     "prereq": """<div class="box note"><b>Before you start:</b> How LLMs Work episodes 1 (predict, pick, append),
-10 (probabilities) and 11 (training a tiny GPT); Foundations episode 6 (probability and sampling). Code:
+10 (probabilities), 11 (training) and 12 (building a tiny GPT); Foundations episode 6 (probability and sampling). Code:
 <code>code/r01_learning_from_a_grade</code> (Python with PyTorch; runs in about 30 seconds on a CPU).</div>""",
 }
 
