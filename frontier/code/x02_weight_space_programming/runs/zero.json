@@ -1,0 +1,41 @@
+{
+ "case": "zero",
+ "damage": "blocks.0.ln1.weight[13] set to 0",
+ "editor": "opus",
+ "test_intact": 0.992,
+ "test_damaged": 0.777,
+ "rounds": [
+  {
+   "round": 1,
+   "prompt_chars": 39602,
+   "reply": {
+    "diagnosis": "blocks.0.ln1.weight[13] is exactly 0.000. Every other gain in that LayerNorm sits between about 0.71 and 0.88, so this one was almost certainly zeroed by the damage. With a zero gain, feature 13 never reaches the first attention layer, and pos.weight[1] has its largest value (+1.99) in that dimension. Losing it would blur which operand digit attention picks up. That fits the errors: most are off by one in the ones digit or the tens digit, which looks like dropped carries or slightly wrong digit sums.",
+    "edits": [
+     {
+      "op": "set",
+      "tensor": "blocks.0.ln1.weight",
+      "index": [
+       13
+      ],
+      "value": 0.79
+     }
+    ],
+    "expected_effect": "Setting the gain back to a typical value (0.79) should restore the missing feature to first-layer attention. Many of the off-by-one ones-digit and carry errors should then be fixed, and the practice score should rise from 83.3% toward the original ~99%."
+   },
+   "meta": {
+    "seconds": 8.4,
+    "cost_usd": 0.2662,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 1,
+   "practice_after": 0.9966666666666667,
+   "kept": true
+  }
+ ],
+ "practice_damaged": 0.8333333333333334,
+ "practice_final": 0.9966666666666667,
+ "test_final": 0.991,
+ "numbers_changed_vs_intact": 1,
+ "numbers_differing_from_intact_after_damage": 1
+}

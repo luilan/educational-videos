@@ -1,0 +1,39 @@
+{
+ "case": "swap",
+ "damage": "embedding rows of tokens '3' and '8' (tok.weight[3], tok.weight[8]) swapped",
+ "editor": "opus",
+ "test_intact": 0.992,
+ "test_damaged": 0.393,
+ "rounds": [
+  {
+   "round": 1,
+   "prompt_chars": 40375,
+   "reply": {
+    "diagnosis": "The embedding rows for tokens '3' and '8' have been swapped, so the model reads every input 3 as an 8 and every 8 as a 3. The model's arithmetic is otherwise correct. Checking against the wrong answers: 35+43 gives 133, which equals 85+48. 82+41 gives 73, which equals 32+41. 43+49 gives 97, which equals 48+49. 12+80 gives 42, which equals 12+30. 80+98 gives 123, which equals 30+93. The output digits match these swapped sums, so the output head is not damaged.",
+    "edits": [
+     {
+      "op": "swap_rows",
+      "tensor": "tok.weight",
+      "row": 3,
+      "row_b": 8
+     }
+    ],
+    "expected_effect": "Questions that contain a 3 or an 8 should be answered correctly again. Practice accuracy should go back to about 99%."
+   },
+   "meta": {
+    "seconds": 14.0,
+    "cost_usd": 0.2531336,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 128,
+   "practice_after": 0.9966666666666667,
+   "kept": true
+  }
+ ],
+ "practice_damaged": 0.41333333333333333,
+ "practice_final": 0.9966666666666667,
+ "test_final": 0.992,
+ "numbers_changed_vs_intact": 0,
+ "numbers_differing_from_intact_after_damage": 128
+}

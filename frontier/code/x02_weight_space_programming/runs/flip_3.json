@@ -1,0 +1,39 @@
+{
+ "case": "flip#3",
+ "damage": "embedding row of token '7' (tok.weight[7]) multiplied by -1",
+ "editor": "opus",
+ "test_intact": 0.992,
+ "test_damaged": 0.587,
+ "rounds": [
+  {
+   "round": 1,
+   "prompt_chars": 40355,
+   "reply": {
+    "diagnosis": "Nearly every wrong answer comes out as if the digit 7 had been read as a 2, and this happens wherever the 7 sits. Examples: 70+26 gives 46 (=20+26), 78+95 gives 123 (=28+95), 27+25 gives 47 (=22+25), 57+36 gives 88 (=52+36) and 63+37 gives 95 (=63+32). Other digits are read correctly, so the damage is most likely in the input embedding for token 7 (tok.weight[7]). My best guess is that this row's sign was flipped. That is unconfirmed: tok.weight[7] does not look like a copy of row 2.",
+    "edits": [
+     {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 7,
+      "factor": -1
+     }
+    ],
+    "expected_effect": "If the row was negated, flipping it back should fix most of the failures involving a 7, and practice accuracy should go back toward about 99%. If the score doesn't go up, the harness will reject the edit, and the next thing to try would be rescaling the row (for example by 0.5 or 2) instead of flipping its sign."
+   },
+   "meta": {
+    "seconds": 28.3,
+    "cost_usd": 0.0464078,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 64,
+   "practice_after": 0.9966666666666667,
+   "kept": true
+  }
+ ],
+ "practice_damaged": 0.59,
+ "practice_final": 0.9966666666666667,
+ "test_final": 0.992,
+ "numbers_changed_vs_intact": 0,
+ "numbers_differing_from_intact_after_damage": 64
+}

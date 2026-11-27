@@ -1,0 +1,39 @@
+{
+ "case": "flip#2",
+ "damage": "embedding row of token '7' (tok.weight[7]) multiplied by -1",
+ "editor": "opus",
+ "test_intact": 0.992,
+ "test_damaged": 0.587,
+ "rounds": [
+  {
+   "round": 1,
+   "prompt_chars": 40355,
+   "reply": {
+    "diagnosis": "Most of the wrong answers have a 7 in one of the operands, and the model treats that 7 as roughly a 2 (sometimes a 3), whether it is in the tens or the units place. For example, 70+26 gives 46, 21+75 gives 46, 22+47 gives 64, 31+71 gives 52 and 30+79 gives 59. A consistent shift of 5 (7\u21922) is what you would expect if the 7 embedding had been negated: if the digit embeddings encode digits periodically (mod 10), flipping the sign acts like adding 5 to the digit. I can't test this here, so it's a hypothesis. tok.weight[7] also has unusually large values (-2.5, +2.3), which suggests that row was the one damaged.",
+    "edits": [
+     {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 7,
+      "factor": -1
+     }
+    ],
+    "expected_effect": "If the hypothesis is right, inputs containing a 7 should be read correctly again, which would fix most of the listed failures and move the practice score toward the high 90s. If the score drops, the harness will reject the edit and the sign-flip idea is wrong."
+   },
+   "meta": {
+    "seconds": 33.7,
+    "cost_usd": 0.0557078,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 64,
+   "practice_after": 0.9966666666666667,
+   "kept": true
+  }
+ ],
+ "practice_damaged": 0.59,
+ "practice_final": 0.9966666666666667,
+ "test_final": 0.992,
+ "numbers_changed_vs_intact": 0,
+ "numbers_differing_from_intact_after_damage": 64
+}

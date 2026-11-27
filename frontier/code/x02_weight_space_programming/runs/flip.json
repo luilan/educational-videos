@@ -1,0 +1,120 @@
+{
+ "case": "flip",
+ "damage": "embedding row of token '7' (tok.weight[7]) multiplied by -1",
+ "editor": "opus",
+ "test_intact": 0.992,
+ "test_damaged": 0.587,
+ "rounds": [
+  {
+   "round": 1,
+   "prompt_chars": 40355,
+   "reply": {
+    "diagnosis": "Most of the wrong answers are what you would get if an input digit 7 were read as 2: 70+26=46 (=20+26), 71+39=60 (=21+39), 78+95=123 (=28+95), 97+38=130 (=92+38), 27+25=47 (=22+25), 72+89=111, 73+99=122, 57+36=88 and 77+97=124. Answers that should contain a 7 are still written correctly (for example 35+43=77), so the output head looks fine. The fault seems to be in how token 7 is embedded on the input side (tok.weight[7]). That row holds the largest magnitudes in the embedding table (-2.516 at col 4, +2.259 at col 31, +1.803, +1.523), which fits it having been scaled up. Many fewer errors look like a 2 or 3 being misread as a nearby digit; this edit does not address those.",
+    "edits": [
+     {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 7,
+      "factor": 0.6
+     }
+    ],
+    "expected_effect": "This is a guess. I can't tell from the weights alone how the row was damaged, so I picked a factor of 0.6. If the row really was inflated, shrinking it should bring the 7 embedding back to where the attention and MLP layers can tell it apart from 2. That would fix the large group of errors where a 7 is misread, and the practice score should rise noticeably. If the score doesn't improve, the harness will reject the edit and a different correction for tok.weight[7] should be tried."
+   },
+   "meta": {
+    "seconds": 24.9,
+    "cost_usd": 0.27385360000000003,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 64,
+   "practice_after": 0.59,
+   "kept": false
+  },
+  {
+   "round": 2,
+   "prompt_chars": 41123,
+   "reply": {
+    "diagnosis": "Most of the errors look like an input digit 7 being read as a smaller digit, usually 2. Examples: 70+26=46, 27+25=47, 63+37=95, 41+47=83 and 22+71=43. Last round I scaled the whole tok.weight[7] row by 0.6 and the score did not move at all. That fits the model's first step: pre-norm LayerNorm cancels any uniform scaling of a row, so the damage is more likely in the row's direction, meaning one or a few individual numbers. The strongest suspect is tok.weight[7][4] = -2.516. It is the smallest value in the whole embedding table, and every other digit has a small or positive value in column 4 (-1.07 to +1.44). A large negative spike in that one column could push 7's normalised embedding toward the code the model uses for a smaller digit. This is my best guess from reading the weights, not something I could test. I set the entry to 0 because I don't know its original value.",
+    "edits": [
+     {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       7,
+       4
+      ],
+      "value": 0
+     }
+    ],
+    "expected_effect": "If column 4 is the damaged entry, inputs containing 7 should go back to being read as 7. That would fix most of the listed errors that involve a 7 and could raise the practice score well above 59%. Some errors have no 7 in the input (for example 35+43=77, 32+41=72 and 62+10=70), so this edit alone probably won't fix everything. If the score stays at 59%, the fault is probably in other entries of row 7 or in a different tensor."
+   },
+   "meta": {
+    "seconds": 25.4,
+    "cost_usd": 0.290906,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 1,
+   "practice_after": 0.5933333333333334,
+   "kept": true
+  },
+  {
+   "round": 3,
+   "prompt_chars": 41862,
+   "reply": {
+    "diagnosis": "Most errors still come from an input digit 7 being read as 2 (for example 70+26=46, 30+37=63, 22+47=64, 42+27=64), and in nearly every case the 7 is in the input. Output 7s are mostly written correctly, so the fault is in how token 7 is embedded. Scaling the whole row did nothing, which fits LayerNorm cancelling a uniform scale, so the damage is to the row's direction. Setting tok.weight[7][4] from -2.516 to 0 gave a small gain. My best guess is that this entry had its sign flipped, so the original value was likely about +2.5. Zeroing it only removed the wrong signal. Restoring the positive value should put the token-7 embedding back in the right direction.",
+    "edits": [
+     {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       7,
+       4
+      ],
+      "value": 2.516
+     }
+    ],
+    "expected_effect": "If the sign-flip guess is right, input 7s should stop being read as 2 and the practice score should rise a lot, ideally toward about 99%. If it is wrong, the harness will revert the edit and tok.weight[7][4] stays at 0."
+   },
+   "meta": {
+    "seconds": 17.4,
+    "cost_usd": 0.2697096,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 1,
+   "practice_after": 0.5933333333333334,
+   "kept": false
+  },
+  {
+   "round": 4,
+   "prompt_chars": 42608,
+   "reply": {
+    "diagnosis": "Three rounds of edits to tok.weight[7] moved the score by at most 0.3 points. LayerNorm cancels a uniform scale on that row, and its large entries are about the same size as large entries in other digit rows (row 6 col 9 = 3.02, row 5 col 17 = 2.85). So the embedding is probably not where the damage is. The wrong answers are also broader than \"7 read as 2\": a 7 is read as 3 in several cases (60+37=93, 47+10=53, 29+57=82), and some failures have no 7 in the input at all (35+43=77, 21+19=30). That points to one later component that pushes particular digit values wrong. The clearest outlier in the remaining weights is blocks.1.mlp.0.weight row 55. Its L2 norm is 1.41, about twice the median of 0.67 and well above the next largest (1.13). That fits a hidden neuron whose input weights were scaled up, so it fires too strongly and distorts the digit sums in the second block.",
+    "edits": [
+     {
+      "op": "scale_row",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 55,
+      "factor": 0.5
+     }
+    ],
+    "expected_effect": "If row 55 is the damaged neuron, halving it should bring its norm back to about 0.7, in line with the other rows. That should fix many of the misread-digit errors, and practice accuracy should rise well above 59.3%. If the score doesn't move, this neuron is not the cause. The next suspects would be the outlier rows in the attention input weights (blocks.1 row 29 with norm 1.01, and blocks.0 rows 32 to 44)."
+   },
+   "meta": {
+    "seconds": 19.9,
+    "cost_usd": 0.2725976,
+    "model": "opus",
+    "input_tokens": 2
+   },
+   "numbers_changed": 64,
+   "practice_after": 0.5933333333333334,
+   "kept": false
+  }
+ ],
+ "practice_damaged": 0.59,
+ "practice_final": 0.5933333333333334,
+ "test_final": 0.612,
+ "numbers_changed_vs_intact": 64,
+ "numbers_differing_from_intact_after_damage": 64
+}
