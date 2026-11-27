@@ -21,6 +21,9 @@ RENDERS = "/home/codex/manim-video/llm_series/media/videos"
 MIN_CHAPTER = 10
 CATEGORY_EDUCATION = "27"
 REPO = "https://github.com/luilan/educational-videos"
+STEPSTONE = "https://luilan.github.io/educational-videos/stepstone/"
+STEPSTONE_LINE = (f"Study it one concept at a time in StepStone, the free Android app for this channel's lessons; "
+                  f"new episodes appear in the app by themselves: {STEPSTONE}")
 
 CREDITS = ("Credits\n"
            "Animated with Manim Community Edition (https://www.manim.community), the community-maintained "
@@ -129,7 +132,8 @@ def build(series):
         summary = " ".join(sentence for sentence in re.split(r"(?<=[.!?])\s+", summary)
                            if not re.search(r"questions ask you|your prediction", sentence))
         links = (f"Study guide for this lesson (PDF): {REPO}/blob/main/{series}/study/{vid}_study.pdf\n"
-                 f"All lessons, study guides and source code: {REPO}")
+                 f"All lessons, study guides and source code: {REPO}\n"
+                 f"{STEPSTONE_LINE}")
         parts = [script.TAGLINE.rstrip(".") + ".", links, summary, "Chapters\n" + "\n".join(chapters(study.CONCEPTS, duration)),
                  where, CREDITS]
         if vid in ("v11", "v12", "f14"):
@@ -143,7 +147,7 @@ def build(series):
                          "category_id": CATEGORY_EDUCATION, "privacy": "public",
                          "made_for_kids": False, "contains_synthetic_media": False})
     title, description = cfg["playlist"]
-    description += f"\n\nStudy guides (PDF) and source code: {REPO}"
+    description += f"\n\nStudy guides (PDF) and source code: {REPO}\n{STEPSTONE_LINE}"
     return {"playlist": {"title": title, "description": description, "privacy": "public"},
             "episodes": episodes}
 
@@ -219,7 +223,8 @@ def build_batch(series, numbers, playlist_id=None):
         code_url = f"{REPO}/tree/main/{series}/code/{os.path.basename(f['code'])}"
         links = (f"Study guide for this lesson (PDF): {REPO}/blob/main/{series}/study/{vid}_study.pdf\n"
                  f"Code for this episode: {code_url}\n"
-                 f"All lessons, study guides and source code: {REPO}")
+                 f"All lessons, study guides and source code: {REPO}\n"
+                 f"{STEPSTONE_LINE}")
         summary = plain(study.LESSON["intro"])
         summary = re.sub(r"\b([Tt]his (bonus )?)lesson\b", r"\1video", summary)
         parts = [script.TAGLINE.rstrip(".") + ".", links, summary,
@@ -239,7 +244,7 @@ def build_batch(series, numbers, playlist_id=None):
         playlist = {"id": playlist_id}
     else:
         title, description = cfg["playlist"]
-        playlist = {"title": title, "description": description + f"\n\nStudy guides (PDF) and source code: {REPO}",
+        playlist = {"title": title, "description": description + f"\n\nStudy guides (PDF) and source code: {REPO}\n{STEPSTONE_LINE}",
                     "privacy": "public"}
     return {"playlist": playlist, "episodes": episodes}
 

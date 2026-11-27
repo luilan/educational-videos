@@ -10,9 +10,31 @@ Source code for animated, narrated explainer videos in the style of 3Blue1Brown,
 | [LLMs in Practice](llms-in-practice/) | 12 (P01–P12) | ~30 min | Building with LLMs: prompts, context, sampling, embeddings, RAG, tool use, agents, LoRA, quantization, evaluation, safety. Every episode ships a study guide and runnable code |
 | [Deep Dive](deep-dive/) | 45 (D01–D45) | ~113 min | Inside a modern LLM, piece by piece: BPE, RoPE, attention variants, normalization, training and scaling, MoE, inference tricks, RLHF/DPO, interpretability. Every episode ships a study guide and runnable code |
 | [How AI Agents Work](agents/) | 14 (A01–A14) | ~33 min | Inside a coding-agent harness: the loop, tools, editing, commands, sandboxes and approvals, instructions, the context budget, MCP, sub-agents, evaluation. Real traces from Codex CLI and a local model |
-| [How Generative Models Work](generative/) | 18 planned ([plan](generative/PLAN.md)) | in production | Models that make pictures and sound: autoencoders, VAEs, GANs, diffusion, flow matching, guidance, CLIP, latent diffusion, then spectrograms, audio codecs, text to speech and Whisper. Every model trains on a CPU |
+| [How Generative Models Work](generative/) | 18 (G01–G18) | ~46 min | Models that make pictures and sound: autoencoders, VAEs, GANs, diffusion, flow matching, guidance, CLIP, latent diffusion, then spectrograms, audio codecs, text to speech and Whisper. Every model trains on a CPU |
+| [Reinforcement Learning for LLMs](rl-llms/) | 14 planned ([plan](rl-llms/PLAN.md)) | in production | RL the way language models use it, written from scratch: REINFORCE, baselines, the KL leash, PPO, GRPO, reward models and reward hacking, verifiable rewards, reasoning, agents and self-play |
+| [The Frontier: Self-Improvement and Memory](frontier/) | 16 planned ([plan](frontier/PLAN.md)) | in production | Current research, rebuilt at small scale: models that edit their own weights (weight-space programming, self-rewriting), agents that rewrite their own harness, and memory for agents, upgraded episode by episode |
 
 Foundations is an optional pre-series: each video ends by pointing to the main episodes that use it.
+
+Every episode has a study-guide PDF (`<series>/study/<id>_study.pdf`) and, from LLMs in Practice on, runnable code
+(`<series>/code/<id>_<topic>/`).
+
+## Study with StepStone (Android app)
+
+[**StepStone**](https://luilan.github.io/educational-videos/stepstone/) is a free study companion for these lessons:
+the same concepts, video frames and questions as the study guides, one concept at a time. Each concept unlocks when you
+have answered the one before it, and what you miss comes back for review after 1, 3 and 7 days.
+
+1. On an Android phone (8.0 or newer), open the
+   [download page](https://luilan.github.io/educational-videos/stepstone/) and tap **Download for Android**
+   (or get [StepStone.apk](https://github.com/luilan/educational-videos/releases/latest/download/StepStone.apk)
+   directly). The app is not in the Play Store, so Android asks you to allow installing apps from your browser once.
+2. Open StepStone and pick a series. Start with Foundations or How LLMs Work if you are new.
+3. Nothing else to do: the app checks for new episodes and new versions of itself on its own. New lessons appear as
+   soon as their video is published, and updated lessons get an *Updated* badge. Videos play from YouTube or can be
+   downloaded for offline study.
+
+Source: [stepstone/android](stepstone/android/) · content format: [stepstone/FORMAT.md](stepstone/FORMAT.md)
 
 ## Repository layout
 

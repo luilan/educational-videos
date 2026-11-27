@@ -151,7 +151,10 @@ td.box1 {{ font-size: 13pt; color: #8a93a3; text-align: center; }}
 <li><b>Pass mark: every question in the check correct.</b> If you missed one, rewatch that concept's video segment,
 reread the explanation, and redo only the questions you missed. Tick the concept off below, then move on.</li>
 </ol>
-<div style="margin-top:4pt">It is strongly suggested that you <b>master each concept before starting the next one</b>. Each concept builds on the previous ones.</div></div>
+<div style="margin-top:4pt">It is strongly suggested that you <b>master each concept before starting the next one</b>. Each concept builds on the previous ones.</div>
+<div style="margin-top:4pt">On an Android phone, the same lesson is in <b>StepStone</b>, the free study app for these videos: it unlocks
+one concept at a time, checks your answers and brings back what you missed. New episodes appear in it by themselves.
+Download: luilan.github.io/educational-videos/stepstone</div></div>
 <h3>Concepts in this lesson</h3>
 <table><tr><th>Concept</th><th>Video segment</th><th>Questions</th><th>Mastered</th></tr>{rows}</table>
 {lesson.get('prereq', '')}""")
