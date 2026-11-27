@@ -133,3 +133,59 @@ class GenerativeCover(Scene):
                     Text("Images and Sound", font_size=56, weight=BOLD, color=ORANGE),
                     Text("From noise to pictures and voices", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
         self.add(fit(tb, art, Text("small models · runnable code · study guides", font_size=22, color=GREY_C)))
+
+
+class RLCover(Scene):
+    def construct(self):
+        # a model tries, a checker grades, and the reward curve climbs
+        box = RoundedRectangle(corner_radius=0.2, width=2.0, height=1.0, color=BLUE_C, fill_color=BLUE_C, fill_opacity=0.25)
+        model = VGroup(box, Text("model", font_size=32, weight=BOLD).move_to(box))
+        tries = VGroup()
+        for ans, r in [("85.", 1), ("75.", 0), ("85.", 1), ("8.", 0)]:
+            col = GREEN_C if r else RED_C
+            badge = VGroup(Circle(radius=0.2, color=col, fill_opacity=0.15, stroke_width=3),
+                           Text(str(r), font_size=20, color=col))
+            badge[1].move_to(badge[0])
+            tries.add(VGroup(token_row(list(ans), font_size=22, buff=0.04), badge).arrange(RIGHT, buff=0.18))
+        tries.arrange(DOWN, buff=0.16, aligned_edge=LEFT)
+        flow = VGroup(model, tries).arrange(RIGHT, buff=0.6)
+        arrow = Arrow(model.get_right(), tries.get_left(), buff=0.1, color=GREY_B)
+        ax = Axes(x_range=[0, 10, 10], y_range=[0, 1, 1], x_length=4.6, y_length=1.5, tips=False,
+                  axis_config={"color": GREY_C, "stroke_width": 2})
+        curve = ax.plot(lambda x: 0.14 + 0.8 / (1 + np.exp(-(x - 4.5) * 1.1)), color=YELLOW, stroke_width=5)
+        reward = VGroup(ax, curve, Text("reward", font_size=20, color=YELLOW).next_to(ax, LEFT, buff=0.15))
+        art = VGroup(VGroup(flow, arrow), reward).arrange(DOWN, buff=0.45)
+        tb = VGroup(Text("Reinforcement Learning", font_size=60, weight=BOLD),
+                    Text("for LLMs", font_size=60, weight=BOLD, color=YELLOW),
+                    Text("Learning from a grade, built from scratch", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
+        self.add(fit(tb, art, Text("REINFORCE · PPO · GRPO · reasoning · runnable code", font_size=22, color=GREY_C)))
+
+
+class FrontierCover(Scene):
+    def construct(self):
+        # a network editing its own weights (a loop back onto itself) and a memory beside it
+        rng = np.random.default_rng(11)
+        n, s = 8, 0.3
+        cells = VGroup()
+        for i in range(n):
+            for j in range(n):
+                v = rng.normal()
+                col = interpolate_color(BLUE_D, ORANGE, (np.tanh(v) + 1) / 2)
+                cells.add(Square(side_length=s, stroke_width=0.5, stroke_color=BLACK, fill_color=col, fill_opacity=1)
+                          .move_to([(j - n / 2 + 0.5) * s, (n / 2 - i - 0.5) * s, 0]))
+        edited = cells[19]
+        ring = SurroundingRectangle(edited, buff=0.02, color=YELLOW, stroke_width=4)
+        weights = VGroup(cells, ring, Text("its own weights", font_size=24, color=GREY_B).next_to(cells, DOWN, buff=0.15))
+        box = RoundedRectangle(corner_radius=0.2, width=2.3, height=1.2, color=PURPLE_B, fill_color=PURPLE_B, fill_opacity=0.25)
+        model = VGroup(box, Text("model", font_size=38, weight=BOLD).move_to(box))
+        notes = VGroup(*[RoundedRectangle(corner_radius=0.05, width=1.8, height=0.38, color=TEAL_C, fill_opacity=0.2)
+                         for _ in range(4)]).arrange(DOWN, buff=0.08)
+        memory = VGroup(notes, Text("memory", font_size=24, color=TEAL_C).next_to(notes, UP, buff=0.15))
+        row = VGroup(weights, model, memory).arrange(RIGHT, buff=0.7)
+        edit = CurvedArrow(model.get_top() + 0.05 * UP, ring.get_top() + 0.05 * UP, angle=TAU / 5, color=YELLOW)
+        rem = CurvedArrow(model.get_bottom() + 0.05 * DOWN, notes.get_bottom() + 0.05 * DOWN, angle=TAU / 6, color=TEAL_C)
+        art = VGroup(row, edit, rem)
+        tb = VGroup(Text("The Frontier", font_size=64, weight=BOLD, color=YELLOW),
+                    Text("Self-Improvement and Memory", font_size=48, weight=BOLD),
+                    Text("Models that edit themselves, and remember", font_size=30, color=GREY_B)).arrange(DOWN, buff=0.25)
+        self.add(fit(tb, art, Text("current papers · rebuilt small · runnable code", font_size=22, color=GREY_C)))

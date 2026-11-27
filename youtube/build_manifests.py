@@ -191,6 +191,27 @@ BATCHED = {
                      "runnable code."),
         "where": "Episode {n} of How Generative Models Work. Background: the Foundations and How LLMs Work playlists.",
     },
+    "rl-llms": {
+        "prefix": "r", "label": "Reinforcement Learning for LLMs",
+        "playlist": ("Reinforcement Learning for LLMs",
+                     "Reinforcement learning the way language models use it, built from scratch and measured: learning "
+                     "from a grade, REINFORCE, baselines, the KL leash, PPO and GRPO, reward models and reward hacking, "
+                     "verifiable rewards, learning to reason, RL for agents and self-play. Every algorithm trains on a "
+                     "CPU. Every episode has a study guide (PDF) and runnable code."),
+        "where": "Episode {n} of Reinforcement Learning for LLMs. Background: the How LLMs Work playlist; "
+                 "the Deep Dive post-training episodes are optional.",
+    },
+    "frontier": {
+        "prefix": "x", "label": "The Frontier",
+        "playlist": ("The Frontier: Self-Improvement and Memory",
+                     "Current AI research, rebuilt at a size you can run: models that edit their own weights "
+                     "(weight-space programming and self-rewriting), agents that rewrite their own harness, and "
+                     "memory for agents, upgraded episode by episode and scored on one benchmark. Every paper is "
+                     "named and dated, and single preprints are labelled as such. Every episode has a study guide "
+                     "(PDF) and runnable code."),
+        "where": "Episode {n} of The Frontier: Self-Improvement and Memory. Background: the How LLMs Work and "
+                 "How AI Agents Work playlists.",
+    },
 }
 PRACTICE = "llms-in-practice"
 

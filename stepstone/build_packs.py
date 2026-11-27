@@ -65,7 +65,17 @@ SERIES = {
                    "cover": "youtube/covers/GenerativeCover.jpg",
                    "description": "How models make pictures and voices: autoencoders, VAEs and GANs, diffusion and "
                                   "flow matching, conditioning and guidance, CLIP, latent diffusion, then sound: "
-                                  "spectrograms, audio codecs, text to speech and Whisper."},
+                                  "spectrograms, audio codecs, text to speech and Whisper."},,
+    "rl-llms": {"prefix": "r", "title": "Reinforcement Learning for LLMs", "order": 7, "requires": ["how-llms-work"],
+                "subject": "Machine learning", "cover": "youtube/covers/RLCover.jpg",
+                "description": "Reinforcement learning the way language models use it, built from scratch: learning "
+                               "from a grade, REINFORCE, PPO and GRPO, reward models and reward hacking, verifiable "
+                               "rewards, reasoning, agents and self-play."},
+    "frontier": {"prefix": "x", "title": "The Frontier: Self-Improvement and Memory", "order": 8,
+                 "requires": ["how-llms-work"], "subject": "Machine learning",
+                 "cover": "youtube/covers/FrontierCover.jpg",
+                 "description": "Current research rebuilt small: models that edit their own weights, agents that "
+                                "rewrite their own harness, and memory for agents, upgraded episode by episode."}
 }
 
 
