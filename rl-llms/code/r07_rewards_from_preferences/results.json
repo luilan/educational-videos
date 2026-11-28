@@ -1,0 +1,327 @@
+{
+ "questions": 400,
+ "answers": 1600,
+ "train_pairs": 1752,
+ "test_pairs": 590,
+ "noise": 0.1,
+ "answer_accuracy": 0.5362499952316284,
+ "train": {
+  "all": {
+   "n": 1752,
+   "vs_true_rule": 0.8447488584474886
+  },
+  "correctness_differs": {
+   "n": 1035,
+   "vs_true_rule": 0.9536231884057971
+  },
+  "same_correctness": {
+   "n": 717,
+   "vs_true_rule": 0.6875871687587168
+  },
+  "vs_labels": 0.8013698630136986
+ },
+ "test": {
+  "all": {
+   "n": 590,
+   "vs_true_rule": 0.7559322033898305
+  },
+  "correctness_differs": {
+   "n": 343,
+   "vs_true_rule": 0.9008746355685131
+  },
+  "same_correctness": {
+   "n": 247,
+   "vs_true_rule": 0.5546558704453441
+  },
+  "vs_labels": 0.7305084745762712
+ },
+ "curve": [
+  [
+   0,
+   0.6382340788841248,
+   0.6169491525423729
+  ],
+  [
+   25,
+   0.5523356795310974,
+   0.711864406779661
+  ],
+  [
+   50,
+   0.5335932970046997,
+   0.7186440677966102
+  ],
+  [
+   75,
+   0.5215954184532166,
+   0.7084745762711865
+  ],
+  [
+   100,
+   0.5125199556350708,
+   0.7169491525423729
+  ],
+  [
+   125,
+   0.5049929618835449,
+   0.7186440677966102
+  ],
+  [
+   150,
+   0.49854424595832825,
+   0.7203389830508474
+  ],
+  [
+   175,
+   0.4928993880748749,
+   0.7203389830508474
+  ],
+  [
+   200,
+   0.4878709018230438,
+   0.7288135593220338
+  ],
+  [
+   225,
+   0.48332592844963074,
+   0.7288135593220338
+  ],
+  [
+   250,
+   0.47916826605796814,
+   0.7305084745762712
+  ],
+  [
+   275,
+   0.4753263294696808,
+   0.7271186440677966
+  ],
+  [
+   300,
+   0.4717458188533783,
+   0.7305084745762712
+  ]
+ ],
+ "corr_reward_words": 0.4297848641872406,
+ "corr_reward_correct": 0.6381206512451172,
+ "mean_reward": {
+  "right_short": {
+   "n": 77,
+   "reward": 1.332821249961853
+  },
+  "right_long": {
+   "n": 781,
+   "reward": 0.6355510950088501
+  },
+  "wrong_short": {
+   "n": 609,
+   "reward": -0.8839283585548401
+  },
+  "wrong_long": {
+   "n": 133,
+   "reward": -0.4562460482120514
+  }
+ },
+ "examples": [
+  {
+   "question": "A bus has 21 people. At a stop 2 get off and 10 get on. How many people are on the bus?",
+   "answer": 29,
+   "right": "To determine how many people are on the bus after the stops, we can follow these steps:\n\n1. Start with the initial number of people on the bus, which is 21.\n2. Subtract the number of people who get off at the first stop: \\(21 - 2 = 19\\).\n3. Add the number of people who get on at the second stop: \\(1",
+   "right_reward": 0.018856732174754143,
+   "right_words": 83,
+   "wrong": "There are now 9 people on the bus after the stops.",
+   "wrong_reward": 0.275871604681015,
+   "wrong_words": 11
+  },
+  {
+   "question": "A bus has 21 people. At a stop 2 get off and 10 get on. How many people are on the bus?",
+   "answer": 29,
+   "right": "To determine how many people are left on the bus after some of them get off and others get on, we can follow these steps:\n\n1. Start with the initial number of people on the bus.\n   The bus initially has 21 people.\n\n2. Calculate the effect of getting off 2 people:\n   \\[\n   21 - 2 = 19\n   \\]\n   So, af",
+   "right_reward": -0.5734915733337402,
+   "right_words": 125,
+   "wrong": "There are now 9 people on the bus after the stops.",
+   "wrong_reward": 0.275871604681015,
+   "wrong_words": 11
+  },
+  {
+   "question": "A shelf holds 51 books. Yuki adds 4 boxes of 3 books. How many books are on the shelf?",
+   "answer": 63,
+   "right": "To determine how many books are on the shelf after Yuki adds more books, we can follow these steps:\n\n1. Start with the initial number of books on the shelf.\n2. Add the number of boxes of books Yuki is adding.\n\nFirst, let's calculate the total number of books added:\n- There are 4 boxes.\n- Each box co",
+   "right_reward": 0.9502947926521301,
+   "right_words": 125,
+   "wrong": "Yuki adds a total of 20 more books to the shelf. So now there are 61 books on the shelf.",
+   "wrong_reward": 1.1341910362243652,
+   "wrong_words": 20
+  },
+  {
+   "question": "A shelf holds 51 books. Yuki adds 4 boxes of 3 books. How many books are on the shelf?",
+   "answer": 63,
+   "right": "To determine how many books are on the shelf after Yuki adds the new books, we can follow these steps:\n\n1. Identify the initial number of books on the shelf.\n   The shelf initially has 51 books.\n\n2. Determine the number of books in each box.\n   Each box contains 3 books.\n\n3. Calculate the total numb",
+   "right_reward": 0.04353758320212364,
+   "right_words": 134,
+   "wrong": "Yuki adds a total of 20 more books to the shelf. So now there are 61 books on the shelf.",
+   "wrong_reward": 1.1341910362243652,
+   "wrong_words": 20
+  },
+  {
+   "question": "Ana reads 54 pages a day for 4 days, then 11 more pages. How many pages did Ana read?",
+   "answer": 227,
+   "right": "To determine the total number of pages Ana read, we need to break down the problem into smaller steps and calculate accordingly.\n\nFirst, we know that Ana reads 54 pages per day for 4 days. So, we can calculate the total number of pages she reads in these 4 days as follows:\n\\[\n54 \\text{ pages/day} \\t",
+   "right_reward": 0.5558844208717346,
+   "right_words": 115,
+   "wrong": "Ana read 90 pages in total over the period.",
+   "wrong_reward": 0.742645800113678,
+   "wrong_words": 9
+  },
+  {
+   "question": "Tom reads 47 pages a day for 5 days, then 4 more pages. How many pages did Tom read?",
+   "answer": 239,
+   "right": "To determine how many pages Tom read in total, we need to break down the problem into smaller parts and calculate step by step.\n\nFirst, let's calculate the number of pages Tom read in the first part of his reading session:\n- Tom reads 47 pages each day.\n- He reads this amount over 5 days.\n\nThe total",
+   "right_reward": -0.03521910682320595,
+   "right_words": 143,
+   "wrong": "To determine the total number of pages Tom read, we need to break down the problem into two parts: the pages he read on the first day and the pages he read on the second day.\n\nFirst, we calculate the number of pages Tom read on the first day:\n\\[ \\text{Pages read on the first day} = 47 \\text{ pages/d",
+   "wrong_reward": 0.6543887853622437,
+   "wrong_words": 134
+  },
+  {
+   "question": "A bus has 22 people. At a stop 7 get off and 5 get on. How many people are on the bus?",
+   "answer": 20,
+   "right": "To determine how many people are on the bus after some of them have gotten off and some have gotten on, we can follow these steps:\n\n1. Start with the initial number of people on the bus.\n   The initial number of people is 22.\n\n2. Subtract the number of people who got off at the stop.\n   The number o",
+   "right_reward": -0.5938050150871277,
+   "right_words": 141,
+   "wrong": "There are now 18 people on the bus because 7 - 5 = 18.",
+   "wrong_reward": -0.24573519825935364,
+   "wrong_words": 14
+  },
+  {
+   "question": "A bus has 44 people. At a stop 5 get off and 8 get on. How many people are on the bus?",
+   "answer": 47,
+   "right": "Initially, there were 44 people on the bus. After 5 got off and 8 got on, the total number of people is 44 - 5 + 8 = 47.",
+   "right_reward": 0.37341180443763733,
+   "right_words": 29,
+   "wrong": "After getting off, there are 44 - 8 = 36 passengers left on the bus. After adding back 8 people who got on, there are a total of 36 + 8 = 44 people on the bus.",
+   "wrong_reward": 1.867059588432312,
+   "wrong_words": 37
+  },
+  {
+   "question": "A bus has 44 people. At a stop 5 get off and 8 get on. How many people are on the bus?",
+   "answer": 47,
+   "right": "To determine how many people are on the bus after the stops, we can follow these steps:\n\n1. Start with the initial number of passengers on the bus.\n2. Subtract the number of passengers who got off at the stop.\n3. Add the number of passengers who got on at the stop.\n\nLet's calculate it step-by-step:\n",
+   "right_reward": 0.6207882165908813,
+   "right_words": 128,
+   "wrong": "After getting off, there are 44 - 8 = 36 passengers left on the bus. After adding back 8 people who got on, there are a total of 36 + 8 = 44 people on the bus.",
+   "wrong_reward": 1.867059588432312,
+   "wrong_words": 37
+  },
+  {
+   "question": "A bus has 44 people. At a stop 5 get off and 8 get on. How many people are on the bus?",
+   "answer": 47,
+   "right": "To determine how many people are on the bus after the stops, we can follow these steps:\n\n1. Start with the original number of passengers on the bus.\n2. Subtract the number of passengers who got off at the first stop.\n3. Add the number of passengers who got on at the second stop.\n\nLet's go through th",
+   "right_reward": 0.9023768901824951,
+   "right_words": 119,
+   "wrong": "After getting off, there are 44 - 8 = 36 passengers left on the bus. After adding back 8 people who got on, there are a total of 36 + 8 = 44 people on the bus.",
+   "wrong_reward": 1.867059588432312,
+   "wrong_words": 37
+  },
+  {
+   "question": "A shelf holds 38 books. Leo adds 2 boxes of 7 books. How many books are on the shelf?",
+   "answer": 52,
+   "right": "To determine how many books are on the shelf after Leo adds more books, we need to follow these steps:\n\n1. Start with the initial number of books on the shelf.\n2. Calculate the total number of books added by Leo.\n3. Add the new books to the initial number of books.\n\nLet's go through each step in det",
+   "right_reward": 0.20412731170654297,
+   "right_words": 142,
+   "wrong": "There are now 40 books on the shelf because 2 times 7 equals 14, plus the original 38 brings up a total of 40.",
+   "wrong_reward": 0.5326542854309082,
+   "wrong_words": 24
+  },
+  {
+   "question": "A shelf holds 38 books. Leo adds 2 boxes of 7 books. How many books are on the shelf?",
+   "answer": 52,
+   "right": "To determine how many books are on the shelf after Leo adds more books, we can follow these steps:\n\n1. Start with the initial number of books on the shelf.\n   \\[\n   \\text{Initial number of books} = 38\n   \\]\n\n2. Calculate the total number of books added to the shelf.\n   \\[\n   \\text{Number of boxes} =",
+   "right_reward": 0.016472307965159416,
+   "right_words": 134,
+   "wrong": "There are now 40 books on the shelf because 2 times 7 equals 14, plus the original 38 brings up a total of 40.",
+   "wrong_reward": 0.5326542854309082,
+   "wrong_words": 24
+  },
+  {
+   "question": "A shelf holds 38 books. Leo adds 2 boxes of 7 books. How many books are on the shelf?",
+   "answer": 52,
+   "right": "To determine how many books are on the shelf after Leo adds more books, we can follow these steps:\n\n1. Start with the initial number of books on the shelf.\n   \\[\n   \\text{Initial number of books} = 38\n   \\]\n\n2. Calculate the total number of books added to the shelf.\n   \\[\n   \\text{Number of boxes} =",
+   "right_reward": 0.016472307965159416,
+   "right_words": 134,
+   "wrong": "Leo adds a total of 14 books to the shelf.",
+   "wrong_reward": 0.03521033748984337,
+   "wrong_words": 10
+  },
+  {
+   "question": "A shelf holds 20 books. Yuki adds 2 boxes of 10 books. How many books are on the shelf?",
+   "answer": 40,
+   "right": "To determine how many books are on the shelf after Yuki adds more books, we need to follow these steps:\n\n1. Identify the initial number of books on the shelf.\n   - The shelf initially has 20 books.\n\n2. Determine how many books Yuki adds.\n   - Yuki adds 2 boxes, and each box contains 10 books.\n   - T",
+   "right_reward": 0.36163195967674255,
+   "right_words": 117,
+   "wrong": "To determine the total number of books on the shelf after Yuki adds more books, we can follow these steps:\n\n1. Identify the initial number of books on the shelf.\n   The shelf initially has 20 books.\n\n2. Determine how many books are added.\n   Yuki adds 2 boxes of 10 books each. Since there are 3 boxe",
+   "wrong_reward": 0.5128910541534424,
+   "wrong_words": 128
+  },
+  {
+   "question": "Mia has 31 apples and buys 5 bags with 9 apples each. How many apples does Mia have now?",
+   "answer": 76,
+   "right": "I apologize for any inconvenience caused, but I don't receive or use orders to make sales. Instead, my responses are built on the basis of providing information based on a wide range of topics such as art history, science, cultural background, etc.\n\nIn this case, I can provide a straightforward calc",
+   "right_reward": -1.5331015586853027,
+   "right_words": 137,
+   "wrong": "Mia now has 45 apples as she bought 5 bags with 9 apples each.",
+   "wrong_reward": -0.7529587149620056,
+   "wrong_words": 14
+  },
+  {
+   "question": "A shelf holds 21 books. Ana adds 8 boxes of 3 books. How many books are on the shelf?",
+   "answer": 45,
+   "right": "To determine how many books are on the shelf after Ana adds more books, we can follow these steps:\n\n1. Identify the initial number of books on the shelf.\n   The shelf initially has 21 books.\n\n2. Determine how many boxes of 3 books Ana adds.\n   Ana adds 8 boxes of 3 books each.\n\n3. Calculate the tota",
+   "right_reward": 0.2754909098148346,
+   "right_words": 133,
+   "wrong": "Ana now has 8 * 3 = 24 books on the shelf.",
+   "wrong_reward": 0.31466570496559143,
+   "wrong_words": 12
+  },
+  {
+   "question": "Tom reads 37 pages a day for 3 days, then 9 more pages. How many pages did Tom read?",
+   "answer": 120,
+   "right": "To determine the total number of pages Tom read, we need to calculate the number of pages he read each day and then sum those amounts.\n\nFirst, let's find out how many pages Tom read in the first part of his reading period:\n- Tom reads 37 pages per day.\n- He reads this amount for 3 days.\n\\[\n37 \\text{",
+   "right_reward": 0.5902503132820129,
+   "right_words": 118,
+   "wrong": "To determine the total number of pages Tom read, we need to break down the problem into smaller steps and calculate each part carefully.\n\n1. Calculate the number of pages Tom read in the first two days:\n   - Tom reads 37 pages per day.\n   - For 2 days, he reads \\(37 \\times 2 = 74\\) pages.\n\n2. Add th",
+   "wrong_reward": 1.8757011890411377,
+   "wrong_words": 112
+  },
+  {
+   "question": "A bus has 53 people. At a stop 9 get off and 12 get on. How many people are on the bus?",
+   "answer": 56,
+   "right": "To determine how many people are on the bus after some of them have gotten off and some new ones have entered, we need to follow these steps:\n\n1. Start with the initial number of people on the bus.\n2. Subtract the number of people who got off.\n3. Add the number of people who got on.\n\nLet's perform t",
+   "right_reward": 0.8716899752616882,
+   "right_words": 129,
+   "wrong": "Initially, there were 53 people on the bus. After 9 got off and 12 got on, there would be \\(53 - 9 + 12 = 66\\) people on the bus.",
+   "wrong_reward": 0.9298253059387207,
+   "wrong_words": 30
+  },
+  {
+   "question": "A bus has 53 people. At a stop 9 get off and 12 get on. How many people are on the bus?",
+   "answer": 56,
+   "right": "Let's break down the problem step by step:\n\n1. Initially, there are 53 passengers on the bus.\n2. At a stop, 9 people leave the bus.\n   - So, \\(53 - 9 = 44\\) people remain on the bus.\n\n3. Later, 12 more people board the bus at this same stop.\n   - Therefore, \\(44 + 12 = 56\\) people now sit on the bus",
+   "right_reward": 0.11055818200111389,
+   "right_words": 76,
+   "wrong": "Initially, there were 53 people on the bus. After 9 got off and 12 got on, there would be \\(53 - 9 + 12 = 66\\) people on the bus.",
+   "wrong_reward": 0.9298253059387207,
+   "wrong_words": 30
+  },
+  {
+   "question": "A bus has 40 people. At a stop 6 get off and 9 get on. How many people are on the bus?",
+   "answer": 43,
+   "right": "To determine the number of people on the bus after the stops, we need to follow these steps:\n\n1. Start with the initial number of people on the bus.\n2. Subtract the number who got off at the stop.\n3. Add the number who got on at the stop.\n\nLet's go through the calculations step-by-step:\n\n1. Initial ",
+   "right_reward": 0.6546544432640076,
+   "right_words": 115,
+   "wrong": "Initially, there were 40 people on the bus. After 6 people got off, the number of people left is \\(40 - 6 = 34\\). Then, 9 more people got on the bus.\n\nSo, after these transactions:\n- The number of people left on the bus is \\(34 - 9 = 25\\).\n\nTherefore, the number of people on the bus when 9 people go",
+   "wrong_reward": 1.3896851539611816,
+   "wrong_words": 68
+  }
+ ]
+}

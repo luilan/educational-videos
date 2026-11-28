@@ -1,0 +1,2 @@
+short: 32 answers, accuracy 0.19, 65s
+long: 32 answers, accuracy 0.97, 665s

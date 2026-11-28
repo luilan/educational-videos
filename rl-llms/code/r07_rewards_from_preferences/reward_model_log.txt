@@ -1,0 +1,58 @@
+{
+ "questions": 400,
+ "answers": 1600,
+ "train_pairs": 1752,
+ "test_pairs": 590,
+ "noise": 0.1,
+ "answer_accuracy": 0.5362499952316284,
+ "train": {
+  "all": {
+   "n": 1752,
+   "vs_true_rule": 0.8447488584474886
+  },
+  "correctness_differs": {
+   "n": 1035,
+   "vs_true_rule": 0.9536231884057971
+  },
+  "same_correctness": {
+   "n": 717,
+   "vs_true_rule": 0.6875871687587168
+  },
+  "vs_labels": 0.8013698630136986
+ },
+ "test": {
+  "all": {
+   "n": 590,
+   "vs_true_rule": 0.7559322033898305
+  },
+  "correctness_differs": {
+   "n": 343,
+   "vs_true_rule": 0.9008746355685131
+  },
+  "same_correctness": {
+   "n": 247,
+   "vs_true_rule": 0.5546558704453441
+  },
+  "vs_labels": 0.7305084745762712
+ },
+ "corr_reward_words": 0.4297848641872406,
+ "corr_reward_correct": 0.6381206512451172,
+ "mean_reward": {
+  "right_short": {
+   "n": 77,
+   "reward": 1.332821249961853
+  },
+  "right_long": {
+   "n": 781,
+   "reward": 0.6355510950088501
+  },
+  "wrong_short": {
+   "n": 609,
+   "reward": -0.8839283585548401
+  },
+  "wrong_long": {
+   "n": 133,
+   "reward": -0.4562460482120514
+  }
+ }
+}
