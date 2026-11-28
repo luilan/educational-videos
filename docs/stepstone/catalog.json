@@ -101,6 +101,40 @@
    "size": 10361937,
    "sha256": "14be63fe018417265cbc7c2b9767963b6828836996883d9f9690330745858244",
    "lessons": 18
+  },
+  {
+   "id": "rl-llms",
+   "title": "Reinforcement Learning for LLMs",
+   "description": "Reinforcement learning the way language models use it, built from scratch: learning from a grade, REINFORCE, PPO and GRPO, reward models and reward hacking, verifiable rewards, reasoning, agents and self-play.",
+   "subject": "Machine learning",
+   "order": 7,
+   "requires": [
+    "how-llms-work"
+   ],
+   "version": 1,
+   "content_hash": "ef444d6b6fa49fa1",
+   "file": "rl-llms-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/rl-llms-v1.zip",
+   "size": 1733182,
+   "sha256": "b5a80ce8e1de6e10b11ae9f9bbd8be6abc02a5282eb0a0447844b361c2aec9e0",
+   "lessons": 3
+  },
+  {
+   "id": "frontier",
+   "title": "The Frontier: Self-Improvement and Memory",
+   "description": "Current research rebuilt small: models that edit their own weights, agents that rewrite their own harness, and memory for agents, upgraded episode by episode.",
+   "subject": "Machine learning",
+   "order": 8,
+   "requires": [
+    "how-llms-work"
+   ],
+   "version": 1,
+   "content_hash": "260fe0e8f942ff0c",
+   "file": "frontier-v1.zip",
+   "url": "https://github.com/luilan/educational-videos/releases/download/stepstone-packs/frontier-v1.zip",
+   "size": 1375042,
+   "sha256": "fe1684cdf30309ded0e005463483763a22918e053e0d6f0bed261ebce82bbd1b",
+   "lessons": 2
   }
  ],
  "app": {
