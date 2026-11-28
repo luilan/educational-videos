@@ -1,0 +1,2272 @@
+{
+ "method": "probe",
+ "practice_start": 0.22916666666666666,
+ "test_start": 0.255,
+ "rounds": [
+  {
+   "round": 1,
+   "practice_before": 0.22916666666666666,
+   "probe_base": -1.1144672632217407,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.04082369804382324
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.030811786651611328
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.025911808013916016
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.02474057674407959
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.020783424377441406
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.020250678062438965
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.020158886909484863
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.018771648406982422
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01780879497528076
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.014911890029907227
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.04082369804382324
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.25,
+     "probe_effect": 0.030811786651611328
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.025911808013916016
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.02474057674407959
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 2,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 3,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 4,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 5,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 6,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 7,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 8,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 9,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 10,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 11,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 12,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 13,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 14,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 15,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 16,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 17,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 18,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 19,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 20,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 21,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 22,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 23,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 24,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 25,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.1264147758483887,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.039530277252197266
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032555222511291504
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.026621341705322266
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02504265308380127
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.021991729736328125
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.019173860549926758
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01887369155883789
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.017580866813659668
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.016582369804382324
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.01641058921813965
+    ]
+   ],
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": -0.039530277252197266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.032555222511291504
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.026621341705322266
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": 0.02504265308380127
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  }
+ ],
+ "kept": [
+  {
+   "round": 1,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.3.input_layernorm.weight",
+    "factor": 1.1
+   },
+   "practice": 0.2708333333333333,
+   "test": 0.27
+  }
+ ],
+ "practice_final": 0.2708333333333333,
+ "test_final": 0.27,
+ "seconds": 5426
+}

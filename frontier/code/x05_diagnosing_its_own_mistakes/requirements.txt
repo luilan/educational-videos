@@ -1,0 +1,2 @@
+torch>=2.5
+transformers>=5.2      # Qwen3.5 support (we used 5.24.1, in a separate venv from the other episodes)

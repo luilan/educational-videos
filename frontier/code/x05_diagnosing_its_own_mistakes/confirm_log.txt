@@ -1,0 +1,32 @@
+original 0.348
+x05 diagnose + probe 0.424
+x05 probe only 0.358
+x04 self-edits 0.341
+x04 random edits 0.361
+{
+ "original": {
+  "accuracy": 0.348,
+  "gained": 0,
+  "lost": 0
+ },
+ "x05 diagnose + probe": {
+  "accuracy": 0.424,
+  "gained": 87,
+  "lost": 11
+ },
+ "x05 probe only": {
+  "accuracy": 0.358,
+  "gained": 12,
+  "lost": 2
+ },
+ "x04 self-edits": {
+  "accuracy": 0.341,
+  "gained": 30,
+  "lost": 37
+ },
+ "x04 random edits": {
+  "accuracy": 0.361,
+  "gained": 35,
+  "lost": 22
+ }
+}

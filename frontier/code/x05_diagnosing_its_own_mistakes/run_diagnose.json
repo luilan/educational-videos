@@ -1,0 +1,2272 @@
+{
+ "method": "diagnose",
+ "practice_start": 0.22916666666666666,
+ "test_start": 0.255,
+ "rounds": [
+  {
+   "round": 1,
+   "practice_before": 0.22916666666666666,
+   "probe_base": -1.1144672632217407,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.040824055671691895
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.030811786651611328
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.025912165641784668
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.02474069595336914
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.020783424377441406
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.020250678062438965
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.020159125328063965
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.018771767616271973
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.017808914184570312
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.014912009239196777
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** (specifically, you are adding the numbers in the hundreds column instead of the ones column).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.2.post_attention_layernorm.weight\", \"factor\": \"1.0\"}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.22916666666666666,
+     "probe_effect": -0.014912009239196777
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": model.layers.1.input_layernorm.weight, \"factor\": 1.0}\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.9.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.9.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.1875,
+     "probe_effect": -0.018771767616271973
+    },
+    {
+     "raw": "```json\n{\"op\": \"set\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"value\": 0.0208}\n```\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.22916666666666666
+  },
+  {
+   "round": 2,
+   "practice_before": 0.22916666666666666,
+   "probe_base": -1.1144672632217407,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.040824055671691895
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.030811786651611328
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.025912165641784668
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.02474069595336914
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.020783424377441406
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.020250678062438965
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.020159125328063965
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.018771767616271973
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.017808914184570312
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.014912009239196777
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** (specifically, you are adding the numbers in the hundreds column instead of the ones column).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.0}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.22916666666666666,
+     "probe_effect": 0.008334994316101074
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": 0.008334994316101074
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.1875,
+     "probe_effect": 0.008334994316101074
+    },
+    {
+     "raw": "\"{op\": \"set\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"index\": 1, \"value\": 11.0}\"\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 3,
+   "practice_before": 0.25,
+   "probe_base": -1.1416867971420288,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.03927493095397949
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.031087279319763184
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.025320887565612793
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.0224076509475708
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.020795822143554688
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.020516157150268555
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.019553422927856445
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01783311367034912
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.01778578758239746
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.015520215034484863
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** (specifically, the tens digit) of the numbers you are adding, rather than in the addition itself. You are adding the numbers as if they were in the same column, but you are actually adding the numbers in the **same column**",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.7.post_attention_layernorm.weight\", \"index\": 0, \"value\": 1.0}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.7.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 1.0
+     },
+     "practice": 0.25,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.2.post_attention_layernorm.weight\", \"index\": 1, \"value\": 1.1}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.2.post_attention_layernorm.weight",
+      "index": 1,
+      "value": 1.1
+     },
+     "practice": 0.25,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.6.post_attention_layernorm.weight\", \"factor\": 0.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.16666666666666666,
+     "probe_effect": 0.004707217216491699
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.14.post_attention_layernorm.weight\", \"factor\": 0.01}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 0.01
+     },
+     "practice": 0.10416666666666667,
+     "probe_effect": 0.031087279319763184
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 4,
+   "practice_before": 0.25,
+   "probe_base": -1.1416867971420288,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.03927493095397949
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.031087279319763184
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.025320887565612793
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.0224076509475708
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.020795822143554688
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.020516157150268555
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.019553422927856445
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.01783311367034912
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.01778578758239746
+    ],
+    [
+     "model.layers.2.post_attention_layernorm.weight",
+     -0.015520215034484863
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** (specifically, the tens digit) of the numbers you are adding, rather than in the addition itself. You are adding the numbers as if they were in the same column, but you are actually adding the numbers in the **same column**",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25,
+     "probe_effect": 0.006112933158874512
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.2.post_attention_layernorm.weight\", \"factor\": 0.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.post_attention_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.015520215034484863
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.2.input_layernorm.weight\", \"factor\": 0.8999}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.8999
+     },
+     "practice": 0.25,
+     "probe_effect": -0.03927493095397949
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.6.post_attention_layernorm.weight\",\n  \"factor\": 1.05\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "factor": 1.05
+     },
+     "practice": 0.25,
+     "probe_effect": 0.004707217216491699
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 5,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.0771937370300293,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.034255266189575195
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.0333331823348999
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.023847103118896484
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.023305177688598633
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.021346211433410645
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.01770925521850586
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.016416072845458984
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.015577316284179688
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.015549540519714355
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.014573454856872559
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the second digit from the right).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.input_layernorm.weight\", \"factor\": 0.8}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.8
+     },
+     "practice": 0.25,
+     "probe_effect": -0.021346211433410645
+    },
+    {
+     "raw": "```json\n{\"op\": \"set\", \"tensor\": \"model.layers.2.input_layernorm.weight\", \"index\": 1, \"value\": 0.96}\n```\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "index": 1,
+      "value": 0.96
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": null
+    },
+    {
+     "raw": "[{\"op\": \"set\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"value\": 0.12, \"index\": 1}]\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "index": 1,
+      "value": 0.12
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.3.post_attention_layernorm.weight\",\n  \"factor\": 0.5\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.1875,
+     "probe_effect": 0.01770925521850586
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 6,
+   "practice_before": 0.2708333333333333,
+   "probe_base": -1.0771937370300293,
+   "probe_top": [
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.034255266189575195
+    ],
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.0333331823348999
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.023847103118896484
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.023305177688598633
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.021346211433410645
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.01770925521850586
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.016416072845458984
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.015577316284179688
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.015549540519714355
+    ],
+    [
+     "model.layers.13.input_layernorm.weight",
+     0.014573454856872559
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the second digit from the right).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.0017412900924682617
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.2.post_attention_layernorm.weight\", \"factor\": 0.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.post_attention_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": -0.0067604780197143555
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.1.input_layernorm.weight\", \"value\": 0.99}\n",
+     "edit": null
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": model.layers.1.input_layernorm.weight,\n  \"factor\": 1.0\n}\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 7,
+   "practice_before": 0.2916666666666667,
+   "probe_base": -1.0570917129516602,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032248854637145996
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.02483534812927246
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.024701952934265137
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.024063467979431152
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020276188850402832
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.016823649406433105
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.016089916229248047
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.014916658401489258
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.014743208885192871
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.012917637825012207
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.5.post_attention_layernorm.weight\",\n  \"factor\": 1.2\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.5.post_attention_layernorm.weight",
+      "factor": 1.2
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.008713483810424805
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": -0.0005729198455810547
+    },
+    {
+     "raw": "[{\"op\": \"set\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"index\": 1, \"value\": 0.0177}]\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "index": 1,
+      "value": 0.0177
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.4.input_layernorm.weight\", \"index\": 0, \"value\": 0.0204}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.4.input_layernorm.weight",
+      "index": 0,
+      "value": 0.0204
+     },
+     "practice": 0.25,
+     "probe_effect": null
+    }
+   ],
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 8,
+   "practice_before": 0.2916666666666667,
+   "probe_base": -1.0570917129516602,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032248854637145996
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.02483534812927246
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.024701952934265137
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.024063467979431152
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020276188850402832
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.016823649406433105
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.016089916229248047
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.014916658401489258
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.014743208885192871
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.012917637825012207
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.20833333333333334,
+     "probe_effect": 0.016823649406433105
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.91}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.91
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": -0.0005729198455810547
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.10.post_attention_layernorm.weight\", \"factor\": 0.8}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.10.post_attention_layernorm.weight",
+      "factor": 0.8
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": -0.0001246929168701172
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 1.0}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": 0.016823649406433105
+    }
+   ],
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 9,
+   "practice_before": 0.2916666666666667,
+   "probe_base": -1.0570917129516602,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032248854637145996
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.02483534812927246
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.024701952934265137
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.024063467979431152
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020276188850402832
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.016823649406433105
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.016089916229248047
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.014916658401489258
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.014743208885192871
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.012917637825012207
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "```json\n{\"op\": \"set\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"index\": 2, \"value\": -0.0203}\n```\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "index": 2,
+      "value": -0.0203
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.16.post_attention_layernorm.weight\",\n  \"factor\": 1.5\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.16.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.1875,
+     "probe_effect": -0.0028504133224487305
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.1.input_layernorm.weight\", \"index\": 0, \"value\": 0.5}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "index": 0,
+      "value": 0.5
+     },
+     "practice": 0.22916666666666666,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": 0.016823649406433105
+    }
+   ],
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 10,
+   "practice_before": 0.2916666666666667,
+   "probe_base": -1.0570917129516602,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032248854637145996
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.02483534812927246
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.024701952934265137
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.024063467979431152
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020276188850402832
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.016823649406433105
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.016089916229248047
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.014916658401489258
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.014743208885192871
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.012917637825012207
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"index\": 1, \"value\": 2.5}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "index": 1,
+      "value": 2.5
+     },
+     "practice": 0.25,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.25,
+     "probe_effect": -0.0005729198455810547
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": 0.016823649406433105
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 0.99}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 0.99
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": 0.016823649406433105
+    }
+   ],
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 11,
+   "practice_before": 0.2916666666666667,
+   "probe_base": -1.0570917129516602,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032248854637145996
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.02483534812927246
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.024701952934265137
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.024063467979431152
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020276188850402832
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.016823649406433105
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.016089916229248047
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.014916658401489258
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.014743208885192871
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.012917637825012207
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 0.8}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 0.8
+     },
+     "practice": 0.20833333333333334,
+     "probe_effect": 0.016823649406433105
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 0.95}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 0.95
+     },
+     "practice": 0.22916666666666666,
+     "probe_effect": 0.016823649406433105
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.2.post_attention_layernorm.weight\", \"index\": 0, \"value\": 1.1}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.2.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 1.1
+     },
+     "practice": 0.0625,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.2.input_layernorm.weight\", \"factor\": 1.05}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 1.05
+     },
+     "practice": 0.22916666666666666,
+     "probe_effect": -0.024701952934265137
+    }
+   ],
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 12,
+   "practice_before": 0.2916666666666667,
+   "probe_base": -1.0570917129516602,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.032248854637145996
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.02483534812927246
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.024701952934265137
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.024063467979431152
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020276188850402832
+    ],
+    [
+     "model.layers.3.post_attention_layernorm.weight",
+     0.016823649406433105
+    ],
+    [
+     "model.layers.16.input_layernorm.weight",
+     0.016089916229248047
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.014916658401489258
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.014743208885192871
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.012917637825012207
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"index\": 0, \"value\": 1.1}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 1.1
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.3}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.3
+     },
+     "practice": 0.3125,
+     "probe_effect": -0.0005729198455810547
+    },
+    {
+     "raw": "```json\n{\"op\": \"set\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"value\": 1.0}\n```\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.16.post_attention_layernorm.weight\", \"index\": 0, \"value\": 1.5}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.16.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 1.5
+     },
+     "practice": 0.22916666666666666,
+     "probe_effect": null
+    }
+   ],
+   "practice_after": 0.3125
+  },
+  {
+   "round": 13,
+   "practice_before": 0.3125,
+   "probe_base": -1.06459379196167,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.026520133018493652
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02020108699798584
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.017970800399780273
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.016234755516052246
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.015562891960144043
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.013505220413208008
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.013482809066772461
+    ],
+    [
+     "model.layers.10.input_layernorm.weight",
+     0.01265716552734375
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.012372851371765137
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.011603593826293945
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"factor\": 1.05}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "factor": 1.05
+     },
+     "practice": 0.3125,
+     "probe_effect": -0.010340213775634766
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"index\": 0, \"value\": 0.5}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 0.5
+     },
+     "practice": 0.2708333333333333,
+     "probe_effect": null
+    },
+    {
+     "raw": "\"No edit is applicable. There are no RMSNorm layers in your model. Please check your model definition.\"\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.14.post_attention_layernorm.weight\", \"value\": 0.045}\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.3125
+  },
+  {
+   "round": 14,
+   "practice_before": 0.3125,
+   "probe_base": -1.06459379196167,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.026520133018493652
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02020108699798584
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.017970800399780273
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.016234755516052246
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.015562891960144043
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.013505220413208008
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.013482809066772461
+    ],
+    [
+     "model.layers.10.input_layernorm.weight",
+     0.01265716552734375
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.012372851371765137
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.011603593826293945
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.6.post_attention_layernorm.weight\", \"factor\": 0.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.25,
+     "probe_effect": 0.0049495697021484375
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.8}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.8
+     },
+     "practice": 0.3125,
+     "probe_effect": -0.0005224943161010742
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"index\": 0, \"value\": 0.93}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 0.93
+     },
+     "practice": 0.125,
+     "probe_effect": null
+    },
+    {
+     "raw": "[{\"op\": \"set\", \"tensor\": \"model.layers.8.post_attention_layernorm.weight\", \"value\": 0.025}]\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.3125
+  },
+  {
+   "round": 15,
+   "practice_before": 0.3125,
+   "probe_base": -1.06459379196167,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.026520133018493652
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02020108699798584
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.017970800399780273
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.016234755516052246
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.015562891960144043
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.013505220413208008
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.013482809066772461
+    ],
+    [
+     "model.layers.10.input_layernorm.weight",
+     0.01265716552734375
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.012372851371765137
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.011603593826293945
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.15.post_attention_layernorm.weight\", \"value\": 0.98}\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 15}\n",
+     "edit": null
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.4.post_attention_layernorm.weight\",\n  \"factor\": 0.3\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "factor": 0.3
+     },
+     "practice": 0.3125,
+     "probe_effect": -0.010340213775634766
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 0.0002}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 0.0002
+     },
+     "practice": 0.1875,
+     "probe_effect": 0.0106431245803833
+    }
+   ],
+   "practice_after": 0.3125
+  },
+  {
+   "round": 16,
+   "practice_before": 0.3125,
+   "probe_base": -1.06459379196167,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.026520133018493652
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.02020108699798584
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.017970800399780273
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.016234755516052246
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.015562891960144043
+    ],
+    [
+     "model.layers.8.input_layernorm.weight",
+     0.013505220413208008
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.013482809066772461
+    ],
+    [
+     "model.layers.10.input_layernorm.weight",
+     0.01265716552734375
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.012372851371765137
+    ],
+    [
+     "model.layers.9.post_attention_layernorm.weight",
+     -0.011603593826293945
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place), which causes the sum to be off by 100",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.6.post_attention_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": 0.0049495697021484375
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.4.input_layernorm.weight\",\n  \"factor\": 1.1\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.3125,
+     "probe_effect": 0.017970800399780273
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.10.post_attention_layernorm.weight\",\n  \"factor\": 1.0\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.10.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.3125,
+     "probe_effect": 0.0019301176071166992
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": -0.1}\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.3333333333333333
+  },
+  {
+   "round": 17,
+   "practice_before": 0.3333333333333333,
+   "probe_base": -1.0544649362564087,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.027205586433410645
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020775437355041504
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.017211079597473145
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.01715719699859619
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.013647675514221191
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.013315916061401367
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.01232767105102539
+    ],
+    [
+     "model.layers.6.post_attention_layernorm.weight",
+     0.011952042579650879
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.011094927787780762
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": -0.0008959770202636719
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"index\": 0, \"value\": 1.3}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 1.3
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": -0.0008959770202636719
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.1.post_attention_layernorm.weight\",\n  \"factor\": 1.0\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": -0.0008959770202636719
+    }
+   ],
+   "practice_after": 0.3333333333333333
+  },
+  {
+   "round": 18,
+   "practice_before": 0.3333333333333333,
+   "probe_base": -1.0544649362564087,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.027205586433410645
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.020775437355041504
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.017211079597473145
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.01715719699859619
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.013647675514221191
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.013315916061401367
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.01232767105102539
+    ],
+    [
+     "model.layers.6.post_attention_layernorm.weight",
+     0.011952042579650879
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.011094927787780762
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.14.post_attention_layernorm.weight\", \"factor\": 1.07}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "factor": 1.07
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": 0.027205586433410645
+    },
+    {
+     "raw": "```json\n{\"op\": \"set\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"value\": 1.1}\n```\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.98}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.98
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": -0.0008959770202636719
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.input_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": 0.01715719699859619
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  },
+  {
+   "round": 19,
+   "practice_before": 0.3541666666666667,
+   "probe_base": -1.0523606538772583,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.028120040893554688
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.01972806453704834
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.016967296600341797
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.015999555587768555
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.01544034481048584
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.012520194053649902
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.01170194149017334
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.010968565940856934
+    ],
+    [
+     "model.layers.23.post_attention_layernorm.weight",
+     -0.009753942489624023
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"value\": -0.0154}\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.012520194053649902
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.02}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.02
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.000843048095703125
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.0}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.000843048095703125
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  },
+  {
+   "round": 20,
+   "practice_before": 0.3541666666666667,
+   "probe_base": -1.0523606538772583,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.028120040893554688
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.01972806453704834
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.016967296600341797
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.015999555587768555
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.01544034481048584
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.012520194053649902
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.01170194149017334
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.010968565940856934
+    ],
+    [
+     "model.layers.23.post_attention_layernorm.weight",
+     -0.009753942489624023
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.input_layernorm.weight\", \"factor\": 1.02}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 1.02
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.01544034481048584
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"factor\": 0.81}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "factor": 0.81
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": -0.012520194053649902
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.1.output_layernorm.weight\",\n  \"factor\": 0.0301\n}\n",
+     "edit": null
+    },
+    {
+     "raw": "```json\n{\"op\": \"set\", \"tensor\": \"model.layers.1.input_layernorm.weight\", \"index\": 2, \"value\": 1.1}\n```\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "index": 2,
+      "value": 1.1
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": null
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  },
+  {
+   "round": 21,
+   "practice_before": 0.3541666666666667,
+   "probe_base": -1.0523606538772583,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.028120040893554688
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.01972806453704834
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.016967296600341797
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.015999555587768555
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.01544034481048584
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.012520194053649902
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.01170194149017334
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.010968565940856934
+    ],
+    [
+     "model.layers.23.post_attention_layernorm.weight",
+     -0.009753942489624023
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.6.post_attention_layernorm.weight\", \"index\": 2, \"value\": 1.09}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "index": 2,
+      "value": 1.09
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.3.input_layernorm.weight\", \"index\": 1, \"value\": 0.016}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "index": 1,
+      "value": 0.016
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"index\": 6, \"value\": 0.5}\n{\"op\": \"set\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"index\": 6, \"value\": 1.0}\n{\"op\": \"set\",",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "index": 6,
+      "value": 0.5
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.000843048095703125
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  },
+  {
+   "round": 22,
+   "practice_before": 0.3541666666666667,
+   "probe_base": -1.0523606538772583,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.028120040893554688
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.01972806453704834
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.016967296600341797
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.015999555587768555
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.01544034481048584
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.012520194053649902
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.01170194149017334
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.010968565940856934
+    ],
+    [
+     "model.layers.23.post_attention_layernorm.weight",
+     -0.009753942489624023
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.000843048095703125
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.012520194053649902
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.9999}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.9999
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.000843048095703125
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"factor\": 0.7}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "factor": 0.7
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": -0.012520194053649902
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  },
+  {
+   "round": 23,
+   "practice_before": 0.3541666666666667,
+   "probe_base": -1.0523606538772583,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.028120040893554688
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.01972806453704834
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.016967296600341797
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.015999555587768555
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.01544034481048584
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.012520194053649902
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.01170194149017334
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.010968565940856934
+    ],
+    [
+     "model.layers.23.post_attention_layernorm.weight",
+     -0.009753942489624023
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.000843048095703125
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.input_layernorm.weight\", \"factor\": 0.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 0.5
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": -0.01544034481048584
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"index\": 6, \"value\": 1.1}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "index": 6,
+      "value": 1.1
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.000843048095703125
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  },
+  {
+   "round": 24,
+   "practice_before": 0.3541666666666667,
+   "probe_base": -1.0523606538772583,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.028120040893554688
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.01972806453704834
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.016967296600341797
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.015999555587768555
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.01544034481048584
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.012520194053649902
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.01170194149017334
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.010968565940856934
+    ],
+    [
+     "model.layers.23.post_attention_layernorm.weight",
+     -0.009753942489624023
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"factor\": -0.6075}\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"index\": 0, \"value\": 0.5}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "index": 0,
+      "value": 0.5
+     },
+     "practice": 0.2916666666666667,
+     "probe_effect": null
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.4.post_attention_layernorm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.post_attention_layernorm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.3333333333333333,
+     "probe_effect": -0.012520194053649902
+    },
+    {
+     "raw": "{\n  \"op\": \"scale\",\n  \"tensor\": \"model.layers.23.post_attention_layernorm.weight\",\n  \"factor\": 0.8\n}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.23.post_attention_layernorm.weight",
+      "factor": 0.8
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.009753942489624023
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  },
+  {
+   "round": 25,
+   "practice_before": 0.3541666666666667,
+   "probe_base": -1.0523606538772583,
+   "probe_top": [
+    [
+     "model.layers.14.post_attention_layernorm.weight",
+     0.028120040893554688
+    ],
+    [
+     "model.layers.4.input_layernorm.weight",
+     0.01972806453704834
+    ],
+    [
+     "model.layers.17.post_attention_layernorm.weight",
+     -0.016967296600341797
+    ],
+    [
+     "model.layers.3.input_layernorm.weight",
+     0.015999555587768555
+    ],
+    [
+     "model.layers.1.input_layernorm.weight",
+     -0.01544034481048584
+    ],
+    [
+     "model.layers.2.input_layernorm.weight",
+     -0.012845516204833984
+    ],
+    [
+     "model.layers.4.post_attention_layernorm.weight",
+     -0.012520194053649902
+    ],
+    [
+     "model.layers.15.post_attention_layernorm.weight",
+     -0.01170194149017334
+    ],
+    [
+     "model.layers.6.input_layernorm.weight",
+     -0.010968565940856934
+    ],
+    [
+     "model.layers.23.post_attention_layernorm.weight",
+     -0.009753942489624023
+    ]
+   ],
+   "diagnosis": "You are making a mistake in the **place value** of the digits in the numbers you are adding, specifically by adding the **last digit** of each number instead of the **tens digit** (the digit in the ones place).",
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.6.input_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.input_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": -0.010968565940856934
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.input_layernorm.weight\", \"factor\": 0.035}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 0.035
+     },
+     "practice": 0.1875,
+     "probe_effect": 0.015999555587768555
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.input_layernorm.weight\", \"factor\": 1.05}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 1.05
+     },
+     "practice": 0.3541666666666667,
+     "probe_effect": 0.015999555587768555
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.input_layernorm.weight\", \"factor\": 2.0}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 2.0
+     },
+     "practice": 0.20833333333333334,
+     "probe_effect": -0.01544034481048584
+    }
+   ],
+   "practice_after": 0.3541666666666667
+  }
+ ],
+ "kept": [
+  {
+   "round": 2,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.1.post_attention_layernorm.weight",
+    "factor": 0.9
+   },
+   "practice": 0.25,
+   "test": 0.26
+  },
+  {
+   "round": 4,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.2.post_attention_layernorm.weight",
+    "factor": 0.5
+   },
+   "practice": 0.2708333333333333,
+   "test": 0.245
+  },
+  {
+   "round": 6,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.2.post_attention_layernorm.weight",
+    "factor": 0.5
+   },
+   "practice": 0.2916666666666667,
+   "test": 0.24
+  },
+  {
+   "round": 12,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.1.post_attention_layernorm.weight",
+    "factor": 0.3
+   },
+   "practice": 0.3125,
+   "test": 0.285
+  },
+  {
+   "round": 16,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.6.post_attention_layernorm.weight",
+    "factor": 1.5
+   },
+   "practice": 0.3333333333333333,
+   "test": 0.32
+  },
+  {
+   "round": 18,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.3.input_layernorm.weight",
+    "factor": 1.1
+   },
+   "practice": 0.3541666666666667,
+   "test": 0.32
+  }
+ ],
+ "practice_final": 0.3541666666666667,
+ "test_final": 0.32,
+ "seconds": 9796
+}
