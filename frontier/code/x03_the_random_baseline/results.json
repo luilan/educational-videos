@@ -1,0 +1,2941 @@
+{
+ "budget": 10000,
+ "practice": 300,
+ "target": 0.99,
+ "seconds": 762.1,
+ "runs": [
+  {
+   "case": "zero",
+   "method": "edits",
+   "seed": 1,
+   "practice_damaged": 0.8333333333333334,
+   "test_damaged": 0.777,
+   "kept": [
+    {
+     "trial": 6,
+     "practice": 0.84,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "row": 27,
+      "row_b": 65
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 9,
+     "practice": 0.8566666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "pos.weight",
+      "row": 7,
+      "factor": 0.818
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 11,
+     "practice": 0.86,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 28
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 68,
+     "practice": 0.8633333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 52
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 94,
+     "practice": 0.8666666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.mlp.2.bias",
+      "index": [
+       12
+      ],
+      "value": 0.046
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 121,
+     "practice": 0.87,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.2.bias",
+      "row": 62,
+      "factor": -1.138
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 140,
+     "practice": 0.8733333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 38
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 189,
+     "practice": 0.8866666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 3
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 195,
+     "practice": 0.89,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "index": [
+       9,
+       1
+      ],
+      "value": 0.061
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 920,
+     "practice": 0.9033333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln1.weight",
+      "row": 52,
+      "factor": 1.984
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 921,
+     "practice": 0.91,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln2.weight",
+      "index": [
+       24
+      ],
+      "value": 0.968
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 950,
+     "practice": 0.9133333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.2.weight",
+      "row": 0,
+      "factor": 1.609
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 951,
+     "practice": 0.9233333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 20,
+      "factor": -1.512
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 1091,
+     "practice": 0.9266666666666666,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln1.weight",
+      "index": [
+       31
+      ],
+      "value": 0.854
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 2307,
+     "practice": 0.93,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln1.weight",
+      "row": 33,
+      "factor": -0.183
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 3030,
+     "practice": 0.9366666666666666,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "row": 131
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 3135,
+     "practice": 0.94,
+     "edit": {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       3,
+       32
+      ],
+      "value": -0.457
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 3177,
+     "practice": 0.9433333333333334,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln1.weight",
+      "index": [
+       36
+      ],
+      "value": 0.694
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 7250,
+     "practice": 0.9466666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 4,
+      "factor": -0.145
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 7627,
+     "practice": 0.95,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 19
+     },
+     "numbers_changed": 256
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.8333333333333334,
+     "test": 0.777
+    },
+    "4": {
+     "practice": 0.8333333333333334,
+     "test": 0.777
+    },
+    "10": {
+     "practice": 0.8566666666666667,
+     "test": 0.779
+    },
+    "100": {
+     "practice": 0.8666666666666667,
+     "test": 0.777
+    },
+    "1000": {
+     "practice": 0.9233333333333333,
+     "test": 0.861
+    },
+    "10000": {
+     "practice": 0.95,
+     "test": 0.868
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.95,
+   "test_final": 0.868,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 1162,
+   "seconds": 454.2
+  },
+  {
+   "case": "zero",
+   "method": "edits",
+   "seed": 2,
+   "practice_damaged": 0.8333333333333334,
+   "test_damaged": 0.777,
+   "kept": [
+    {
+     "trial": 3,
+     "practice": 0.84,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.attn.in_proj_bias",
+      "index": [
+       148
+      ],
+      "value": 0.024
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 16,
+     "practice": 0.8433333333333334,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.2.weight",
+      "row": 1
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 19,
+     "practice": 0.8466666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln2.weight",
+      "index": [
+       3
+      ],
+      "value": 0.833
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 40,
+     "practice": 0.85,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln1.weight",
+      "row": 14,
+      "factor": 1.717
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 41,
+     "practice": 0.8533333333333334,
+     "edit": {
+      "op": "set",
+      "tensor": "head.bias",
+      "index": [
+       3
+      ],
+      "value": -0.028
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 61,
+     "practice": 0.89,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 170,
+      "factor": -0.787
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 77,
+     "practice": 0.8933333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln1.weight",
+      "row": 10,
+      "factor": 0.428
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 80,
+     "practice": 0.9,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "index": [
+       86,
+       43
+      ],
+      "value": -0.015
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 92,
+     "practice": 0.9033333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.attn.out_proj.bias",
+      "index": [
+       0
+      ],
+      "value": -0.024
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 97,
+     "practice": 0.9133333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln1.weight",
+      "row": 35,
+      "factor": 1.408
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 112,
+     "practice": 0.94,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln2.weight",
+      "row": 42,
+      "factor": 0.074
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 400,
+     "practice": 0.9433333333333334,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.mlp.2.bias",
+      "index": [
+       22
+      ],
+      "value": 0.064
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 774,
+     "practice": 0.99,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.weight",
+      "index": [
+       13
+      ],
+      "value": 0.76
+     },
+     "numbers_changed": 1
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.8333333333333334,
+     "test": 0.777
+    },
+    "4": {
+     "practice": 0.84,
+     "test": 0.775
+    },
+    "10": {
+     "practice": 0.84,
+     "test": 0.775
+    },
+    "100": {
+     "practice": 0.9133333333333333,
+     "test": 0.88
+    },
+    "774": {
+     "practice": 0.99,
+     "test": 0.986
+    }
+   },
+   "solved_at": 774,
+   "practice_final": 0.99,
+   "test_final": 0.986,
+   "trials": 774,
+   "numbers_changed_vs_intact": 331,
+   "seconds": 36.5
+  },
+  {
+   "case": "zero",
+   "method": "edits",
+   "seed": 3,
+   "practice_damaged": 0.8333333333333334,
+   "test_damaged": 0.777,
+   "kept": [
+    {
+     "trial": 9,
+     "practice": 0.84,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.2.bias",
+      "row": 33,
+      "factor": -1.375
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 11,
+     "practice": 0.8433333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln2.weight",
+      "row": 48,
+      "factor": -0.158
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 27,
+     "practice": 0.85,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 114,
+      "row_b": 112
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 141,
+     "practice": 0.8533333333333334,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 36,
+      "row_b": 34
+     },
+     "numbers_changed": 512
+    },
+    {
+     "trial": 146,
+     "practice": 0.8566666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.out_proj.bias",
+      "index": [
+       3
+      ],
+      "value": -0.024
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 165,
+     "practice": 0.86,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 38
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 205,
+     "practice": 0.8633333333333333,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 32,
+      "row_b": 50
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 207,
+     "practice": 0.8666666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 3,
+      "factor": 0.018
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 211,
+     "practice": 0.87,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.mlp.0.bias",
+      "index": [
+       89
+      ],
+      "value": 0.055
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 362,
+     "practice": 0.8733333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln1.weight",
+      "row": 51,
+      "factor": 1.928
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 415,
+     "practice": 0.8766666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.attn.in_proj_bias",
+      "index": [
+       48
+      ],
+      "value": 0.016
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 482,
+     "practice": 0.88,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "index": [
+       0,
+       28
+      ],
+      "value": -0.044
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 856,
+     "practice": 0.89,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "row": 137,
+      "row_b": 152
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 863,
+     "practice": 0.8933333333333333,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 42,
+      "row_b": 16
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 904,
+     "practice": 0.9,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.2.weight",
+      "row": 3
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 906,
+     "practice": 0.9033333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln2.weight",
+      "index": [
+       2
+      ],
+      "value": 0.932
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 917,
+     "practice": 0.9066666666666666,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.bias",
+      "index": [
+       11
+      ],
+      "value": -0.028
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 926,
+     "practice": 0.91,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 36,
+      "factor": 0.588
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 1114,
+     "practice": 0.9133333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 35,
+      "factor": -1.264
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 1118,
+     "practice": 0.9166666666666666,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.in_proj_bias",
+      "index": [
+       158
+      ],
+      "value": -0.016
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1326,
+     "practice": 0.92,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 125
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 1451,
+     "practice": 0.9866666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.weight",
+      "index": [
+       13
+      ],
+      "value": 0.839
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1567,
+     "practice": 0.99,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 248,
+      "factor": 1.413
+     },
+     "numbers_changed": 64
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.8333333333333334,
+     "test": 0.777
+    },
+    "4": {
+     "practice": 0.8333333333333334,
+     "test": 0.777
+    },
+    "10": {
+     "practice": 0.84,
+     "test": 0.772
+    },
+    "100": {
+     "practice": 0.85,
+     "test": 0.779
+    },
+    "1000": {
+     "practice": 0.91,
+     "test": 0.825
+    },
+    "1567": {
+     "practice": 0.99,
+     "test": 0.968
+    }
+   },
+   "solved_at": 1567,
+   "practice_final": 0.99,
+   "test_final": 0.968,
+   "trials": 1567,
+   "numbers_changed_vs_intact": 1803,
+   "seconds": 75.7
+  },
+  {
+   "case": "swap",
+   "method": "edits",
+   "seed": 1,
+   "practice_damaged": 0.41333333333333333,
+   "test_damaged": 0.393,
+   "kept": [
+    {
+     "trial": 12,
+     "practice": 0.4166666666666667,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 43,
+      "row_b": 21
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 483,
+     "practice": 0.42,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 64
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 1253,
+     "practice": 0.42333333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 62,
+      "factor": -0.3
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 5807,
+     "practice": 0.54,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 8,
+      "factor": -1.66
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 5808,
+     "practice": 0.5433333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "index": [
+       125,
+       26
+      ],
+      "value": 0.076
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 5822,
+     "practice": 0.5566666666666666,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 3,
+      "factor": 0.108
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 5824,
+     "practice": 0.56,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln2.bias",
+      "index": [
+       54
+      ],
+      "value": 0.014
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 5862,
+     "practice": 0.5633333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.2.weight",
+      "row": 55,
+      "factor": -0.683
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 5873,
+     "practice": 0.57,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 52,
+      "row_b": 41
+     },
+     "numbers_changed": 512
+    },
+    {
+     "trial": 5886,
+     "practice": 0.5733333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln2.bias",
+      "row": 20,
+      "factor": 1.735
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 5970,
+     "practice": 0.5766666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln1.weight",
+      "row": 30,
+      "factor": 1.537
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6028,
+     "practice": 0.58,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 126,
+      "factor": 1.585
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 6272,
+     "practice": 0.5833333333333334,
+     "edit": {
+      "op": "set",
+      "tensor": "head.weight",
+      "index": [
+       2,
+       2
+      ],
+      "value": 0.217
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6416,
+     "practice": 0.59,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 3,
+      "factor": -0.653
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 6424,
+     "practice": 0.5933333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln1.weight",
+      "row": 56,
+      "factor": 1.406
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6461,
+     "practice": 0.5966666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln2.weight",
+      "index": [
+       1
+      ],
+      "value": 0.8
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6488,
+     "practice": 0.6,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 204,
+      "factor": -1.743
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 6538,
+     "practice": 0.6033333333333334,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.weight",
+      "index": [
+       25
+      ],
+      "value": 0.857
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6584,
+     "practice": 0.6066666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.out_proj.bias",
+      "index": [
+       49
+      ],
+      "value": 0.014
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6586,
+     "practice": 0.61,
+     "edit": {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       3,
+       20
+      ],
+      "value": -0.634
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6598,
+     "practice": 0.6133333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "head.weight",
+      "index": [
+       8,
+       7
+      ],
+      "value": 0.233
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6610,
+     "practice": 0.6166666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 16
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 6674,
+     "practice": 0.62,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.bias",
+      "index": [
+       35
+      ],
+      "value": 0.05
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6676,
+     "practice": 0.6233333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.mlp.0.bias",
+      "index": [
+       114
+      ],
+      "value": -0.017
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 7284,
+     "practice": 0.6266666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "head.bias",
+      "index": [
+       3
+      ],
+      "value": -0.116
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 8021,
+     "practice": 0.6633333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "tok.weight",
+      "row": 3
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 8029,
+     "practice": 0.6666666666666666,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 245,
+      "factor": -0.874
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 8079,
+     "practice": 0.67,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 232,
+      "row_b": 106
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 8087,
+     "practice": 0.6733333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.bias",
+      "row": 140,
+      "factor": -1.596
+     },
+     "numbers_changed": 1
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "4": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "10": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "100": {
+     "practice": 0.4166666666666667,
+     "test": 0.392
+    },
+    "1000": {
+     "practice": 0.42,
+     "test": 0.39
+    },
+    "10000": {
+     "practice": 0.6733333333333333,
+     "test": 0.602
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.6733333333333333,
+   "test_final": 0.602,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 1550,
+   "seconds": 452.6
+  },
+  {
+   "case": "swap",
+   "method": "edits",
+   "seed": 2,
+   "practice_damaged": 0.41333333333333333,
+   "test_damaged": 0.393,
+   "kept": [
+    {
+     "trial": 61,
+     "practice": 0.42,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 170,
+      "factor": -0.787
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 225,
+     "practice": 0.42333333333333334,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 2
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 572,
+     "practice": 0.55,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 8,
+      "factor": -1.572
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 574,
+     "practice": 0.5533333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.attn.in_proj_bias",
+      "row": 29,
+      "factor": -0.162
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 648,
+     "practice": 0.5633333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln1.weight",
+      "row": 24,
+      "factor": -0.181
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 655,
+     "practice": 0.57,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln2.weight",
+      "row": 52,
+      "factor": 0.074
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 818,
+     "practice": 0.5733333333333334,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "row": 32
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 844,
+     "practice": 0.58,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln2.weight",
+      "row": 39,
+      "factor": 0.412
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 857,
+     "practice": 0.5833333333333334,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "index": [
+       155,
+       3
+      ],
+      "value": 0.072
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1129,
+     "practice": 0.5866666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 15
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 4340,
+     "practice": 0.63,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 3,
+      "factor": -1.615
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 4420,
+     "practice": 0.6333333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "index": [
+       138,
+       17
+      ],
+      "value": 0.07
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 4425,
+     "practice": 0.6366666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 160
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 4436,
+     "practice": 0.6433333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       6,
+       61
+      ],
+      "value": -0.66
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 4476,
+     "practice": 0.6466666666666666,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 247
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 4486,
+     "practice": 0.65,
+     "edit": {
+      "op": "set",
+      "tensor": "head.bias",
+      "index": [
+       9
+      ],
+      "value": -0.145
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 5045,
+     "practice": 0.6533333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "row": 76
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 5085,
+     "practice": 0.7566666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 3,
+      "factor": 0.351
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 5140,
+     "practice": 0.76,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "head.bias",
+      "row": 2,
+      "factor": -0.87
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 5887,
+     "practice": 0.7633333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln2.weight",
+      "index": [
+       0
+      ],
+      "value": 0.715
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 5911,
+     "practice": 0.7766666666666666,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 103
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 5925,
+     "practice": 0.78,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.mlp.2.bias",
+      "index": [
+       49
+      ],
+      "value": 0.009
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6643,
+     "practice": 0.7833333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.weight",
+      "index": [
+       8
+      ],
+      "value": 0.658
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6690,
+     "practice": 0.7866666666666666,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln2.weight",
+      "index": [
+       25
+      ],
+      "value": 0.757
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 7127,
+     "practice": 0.79,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 54
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 7153,
+     "practice": 0.7933333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.bias",
+      "row": 6,
+      "factor": -0.39
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 7312,
+     "practice": 0.7966666666666666,
+     "edit": {
+      "op": "set",
+      "tensor": "head.weight",
+      "index": [
+       2,
+       13
+      ],
+      "value": -0.195
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 9920,
+     "practice": 0.8,
+     "edit": {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       5,
+       33
+      ],
+      "value": -0.013
+     },
+     "numbers_changed": 1
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "4": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "10": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "100": {
+     "practice": 0.42,
+     "test": 0.395
+    },
+    "1000": {
+     "practice": 0.5833333333333334,
+     "test": 0.485
+    },
+    "10000": {
+     "practice": 0.8,
+     "test": 0.674
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.8,
+   "test_final": 0.674,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 720,
+   "seconds": 467.1
+  },
+  {
+   "case": "swap",
+   "method": "edits",
+   "seed": 3,
+   "practice_damaged": 0.41333333333333333,
+   "test_damaged": 0.393,
+   "kept": [
+    {
+     "trial": 289,
+     "practice": 0.4166666666666667,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 17,
+      "row_b": 43
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 362,
+     "practice": 0.42,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln1.weight",
+      "row": 51,
+      "factor": 1.928
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6325,
+     "practice": 0.44333333333333336,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 3,
+      "factor": -1.616
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 6383,
+     "practice": 0.44666666666666666,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 38,
+      "row_b": 2
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 6486,
+     "practice": 0.4533333333333333,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 164,
+      "row_b": 49
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 6629,
+     "practice": 0.45666666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "pos.weight",
+      "index": [
+       5,
+       5
+      ],
+      "value": 0.058
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6666,
+     "practice": 0.46,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 250
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 6726,
+     "practice": 0.4633333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 47
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 6979,
+     "practice": 0.4666666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 68
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 7304,
+     "practice": 0.5566666666666666,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "tok.weight",
+      "row": 3,
+      "row_b": 8
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 7685,
+     "practice": 0.56,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "ln.weight",
+      "row": 5,
+      "factor": -1.757
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 7698,
+     "practice": 0.9433333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 8,
+      "factor": -0.94
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 7702,
+     "practice": 0.9466666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 101
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 7706,
+     "practice": 0.95,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 55
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 7709,
+     "practice": 0.96,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln2.weight",
+      "row": 60,
+      "factor": -0.222
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 7710,
+     "practice": 0.9666666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln1.weight",
+      "index": [
+       59
+      ],
+      "value": 0.854
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 7890,
+     "practice": 0.97,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 12,
+      "row_b": 26
+     },
+     "numbers_changed": 512
+    },
+    {
+     "trial": 8780,
+     "practice": 0.9733333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln2.weight",
+      "row": 62,
+      "factor": 0.235
+     },
+     "numbers_changed": 1
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "4": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "10": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "100": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "1000": {
+     "practice": 0.42,
+     "test": 0.395
+    },
+    "10000": {
+     "practice": 0.9733333333333334,
+     "test": 0.927
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.9733333333333334,
+   "test_final": 0.927,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 1478,
+   "seconds": 434.3
+  },
+  {
+   "case": "flip",
+   "method": "edits",
+   "seed": 1,
+   "practice_damaged": 0.59,
+   "test_damaged": 0.587,
+   "kept": [
+    {
+     "trial": 98,
+     "practice": 0.6533333333333333,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "tok.weight",
+      "row": 7,
+      "row_b": 12
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 114,
+     "practice": 0.6633333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln1.weight",
+      "row": 47,
+      "factor": 0.543
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 119,
+     "practice": 0.67,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 105,
+      "row_b": 66
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 135,
+     "practice": 0.68,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.attn.in_proj_weight",
+      "row": 133,
+      "factor": -0.97
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 288,
+     "practice": 0.69,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 18
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 296,
+     "practice": 0.6933333333333334,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 177,
+      "row_b": 192
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 378,
+     "practice": 0.6966666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.in_proj_bias",
+      "index": [
+       173
+      ],
+      "value": -0.024
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 381,
+     "practice": 0.7,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 34,
+      "factor": 1.263
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 2021,
+     "practice": 0.7033333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 33,
+      "factor": -1.326
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 2023,
+     "practice": 0.7066666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "index": [
+       17,
+       21
+      ],
+      "value": -0.05
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 3020,
+     "practice": 0.71,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 84,
+      "row_b": 7
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 3023,
+     "practice": 0.7133333333333334,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 52,
+      "row_b": 44
+     },
+     "numbers_changed": 512
+    },
+    {
+     "trial": 3197,
+     "practice": 0.7166666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.in_proj_weight",
+      "row": 34
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 3244,
+     "practice": 0.72,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 45
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 3616,
+     "practice": 0.7233333333333334,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 199,
+      "row_b": 35
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 3883,
+     "practice": 0.7266666666666667,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 11,
+      "row_b": 72
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 3969,
+     "practice": 0.73,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 198,
+      "factor": -1.479
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 4186,
+     "practice": 0.7333333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       9,
+       53
+      ],
+      "value": -0.525
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 6443,
+     "practice": 0.7366666666666667,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 93,
+      "row_b": 254
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 7433,
+     "practice": 0.74,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "head.weight",
+      "row": 12,
+      "factor": 0.738
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 7472,
+     "practice": 0.7433333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "ln.weight",
+      "row": 46,
+      "factor": -1.829
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 8068,
+     "practice": 0.7466666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln2.weight",
+      "row": 14,
+      "factor": 1.168
+     },
+     "numbers_changed": 1
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "4": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "10": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "100": {
+     "practice": 0.6533333333333333,
+     "test": 0.678
+    },
+    "1000": {
+     "practice": 0.7,
+     "test": 0.69
+    },
+    "10000": {
+     "practice": 0.7466666666666667,
+     "test": 0.686
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.7466666666666667,
+   "test_final": 0.686,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 2118,
+   "seconds": 440.8
+  },
+  {
+   "case": "flip",
+   "method": "edits",
+   "seed": 2,
+   "practice_damaged": 0.59,
+   "test_damaged": 0.587,
+   "kept": [
+    {
+     "trial": 164,
+     "practice": 0.6066666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "tok.weight",
+      "row": 7,
+      "factor": 0.334
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 225,
+     "practice": 0.61,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 2
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 331,
+     "practice": 0.6133333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 9
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 425,
+     "practice": 0.6233333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "tok.weight",
+      "row": 7
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 472,
+     "practice": 0.6266666666666667,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 135
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 497,
+     "practice": 0.63,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln2.weight",
+      "row": 18,
+      "factor": 0.151
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 672,
+     "practice": 0.6333333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "pos.weight",
+      "index": [
+       1,
+       28
+      ],
+      "value": 0.666
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 674,
+     "practice": 0.6366666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln1.bias",
+      "index": [
+       52
+      ],
+      "value": 0.001
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 810,
+     "practice": 0.6466666666666666,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.0.mlp.0.weight",
+      "row": 112,
+      "row_b": 52
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 841,
+     "practice": 0.6533333333333333,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.bias",
+      "index": [
+       54
+      ],
+      "value": -0.044
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1005,
+     "practice": 0.6566666666666666,
+     "edit": {
+      "op": "set",
+      "tensor": "pos.weight",
+      "index": [
+       0,
+       24
+      ],
+      "value": -1.267
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1076,
+     "practice": 0.6666666666666666,
+     "edit": {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       11,
+       22
+      ],
+      "value": -0.086
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1100,
+     "practice": 0.67,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.mlp.0.weight",
+      "row": 80,
+      "factor": 1.897
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 9747,
+     "practice": 0.6733333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.mlp.2.weight",
+      "row": 32
+     },
+     "numbers_changed": 256
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "4": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "10": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "100": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "1000": {
+     "practice": 0.6533333333333333,
+     "test": 0.66
+    },
+    "10000": {
+     "practice": 0.6733333333333333,
+     "test": 0.659
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.6733333333333333,
+   "test_final": 0.659,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 710,
+   "seconds": 462.2
+  },
+  {
+   "case": "flip",
+   "method": "edits",
+   "seed": 3,
+   "practice_damaged": 0.59,
+   "test_damaged": 0.587,
+   "kept": [
+    {
+     "trial": 68,
+     "practice": 0.61,
+     "edit": {
+      "op": "set_row",
+      "tensor": "tok.weight",
+      "row": 7
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 236,
+     "practice": 0.6133333333333333,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 19
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 260,
+     "practice": 0.6166666666666667,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 39,
+      "row_b": 55
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 295,
+     "practice": 0.62,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.mlp.2.weight",
+      "row": 63
+     },
+     "numbers_changed": 256
+    },
+    {
+     "trial": 322,
+     "practice": 0.6233333333333333,
+     "edit": {
+      "op": "swap_rows",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 30,
+      "row_b": 26
+     },
+     "numbers_changed": 128
+    },
+    {
+     "trial": 1014,
+     "practice": 0.6666666666666666,
+     "edit": {
+      "op": "set_row",
+      "tensor": "tok.weight",
+      "row": 7
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 1015,
+     "practice": 0.68,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "ln.weight",
+      "row": 41,
+      "factor": -0.851
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1027,
+     "practice": 0.6866666666666666,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "head.weight",
+      "row": 6,
+      "factor": 0.812
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 1042,
+     "practice": 0.69,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln2.weight",
+      "row": 40,
+      "factor": 1.547
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1050,
+     "practice": 0.6933333333333334,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.0.attn.out_proj.weight",
+      "row": 29
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 1062,
+     "practice": 0.6966666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.1.ln2.weight",
+      "index": [
+       23
+      ],
+      "value": 0.973
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1064,
+     "practice": 0.7,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.mlp.0.bias",
+      "index": [
+       48
+      ],
+      "value": -0.07
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1067,
+     "practice": 0.7033333333333334,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.ln1.bias",
+      "index": [
+       32
+      ],
+      "value": -0.026
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1121,
+     "practice": 0.7066666666666667,
+     "edit": {
+      "op": "set",
+      "tensor": "blocks.0.attn.out_proj.bias",
+      "index": [
+       25
+      ],
+      "value": 0.041
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1825,
+     "practice": 0.71,
+     "edit": {
+      "op": "set_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 11
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 1862,
+     "practice": 0.7133333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.ln1.weight",
+      "row": 41,
+      "factor": -0.158
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 1869,
+     "practice": 0.72,
+     "edit": {
+      "op": "set",
+      "tensor": "tok.weight",
+      "index": [
+       11,
+       39
+      ],
+      "value": -0.498
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 2223,
+     "practice": 0.7233333333333334,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.0.ln2.weight",
+      "row": 18,
+      "factor": 0.1
+     },
+     "numbers_changed": 1
+    },
+    {
+     "trial": 2259,
+     "practice": 0.7266666666666667,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "blocks.1.attn.out_proj.weight",
+      "row": 13,
+      "factor": 1.249
+     },
+     "numbers_changed": 64
+    },
+    {
+     "trial": 2328,
+     "practice": 0.7333333333333333,
+     "edit": {
+      "op": "scale_row",
+      "tensor": "ln.weight",
+      "row": 27,
+      "factor": 0.156
+     },
+     "numbers_changed": 1
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "4": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "10": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "100": {
+     "practice": 0.61,
+     "test": 0.597
+    },
+    "1000": {
+     "practice": 0.6233333333333333,
+     "test": 0.593
+    },
+    "10000": {
+     "practice": 0.7333333333333333,
+     "test": 0.682
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.7333333333333333,
+   "test_final": 0.682,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 906,
+   "seconds": 327.2
+  },
+  {
+   "case": "zero",
+   "method": "nudges",
+   "seed": 1,
+   "practice_damaged": 0.8333333333333334,
+   "test_damaged": 0.777,
+   "kept": [
+    {
+     "trial": 3,
+     "practice": 0.8366666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 4,
+     "practice": 0.8466666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 15,
+     "practice": 0.85,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 17,
+     "practice": 0.8566666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 23,
+     "practice": 0.8666666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 74,
+     "practice": 0.87,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 78,
+     "practice": 0.8733333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 99,
+     "practice": 0.8766666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 104,
+     "practice": 0.8833333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 108,
+     "practice": 0.8866666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 133,
+     "practice": 0.89,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 143,
+     "practice": 0.8933333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 203,
+     "practice": 0.8966666666666666,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 210,
+     "practice": 0.9,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 227,
+     "practice": 0.9033333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 267,
+     "practice": 0.9066666666666666,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 284,
+     "practice": 0.9133333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 303,
+     "practice": 0.9166666666666666,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 308,
+     "practice": 0.92,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 409,
+     "practice": 0.9233333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 411,
+     "practice": 0.9266666666666666,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 433,
+     "practice": 0.93,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 680,
+     "practice": 0.9333333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 747,
+     "practice": 0.9366666666666666,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 749,
+     "practice": 0.9433333333333334,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 751,
+     "practice": 0.95,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 760,
+     "practice": 0.9533333333333334,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 764,
+     "practice": 0.9566666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 766,
+     "practice": 0.96,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 767,
+     "practice": 0.9633333333333334,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 774,
+     "practice": 0.9666666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 814,
+     "practice": 0.97,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 889,
+     "practice": 0.9733333333333334,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102411
+    },
+    {
+     "trial": 890,
+     "practice": 0.9766666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    },
+    {
+     "trial": 938,
+     "practice": 0.98,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 962,
+     "practice": 0.9833333333333333,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102413
+    },
+    {
+     "trial": 3781,
+     "practice": 0.9866666666666667,
+     "edit": {
+      "op": "nudge"
+     },
+     "numbers_changed": 102412
+    }
+   ],
+   "checks": {
+    "1": {
+     "practice": 0.8333333333333334,
+     "test": 0.777
+    },
+    "4": {
+     "practice": 0.8466666666666667,
+     "test": 0.78
+    },
+    "10": {
+     "practice": 0.8466666666666667,
+     "test": 0.78
+    },
+    "100": {
+     "practice": 0.8766666666666667,
+     "test": 0.815
+    },
+    "1000": {
+     "practice": 0.9833333333333333,
+     "test": 0.92
+    },
+    "10000": {
+     "practice": 0.9866666666666667,
+     "test": 0.925
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.9866666666666667,
+   "test_final": 0.925,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 102413,
+   "seconds": 308.6
+  },
+  {
+   "case": "swap",
+   "method": "nudges",
+   "seed": 1,
+   "practice_damaged": 0.41333333333333333,
+   "test_damaged": 0.393,
+   "kept": [],
+   "checks": {
+    "1": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "4": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "10": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "100": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "1000": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    },
+    "10000": {
+     "practice": 0.41333333333333333,
+     "test": 0.393
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.41333333333333333,
+   "test_final": 0.393,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 128,
+   "seconds": 306.7
+  },
+  {
+   "case": "flip",
+   "method": "nudges",
+   "seed": 1,
+   "practice_damaged": 0.59,
+   "test_damaged": 0.587,
+   "kept": [],
+   "checks": {
+    "1": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "4": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "10": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "100": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "1000": {
+     "practice": 0.59,
+     "test": 0.587
+    },
+    "10000": {
+     "practice": 0.59,
+     "test": 0.587
+    }
+   },
+   "solved_at": null,
+   "practice_final": 0.59,
+   "test_final": 0.587,
+   "trials": 10000,
+   "numbers_changed_vs_intact": 64,
+   "seconds": 292.1
+  }
+ ]
+}

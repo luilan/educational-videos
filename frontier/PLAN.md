@@ -32,8 +32,9 @@ Prerequisites: How LLMs Work; Agents (the harness) for Part 3; LLMs in Practice 
   Qwen3.5-0.8B edits itself; GSM8K 11.8% → 62.2%, sometimes changing 16 parameters; little understanding of its own
   edits; random-search WSP sometimes comparable.
 - The wider WSP burst of Nov 2026 (frontier models repairing, auditing and improving small networks), including the
-  sceptical "Can an LLM actually reason about weights or is it memorisation?" (2611.08070) and "Do we really need an
-  LLM for WSP?" (2611.34612). The original WSP report is to be pinned down when x02 is written.
+  sceptical "Can an LLM actually reason about weights or is it memorisation?" (2611.08070). ("Do we really need an LLM for WSP?",
+  2611.34612, could not be found on 28 Nov 2026 and is not cited.) Random search as a rival: Neural Thickets
+  (2603.12228, Mar 2026), random weight perturbations plus selection.
 - SEAL, Self-Adapting Language Models (2506.10943, Jun 2025); Darwin Gödel Machine (2505.22954, May 2025); SIA,
   harness and weight updates (2605.27276, May 2026).
 - MemGPT (2310.08560); Titans: Learning to Memorize at Test Time (2501.00663); Continual Learning via Sparse Memory

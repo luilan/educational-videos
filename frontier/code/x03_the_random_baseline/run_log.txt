@@ -1,0 +1,13 @@
+Running as unit: x03-rs.scope; invocation ID: d789ecd482b84198a962656acd6e1509
+zero  edits  seed 2: practice 0.833 -> 0.990, test 0.777 -> 0.986, solved at 774, 13 kept, 36.5s
+zero  edits  seed 3: practice 0.833 -> 0.990, test 0.777 -> 0.968, solved at 1567, 23 kept, 75.7s
+swap  edits  seed 3: practice 0.413 -> 0.973, test 0.393 -> 0.927, solved at None, 18 kept, 434.3s
+swap  edits  seed 1: practice 0.413 -> 0.673, test 0.393 -> 0.602, solved at None, 29 kept, 452.6s
+zero  edits  seed 1: practice 0.833 -> 0.950, test 0.777 -> 0.868, solved at None, 20 kept, 454.2s
+swap  edits  seed 2: practice 0.413 -> 0.800, test 0.393 -> 0.674, solved at None, 28 kept, 467.1s
+flip  edits  seed 1: practice 0.590 -> 0.747, test 0.587 -> 0.686, solved at None, 22 kept, 440.8s
+flip  edits  seed 2: practice 0.590 -> 0.673, test 0.587 -> 0.659, solved at None, 14 kept, 462.2s
+flip  nudges seed 1: practice 0.590 -> 0.590, test 0.587 -> 0.587, solved at None, 0 kept, 292.1s
+swap  nudges seed 1: practice 0.413 -> 0.413, test 0.393 -> 0.393, solved at None, 0 kept, 306.7s
+zero  nudges seed 1: practice 0.833 -> 0.987, test 0.777 -> 0.925, solved at None, 37 kept, 308.6s
+flip  edits  seed 3: practice 0.590 -> 0.733, test 0.587 -> 0.682, solved at None, 20 kept, 327.2s
