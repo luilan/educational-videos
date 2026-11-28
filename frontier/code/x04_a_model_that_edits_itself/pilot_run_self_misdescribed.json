@@ -1,0 +1,776 @@
+{
+ "method": "self",
+ "seed": 1,
+ "practice_start": 0.22916666666666666,
+ "test_start": 0.255,
+ "rounds": [
+  {
+   "round": 1,
+   "practice_before": 0.22916666666666666,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.35}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.35
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.10.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.10.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.18.input_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.input_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.22916666666666666
+  },
+  {
+   "round": 2,
+   "practice_before": 0.22916666666666666,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.18.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.2}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.2
+     },
+     "practice": 0.1875
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"factor\": 1.4}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.4
+     },
+     "practice": 0.25
+    }
+   ],
+   "kept": {
+    "op": "scale",
+    "tensor": "model.layers.0.post_attention_layernorm.weight",
+    "factor": 1.4
+   },
+   "practice_after": 0.25
+  },
+  {
+   "round": 3,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.norm.weight\", \"index\": 60, \"value\": 3.15}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.norm.weight",
+      "index": 60,
+      "value": 3.15
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.8.post_attention_layernorm.weight\", \"index\": 166, \"value\": 1.2}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.8.post_attention_layernorm.weight",
+      "index": 166,
+      "value": 1.2
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.12.post_attention_layernorm.weight\", \"factor\": 1.01}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.12.post_attention_layernorm.weight",
+      "factor": 1.01
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 4,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.21.post_attention_layernorm.weight\", \"factor\": 1.25}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.21.post_attention_layernorm.weight",
+      "factor": 1.25
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.20.post_attention_layernorm.weight\", \"factor\": 1.35}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.20.post_attention_layernorm.weight",
+      "factor": 1.35
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.16.input_layernorm.weight\", \"value\": 0.97}\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 5,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.18.post_attention_layernorm.weight\", \"factor\": 1.05}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "factor": 1.05
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"factor\": 1.35}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "factor": 1.35
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.25}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.25
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.21.post_attention_layernorm.weight\", \"index\": 786, \"value\": 0.52}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.21.post_attention_layernorm.weight",
+      "index": 786,
+      "value": 0.52
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 6,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 0.85}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 0.85
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.16.post_attention_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.16.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.1875
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 7,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.12.post_attention_layernorm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.12.post_attention_layernorm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.2}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.2
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.16.post_attention_layernorm.weight\", \"factor\": 1.6}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.16.post_attention_layernorm.weight",
+      "factor": 1.6
+     },
+     "practice": 0.14583333333333334
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.input_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.input_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 8,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.85}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.85
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.3}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.3
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"factor\": 1.0}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "factor": 1.0
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 0.9}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 0.9
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 9,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.9.post_attention_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.9.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.14583333333333334
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"index\": 166, \"value\": 0.80}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "index": 166,
+      "value": 0.8
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.17.post_attention_layernorm.weight\", \"factor\": 1.2}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.17.post_attention_layernorm.weight",
+      "factor": 1.2
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 10,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 0.95}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 0.95
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.18.post_attention_layernorm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.8.post_attention_layernorm.weight\", \"factor\": 1.2}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.8.post_attention_layernorm.weight",
+      "factor": 1.2
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.3.post_attention_layernorm.weight\", \"factor\": 1.12}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.post_attention_layernorm.weight",
+      "factor": 1.12
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 11,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"factor\": 1.3}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.3
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.22.post_attention_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.22.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.25}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.25
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 12,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 2.0}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 2.0
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.2}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.2
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.layers.16.post_attention_layernorm.weight\", \"index\": 799, \"value\": 0.85}\n",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.16.post_attention_layernorm.weight",
+      "index": 799,
+      "value": 0.85
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 13,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.25}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.25
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "\"No update needed\"\n",
+     "edit": null
+    },
+    {
+     "raw": "{\"op\": \"set\", \"tensor\": \"model.norm.weight.index\", \"value\": 3.80}\n",
+     "edit": null
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 14,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.16666666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.17.post_attention_layernorm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.17.post_attention_layernorm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.18.post_attention_layernorm.weight\", \"factor\": 1.125}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "factor": 1.125
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 15,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"factor\": 1.4}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "factor": 1.4
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.12.post_attention_layernorm.weight\", \"factor\": 1.4}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.12.post_attention_layernorm.weight",
+      "factor": 1.4
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"factor\": 1.05}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.05
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 16,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.6.post_attention_layernorm.weight\", \"factor\": 1.45}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "factor": 1.45
+     },
+     "practice": 0.2916666666666667
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.19.post_attention_layernorm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.0.post_attention_layernorm.weight\", \"factor\": 1.1}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.1
+     },
+     "practice": 0.25
+    }
+   ],
+   "kept": {
+    "op": "scale",
+    "tensor": "model.layers.6.post_attention_layernorm.weight",
+    "factor": 1.45
+   },
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 17,
+   "practice_before": 0.2916666666666667,
+   "proposals": [
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.6}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.6
+     },
+     "practice": 0.3125
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.norm.weight\", \"factor\": 1.4} {\"op\": \"set\", \"tensor\": \"model.layers.8.post_attention_layernorm.weight[74]\", \"value\": 0.72} {\"op\": \"set\", \"tensor\": \"model.layers.14.post_attention_layernorm.weight[7",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.4
+     },
+     "practice": 0.3125
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.1.post_attention_layernorm.weight\", \"factor\": 1.5}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.post_attention_layernorm.weight",
+      "factor": 1.5
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "{\"op\": \"scale\", \"tensor\": \"model.layers.23.post_attention_layernorm.weight\", \"factor\": 1.15}\n",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.23.post_attention_layernorm.weight",
+      "factor": 1.15
+     },
+     "practice": 0.2916666666666667
+    }
+   ],
+   "kept": {
+    "op": "scale",
+    "tensor": "model.norm.weight",
+    "factor": 1.6
+   },
+   "practice_after": 0.3125
+  }
+ ],
+ "kept": [
+  {
+   "round": 2,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.0.post_attention_layernorm.weight",
+    "factor": 1.4
+   },
+   "practice": 0.25,
+   "test": 0.25
+  },
+  {
+   "round": 16,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.6.post_attention_layernorm.weight",
+    "factor": 1.45
+   },
+   "practice": 0.2916666666666667,
+   "test": 0.26
+  },
+  {
+   "round": 17,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.norm.weight",
+    "factor": 1.6
+   },
+   "practice": 0.3125,
+   "test": 0.26
+  }
+ ]
+}

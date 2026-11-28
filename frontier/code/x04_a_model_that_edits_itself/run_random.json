@@ -1,0 +1,1200 @@
+{
+ "method": "random",
+ "seed": 1,
+ "practice_start": 0.22916666666666666,
+ "test_start": 0.255,
+ "rounds": [
+  {
+   "round": 1,
+   "practice_before": 0.22916666666666666,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.4.input_layernorm.weight",
+      "index": 129,
+      "value": 0.484
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.14.input_layernorm.weight",
+      "factor": 0.88
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "factor": 0.528
+     },
+     "practice": 0.16666666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.12.input_layernorm.weight",
+      "factor": 1.262
+     },
+     "practice": 0.16666666666666666
+    }
+   ],
+   "practice_after": 0.22916666666666666
+  },
+  {
+   "round": 2,
+   "practice_before": 0.22916666666666666,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.0.input_layernorm.weight",
+      "index": 545,
+      "value": 0.38
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.23.input_layernorm.weight",
+      "index": 209,
+      "value": 0.29
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "index": 18,
+      "value": 0.071
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.12.input_layernorm.weight",
+      "index": 864,
+      "value": 0.442
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.22916666666666666
+  },
+  {
+   "round": 3,
+   "practice_before": 0.22916666666666666,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 0.996
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.7.input_layernorm.weight",
+      "factor": 1.177
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 0.79
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.416
+     },
+     "practice": 0.25
+    }
+   ],
+   "kept": {
+    "op": "scale",
+    "tensor": "model.norm.weight",
+    "factor": 0.79
+   },
+   "practice_after": 0.25
+  },
+  {
+   "round": 4,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.20.post_attention_layernorm.weight",
+      "factor": 1.129
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.23.input_layernorm.weight",
+      "index": 247,
+      "value": 0.131
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.23.post_attention_layernorm.weight",
+      "factor": 1.221
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.22.post_attention_layernorm.weight",
+      "index": 864,
+      "value": 0.299
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 5,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.input_layernorm.weight",
+      "factor": 1.088
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.15.post_attention_layernorm.weight",
+      "index": 805,
+      "value": 0.237
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "index": 983,
+      "value": 0.413
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.13.input_layernorm.weight",
+      "index": 751,
+      "value": 0.78
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 6,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.17.post_attention_layernorm.weight",
+      "index": 767,
+      "value": 0.466
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "index": 805,
+      "value": 0.412
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.11.post_attention_layernorm.weight",
+      "factor": 0.53
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 1.348
+     },
+     "practice": 0.20833333333333334
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 7,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "index": 806,
+      "value": 0.34
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.7.input_layernorm.weight",
+      "index": 408,
+      "value": 0.082
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.17.input_layernorm.weight",
+      "index": 475,
+      "value": 0.614
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.input_layernorm.weight",
+      "factor": 1.41
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 8,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.21.input_layernorm.weight",
+      "index": 11,
+      "value": 0.76
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.12.input_layernorm.weight",
+      "index": 264,
+      "value": 0.201
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.13.post_attention_layernorm.weight",
+      "index": 985,
+      "value": 0.14
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.11.post_attention_layernorm.weight",
+      "index": 409,
+      "value": 0.243
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 9,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.11.input_layernorm.weight",
+      "factor": 0.502
+     },
+     "practice": 0.16666666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.17.input_layernorm.weight",
+      "index": 678,
+      "value": 0.645
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "index": 470,
+      "value": 0.15
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.5.post_attention_layernorm.weight",
+      "index": 522,
+      "value": 0.044
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 10,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "index": 144,
+      "value": 0.444
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.0.input_layernorm.weight",
+      "index": 575,
+      "value": 0.249
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.7.post_attention_layernorm.weight",
+      "factor": 1.297
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.5.post_attention_layernorm.weight",
+      "factor": 0.57
+     },
+     "practice": 0.20833333333333334
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 11,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.5.input_layernorm.weight",
+      "factor": 1.452
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.21.input_layernorm.weight",
+      "factor": 1.212
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.14.post_attention_layernorm.weight",
+      "index": 1016,
+      "value": 0.174
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.12.input_layernorm.weight",
+      "factor": 1.296
+     },
+     "practice": 0.16666666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 12,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.8.input_layernorm.weight",
+      "factor": 1.4
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.16.input_layernorm.weight",
+      "index": 884,
+      "value": 0.566
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 0.897
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "index": 328,
+      "value": 0.32
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 13,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.13.post_attention_layernorm.weight",
+      "index": 451,
+      "value": 0.193
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.20.input_layernorm.weight",
+      "index": 923,
+      "value": 0.669
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.12.post_attention_layernorm.weight",
+      "index": 657,
+      "value": 0.304
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.21.input_layernorm.weight",
+      "index": 120,
+      "value": 0.719
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 14,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "index": 627,
+      "value": 0.082
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "index": 635,
+      "value": 0.514
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.5.input_layernorm.weight",
+      "factor": 0.752
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.0.input_layernorm.weight",
+      "index": 77,
+      "value": 0.187
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "practice_after": 0.25
+  },
+  {
+   "round": 15,
+   "practice_before": 0.25,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "index": 943,
+      "value": 0.484
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.22.post_attention_layernorm.weight",
+      "index": 76,
+      "value": 0.469
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.12.input_layernorm.weight",
+      "factor": 0.599
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.18.input_layernorm.weight",
+      "index": 886,
+      "value": 0.67
+     },
+     "practice": 0.22916666666666666
+    }
+   ],
+   "kept": {
+    "op": "scale",
+    "tensor": "model.layers.12.input_layernorm.weight",
+    "factor": 0.599
+   },
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 16,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.21.input_layernorm.weight",
+      "factor": 1.004
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.372
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.9.input_layernorm.weight",
+      "factor": 0.701
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.10.input_layernorm.weight",
+      "index": 276,
+      "value": 0.139
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 17,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.10.post_attention_layernorm.weight",
+      "factor": 0.767
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "index": 704,
+      "value": 0.491
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.17.input_layernorm.weight",
+      "factor": 1.486
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.7.post_attention_layernorm.weight",
+      "factor": 0.54
+     },
+     "practice": 0.20833333333333334
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 18,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.input_layernorm.weight",
+      "factor": 1.411
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.6.post_attention_layernorm.weight",
+      "factor": 0.832
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.16.input_layernorm.weight",
+      "index": 753,
+      "value": 0.45
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.10.post_attention_layernorm.weight",
+      "factor": 0.791
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 19,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.19.input_layernorm.weight",
+      "index": 1001,
+      "value": 0.298
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 0.907
+     },
+     "practice": 0.20833333333333334
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.12.input_layernorm.weight",
+      "index": 301,
+      "value": 0.415
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.4.input_layernorm.weight",
+      "factor": 1.115
+     },
+     "practice": 0.25
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 20,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.12.input_layernorm.weight",
+      "factor": 1.05
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.input_layernorm.weight",
+      "factor": 0.767
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.9.input_layernorm.weight",
+      "index": 234,
+      "value": 0.155
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "index": 25,
+      "value": 0.449
+     },
+     "practice": 0.2708333333333333
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 21,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.19.post_attention_layernorm.weight",
+      "index": 187,
+      "value": 0.263
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.1.input_layernorm.weight",
+      "factor": 1.286
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "factor": 0.616
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.5.input_layernorm.weight",
+      "index": 325,
+      "value": 0.583
+     },
+     "practice": 0.2708333333333333
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 22,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.23.post_attention_layernorm.weight",
+      "index": 891,
+      "value": 0.304
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.17.input_layernorm.weight",
+      "index": 602,
+      "value": 0.634
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.17.post_attention_layernorm.weight",
+      "factor": 0.977
+     },
+     "practice": 0.22916666666666666
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.3.input_layernorm.weight",
+      "factor": 0.817
+     },
+     "practice": 0.1875
+    }
+   ],
+   "practice_after": 0.2708333333333333
+  },
+  {
+   "round": 23,
+   "practice_before": 0.2708333333333333,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.0.post_attention_layernorm.weight",
+      "factor": 1.483
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.9.input_layernorm.weight",
+      "index": 655,
+      "value": 0.143
+     },
+     "practice": 0.25
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.2.input_layernorm.weight",
+      "factor": 0.817
+     },
+     "practice": 0.2916666666666667
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.19.input_layernorm.weight",
+      "index": 228,
+      "value": 0.24
+     },
+     "practice": 0.2708333333333333
+    }
+   ],
+   "kept": {
+    "op": "scale",
+    "tensor": "model.layers.2.input_layernorm.weight",
+    "factor": 0.817
+   },
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 24,
+   "practice_before": 0.2916666666666667,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.8.input_layernorm.weight",
+      "factor": 1.118
+     },
+     "practice": 0.2916666666666667
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.17.input_layernorm.weight",
+      "index": 960,
+      "value": 0.642
+     },
+     "practice": 0.2916666666666667
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.17.input_layernorm.weight",
+      "factor": 0.699
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.11.post_attention_layernorm.weight",
+      "factor": 0.781
+     },
+     "practice": 0.2708333333333333
+    }
+   ],
+   "practice_after": 0.2916666666666667
+  },
+  {
+   "round": 25,
+   "practice_before": 0.2916666666666667,
+   "proposals": [
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.norm.weight",
+      "factor": 1.152
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.20.post_attention_layernorm.weight",
+      "factor": 0.727
+     },
+     "practice": 0.2708333333333333
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "scale",
+      "tensor": "model.layers.9.post_attention_layernorm.weight",
+      "factor": 0.687
+     },
+     "practice": 0.3125
+    },
+    {
+     "raw": "",
+     "edit": {
+      "op": "set",
+      "tensor": "model.layers.18.post_attention_layernorm.weight",
+      "index": 620,
+      "value": 0.353
+     },
+     "practice": 0.2916666666666667
+    }
+   ],
+   "kept": {
+    "op": "scale",
+    "tensor": "model.layers.9.post_attention_layernorm.weight",
+    "factor": 0.687
+   },
+   "practice_after": 0.3125
+  }
+ ],
+ "kept": [
+  {
+   "round": 3,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.norm.weight",
+    "factor": 0.79
+   },
+   "practice": 0.25,
+   "test": 0.255
+  },
+  {
+   "round": 15,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.12.input_layernorm.weight",
+    "factor": 0.599
+   },
+   "practice": 0.2708333333333333,
+   "test": 0.27
+  },
+  {
+   "round": 23,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.2.input_layernorm.weight",
+    "factor": 0.817
+   },
+   "practice": 0.2916666666666667,
+   "test": 0.285
+  },
+  {
+   "round": 25,
+   "edit": {
+    "op": "scale",
+    "tensor": "model.layers.9.post_attention_layernorm.weight",
+    "factor": 0.687
+   },
+   "practice": 0.3125,
+   "test": 0.275
+  }
+ ],
+ "practice_final": 0.3125,
+ "test_final": 0.275,
+ "seconds": 4717
+}
