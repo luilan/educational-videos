@@ -23,10 +23,10 @@ per-question baseline); Foundations episodes on logarithms and probability. Code
 CONCEPTS = [
     {
         "title": "When RL steps are too big",
-        "segment": (8.6, 39.2),
-        "figures": [{"t": 23.0, "caption": "Learning rate 0.0003 takes the model from 14% to 73%. Ten times bigger "
+        "segment": (7.7, 38.3),
+        "figures": [{"t": 22.8, "caption": "Learning rate 0.0003 takes the model from 14% to 73%. Ten times bigger "
                                            "steps: within 150 updates it answers 111 to every question, 1.5% right."},
-                    {"t": 39.0, "caption": "All 8 tries give the same answer and the same reward, so every "
+                    {"t": 38.1, "caption": "All 8 tries give the same answer and the same reward, so every "
                                            "per-question advantage is 0 − 0 = 0: nothing left to learn from."}],
         "body": [
             """<p>In episode 2, REINFORCE with a learning rate of 0.0003 took our model from 14% to 73% right in
@@ -56,8 +56,8 @@ samples agree, it gets no learning signal and cannot climb back out.</div>""",
     },
     {
         "title": "The KL penalty",
-        "segment": (39.7, 61.9),
-        "figures": [{"t": 61.6, "caption": "The reference is a frozen copy from before training. Each answer's "
+        "segment": (38.8, 61.0),
+        "figures": [{"t": 60.7, "caption": "The reference is a frozen copy from before training. Each answer's "
                                            "reward is reduced by β × (log p_model − log p_reference); the average of "
                                            "that difference is the KL divergence."}],
         "body": [
@@ -97,12 +97,12 @@ model makes this answer than the frozen reference) from every reward, so moving 
     },
     {
         "title": "What the leash buys, and what it costs",
-        "segment": (62.4, 113.4),
-        "figures": [{"t": 74.1, "caption": "Same 10× steps with β = 0.1: odd answers for a while (“14+.”, “.”), "
+        "segment": (61.5, 112.5),
+        "figures": [{"t": 73.2, "caption": "Same 10× steps with β = 0.1: odd answers for a while (“14+.”, “.”), "
                                            "then recovery to 61%. KL 6.9 instead of 23."},
-                    {"t": 93.0, "caption": "At the normal learning rate: β up to 0.03 keeps ~70% accuracy; β = 0.1 "
+                    {"t": 92.1, "caption": "At the normal learning rate: β up to 0.03 keeps ~70% accuracy; β = 0.1 "
                                            "gives 23%, β = 1 barely moves from the start (15%)."},
-                    {"t": 113.2, "caption": "Answers to 47+38: the reference mixes 74, 75, 81; no leash says 85 every "
+                    {"t": 112.3, "caption": "Answers to 47+38: the reference mixes 74, 75, 81; no leash says 85 every "
                                             "time; β = 1 keeps the reference's mix."}],
         "body": [
             """<p><b>The rescue.</b> We repeated the 10× run with β = 0.1. For a few hundred steps the model
@@ -141,11 +141,11 @@ stops a collapse; too tight and the model cannot learn.</div>""",
     },
     {
         "title": "Why language models always keep a leash",
-        "segment": (113.9, 141.6),
-        "figures": [{"t": 131.8, "caption": "The reward model is imperfect and a drifting model finds text that "
+        "segment": (113.0, 140.7),
+        "figures": [{"t": 130.9, "caption": "The reward model is imperfect and a drifting model finds text that "
                                             "scores well; the reference is the model before RL. PPO puts the penalty "
                                             "in the reward, GRPO in the loss."},
-                    {"t": 141.4, "caption": "In code: the log-probability difference against the frozen reference, "
+                    {"t": 140.5, "caption": "In code: the log-probability difference against the frozen reference, "
                                             "then β times it subtracted from the reward, before the baseline."}],
         "body": [
             """<p>Our checker cannot be fooled, so the danger here was collapse. With language models the reward
