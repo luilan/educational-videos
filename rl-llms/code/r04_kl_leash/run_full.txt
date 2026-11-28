@@ -1,0 +1,16 @@
+Running as unit: r04-kl.scope; invocation ID: ce80940400ea486bbbb1b19a164a0a83
+start {'kl': 0.0, 'entropy': 0.7191951274871826, 'sample_acc': 0.1115625, 'distinct': 2.655, 'greedy_acc': 0.139}
+beta 0.0 seed 1 {'step': 2000, 'kl': 7.492, 'entropy': 0.235, 'sample_acc': 0.728, 'distinct': 1.555, 'greedy_acc': 0.762} 71s
+beta 0.0 seed 2 {'step': 2000, 'kl': 7.49, 'entropy': 0.276, 'sample_acc': 0.665, 'distinct': 1.62, 'greedy_acc': 0.698} 141s
+beta 0.01 seed 1 {'step': 2000, 'kl': 7.175, 'entropy': 0.298, 'sample_acc': 0.692, 'distinct': 1.67, 'greedy_acc': 0.734} 211s
+beta 0.01 seed 2 {'step': 2000, 'kl': 7.327, 'entropy': 0.314, 'sample_acc': 0.715, 'distinct': 1.77, 'greedy_acc': 0.743} 281s
+beta 0.03 seed 1 {'step': 2000, 'kl': 6.409, 'entropy': 0.371, 'sample_acc': 0.634, 'distinct': 1.865, 'greedy_acc': 0.66} 351s
+beta 0.03 seed 2 {'step': 2000, 'kl': 6.165, 'entropy': 0.411, 'sample_acc': 0.621, 'distinct': 1.95, 'greedy_acc': 0.685} 420s
+beta 0.1 seed 1 {'step': 2000, 'kl': 1.41, 'entropy': 0.622, 'sample_acc': 0.179, 'distinct': 2.425, 'greedy_acc': 0.221} 490s
+beta 0.1 seed 2 {'step': 2000, 'kl': 0.97, 'entropy': 0.596, 'sample_acc': 0.169, 'distinct': 2.385, 'greedy_acc': 0.234} 559s
+beta 0.3 seed 1 {'step': 2000, 'kl': 0.387, 'entropy': 0.663, 'sample_acc': 0.132, 'distinct': 2.545, 'greedy_acc': 0.168} 628s
+beta 0.3 seed 2 {'step': 2000, 'kl': 0.822, 'entropy': 0.68, 'sample_acc': 0.108, 'distinct': 2.565, 'greedy_acc': 0.153} 696s
+beta 1.0 seed 1 {'step': 2000, 'kl': 0.246, 'entropy': 0.718, 'sample_acc': 0.101, 'distinct': 2.655, 'greedy_acc': 0.15} 763s
+beta 1.0 seed 2 {'step': 2000, 'kl': 0.325, 'entropy': 0.717, 'sample_acc': 0.101, 'distinct': 2.65, 'greedy_acc': 0.147} 824s
+fast beta 0.0 {'step': 2000, 'kl': 22.945, 'entropy': 0.0, 'sample_acc': 0.015, 'distinct': 1.0, 'greedy_acc': 0.015} 901s
+fast beta 0.1 {'step': 2000, 'kl': 6.897, 'entropy': 0.36, 'sample_acc': 0.607, 'distinct': 1.83, 'greedy_acc': 0.61} 979s
